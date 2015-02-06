@@ -1,0 +1,101 @@
+<!-- saved from url=(0056)file:///C:/Users/Trevonious/Desktop/DatapathDiagram.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="./DatapathDiagram_files/images/favicon.ico">
+
+    <title>Upload File</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet">
+
+    <style>
+
+        #Main { width:100%; height:50%; margin-bottom:10px }
+        #file { border:2px solid rgb(56, 93, 138);
+                color:rgb(31,73,125) }
+
+    </style>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3&sensor=false&language=en"></script>
+    <script src="./DatapathDiagram_files/upload.js"></script>
+	<script src="./DatapathDiagram_files/page_buttons.js"></script>
+
+</head>
+    <body >
+
+    <script>
+
+        // Will eventually check for the presence of the files and cause popup if they are not present
+        if (window.confirm("Please allow this application to download the necessary files to your hard drive.") == true) {
+
+            // download the files to "C:\\MIPS32DV"
+
+        } else {
+
+            window.moveTo(400, 100);
+            window.resizeTo(600, 600);
+            window.location.assign('./Error!.html');
+
+        }
+
+    </script>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color:rgb(79, 129, 189)">
+        <div class="container">
+            <div class="navbar-header" style="width:100%">
+                <a class="navbar-brand" style="color:white; float:left">
+                    Upload File
+                </a>
+            </div><!--/.nav-collapse -->
+
+        </div>
+    </div>
+
+    <div id="right" style="color:rgb(79, 129, 189);"
+         align="center" >
+
+        <br/>
+        <br/>
+
+        <h2> Please choose a file: </h2>
+
+
+
+        <div id="Main" align="center">
+            <input type="file" id="file" required="true"
+                   style="vertical-align:middle">
+        </div>
+
+
+    </div>
+
+    <div class="footer navbar-fixed-bottom" style="width:100%; background-color:rgb(79, 129, 189)">
+        <div class="container" style="color:white; padding-top:5px;
+         padding-bottom:3px" align="center">
+
+            <input type="image" id="settings"
+                   src="./DatapathDiagram_files/images/settings.png"
+                   onclick="settings()" height="30" width="30"
+                   style="float:left" >
+
+            <input type="button" style="color:rgb(79,129,189); float:left;
+                       margin-left:20px" onclick="about()"
+                   value="About The Developers Page" >
+
+            <input type="image" id="help"
+                   src="./DatapathDiagram_files/images/help.png"
+                   onclick="getHelp()" height="30" width="30" style="float:right" >
+        </div>
+    </div>
+
+
+    </body>
+</html>
