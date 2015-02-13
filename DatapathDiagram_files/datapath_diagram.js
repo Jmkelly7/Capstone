@@ -247,7 +247,7 @@ function runThrough() {
 
     } else if (counter == 5) {
 
-        if (!document.getElementById("slot5").textContent == " ") {
+            //if (!document.getElementById("slot5").textContent == " ") {
 
             INST_ONE_CNT++;
             INST_TWO_CNT++;
@@ -256,35 +256,51 @@ function runThrough() {
             INST_FIVE_CNT++;
             //if (INST_ONE_CNT == 5) {
 
-                INST_ONE_CNT = INST_TWO_CNT;
-                INST_TWO_CNT = INST_THREE_CNT;
-                INST_THREE_CNT = INST_FOUR_CNT;
-                INST_FOUR_CNT = INST_FIVE_CNT;
-                INST_FIVE_CNT = 0;
-                if(!isFirst) {
-                    setupLegend();
+            INST_ONE_CNT = INST_TWO_CNT;
+            INST_TWO_CNT = INST_THREE_CNT;
+            INST_THREE_CNT = INST_FOUR_CNT;
+            INST_FOUR_CNT = INST_FIVE_CNT;
+            INST_FIVE_CNT = 0;
+            if(!isFirst) {
+                setupLegend();
 
-                }
-                instType(document.getElementById("slot1").getAttribute("inst"),
-                    INST_ONE_CNT,
-                    document.getElementById("slot1").getAttribute("fill"));
-                instType(document.getElementById("slot2").getAttribute("inst"),
-                    INST_TWO_CNT,
-                    document.getElementById("slot2").getAttribute("fill"));
-                instType(document.getElementById("slot3").getAttribute("inst"),
-                    INST_THREE_CNT,
-                    document.getElementById("slot3").getAttribute("fill"));
-                instType(document.getElementById("slot4").getAttribute("inst"),
-                    INST_FOUR_CNT,
-                    document.getElementById("slot4").getAttribute("fill"));
-                instType(document.getElementById("slot5").getAttribute("inst"),
-                    INST_FIVE_CNT,
-                    document.getElementById("slot5").getAttribute("fill"));
-                //setupLegend();
-                isFirst = false;
-                console.log("IN THE FIRST IF STATMEENT WITH 5 INTRUCTS");
+            }
+            instType(document.getElementById("slot1").getAttribute("inst"),
+                INST_ONE_CNT,
+                document.getElementById("slot1").getAttribute("fill"));
+            instType(document.getElementById("slot2").getAttribute("inst"),
+                INST_TWO_CNT,
+                document.getElementById("slot2").getAttribute("fill"));
+            instType(document.getElementById("slot3").getAttribute("inst"),
+                INST_THREE_CNT,
+                document.getElementById("slot3").getAttribute("fill"));
+            instType(document.getElementById("slot4").getAttribute("inst"),
+                INST_FOUR_CNT,
+                document.getElementById("slot4").getAttribute("fill"));
+            instType(document.getElementById("slot5").getAttribute("inst"),
+                INST_FIVE_CNT,
+                document.getElementById("slot5").getAttribute("fill"));
+            //setupLegend();
+            isFirst = false;
+            console.log("IN THE FIRST IF STATMEENT WITH 5 INTRUCTS");
+            if (document.getElementById("slot5").textContent == "") {
+                console.log("CHANGING TO WHITE");
+                document.getElementById("slot5").setAttribute("fill", "white");
 
-        } else {
+            } else if (document.getElementById("slot4").textContent == "") {
+                document.getElementById("slot4").setAttribute("fill", "white");
+
+            } else if (document.getElementById("slot3").textContent == "") {
+                document.getElementById("slot3").setAttribute("fill", "white");
+
+            } else if (document.getElementById("slot2").textContent == "") {
+                document.getElementById("slot2").setAttribute("fill", "white");
+
+            } else if (document.getElementById("slot1").textContent == "") {
+                document.getElementById("slot1").setAttribute("fill", "white");
+
+            }
+     /**   } else {
             console.log("We are going back to 4 instructs");
             console.log("inst ciount   " + INST_ONE_CNT);
             counter--;
@@ -292,7 +308,7 @@ function runThrough() {
             runThrough();
             //setupLegend();
         }
-
+*/
     }
 
 }
