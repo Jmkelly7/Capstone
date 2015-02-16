@@ -74,7 +74,7 @@ function stepThroughRType(count, color) {
         colorLines("line57", color);
 
     } else if (count == 4) {
-
+        console.log("4 instructs gopionggfbcvbfdvdsvscvsdvs");
         clearGivenObject("rect11");
         clearGivenObject("rect13");
         clearGivenObject("rect14");
@@ -96,7 +96,7 @@ function stepThroughRType(count, color) {
         colorLines("line59", color);
 
     } else if (count == 5) {
-
+        console.log("CLEARING ALL OF THJE OBJECTS WITH 5 INSTRUCTs");
         clearGivenObject("rect15");
         clearGivenObject("ellipse5");
         clearGivenObject("rect6");

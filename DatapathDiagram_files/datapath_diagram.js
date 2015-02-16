@@ -142,6 +142,12 @@ function parseFile() {
         }
 
     }
+    legendArray[parseCounter + 1] = " ";
+    legendArray[parseCounter + 2] = " ";
+    legendArray[parseCounter + 3] = " ";
+    legendArray[parseCounter + 4] = " ";
+    legendArray[parseCounter + 5] = " ";
+
 
     return legendArray;
 }
@@ -265,6 +271,51 @@ function runThrough() {
                 setupLegend();
 
             }
+        if (document.getElementById("slot2").textContent == " ") {
+            document.getElementById("slot1").setAttribute("fill", "white");
+            document.getElementById("slot2").setAttribute("fill", "white");
+            document.getElementById("slot3").setAttribute("fill", "white");
+            document.getElementById("slot4").setAttribute("fill", "white");
+            document.getElementById("slot5").setAttribute("fill", "white");
+            console.log("CHANGING TO WHITE 1");
+        }  else if (document.getElementById("slot3").textContent == " ") {
+            document.getElementById("slot2").setAttribute("fill", "white");
+            document.getElementById("slot3").setAttribute("fill", "white");
+            document.getElementById("slot4").setAttribute("fill", "white");
+            document.getElementById("slot5").setAttribute("fill", "white");
+            console.log("CHANGING TO WHITE 2");
+        } else if (document.getElementById("slot4").textContent == " ") {
+            document.getElementById("slot3").setAttribute("fill", "white");
+            document.getElementById("slot4").setAttribute("fill", "white");
+            document.getElementById("slot5").setAttribute("fill", "white");
+            console.log("CHANGING TO WHITE 3");
+        }  else if (document.getElementById("slot5").textContent == " ") {
+            document.getElementById("slot4").setAttribute("fill", "white");
+            document.getElementById("slot5").setAttribute("fill", "white");
+            console.log("CHANGING TO WHITE 4");
+        } else if (document.getElementById("slot6").textContent == " ") {
+            console.log("CHANGING TO WHITE 5");
+            document.getElementById("slot5").setAttribute("fill", "white");
+
+        }
+       /** if (document.getElementById("slot6").textContent == " ") {
+            console.log("CHANGING TO WHITE");
+            document.getElementById("slot5").setAttribute("fill", "white");
+
+        } else if (document.getElementById("slot4").textContent == " ") {
+            document.getElementById("slot4").setAttribute("fill", "white");
+
+        } else if (document.getElementById("slot3").textContent == " ") {
+            document.getElementById("slot3").setAttribute("fill", "white");
+
+        } else if (document.getElementById("slot2").textContent == " ") {
+            document.getElementById("slot2").setAttribute("fill", "white");
+            document.getElementById("slot1").setAttribute("fill", "white");
+
+        } else if (document.getElementById("slot1").textContent == " ") {
+            document.getElementById("slot1").setAttribute("fill", "white");
+
+        }*/
             instType(document.getElementById("slot1").getAttribute("inst"),
                 INST_ONE_CNT,
                 document.getElementById("slot1").getAttribute("fill"));
@@ -283,23 +334,23 @@ function runThrough() {
             //setupLegend();
             isFirst = false;
             console.log("IN THE FIRST IF STATMEENT WITH 5 INTRUCTS");
-            if (document.getElementById("slot5").textContent == "") {
+            /**if (document.getElementById("slot5").textContent == " ") {
                 console.log("CHANGING TO WHITE");
                 document.getElementById("slot5").setAttribute("fill", "white");
 
-            } else if (document.getElementById("slot4").textContent == "") {
+            } else if (document.getElementById("slot4").textContent == " ") {
                 document.getElementById("slot4").setAttribute("fill", "white");
 
-            } else if (document.getElementById("slot3").textContent == "") {
+            } else if (document.getElementById("slot3").textContent == " ") {
                 document.getElementById("slot3").setAttribute("fill", "white");
 
-            } else if (document.getElementById("slot2").textContent == "") {
+            } else if (document.getElementById("slot2").textContent == " ") {
                 document.getElementById("slot2").setAttribute("fill", "white");
 
-            } else if (document.getElementById("slot1").textContent == "") {
+            } else if (document.getElementById("slot1").textContent == " ") {
                 document.getElementById("slot1").setAttribute("fill", "white");
 
-            }
+            }*/
      /**   } else {
             console.log("We are going back to 4 instructs");
             console.log("inst ciount   " + INST_ONE_CNT);
@@ -308,7 +359,10 @@ function runThrough() {
             runThrough();
             //setupLegend();
         }
-*/
+*/          if(document.getElementById("slot1").getAttribute("fill") == "white") {
+                console.log("TRYING TO CLEAR THE LAST FUCKING THING OFF HTE LIST");
+                stepThroughRType(5,"White");
+            }
     }
 
 }
