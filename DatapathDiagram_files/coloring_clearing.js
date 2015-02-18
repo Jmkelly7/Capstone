@@ -1,5 +1,10 @@
 /**
- * Created by Josh on 12/11/2014.
+ * This file contains functions that are used to color the parts of the datapath
+ *  diagram and clear the colors from the diagram.
+ *
+ * @author  Josh Kelly
+ * @author  Trevor Griggs
+ * @version 12/11/2014
  */
 
 /**
@@ -10,18 +15,20 @@
  */
 function colorAndRefreshDiagramObjects(objectName, colorChoice) {
 
-    if (colorChoice == "red") {
-        document.getElementById(objectName).setAttribute("style", "fill:red;stroke-width:3;stroke:black");
-    } else if (colorChoice == "orange") {
-        document.getElementById(objectName).setAttribute("style", "fill:orange;stroke-width:3;stroke:black");
-    } else if (colorChoice == "yellow") {
-        document.getElementById(objectName).setAttribute("style", "fill:yellow;stroke-width:3;stroke:black");
-    } else if (colorChoice == "green") {
-        document.getElementById(objectName).setAttribute("style", "fill:green;stroke-width:3;stroke:black");
-    } else if (colorChoice == "blue") {
-        document.getElementById(objectName).setAttribute("style", "fill:blue;stroke-width:3;stroke:black");
-    } else if (colorChoice == "violet") {
-        document.getElementById(objectName).setAttribute("style", "fill:violet;stroke-width:3;stroke:black");
+    if (colorChoice == "firebrick") {
+        document.getElementById(objectName).setAttribute("style", "fill:firebrick;stroke-width:3;stroke:black");
+    } else if (colorChoice == "peru") {
+        document.getElementById(objectName).setAttribute("style", "fill:peru;stroke-width:3;stroke:black");
+    } else if (colorChoice == "darkgoldenrod") {
+        document.getElementById(objectName).setAttribute("style", "fill:darkgoldenrod;stroke-width:3;stroke:black");
+    } else if (colorChoice == "mediumseagreen") {
+        document.getElementById(objectName).setAttribute("style", "fill:mediumseagreen;stroke-width:3;stroke:black");
+    } else if (colorChoice == "darkcyan") {
+        document.getElementById(objectName).setAttribute("style", "fill:darkcyan;stroke-width:3;stroke:black");
+    } else if (colorChoice == "darkorchid") {
+        document.getElementById(objectName).setAttribute("style", "fill:darkorchid;stroke-width:3;stroke:black");
+    } else if (colorChoice == "dimgray") {
+        document.getElementById(objectName).setAttribute("style", "fill:dimgray;stroke-width:3;stroke:black");
     }
 
     return false;
@@ -35,18 +42,20 @@ function colorAndRefreshDiagramObjects(objectName, colorChoice) {
  */
 function colorLines(objectName, colorChoice) {
 
-    if (colorChoice == "red") {
-        document.getElementById(objectName).setAttribute("style", "fill:red;stroke-width:3;stroke:red");
-    } else if (colorChoice == "orange") {
-        document.getElementById(objectName).setAttribute("style", "fill:orange;stroke-width:3;stroke:orange");
-    } else if (colorChoice == "yellow") {
-        document.getElementById(objectName).setAttribute("style", "fill:yellow;stroke-width:3;stroke:yellow");
-    } else if (colorChoice == "green") {
-        document.getElementById(objectName).setAttribute("style", "fill:green;stroke-width:3;stroke:green");
-    } else if (colorChoice == "blue") {
-        document.getElementById(objectName).setAttribute("style", "fill:blue;stroke-width:3;stroke:blue");
-    } else if (colorChoice == "violet") {
-        document.getElementById(objectName).setAttribute("style", "fill:violet;stroke-width:3;stroke:violet");
+    if (colorChoice == "firebrick") {
+        document.getElementById(objectName).setAttribute("style", "fill:firebrick;stroke-width:3;stroke:firebrick");
+    } else if (colorChoice == "peru") {
+        document.getElementById(objectName).setAttribute("style", "fill:peru;stroke-width:3;stroke:peru");
+    } else if (colorChoice == "darkgoldenrod") {
+        document.getElementById(objectName).setAttribute("style", "fill:darkgoldenrod;stroke-width:3;stroke:darkgoldenrod");
+    } else if (colorChoice == "mediumseagreen") {
+        document.getElementById(objectName).setAttribute("style", "fill:mediumseagreen;stroke-width:3;stroke:mediumseagreen");
+    } else if (colorChoice == "darkcyan") {
+        document.getElementById(objectName).setAttribute("style", "fill:darkcyan;stroke-width:3;stroke:darkcyan");
+    } else if (colorChoice == "darkorchid") {
+        document.getElementById(objectName).setAttribute("style", "fill:darkorchid;stroke-width:3;stroke:darkorchid");
+    } else if (colorChoice == "dimgray") {
+        document.getElementById(objectName).setAttribute("style", "fill:dimgray;stroke-width:3;stroke:dimgray");
     }
 }
 

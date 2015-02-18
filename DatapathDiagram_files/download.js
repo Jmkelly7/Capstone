@@ -1,5 +1,9 @@
 /**
- * Created by Josh on 12/11/2014.
+ * This file contains functions that are used by the download page ONLY.
+ *
+ * @author  Josh Kelly
+ * @author  Trevor Griggs
+ * @version 12/11/2014
  */
 
 /**

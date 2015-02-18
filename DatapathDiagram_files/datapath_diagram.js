@@ -85,7 +85,7 @@ var Inst5 = [""];
 /**
  * The buffer color to put on the diagram to keep the colors refreshing correctly.
  */
-var nextColor = "blue";
+var nextColor = "darkorchid";
 
 /**
  * The name of the file that is uploaded.
@@ -111,6 +111,7 @@ var intervalColor;
  * Tells if this is the first time 5 instructions will be on the diagram at one time.
  */
 var isFirst = true;
+
 /**
  * The popup window that brings the user to upload a file once they visit the site.
  */
@@ -147,7 +148,6 @@ function parseFile() {
     legendArray[parseCounter + 3] = " ";
     legendArray[parseCounter + 4] = " ";
     legendArray[parseCounter + 5] = " ";
-
 
     return legendArray;
 }
@@ -472,6 +472,18 @@ function play() {
     } else {
         window.clearInterval(intervalColor);
     }
+}
+
+/**
+ * This function allows the user to input a line number that they wish to jump
+ *  to, the legend/diagram go to that location in the code, and start from the
+ *  specified line. Up to four previous instructions will be displayed and
+ *  pre-highlighted in the diagram.
+ */
+function skipTo() {
+
+    // goes to specified line in code
+
 }
 
 /**

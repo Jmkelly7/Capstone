@@ -1,16 +1,11 @@
 /**
- * Created by Josh on 12/11/2014.
+ * This file contains functions that control the shared buttons on pages of the
+ *  web application.
+ *
+ * @author  Josh Kelly
+ * @author  Trevor Griggs
+ * @version 12/11/2014
  */
-
-/**
- * This function launches a popup window that will allow the user to
- *  change some web application settings.
- */
-function settings() {
-
-    // brings up the settings window
-
-}
 
 /**
  * This function opens the about the developers page. This page

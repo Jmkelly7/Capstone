@@ -1,5 +1,10 @@
 /**
- * Created by Josh on 12/11/2014.
+ * This file contains functions that interpret instruction type and color the
+ *  correct diagram parts and legend text.
+ *
+ * @author  Josh Kelly
+ * @author  Trevor Griggs
+ * @version 12/11/2014
  */
 
 /**

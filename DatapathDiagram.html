@@ -1,11 +1,17 @@
-<!-- saved from url=(0056)file:///C:/Users/Trevonious/Desktop/DatapathDiagram.html -->
+<!--
+    This file is the "main" project file in that this is the first page that a
+    user sees when they access the application. All other pages in the
+    application are either displayed in a popup or another tab\window.
+
+    Josh Kelly, Trevor Griggs
+-->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="./DatapathDiagram_files/images/favicon.ico">
+    <link rel="icon" href="../../../MIPS32DV/DatapathDiagram_files/images/favicon.ico">
 
     <title>Datapath Diagram</title>
 
@@ -22,8 +28,6 @@
         #right {width:1400px; height:800px; padding:5px; overflow-x:hidden;
         overflow-y:auto; float:left;}
     </style>
-
-
 
     <script src="./DatapathDiagram_files/jquery-1.11.1.js"></script>
     <script src="./DatapathDiagram_files/bootstrap.min.js"></script>
@@ -57,19 +61,22 @@
         <div id="left" style="color:rgb(79, 129, 189)" align="center">
             <h2> Instruction Legend </h2>
 
-            <svg width="300" height="600" style="background-color:rgb(79, 129,189)">
+            <svg width="300" height="600" ><!--style="background-color:rgb(79,
+                129,189)">-->
                 <g>
-
-                    <text x="30" y="50" fill="red" id="slot1" font-size="20px"></text>
-                    <text x="30" y="100" fill="orange" id="slot2" font-size="20px"></text>
-                    <text x="30" y="150" fill="yellow" id="slot3" font-size="20px"></text>
-                    <text x="30" y="200" fill="green" id="slot4" font-size="20px"></text>
-                    <text x="30" y="250" fill="violet" id="slot5" font-size="20px"></text>
+                    <rect width="300" height="600" rx="20" ry="20" id="legend"
+                          style="fill:beige; stroke:rgb(79,129,189); stroke-width:10"></rect>
+                    <text x="30" y="50" fill="firebrick" id="slot1" font-size="20px" font-weight = "bold"></text>
+                    <text x="30" y="100" fill="peru" id="slot2" font-size="20px" font-weight = "bold"></text>
+                    <text x="30" y="150" fill="darkgoldenrod" id="slot3" font-size="20px" font-weight = "bold"></text>
+                    <text x="30" y="200" fill="mediumseagreen" id="slot4" font-size="20px" font-weight = "bold"></text>
+                    <text x="30" y="250" fill="darkcyan" id="slot5" font-size="20px" font-weight = "bold"></text>
                     <text x="30" y="300" fill="black" id="slot6" font-size="20px"></text>
                     <text x="30" y="350" fill="black" id="slot7" font-size="20px"></text>
                     <text x="30" y="400" fill="black" id="slot8" font-size="20px"></text>
                     <text x="30" y="450" fill="black" id="slot9" font-size="20px"></text>
                     <text x="30" y="500" fill="black" id="slot10" font-size="20px"></text>
+                    <text x="30" y="550" fill="black" id="slot11" font-size="20px"></text>
                 </g>
             </svg>
 
@@ -77,9 +84,9 @@
                 <form>
                     <input type="text" id="numskip" value="Enter line number" >
                     <button id="numskipb"
-                            onclick="skipto()"
+                            onclick="skipTo()"
                             style="margin-top:15px" ><img
-                            src="./DatapathDiagram_files/images/numskip.png"
+                            src="../../../MIPS32DV/DatapathDiagram_files/images/numskip.png"
                             alt="Submit" ></button>
                 </form>
             </div>
@@ -90,7 +97,10 @@
 
             <svg xmlns="http://www.w3.org/2000/svg" width="1211px" height="524px" version="1.1">
                 <g transform="translate(0.5,0.5)">
-                    <rect x="712" y="138" width="60" height="52" fill="none" stroke="none" pointer-events="none"/>
+
+                <!-- Diagram -->
+
+                    <rect x="712" y="138" rx="20" ry="20" width="60" height="52" fill="none" stroke="none" pointer-events="none"/>
                     <g>
                         <path id="poly2" d="M 712 190 L 726.54 138 L 757.46 138 L 772 190 Z" fill="#ffffff" stroke="#000000" stroke-width="2" stroke-miterlimit="10" transform="rotate(90,742,164)" pointer-events="none"/>
                         <text x="730" y="170" fill="black" font-size="20px">Add</text>
@@ -173,6 +183,9 @@
                     <path id="ellipse5" d="M 1150.1 328 L 1181.9 328 C 1195.76 328 1207 335.84 1207 345.5 C 1207 355.16 1195.76 363 1181.9 363 L 1150.1 363 C 1136.24 363 1125 355.16 1125 345.5 C 1125 335.84 1136.24 328 1150.1 328 Z" fill="#ffffff" stroke="#000000" stroke-width="2" stroke-miterlimit="10" transform="rotate(90,1166,345.5)" pointer-events="none"/>
                     <ellipse id="ellipse2" cx="562" cy="416" rx="23" ry="35" fill="#ffffff" stroke="#000000" stroke-width="2" pointer-events="none"/>
                     <ellipse id="ellipse3" cx="666" cy="189" rx="18" ry="27.5" fill="#ffffff" stroke="#000000" stroke-width="2" pointer-events="none"/>
+
+                    <!-- Register text above arrows -->
+
                     <g>
                         <path id="line1" d="M 8 261 L 51.62 261.01" fill="black" stroke="black" stroke-miterlimit="10" pointer-events="none"/>
                         <path d="M 56.87 261.01 L 49.87 264.51 L 51.62 261.01 L 49.87 257.51 Z" fill="black" stroke="black" stroke-miterlimit="10" pointer-events="none"/>
@@ -393,7 +406,7 @@
                     </g>
                 </g>
 
-                Sorry, your broswer does not support inline SVG.
+                Sorry, your browser does not support inline SVG.
             </svg>
             <br>
 
@@ -401,15 +414,15 @@
 
                 <button id="play" onclick="play()"
                         style="margin-left:60px; margin-right:50px" ><img
-                        src="./DatapathDiagram_files/images/play.png"
+                        src="../../../MIPS32DV/DatapathDiagram_files/images/play.png"
                         alt="Submit" ></button>
                 <button id="back" onclick="stepBack()"
                         style="margin-right:50px" ><img
-                        src="./DatapathDiagram_files/images/back.png"
+                        src="../../../MIPS32DV/DatapathDiagram_files/images/back.png"
                         alt="Submit" ></button>
                 <button id="step" onclick="runThrough()"
                         style="margin-right:50px" ><img
-                        src="./DatapathDiagram_files/images/step.png"
+                        src="../../../MIPS32DV/DatapathDiagram_files/images/step.png"
                         alt="Submit" ></button>
 
                 <div style="color:rgb(79, 129, 189)">
@@ -432,26 +445,20 @@
     <div class="footer navbar-fixed-bottom" style="width:100%; background-color:rgb(79, 129, 189)">
         <div class="container" style="color:white" align="center">
 
-            <input type="image" id="settings" onclick="settings()"
-                   src="./DatapathDiagram_files/images/settings.png"
-                   height="30" width="30" style="float:left" >
-
             <input type="button" style="color:rgb(79,129,189); float:left;
                    margin-left:20px" onclick="about()"
                    value="About The Developers Page" >
 
             <input type="image" id="help" onclick="getHelp()"
-                   src="./DatapathDiagram_files/images/help.png"
+                   src="../../../MIPS32DV/DatapathDiagram_files/images/help.png"
                    height="30" width="30" style="float:right" >
 
-
-
             <input type="image" id="download" onclick="download()"
-                   src="./DatapathDiagram_files/images/download.png"
+                   src="../../../MIPS32DV/DatapathDiagram_files/images/download.png"
                    height="30" width="30" style="float:right" >
 
             <input type="image" id="upload" onclick="uploadNew()"
-                   src="./DatapathDiagram_files/images/upload.png"
+                   src="../../../MIPS32DV/DatapathDiagram_files/images/upload.png"
                    height="30" width="30" style="float:right" >
 
         </div>

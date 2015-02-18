@@ -1,5 +1,10 @@
 /**
-+ * Created by Josh on 12/11/2014.
+ * This file contains functions that are used for creating and displaying the
+ *  instruction legend for the web application.
+ *
+ * @author  Josh Kelly
+ * @author  Trevor Griggs
+ * @version 12/11/2014
  */
 
 /**
@@ -61,7 +66,7 @@ function getInstructionForList(instArray) {
     //  from the file we read in after we get the file sending system working.
     //  as for right now we are statically placing the instruction within the legend
     //  just so we have a few placeholders on what it is going to look like.
-    for (var i = 1; i < 11; i++) {
+    for (var i = 1; i < 12; i++) {
 
         inst = instArray[instructionCounter].split(" ");
         word = "slot";
@@ -78,7 +83,7 @@ function getInstructionForList(instArray) {
 
 /**
  * This function setup the legend and if it it the first time it calls getInstructionForList and then
- * it updates the list by moving everyhting up and taking the first off and adding a new one once the others
+ * it updates the list by moving everything up and taking the first off and adding a new one once the others
  * are moved up the list on the legend.
  */
 function setupLegend() {
@@ -95,11 +100,11 @@ function setupLegend() {
 
         var colorQueue = document.getElementById("slot1").getAttribute("fill");
 
-        for (var i = 1; i < 11; i++) {
+        for (var i = 1; i < 12; i++) {
 
             var word = "slot";
 
-            if (i < 10) {
+            if (i < 11) {
 
                 var num = i + 1;
                 var word2 = word + num;
@@ -124,11 +129,11 @@ function setupLegend() {
 
                 word = word + i;
                 document.getElementById(word).textContent = instructionArray[instructionCounter];
+
                 if(document.getElementById(word.textContent != " ")) {
                     var inst = instructionArray[instructionCounter].split(" ");
                     document.getElementById(word).setAttribute("inst", inst[0]);
                 }
-
 
                 instructionCounter++;
 
