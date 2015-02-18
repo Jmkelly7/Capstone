@@ -362,6 +362,16 @@ function runThrough() {
 */          if(document.getElementById("slot1").getAttribute("fill") == "white") {
                 console.log("TRYING TO CLEAR THE LAST FUCKING THING OFF HTE LIST");
                 stepThroughRType(5,"White");
+
+                window.alert("PROGRAM FINISHED");
+                var r = confirm("Run another program?");
+                if (r == true) {
+                    window.setTimeout(location.reload(), 2000);
+                } else {
+                    close();
+                }
+                //window.setTimeout(location.reload(), 2000);
+                //location.reload();
             }
     }
 
@@ -440,16 +450,27 @@ function setName() {
  */
 function play() {
 
-    if (playCounter == 0) {
-
-        intervalColor = window.setInterval(function () {
-            runThrough()
-        }, 2000);
-        playCounter = 1;
-        console.log("IT IS IN THE PLAY FEATURE THINGY");
-    } else if (playCounter == 1) {
+    if(!document.getElementById("slot1").textContent == " ") {
+        if (playCounter == 0) {
+            var time = prompt("Please enter a speed for the diagram", "");
+            if (time != null) {
+                intervalColor = window.setInterval(function () {
+                    runThrough()
+                }, time * 1000);
+            } else {
+                play();
+            }
+            //  intervalColor = window.setInterval(function () {
+            //    runThrough()
+            //}, 2000);
+            playCounter = 1;
+            console.log("IT IS IN THE PLAY FEATURE THINGY");
+        } else if (playCounter == 1) {
+            window.clearInterval(intervalColor);
+            playCounter = 0;
+        }
+    } else {
         window.clearInterval(intervalColor);
-        playCounter = 0;
     }
 }
 

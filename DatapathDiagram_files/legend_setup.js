@@ -14,18 +14,23 @@ function setupReg(instArray) {
         console.log("value from array" + instArray[regCounter]);
         Inst1 = instArray[regCounter].split(" ");
         Inst1.shift();
+        console.log("REGISTER VALUE 1", Inst1);
         regCounter++;
         Inst2 = instArray[regCounter].split(" ");
         Inst2.shift();
+        console.log("REGISTER VALUE 1", Inst2);
         regCounter++;
         Inst3 = instArray[regCounter].split(" ");
         Inst3.shift();
+        console.log("REGISTER VALUE 1", Inst3);
         regCounter++;
         Inst4 = instArray[regCounter].split(" ");
         Inst4.shift();
+        console.log("REGISTER VALUE 1", Inst4);
         regCounter++;
         Inst5 = instArray[regCounter].split(" ");
         Inst5.shift();
+        console.log("REGISTER VALUE 1", Inst5);
         regCounter++;
         console.log("INSTRUCTIONS" + Inst1[0]);
 
@@ -67,7 +72,7 @@ function getInstructionForList(instArray) {
 
     }
 
-    //setupReg(instructionArray);
+    setupReg(instructionArray);
 
 }
 
