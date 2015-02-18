@@ -15,6 +15,7 @@ function stepThroughRType(count, color) {
 
         colorAndRefreshDiagramObjects("rect3", color);
         colorAndRefreshDiagramObjects("rect4", color);
+        document.getElementById("txt22").textContent = Inst1[0];
         colorLines("line22", color);
 
     } else if (count == 1) {
@@ -22,13 +23,18 @@ function stepThroughRType(count, color) {
         clearGivenObject("rect3");
         clearGivenObject("rect4");
         clearGivenObject("line22");
+        document.getElementById("txt22").textContent = "";
         colorAndRefreshDiagramObjects("rect5", color);
         colorAndRefreshDiagramObjects("rect7", color);
         colorAndRefreshDiagramObjects("rect8", color);
         colorLines("line23", color);
+        document.getElementById("txt24").textContent = Inst1[1];
         colorLines("line24", color);
+        document.getElementById("txt25").textContent = Inst1[0];
         colorLines("line25", color);
+        document.getElementById("txt31").textContent = Inst1[1];
         colorLines("line31", color);
+        document.getElementById("txt32").textContent = Inst1[0];
         colorLines("line32", color);
         colorLines("line49", color);
         colorLines("line50", color);
@@ -45,14 +51,23 @@ function stepThroughRType(count, color) {
         clearGivenObject("line32");
         clearGivenObject("line49");
         clearGivenObject("line50");
+        document.getElementById("txt24").textContent = "";
+        document.getElementById("txt25").textContent = "";
+        document.getElementById("txt31").textContent = "";
+        document.getElementById("txt32").textContent = "";
         colorAndRefreshDiagramObjects("rect9", color);
         colorAndRefreshDiagramObjects("rect10", color);
         colorAndRefreshDiagramObjects("ellipse4", color);
         colorAndRefreshDiagramObjects("poly3", color);
+        document.getElementById("txt33").textContent = Inst1[0];
         colorLines("line33", color);
+        document.getElementById("txt34").textContent = Inst1[1];
         colorLines("line34", color);
+        document.getElementById("txt35").textContent = Inst1[1];
         colorLines("line35", color);
+        document.getElementById("txt37").textContent = Inst1[1];
         colorLines("line37", color);
+        document.getElementById("txt39").textContent = Inst1[0];
         colorLines("line39", color);
 
     } else if (count == 3) {
@@ -66,10 +81,17 @@ function stepThroughRType(count, color) {
         clearGivenObject("line35");
         clearGivenObject("line37");
         clearGivenObject("line39");
+        document.getElementById("txt33").textContent = "";
+        document.getElementById("txt34").textContent = "";
+        document.getElementById("txt35").textContent = "";
+        document.getElementById("txt37").textContent = "";
+        document.getElementById("txt39").textContent = "";
         colorAndRefreshDiagramObjects("rect11", color);
         colorAndRefreshDiagramObjects("rect13", color);
         colorAndRefreshDiagramObjects("rect14", color);
+        document.getElementById("txt41").textContent = Inst1[0];
         colorLines("line41", color);
+        document.getElementById("txt43").textContent = Inst1[0];
         colorLines("line43", color);
         colorLines("line57", color);
 
@@ -83,20 +105,32 @@ function stepThroughRType(count, color) {
         clearGivenObject("line43");
         clearGivenObject("line57");
         clearGivenObject("line58");
+        document.getElementById("txt41").textContent = "";
+        document.getElementById("txt43").textContent = "";
         colorAndRefreshDiagramObjects("rect15", color);
         colorAndRefreshDiagramObjects("ellipse5", color);
         colorAndRefreshDiagramObjects("rect6", color);
         colorLines("line58", color);
+        document.getElementById("txt46").textContent = Inst1[0];
         colorLines("line46", color);
+        document.getElementById("txt48").textContent = Inst1[0];
         colorLines("line48", color);
+        document.getElementById("txt47").textContent = Inst1[0];
         colorLines("line47", color);
+        document.getElementById("txt26").textContent = Inst1[1];
         colorLines("line26", color);
+        document.getElementById("txt27").textContent = Inst1[0];
         colorLines("line27", color);
         colorLines("line53", color);
         colorLines("line59", color);
 
     } else if (count == 5) {
         console.log("CLEARING ALL OF THJE OBJECTS WITH 5 INSTRUCTs");
+        document.getElementById("txt46").textContent = "";
+        document.getElementById("txt48").textContent = "";
+        document.getElementById("txt27").textContent = "";
+        document.getElementById("txt47").textContent = "";
+        document.getElementById("txt26").textContent = "";
         clearGivenObject("rect15");
         clearGivenObject("ellipse5");
         clearGivenObject("rect6");

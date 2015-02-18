@@ -14,7 +14,7 @@ function setupReg(instArray) {
         console.log("value from array" + instArray[regCounter]);
         Inst1 = instArray[regCounter].split(" ");
         Inst1.shift();
-        console.log("REGISTER VALUE 1", Inst1);
+        console.log("REGISTER VALUE 1", Inst1[0]);
         regCounter++;
         Inst2 = instArray[regCounter].split(" ");
         Inst2.shift();
