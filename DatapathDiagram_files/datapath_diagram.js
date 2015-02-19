@@ -18,7 +18,7 @@ var instructionCounter = 0;
 var regCounter = 0;
 
 /**
- * The number of instructions that are on the diagram at one time. anus
+ * The number of instructions that are on the diagram at one time.
  */
 var counter = 1;
 
@@ -255,22 +255,25 @@ function runThrough() {
 
             //if (!document.getElementById("slot5").textContent == " ") {
 
-            INST_ONE_CNT++;
-            INST_TWO_CNT++;
-            INST_THREE_CNT++;
-            INST_FOUR_CNT++;
-            INST_FIVE_CNT++;
+        INST_ONE_CNT++;
+        INST_TWO_CNT++;
+        INST_THREE_CNT++;
+        INST_FOUR_CNT++;
+        INST_FIVE_CNT++;
             //if (INST_ONE_CNT == 5) {
 
-            INST_ONE_CNT = INST_TWO_CNT;
-            INST_TWO_CNT = INST_THREE_CNT;
-            INST_THREE_CNT = INST_FOUR_CNT;
-            INST_FOUR_CNT = INST_FIVE_CNT;
-            INST_FIVE_CNT = 0;
-            if(!isFirst) {
-                setupLegend();
+        INST_ONE_CNT = INST_TWO_CNT;
+        INST_TWO_CNT = INST_THREE_CNT;
+        INST_THREE_CNT = INST_FOUR_CNT;
+        INST_FOUR_CNT = INST_FIVE_CNT;
+        INST_FIVE_CNT = 0;
 
-            }
+        if(!isFirst) {
+
+            setupLegend();
+
+        }
+
         if (document.getElementById("slot2").textContent == " ") {
             document.getElementById("slot1").setAttribute("fill", "white");
             document.getElementById("slot2").setAttribute("fill", "white");
@@ -298,6 +301,7 @@ function runThrough() {
             document.getElementById("slot5").setAttribute("fill", "white");
 
         }
+
        /** if (document.getElementById("slot6").textContent == " ") {
             console.log("CHANGING TO WHITE");
             document.getElementById("slot5").setAttribute("fill", "white");
@@ -316,6 +320,7 @@ function runThrough() {
             document.getElementById("slot1").setAttribute("fill", "white");
 
         }*/
+
             instType(document.getElementById("slot1").getAttribute("inst"),
                 INST_ONE_CNT,
                 document.getElementById("slot1").getAttribute("fill"));
@@ -334,6 +339,7 @@ function runThrough() {
             //setupLegend();
             isFirst = false;
             console.log("IN THE FIRST IF STATMEENT WITH 5 INTRUCTS");
+
             /**if (document.getElementById("slot5").textContent == " ") {
                 console.log("CHANGING TO WHITE");
                 document.getElementById("slot5").setAttribute("fill", "white");
@@ -358,8 +364,9 @@ function runThrough() {
             console.log("# OF COUNT   " + counter);
             runThrough();
             //setupLegend();
-        }
-*/          if(document.getElementById("slot1").getAttribute("fill") == "white") {
+        }*/
+
+            if(document.getElementById("slot1").getAttribute("fill") == "white") {
                 console.log("TRYING TO CLEAR THE LAST FUCKING THING OFF HTE LIST");
                 stepThroughRType(5,"White");
 
@@ -381,7 +388,7 @@ function runThrough() {
  * This function checks what type the instruction is and calls the correct path for that instruction.
  *
  * @param instruction - instruction from the legend.
- * @param instCnt - the stage the instruction is on.
+ * @param instCnt - the stage the instruction is in.
  * @param color - the color to change the objects and lines too.
  */
 function instType(instruction, instCnt, color) {
@@ -491,7 +498,56 @@ function skipTo() {
  */
 function stepBack() {
 
-    // goes back to the previous instruction
+    if (instructionCounter > 5) {
+
+        var temp = document.getElementById("slot5").getAttribute("fill");
+        instructionCounter--;
+
+        /*INST_ONE_CNT++;
+        INST_TWO_CNT++;
+        INST_THREE_CNT++;
+        INST_FOUR_CNT++;
+        INST_FIVE_CNT++;*/
+
+        console.log(INST_ONE_CNT);
+        console.log(INST_FIVE_CNT);
+        console.log(nextColor);
+        console.log(instructionArray[instructionCounter - 11].split(" ")[0]);
+        instType(instructionArray[instructionCounter - 11].split(" ")[0], INST_ONE_CNT, nextColor);
+        instType(document.getElementById("slot1").getAttribute("inst"),
+            INST_TWO_CNT,
+            document.getElementById("slot1").getAttribute("fill"));
+        instType(document.getElementById("slot2").getAttribute("inst"),
+            INST_THREE_CNT,
+            document.getElementById("slot2").getAttribute("fill"));
+        instType(document.getElementById("slot3").getAttribute("inst"),
+            INST_FOUR_CNT,
+            document.getElementById("slot3").getAttribute("fill"));
+        instType(document.getElementById("slot4").getAttribute("inst"),
+            INST_FIVE_CNT,
+            document.getElementById("slot4").getAttribute("fill"));
+
+        //if (instructionCounter > 5) {
+
+            nextColor = temp;// document.getElementById("slot5").getAttribute("fill");
+
+        //}
+
+        /*INST_ONE_CNT++;
+        INST_TWO_CNT++;
+        INST_THREE_CNT++;
+        INST_FOUR_CNT++;
+        INST_FIVE_CNT++;*/
+
+        /*INST_ONE_CNT--;
+        INST_TWO_CNT--;
+        INST_THREE_CNT--;
+        INST_FOUR_CNT--;
+        INST_FIVE_CNT--;*/
+
+        //runThrough();
+
+    }
 
 }
 

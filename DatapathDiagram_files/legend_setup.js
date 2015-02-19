@@ -52,8 +52,8 @@ function setupReg(instArray) {
 }
 
 /**
- * This function initiallizes the legend for the first ten instructions from the instruction legend and sets the
- * attribbute inst for each of the slots within the legend.
+ * This function initializes the legend for the first ten instructions from the instruction legend and sets the
+ *  attribute inst for each of the slots within the legend.
  *
  * @param instArray - the array of instructions to use to generate the legend.
  */
@@ -82,9 +82,9 @@ function getInstructionForList(instArray) {
 }
 
 /**
- * This function setup the legend and if it it the first time it calls getInstructionForList and then
- * it updates the list by moving everything up and taking the first off and adding a new one once the others
- * are moved up the list on the legend.
+ * This function sets up the legend and if it is the first time it calls getInstructionForList and then
+ *  it updates the list by moving everything up and taking the first off and adding a new one once the others
+ *  are moved up the list on the legend.
  */
 function setupLegend() {
 
@@ -138,6 +138,58 @@ function setupLegend() {
                 instructionCounter++;
 
             }
+
+        }
+
+    }
+
+}
+
+/**
+ * This function sets up the legend and if it is the first time it calls getInstructionForList and then
+ *  it updates the list by moving everything up and taking the first off and adding a new one once the others
+ *  are moved up the list on the legend.
+ */
+function backLegend(prevColor) {
+
+    var colorQueue = document.getElementById("slot1").getAttribute("fill");
+
+    for (var i = 1; i < 12; i++) {
+
+        var word = "slot";
+
+        if (i < 11) {
+
+            var num = i + 1;
+            var word2 = word + num;
+            word = word + i;
+            document.getElementById(word).textContent =
+                document.getElementById(word2).textContent;
+            document.getElementById(word).setAttribute("inst", document.getElementById(word2).getAttribute("inst"));
+
+            if (i < 5) {
+
+                document.getElementById(word).setAttribute("fill",
+                    document.getElementById(word2).getAttribute("fill"));
+
+            } else if (i == 5) {
+
+                document.getElementById(word).setAttribute("fill", nextColor);
+                nextColor = colorQueue;
+
+            }
+
+        } else {
+
+            word = word + i;
+            document.getElementById(word).textContent = instructionArray[instructionCounter];
+
+            if (document.getElementById(word.textContent != " ")) {
+                var inst = instructionArray[instructionCounter].split(" ");
+                document.getElementById(word).setAttribute("inst", inst[0]);
+            }
+
+            instructionCounter++;
 
         }
 

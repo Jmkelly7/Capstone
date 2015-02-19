@@ -11,19 +11,19 @@
  * This function is the path for R type instructions to follow in the diagram and colors and clears the
  * appropriate objects in the diagram.
  *
- * @param count - The stage the current instruction is in.
+ * @param stage - The stage the current instruction is in.
  * @param color - The color to change the objects to for the given instruction.
  */
-function stepThroughRType(count, color) {
+function stepThroughRType(stage, color) {
 
-    if (count == 0) {
+    if (stage == 0) {
 
         colorAndRefreshDiagramObjects("rect3", color);
         colorAndRefreshDiagramObjects("rect4", color);
         document.getElementById("txt22").textContent = Inst1[0];
         colorLines("line22", color);
 
-    } else if (count == 1) {
+    } else if (stage == 1) {
 
         clearGivenObject("rect3");
         clearGivenObject("rect4");
@@ -44,7 +44,7 @@ function stepThroughRType(count, color) {
         colorLines("line49", color);
         colorLines("line50", color);
 
-    } else if (count == 2) {
+    } else if (stage == 2) {
 
         clearGivenObject("rect5");
         clearGivenObject("rect7");
@@ -75,7 +75,7 @@ function stepThroughRType(count, color) {
         document.getElementById("txt39").textContent = Inst1[0];
         colorLines("line39", color);
 
-    } else if (count == 3) {
+    } else if (stage == 3) {
 
         clearGivenObject("rect9");
         clearGivenObject("rect10");
@@ -100,8 +100,8 @@ function stepThroughRType(count, color) {
         colorLines("line43", color);
         colorLines("line57", color);
 
-    } else if (count == 4) {
-        console.log("4 instructs gopionggfbcvbfdvdsvscvsdvs");
+    } else if (stage == 4) {
+        console.log("4 instructions");
         clearGivenObject("rect11");
         clearGivenObject("rect13");
         clearGivenObject("rect14");
@@ -129,8 +129,8 @@ function stepThroughRType(count, color) {
         colorLines("line53", color);
         colorLines("line59", color);
 
-    } else if (count == 5) {
-        console.log("CLEARING ALL OF THJE OBJECTS WITH 5 INSTRUCTs");
+    } else if (stage == 5) {
+        console.log("CLEARING ALL OF THE OBJECTS WITH 5 INSTRUCTIONS");
         document.getElementById("txt46").textContent = "";
         document.getElementById("txt48").textContent = "";
         document.getElementById("txt27").textContent = "";
@@ -156,12 +156,12 @@ function stepThroughRType(count, color) {
  *This function is the path for I type instructions to follow in the diagram and colors and clears the
  * appropriate objects in the diagram.
  *
- * @param counter - The stage the current instruction is in.
+ * @param stage - The stage the current instruction is in.
  * @param color - The color to change the objects to for the given instruction.
  **/
-function stepThroughIType(counter, color) {
+function stepThroughIType(stage, color) {
 
-    if (counter == 0) {
+    if (stage == 0) {
 
         colorAndRefreshDiagramObjects("ellipse1", color);
         colorAndRefreshDiagramObjects("poly1", color);
@@ -176,7 +176,7 @@ function stepThroughIType(counter, color) {
         colorLines("line8", color);
         colorLines("line9", color);
 
-    } else if (counter == 1) {
+    } else if (stage == 1) {
 
         clearGivenObject("rect3");
         clearGivenObject("rect4");
@@ -206,7 +206,7 @@ function stepThroughIType(counter, color) {
         colorLines("line28", color);
         colorLines("line29", color);
 
-    } else if (counter == 2) {
+    } else if (stage == 2) {
 
         clearGivenObject("rect5");
         clearGivenObject("rect7");
@@ -236,7 +236,7 @@ function stepThroughIType(counter, color) {
         colorLines("line61", color);
         colorLines("line56", color);
 
-    } else if (counter == 3) {
+    } else if (stage == 3) {
 
         clearGivenObject("rect9");
         clearGivenObject("rect10");
@@ -257,7 +257,7 @@ function stepThroughIType(counter, color) {
         colorLines("line43", color);
         colorLines("line57", color);
 
-    } else if (counter == 4) {
+    } else if (stage == 4) {
 
         clearGivenObject("rect11");
         clearGivenObject("rect13");
@@ -279,7 +279,7 @@ function stepThroughIType(counter, color) {
         colorLines("line53", color);
         colorLines("line59", color);
 
-    } else if (counter == 5) {
+    } else if (stage == 5) {
 
         clearGivenObject("rect15");
         clearGivenObject("ellipse5");
