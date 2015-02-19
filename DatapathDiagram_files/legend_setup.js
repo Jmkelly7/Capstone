@@ -150,50 +150,66 @@ function setupLegend() {
  *  it updates the list by moving everything up and taking the first off and adding a new one once the others
  *  are moved up the list on the legend.
  */
-function backLegend(prevColor) {
+function backLegend(previousInstruction, inst, colorInQueue) {
 
-    var colorQueue = document.getElementById("slot1").getAttribute("fill");
+    var newColorInQueue = document.getElementById("slot5").getAttribute("fill");
 
-    for (var i = 1; i < 12; i++) {
+    for (var i = 11; i > 0; i--) {
 
         var word = "slot";
+        var num = i - 1;
+        var word2 = word + num;
+        word = word + i;
 
-        if (i < 11) {
+        if (i > 1) {
 
-            var num = i + 1;
-            var word2 = word + num;
-            word = word + i;
+            /*if (i == 1) {
+
+                document.getElementById(word).textContent = previousInstruction;
+                document.getElementById(word).setAttribute("inst", inst);
+                document.getElementById(word).setAttribute("fill", colorInQueue);
+
+            } else {*/
             document.getElementById(word).textContent =
                 document.getElementById(word2).textContent;
             document.getElementById(word).setAttribute("inst", document.getElementById(word2).getAttribute("inst"));
+            //}
 
-            if (i < 5) {
+            if (i < 6) {
 
                 document.getElementById(word).setAttribute("fill",
                     document.getElementById(word2).getAttribute("fill"));
 
-            } else if (i == 5) {
+            } /*else if (i == 5) {
 
-                document.getElementById(word).setAttribute("fill", nextColor);
-                nextColor = colorQueue;
+                console.log(document.getElementById("slot5").getAttribute("fill") + " " + document.getElementById("slot5").getAttribute("inst"));
+                newColorInQueue = document.getElementById("slot5").getAttribute("fill");
 
-            }
+            }*/
 
-        } else {
+        /*} else {
 
             word = word + i;
             document.getElementById(word).textContent = instructionArray[instructionCounter];
 
             if (document.getElementById(word.textContent != " ")) {
-                var inst = instructionArray[instructionCounter].split(" ");
-                document.getElementById(word).setAttribute("inst", inst[0]);
+                var instruction = instructionArray[instructionCounter].split(" ");
+                document.getElementById(word).setAttribute("inst", instruction[0]);
             }
 
-            instructionCounter++;
+            instructionCounter++;*/
+
+        } else {
+
+            document.getElementById(word).textContent = previousInstruction;
+            document.getElementById(word).setAttribute("inst", inst);
+            document.getElementById(word).setAttribute("fill", colorInQueue);
 
         }
 
     }
+
+    return newColorInQueue;
 
 }
 

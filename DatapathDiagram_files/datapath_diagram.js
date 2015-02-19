@@ -500,8 +500,11 @@ function stepBack() {
 
     if (instructionCounter > 5) {
 
-        var temp = document.getElementById("slot5").getAttribute("fill");
         instructionCounter--;
+        var previousInstruction = instructionArray[instructionCounter - 11];
+        var inst = instructionArray[instructionCounter - 11].split(" ")[0];
+        //var temp = document.getElementById("slot5").getAttribute("fill");
+        //instructionCounter--;
 
         /*INST_ONE_CNT++;
         INST_TWO_CNT++;
@@ -512,40 +515,41 @@ function stepBack() {
         console.log(INST_ONE_CNT);
         console.log(INST_FIVE_CNT);
         console.log(nextColor);
-        console.log(instructionArray[instructionCounter - 11].split(" ")[0]);
-        instType(instructionArray[instructionCounter - 11].split(" ")[0], INST_ONE_CNT, nextColor);
-        instType(document.getElementById("slot1").getAttribute("inst"),
-            INST_TWO_CNT,
-            document.getElementById("slot1").getAttribute("fill"));
+        console.log(inst);
+
+        var newNextColor = backLegend(previousInstruction, inst, nextColor);
+
+        instType(inst, INST_ONE_CNT, nextColor);
         instType(document.getElementById("slot2").getAttribute("inst"),
-            INST_THREE_CNT,
+            INST_TWO_CNT,
             document.getElementById("slot2").getAttribute("fill"));
         instType(document.getElementById("slot3").getAttribute("inst"),
-            INST_FOUR_CNT,
+            INST_THREE_CNT,
             document.getElementById("slot3").getAttribute("fill"));
         instType(document.getElementById("slot4").getAttribute("inst"),
-            INST_FIVE_CNT,
+            INST_FOUR_CNT,
             document.getElementById("slot4").getAttribute("fill"));
+        instType(document.getElementById("slot5").getAttribute("inst"),
+            INST_FIVE_CNT,
+            document.getElementById("slot5").getAttribute("fill"));
 
-        //if (instructionCounter > 5) {
+        nextColor = newNextColor;
 
-            nextColor = temp;// document.getElementById("slot5").getAttribute("fill");
+    } else if (instructionCounter == 4) {
 
-        //}
-
-        /*INST_ONE_CNT++;
-        INST_TWO_CNT++;
-        INST_THREE_CNT++;
-        INST_FOUR_CNT++;
-        INST_FIVE_CNT++;*/
-
-        /*INST_ONE_CNT--;
-        INST_TWO_CNT--;
-        INST_THREE_CNT--;
-        INST_FOUR_CNT--;
-        INST_FIVE_CNT--;*/
-
-        //runThrough();
+        instType(inst, INST_ONE_CNT, nextColor);
+        instType(document.getElementById("slot2").getAttribute("inst"),
+            INST_TWO_CNT,
+            document.getElementById("slot2").getAttribute("fill"));
+        instType(document.getElementById("slot3").getAttribute("inst"),
+            INST_THREE_CNT,
+            document.getElementById("slot3").getAttribute("fill"));
+        instType(document.getElementById("slot4").getAttribute("inst"),
+            INST_FOUR_CNT,
+            document.getElementById("slot4").getAttribute("fill"));
+        instType(document.getElementById("slot5").getAttribute("inst"),
+            INST_FIVE_CNT,
+            document.getElementById("slot5").getAttribute("fill"));
 
     }
 
