@@ -163,41 +163,15 @@ function backLegend(previousInstruction, inst, colorInQueue) {
 
         if (i > 1) {
 
-            /*if (i == 1) {
-
-                document.getElementById(word).textContent = previousInstruction;
-                document.getElementById(word).setAttribute("inst", inst);
-                document.getElementById(word).setAttribute("fill", colorInQueue);
-
-            } else {*/
             document.getElementById(word).textContent =
                 document.getElementById(word2).textContent;
             document.getElementById(word).setAttribute("inst", document.getElementById(word2).getAttribute("inst"));
-            //}
 
             if (i < 6) {
 
                 document.getElementById(word).setAttribute("fill",
                     document.getElementById(word2).getAttribute("fill"));
-
-            } /*else if (i == 5) {
-
-                console.log(document.getElementById("slot5").getAttribute("fill") + " " + document.getElementById("slot5").getAttribute("inst"));
-                newColorInQueue = document.getElementById("slot5").getAttribute("fill");
-
-            }*/
-
-        /*} else {
-
-            word = word + i;
-            document.getElementById(word).textContent = instructionArray[instructionCounter];
-
-            if (document.getElementById(word.textContent != " ")) {
-                var instruction = instructionArray[instructionCounter].split(" ");
-                document.getElementById(word).setAttribute("inst", instruction[0]);
             }
-
-            instructionCounter++;*/
 
         } else {
 
