@@ -1,5 +1,9 @@
 /**
- * Created by Josh on 12/11/2014.
+ * This file contains functions that are used by the datapath diagram page.
+ *
+ * @author  Josh Kelly
+ * @author  Trevor Griggs
+ * @version 12/11/2014
  */
 
 /**
@@ -11,6 +15,11 @@ var instructionArray = null;
  * The counter that keeps track of what instruction is going to go on the legend next.
  */
 var instructionCounter = 0;
+
+/**
+ * The counter representing the current instruction.
+ */
+var currentNumInstructions = 0;
 
 /**
  * The counter for the registers that are being put into arrays for the first 5 instructions on the legend.
@@ -127,11 +136,12 @@ function parseFile() {
 
     // Code for parsing file.
     //  We plan to use the built in string methods of html5 to find the
-    //  individual instructions and pull that whole line i.
+    //  individual instructions and pull that whole line out.
     var returnInstructions = fileContents.split("\n");
     var legendArray = [""];
 
     for (var i = 0; i < returnInstructions.length; i++) {
+
         if (returnInstructions.indexOf("$") != -1 || returnInstructions.indexOf(";") == -1
             && returnInstructions[i].substring(0, 1) != "#" &&
             returnInstructions[i].substring(0, 6) != "syscall") {
@@ -143,6 +153,7 @@ function parseFile() {
         }
 
     }
+
     legendArray[parseCounter + 1] = " ";
     legendArray[parseCounter + 2] = " ";
     legendArray[parseCounter + 3] = " ";
@@ -150,6 +161,7 @@ function parseFile() {
     legendArray[parseCounter + 5] = " ";
 
     return legendArray;
+
 }
 
 /**
@@ -157,6 +169,8 @@ function parseFile() {
  * how many of instructions there are on the diagram.
  */
 function runThrough() {
+
+    currentNumInstructions++;
 
     if (counter == 1) {
 
@@ -214,7 +228,7 @@ function runThrough() {
 
             //console.log("We are going back to 2 instructs");
             counter--;
-            console.log("# OF COUNT   " + counter);
+            //console.log("# OF COUNT   " + counter);
             runThrough();
             setupLegend();
 
@@ -247,7 +261,7 @@ function runThrough() {
 
             //console.log("We are going back to 3 instructs");
             counter--;
-            console.log("# OF COUNT   " + counter);
+            //console.log("# OF COUNT   " + counter);
             //runThrough();
             setupLegend();
             runThrough();
@@ -283,24 +297,24 @@ function runThrough() {
             document.getElementById("slot3").setAttribute("fill", "white");
             document.getElementById("slot4").setAttribute("fill", "white");
             document.getElementById("slot5").setAttribute("fill", "white");
-            console.log("CHANGING TO WHITE 1");
+            //console.log("CHANGING TO WHITE 1");
         }  else if (document.getElementById("slot3").textContent == " ") {
             document.getElementById("slot2").setAttribute("fill", "white");
             document.getElementById("slot3").setAttribute("fill", "white");
             document.getElementById("slot4").setAttribute("fill", "white");
             document.getElementById("slot5").setAttribute("fill", "white");
-            console.log("CHANGING TO WHITE 2");
+            //console.log("CHANGING TO WHITE 2");
         } else if (document.getElementById("slot4").textContent == " ") {
             document.getElementById("slot3").setAttribute("fill", "white");
             document.getElementById("slot4").setAttribute("fill", "white");
             document.getElementById("slot5").setAttribute("fill", "white");
-            console.log("CHANGING TO WHITE 3");
+            //console.log("CHANGING TO WHITE 3");
         }  else if (document.getElementById("slot5").textContent == " ") {
             document.getElementById("slot4").setAttribute("fill", "white");
             document.getElementById("slot5").setAttribute("fill", "white");
-            console.log("CHANGING TO WHITE 4");
+            //console.log("CHANGING TO WHITE 4");
         } else if (document.getElementById("slot6").textContent == " ") {
-            console.log("CHANGING TO WHITE 5");
+            //console.log("CHANGING TO WHITE 5");
             document.getElementById("slot5").setAttribute("fill", "white");
 
         }
@@ -341,7 +355,7 @@ function runThrough() {
                 document.getElementById("slot5").getAttribute("fill"));
             //setupLegend();
             isFirst = false;
-            console.log("IN THE FIRST IF STATMEENT WITH 5 INTRUCTS");
+            //console.log("IN THE FIRST IF STATMEENT WITH 5 INTRUCTS");
 
             /**if (document.getElementById("slot5").textContent == " ") {
                 console.log("CHANGING TO WHITE");
@@ -370,7 +384,7 @@ function runThrough() {
         }*/
 
             if(document.getElementById("slot1").getAttribute("fill") == "white") {
-                console.log("TRYING TO CLEAR THE LAST FUCKING THING OFF HTE LIST");
+                //console.log("TRYING TO CLEAR THE LAST FUCKING THING OFF HTE LIST");
                 stepThroughRType(5,"White");
 
                 window.alert("PROGRAM FINISHED");
@@ -384,6 +398,15 @@ function runThrough() {
                 //location.reload();
             }
     }
+
+    console.log("counter: " + counter);
+    console.log("instructionCounter: " + instructionCounter);
+    console.log("currentNumInstructions: " + currentNumInstructions);
+    console.log("INST_ONE_CNT: " + INST_ONE_CNT);
+    console.log("INST_TWO_CNT: " + INST_TWO_CNT);
+    console.log("INST_THREE_CNT: " + INST_THREE_CNT);
+    console.log("INST_FOUR_CNT: " + INST_FOUR_CNT);
+    console.log("INST_FIVE_CNT: " + INST_FIVE_CNT);
 
 }
 
@@ -424,10 +447,10 @@ function instType(instruction, instCnt, color) {
 function receiveMessage(event) {
 
     fileName = ab2str(event.data[0]);
-    console.log(fileName);
+    //console.log(fileName);
     fileContents = ab2str(event.data[1]);
-    console.log(fileContents);
-    console.log("message received\n" + fileContents);
+    //console.log(fileContents);
+    //console.log("message received\n" + fileContents);
     setName();
     setupLegend();
 
@@ -474,7 +497,7 @@ function play() {
             //    runThrough()
             //}, 2000);
             playCounter = 1;
-            console.log("IT IS IN THE PLAY FEATURE THINGY");
+            //console.log("IT IS IN THE PLAY FEATURE THINGY");
         } else if (playCounter == 1) {
             window.clearInterval(intervalColor);
             playCounter = 0;
@@ -501,12 +524,28 @@ function skipTo() {
  */
 function stepBack() {
 
-    instructionCounter--;
+    if (currentNumInstructions != 0) {
 
-    if (instructionCounter > 10) {
+        currentNumInstructions--;
 
-        var previousInstruction = instructionArray[instructionCounter - 11];
-        var inst = instructionArray[instructionCounter - 11].split(" ")[0];
+        if (instructionCounter > 11) {
+
+            instructionCounter--;
+
+        }
+
+    }
+
+    if (currentNumInstructions < 5 && counter != 0) {
+
+        counter--;
+
+    }
+
+    if (counter == 5) {
+
+        var previousInstruction = instructionArray[currentNumInstructions - 5];
+        var inst = instructionArray[currentNumInstructions - 5].split(" ")[0];
 
         instType(inst, INST_ONE_CNT, nextColor);
 
@@ -525,12 +564,12 @@ function stepBack() {
             INST_FIVE_CNT,
             document.getElementById("slot5").getAttribute("fill"));
 
-    } else if (instructionCounter == 10) {
+    } else if (counter == 4) {
 
         // clear the 5th stage diagram objects
         clearStageFive();
         INST_ONE_CNT = 0;
-        counter--;
+        isFirst = true;
 
         instType(document.getElementById("slot1").getAttribute("inst"),
             INST_TWO_CNT,
@@ -545,12 +584,11 @@ function stepBack() {
             INST_FIVE_CNT,
             document.getElementById("slot4").getAttribute("fill"));
 
-    } else if (instructionCounter == 9) {
+    } else if (counter == 3) {
 
         // clear the 4th stage diagram objects
         clearStageFour();
         INST_TWO_CNT = 0;
-        counter--;
 
         instType(document.getElementById("slot1").getAttribute("inst"),
             INST_THREE_CNT,
@@ -563,12 +601,11 @@ function stepBack() {
             INST_FIVE_CNT,
             document.getElementById("slot3").getAttribute("fill"));
 
-    } else if (instructionCounter == 8) {
+    } else if (counter == 2) {
 
         // clear the 3rd stage diagram objects
         clearStageThree();
         INST_THREE_CNT = 0;
-        counter--;
 
         instType(document.getElementById("slot1").getAttribute("inst"),
             INST_FOUR_CNT,
@@ -577,30 +614,32 @@ function stepBack() {
             INST_FIVE_CNT,
             document.getElementById("slot2").getAttribute("fill"));
 
-    } else if (instructionCounter == 7) {
+    } else if (counter == 1) {
 
         // clear the 2nd stage diagram objects
         clearStageTwo();
         INST_FOUR_CNT = 0;
-        counter--;
 
         instType(document.getElementById("slot1").getAttribute("inst"),
             INST_FIVE_CNT,
             document.getElementById("slot1").getAttribute("fill"));
 
-    } else if (instructionCounter == 6) {
+    } else if (counter == 0) {
 
         // clear the 1st stage diagram objects
         clearStageOne();
         INST_FIVE_CNT = 0;
-        counter = 0;
-        isFirst = true;
-
-    } else {
-
-        instructionCounter++;
 
     }
+
+    console.log("counter: " + counter);
+    console.log("instructionCounter: " + instructionCounter);
+    console.log("currentNumInstructions: " + currentNumInstructions);
+    console.log("INST_ONE_CNT: " + INST_ONE_CNT);
+    console.log("INST_TWO_CNT: " + INST_TWO_CNT);
+    console.log("INST_THREE_CNT: " + INST_THREE_CNT);
+    console.log("INST_FOUR_CNT: " + INST_FOUR_CNT);
+    console.log("INST_FIVE_CNT: " + INST_FIVE_CNT);
 
 }
 
