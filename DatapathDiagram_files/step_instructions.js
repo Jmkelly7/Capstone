@@ -95,6 +95,8 @@ function stepThroughRType(stage, color) {
         colorLines("line48", color);
         document.getElementById("txt47").textContent = Inst1[0];
         colorLines("line47", color);
+        document.getElementById("txt46").textContent = Inst1[0];
+        colorLines("line46", color);
         document.getElementById("txt26").textContent = Inst1[1];
         colorLines("line26", color);
         document.getElementById("txt27").textContent = Inst1[0];
@@ -105,12 +107,12 @@ function stepThroughRType(stage, color) {
     } else if (stage == 5) {
 
         console.log("CLEARING ALL OF THE OBJECTS WITH 5 INSTRUCTIONS");
+        clearStageFive();
         document.getElementById("txt46").textContent = "";
         document.getElementById("txt48").textContent = "";
         document.getElementById("txt27").textContent = "";
         document.getElementById("txt47").textContent = "";
         document.getElementById("txt26").textContent = "";
-        clearStageFive();
 
     }
 

@@ -82,12 +82,12 @@ function clearStageFive() {
     clearGivenObject("rect6");
     clearGivenObject("line48");
     clearGivenObject("line47");
+    clearGivenObject("line46");
     clearGivenObject("line26");
     clearGivenObject("line27");
     clearGivenObject("line53");
     clearGivenObject("line59");
     clearGivenObject("line58");
-    clearGivenObject("line46");
 
 }
 
