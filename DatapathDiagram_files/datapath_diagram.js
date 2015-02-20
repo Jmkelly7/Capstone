@@ -12,7 +12,8 @@
 var instructionArray = null;
 
 /**
- * The counter that keeps track of what instruction is going to go on the legend next.
+ * The counter that keeps track of what instruction is going to go on the legend
+ *  next.
  */
 var instructionCounter = 0;
 
@@ -22,7 +23,8 @@ var instructionCounter = 0;
 var currentNumInstructions = 0;
 
 /**
- * The counter for the registers that are being put into arrays for the first 5 instructions on the legend.
+ * The counter for the registers that are being put into arrays for the first 5
+ *  instructions on the legend.
  */
 var regCounter = 0;
 
@@ -32,7 +34,8 @@ var regCounter = 0;
 var counter = 1;
 
 /**
- * The counter used to parse through the given file and help construct the array of instructions
+ * The counter used to parse through the given file and help construct the array
+ *  of instructions
  */
 var parseCounter = 0;
 
@@ -92,7 +95,8 @@ var Inst4 = [""];
 var Inst5 = [""];
 
 /**
- * The buffer color to put on the diagram to keep the colors refreshing correctly.
+ * The buffer color to put on the diagram to keep the colors refreshing
+ *  correctly.
  */
 var nextColor = "darkorchid";
 
@@ -117,20 +121,24 @@ var playCounter = 0;
 var intervalColor;
 
 /**
- * Tells if this is the first time 5 instructions will be on the diagram at one time.
+ * Tells if this is the first time 5 instructions will be on the diagram at one
+ *  time.
  */
 var isFirst = true;
 
 /**
- * The popup window that brings the user to upload a file once they visit the site.
+ * The popup window that brings the user to upload a file once they visit the
+ *  site.
  */
-var popup = window.open('./Upload.html', 'Upload File', 'height=300,width=400,left=450,top=200');
+var popup = window.open('./Upload.html', 'Upload File',
+                        'height=300,width=400,left=450,top=200');
 
 // Gives the popup window focus.
 popup.focus();
 
 /**
- * This function that parsers through the given file contents and gets the array of instructions.
+ * This function that parsers through the given file contents and gets the array
+ *  of instructions.
  */
 function parseFile() {
 
@@ -142,8 +150,9 @@ function parseFile() {
 
     for (var i = 0; i < returnInstructions.length; i++) {
 
-        if (returnInstructions.indexOf("$") != -1 || returnInstructions.indexOf(";") == -1
-            && returnInstructions[i].substring(0, 1) != "#" &&
+        if (returnInstructions.indexOf("$") != -1 ||
+            returnInstructions.indexOf(";") == -1 &&
+            returnInstructions[i].substring(0, 1) != "#" &&
             returnInstructions[i].substring(0, 6) != "syscall") {
 
             legendArray[parseCounter] = returnInstructions[i];
@@ -165,8 +174,8 @@ function parseFile() {
 }
 
 /**
- * This function is ran when the step button is clicked and calls the instType to update the diagram for
- * how many of instructions there are on the diagram.
+ * This function is ran when the step button is clicked and calls the instType
+ *  to update the diagram for how many of instructions there are on the diagram.
  */
 function runThrough() {
 
@@ -319,7 +328,7 @@ function runThrough() {
 
         }
 
-       /** if (document.getElementById("slot6").textContent == " ") {
+        /*if (document.getElementById("slot6").textContent == " ") {
             console.log("CHANGING TO WHITE");
             document.getElementById("slot5").setAttribute("fill", "white");
 
@@ -338,26 +347,24 @@ function runThrough() {
 
         }*/
 
-            instType(document.getElementById("slot1").getAttribute("inst"),
-                INST_ONE_CNT,
-                document.getElementById("slot1").getAttribute("fill"));
-            instType(document.getElementById("slot2").getAttribute("inst"),
-                INST_TWO_CNT,
-                document.getElementById("slot2").getAttribute("fill"));
-            instType(document.getElementById("slot3").getAttribute("inst"),
-                INST_THREE_CNT,
-                document.getElementById("slot3").getAttribute("fill"));
-            instType(document.getElementById("slot4").getAttribute("inst"),
-                INST_FOUR_CNT,
-                document.getElementById("slot4").getAttribute("fill"));
-            instType(document.getElementById("slot5").getAttribute("inst"),
-                INST_FIVE_CNT,
-                document.getElementById("slot5").getAttribute("fill"));
-            //setupLegend();
-            isFirst = false;
-            //console.log("IN THE FIRST IF STATMEENT WITH 5 INTRUCTS");
+        instType(document.getElementById("slot1").getAttribute("inst"),
+            INST_ONE_CNT,
+            document.getElementById("slot1").getAttribute("fill"));
+        instType(document.getElementById("slot2").getAttribute("inst"),
+            INST_TWO_CNT,
+            document.getElementById("slot2").getAttribute("fill"));
+        instType(document.getElementById("slot3").getAttribute("inst"),
+            INST_THREE_CNT,
+            document.getElementById("slot3").getAttribute("fill"));
+        instType(document.getElementById("slot4").getAttribute("inst"),
+            INST_FOUR_CNT,
+            document.getElementById("slot4").getAttribute("fill"));
+        instType(document.getElementById("slot5").getAttribute("inst"),
+            INST_FIVE_CNT,
+            document.getElementById("slot5").getAttribute("fill"));
+        isFirst = false;
 
-            /**if (document.getElementById("slot5").textContent == " ") {
+            /*if (document.getElementById("slot5").textContent == " ") {
                 console.log("CHANGING TO WHITE");
                 document.getElementById("slot5").setAttribute("fill", "white");
 
@@ -372,9 +379,8 @@ function runThrough() {
 
             } else if (document.getElementById("slot1").textContent == " ") {
                 document.getElementById("slot1").setAttribute("fill", "white");
-
             }*/
-     /**   } else {
+        /*} else {
             console.log("We are going back to 4 instructs");
             console.log("inst ciount   " + INST_ONE_CNT);
             counter--;
@@ -383,20 +389,24 @@ function runThrough() {
             //setupLegend();
         }*/
 
-            if(document.getElementById("slot1").getAttribute("fill") == "white") {
-                //console.log("TRYING TO CLEAR THE LAST FUCKING THING OFF HTE LIST");
-                stepThroughRType(5,"White");
+        if(document.getElementById("slot1").getAttribute("fill") == "white") {
 
-                window.alert("PROGRAM FINISHED");
-                var r = confirm("Run another program?");
-                if (r == true) {
-                    window.setTimeout(location.reload(), 2000);
-                } else {
-                    close();
-                }
-                //window.setTimeout(location.reload(), 2000);
-                //location.reload();
+            stepThroughRType(5,"White");
+            window.alert("PROGRAM FINISHED");
+            var r = confirm("Run another program?");
+
+            if (r == true) {
+
+                window.setTimeout(location.reload(), 2000);
+
+            } else {
+
+                close();
+
             }
+
+        }
+
     }
 
     console.log("counter: " + counter);
@@ -411,7 +421,8 @@ function runThrough() {
 }
 
 /**
- * This function checks what type the instruction is and calls the correct path for that instruction.
+ * This function checks what type the instruction is and calls the correct path
+ *  for that instruction.
  *
  * @param inst - instruction from the legend.
  * @param instCnt - the stage the instruction is in.
@@ -473,8 +484,9 @@ function instType(inst, instCnt, color) {
 }
 
 /**
- * This function receives the contents of the file from the upload feature and sets up the name of the project
- * along with the legend so that the instruction list is displayed on the page.
+ * This function receives the contents of the file from the upload feature and
+ *  sets up the name of the project along with the legend so that the
+ *  instruction list is displayed on the page.
  *
  * @param event - the event of the file contents being sent to the diagram page.
  */
@@ -694,10 +706,12 @@ function stepBack() {
  */
 function uploadNew() {
 
-    if (window.confirm("Are you sure you want to leave this page?\n\nAny progress will be lost.") == true) {
+    if (window.confirm("Are you sure you want to leave this page?\n\n" +
+        "Any progress will be lost.") == true) {
 
         // brings up the upload file prompt
-        upload = window.open('./Upload.html', 'Upload File', 'height=300,width=400,left=450,top=200');
+        var upload = window.open('./Upload.html', 'Upload File',
+                             'height=300,width=400,left=450,top=200');
 		
 		// ***NOT FINISHED***
 		// clear the diagram colors and data
