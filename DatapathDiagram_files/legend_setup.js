@@ -61,8 +61,8 @@ function getInstructionForList(instArray) {
 
     var inst = "";
     var word = "";
-    // setupReg(instructionArray);
-    //  For loop to setup legend and send it to legend. We are going to get all the instructions
+
+    // For loop to setup legend and send it to legend. We are going to get all the instructions
     //  from the file we read in after we get the file sending system working.
     //  as for right now we are statically placing the instruction within the legend
     //  just so we have a few placeholders on what it is going to look like.
@@ -88,8 +88,8 @@ function getInstructionForList(instArray) {
  */
 function setupLegend() {
 
-    //going to call getInstructionForList and build it while keeping it refreshing when
-    //it needs to be.
+    // Going to call getInstructionForList and build it while keeping it
+    //  refreshing when it needs to be.
 
     if (instructionCounter == 0) {
 
@@ -130,9 +130,11 @@ function setupLegend() {
                 word = word + i;
                 document.getElementById(word).textContent = instructionArray[instructionCounter];
 
-                if(document.getElementById(word.textContent != " ")) {
+                if (document.getElementById(word.textContent != " ")) {
+
                     var inst = instructionArray[instructionCounter].split(" ");
                     document.getElementById(word).setAttribute("inst", inst[0]);
+
                 }
 
                 instructionCounter++;
@@ -146,9 +148,8 @@ function setupLegend() {
 }
 
 /**
- * This function sets up the legend and if it is the first time it calls getInstructionForList and then
- *  it updates the list by moving everything up and taking the first off and adding a new one once the others
- *  are moved up the list on the legend.
+ * This function handles updating the instruction legend when the back button is
+ *  clicked.
  */
 function backLegend(previousInstruction, inst, colorInQueue) {
 

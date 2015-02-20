@@ -25,9 +25,7 @@ function stepThroughRType(stage, color) {
 
     } else if (stage == 1) {
 
-        clearGivenObject("rect3");
-        clearGivenObject("rect4");
-        clearGivenObject("line22");
+        clearStageOne();
         document.getElementById("txt22").textContent = "";
         colorAndRefreshDiagramObjects("rect5", color);
         colorAndRefreshDiagramObjects("rect7", color);
@@ -46,16 +44,7 @@ function stepThroughRType(stage, color) {
 
     } else if (stage == 2) {
 
-        clearGivenObject("rect5");
-        clearGivenObject("rect7");
-        clearGivenObject("rect8");
-        clearGivenObject("line23");
-        clearGivenObject("line24");
-        clearGivenObject("line25");
-        clearGivenObject("line31");
-        clearGivenObject("line32");
-        clearGivenObject("line49");
-        clearGivenObject("line50");
+        clearStageTwo();
         document.getElementById("txt24").textContent = "";
         document.getElementById("txt25").textContent = "";
         document.getElementById("txt31").textContent = "";
@@ -77,15 +66,7 @@ function stepThroughRType(stage, color) {
 
     } else if (stage == 3) {
 
-        clearGivenObject("rect9");
-        clearGivenObject("rect10");
-        clearGivenObject("ellipse4");
-        clearGivenObject("poly3");
-        clearGivenObject("line33");
-        clearGivenObject("line34");
-        clearGivenObject("line35");
-        clearGivenObject("line37");
-        clearGivenObject("line39");
+        clearStageThree();
         document.getElementById("txt33").textContent = "";
         document.getElementById("txt34").textContent = "";
         document.getElementById("txt35").textContent = "";
@@ -101,23 +82,15 @@ function stepThroughRType(stage, color) {
         colorLines("line57", color);
 
     } else if (stage == 4) {
+
         console.log("4 instructions");
-        clearGivenObject("rect11");
-        clearGivenObject("rect13");
-        clearGivenObject("rect14");
-        clearGivenObject("line41");
-        clearGivenObject("line46");
-        clearGivenObject("line43");
-        clearGivenObject("line57");
-        clearGivenObject("line58");
+        clearStageFour();
         document.getElementById("txt41").textContent = "";
         document.getElementById("txt43").textContent = "";
         colorAndRefreshDiagramObjects("rect15", color);
         colorAndRefreshDiagramObjects("ellipse5", color);
         colorAndRefreshDiagramObjects("rect6", color);
         colorLines("line58", color);
-        document.getElementById("txt46").textContent = Inst1[0];
-        colorLines("line46", color);
         document.getElementById("txt48").textContent = Inst1[0];
         colorLines("line48", color);
         document.getElementById("txt47").textContent = Inst1[0];
@@ -130,23 +103,14 @@ function stepThroughRType(stage, color) {
         colorLines("line59", color);
 
     } else if (stage == 5) {
+
         console.log("CLEARING ALL OF THE OBJECTS WITH 5 INSTRUCTIONS");
         document.getElementById("txt46").textContent = "";
         document.getElementById("txt48").textContent = "";
         document.getElementById("txt27").textContent = "";
         document.getElementById("txt47").textContent = "";
         document.getElementById("txt26").textContent = "";
-        clearGivenObject("rect15");
-        clearGivenObject("ellipse5");
-        clearGivenObject("rect6");
-        clearGivenObject("line48");
-        clearGivenObject("line47");
-        clearGivenObject("line26");
-        clearGivenObject("line27");
-        clearGivenObject("line53");
-        clearGivenObject("line59");
-        clearGivenObject("line58");
-        clearGivenObject("line46");
+        clearStageFive();
 
     }
 
@@ -178,18 +142,7 @@ function stepThroughIType(stage, color) {
 
     } else if (stage == 1) {
 
-        clearGivenObject("rect3");
-        clearGivenObject("rect4");
-        clearGivenObject("ellipse1");
-        clearGivenObject("poly1");
-        clearGivenObject("line3");
-        clearGivenObject("line4");
-        clearGivenObject("line22");
-        clearGivenObject("line6");
-        clearGivenObject("line19");
-        clearGivenObject("line7");
-        clearGivenObject("line8");
-        clearGivenObject("line9");
+        clearStageOne();
         colorAndRefreshDiagramObjects("rect5", color);
         colorAndRefreshDiagramObjects("rect7", color);
         colorAndRefreshDiagramObjects("rect8", color);
@@ -208,21 +161,7 @@ function stepThroughIType(stage, color) {
 
     } else if (stage == 2) {
 
-        clearGivenObject("rect5");
-        clearGivenObject("rect7");
-        clearGivenObject("rect8");
-        clearGivenObject("ellipse2");
-        clearGivenObject("line23");
-        clearGivenObject("line24");
-        clearGivenObject("line25");
-        clearGivenObject("line31");
-        clearGivenObject("line32");
-        clearGivenObject("line49");
-        clearGivenObject("line50");
-        clearGivenObject("line51");
-        clearGivenObject("line52");
-        clearGivenObject("line28");
-        clearGivenObject("line29");
+        clearStageTwo();
         colorAndRefreshDiagramObjects("rect9", color);
         colorAndRefreshDiagramObjects("rect10", color);
         colorAndRefreshDiagramObjects("ellipse4", color);
@@ -238,18 +177,7 @@ function stepThroughIType(stage, color) {
 
     } else if (stage == 3) {
 
-        clearGivenObject("rect9");
-        clearGivenObject("rect10");
-        clearGivenObject("ellipse4");
-        clearGivenObject("poly3");
-        clearGivenObject("line33");
-        clearGivenObject("line34");
-        clearGivenObject("line35");
-        clearGivenObject("line37");
-        clearGivenObject("line39");
-        clearGivenObject("line30");
-        clearGivenObject("line61");
-        clearGivenObject("line56");
+        clearStageThree();
         colorAndRefreshDiagramObjects("rect11", color);
         colorAndRefreshDiagramObjects("rect13", color);
         colorAndRefreshDiagramObjects("rect14", color);
@@ -259,14 +187,15 @@ function stepThroughIType(stage, color) {
 
     } else if (stage == 4) {
 
-        clearGivenObject("rect11");
+        clearStageFour();
+        /*clearGivenObject("rect11");
         clearGivenObject("rect13");
         clearGivenObject("rect14");
         clearGivenObject("line41");
         clearGivenObject("line46");
         clearGivenObject("line43");
         clearGivenObject("line57");
-        clearGivenObject("line58");
+        clearGivenObject("line58");*/
         colorAndRefreshDiagramObjects("rect15", color);
         colorAndRefreshDiagramObjects("ellipse5", color);
         colorAndRefreshDiagramObjects("rect6", color);
@@ -281,7 +210,8 @@ function stepThroughIType(stage, color) {
 
     } else if (stage == 5) {
 
-        clearGivenObject("rect15");
+        clearStageFive();
+        /*clearGivenObject("rect15");
         clearGivenObject("ellipse5");
         clearGivenObject("rect6");
         clearGivenObject("line48");
@@ -291,7 +221,7 @@ function stepThroughIType(stage, color) {
         clearGivenObject("line53");
         clearGivenObject("line59");
         clearGivenObject("line58");
-        clearGivenObject("line46");
+        clearGivenObject("line46");*/
 
     }
 

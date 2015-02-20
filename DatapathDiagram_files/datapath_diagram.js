@@ -137,7 +137,7 @@ function parseFile() {
             returnInstructions[i].substring(0, 6) != "syscall") {
 
             legendArray[parseCounter] = returnInstructions[i];
-            console.log("Instruction list is " + legendArray[parseCounter]);
+            //console.log("Instruction list is " + legendArray[parseCounter]);
             parseCounter++;
 
         }
@@ -183,7 +183,8 @@ function runThrough() {
             counter++;
 
         } else {
-            console.log("We are going back to 1 instructs");
+
+            //console.log("We are going back to 1 instructs");
             counter--;
             runThrough();
             setupLegend();
@@ -210,7 +211,8 @@ function runThrough() {
             counter++;
 
         } else {
-            console.log("We are going back to 2 instructs");
+
+            //console.log("We are going back to 2 instructs");
             counter--;
             console.log("# OF COUNT   " + counter);
             runThrough();
@@ -242,7 +244,8 @@ function runThrough() {
                 counter++;
 
         } else {
-            console.log("We are going back to 3 instructs");
+
+            //console.log("We are going back to 3 instructs");
             counter--;
             console.log("# OF COUNT   " + counter);
             //runThrough();
@@ -498,28 +501,17 @@ function skipTo() {
  */
 function stepBack() {
 
-    if (instructionCounter > 5) {
+    instructionCounter--;
 
-        instructionCounter--;
+    if (instructionCounter > 10) {
+
         var previousInstruction = instructionArray[instructionCounter - 11];
         var inst = instructionArray[instructionCounter - 11].split(" ")[0];
-        //var temp = document.getElementById("slot5").getAttribute("fill");
-        //instructionCounter--;
-
-        /*INST_ONE_CNT++;
-        INST_TWO_CNT++;
-        INST_THREE_CNT++;
-        INST_FOUR_CNT++;
-        INST_FIVE_CNT++;*/
-
-        console.log(INST_ONE_CNT);
-        console.log(INST_FIVE_CNT);
-        console.log(nextColor);
-        console.log(inst);
-
-        var newNextColor = backLegend(previousInstruction, inst, nextColor);
 
         instType(inst, INST_ONE_CNT, nextColor);
+
+        nextColor = backLegend(previousInstruction, inst, nextColor);
+
         instType(document.getElementById("slot2").getAttribute("inst"),
             INST_TWO_CNT,
             document.getElementById("slot2").getAttribute("fill"));
@@ -533,23 +525,80 @@ function stepBack() {
             INST_FIVE_CNT,
             document.getElementById("slot5").getAttribute("fill"));
 
-        nextColor = newNextColor;
+    } else if (instructionCounter == 10) {
 
-    } else if (instructionCounter == 4) {
+        // clear the 5th stage diagram objects
+        clearStageFive();
+        INST_ONE_CNT = 0;
+        counter--;
 
-        instType(inst, INST_ONE_CNT, nextColor);
-        instType(document.getElementById("slot2").getAttribute("inst"),
+        instType(document.getElementById("slot1").getAttribute("inst"),
             INST_TWO_CNT,
+            document.getElementById("slot1").getAttribute("fill"));
+        instType(document.getElementById("slot2").getAttribute("inst"),
+            INST_THREE_CNT,
             document.getElementById("slot2").getAttribute("fill"));
         instType(document.getElementById("slot3").getAttribute("inst"),
-            INST_THREE_CNT,
+            INST_FOUR_CNT,
             document.getElementById("slot3").getAttribute("fill"));
         instType(document.getElementById("slot4").getAttribute("inst"),
-            INST_FOUR_CNT,
-            document.getElementById("slot4").getAttribute("fill"));
-        instType(document.getElementById("slot5").getAttribute("inst"),
             INST_FIVE_CNT,
-            document.getElementById("slot5").getAttribute("fill"));
+            document.getElementById("slot4").getAttribute("fill"));
+
+    } else if (instructionCounter == 9) {
+
+        // clear the 4th stage diagram objects
+        clearStageFour();
+        INST_TWO_CNT = 0;
+        counter--;
+
+        instType(document.getElementById("slot1").getAttribute("inst"),
+            INST_THREE_CNT,
+            document.getElementById("slot1").getAttribute("fill"));
+        instType(document.getElementById("slot2").getAttribute("inst"),
+            INST_FOUR_CNT,
+            document.getElementById("slot2").getAttribute("fill"));
+
+        instType(document.getElementById("slot3").getAttribute("inst"),
+            INST_FIVE_CNT,
+            document.getElementById("slot3").getAttribute("fill"));
+
+    } else if (instructionCounter == 8) {
+
+        // clear the 3rd stage diagram objects
+        clearStageThree();
+        INST_THREE_CNT = 0;
+        counter--;
+
+        instType(document.getElementById("slot1").getAttribute("inst"),
+            INST_FOUR_CNT,
+            document.getElementById("slot1").getAttribute("fill"));
+        instType(document.getElementById("slot2").getAttribute("inst"),
+            INST_FIVE_CNT,
+            document.getElementById("slot2").getAttribute("fill"));
+
+    } else if (instructionCounter == 7) {
+
+        // clear the 2nd stage diagram objects
+        clearStageTwo();
+        INST_FOUR_CNT = 0;
+        counter--;
+
+        instType(document.getElementById("slot1").getAttribute("inst"),
+            INST_FIVE_CNT,
+            document.getElementById("slot1").getAttribute("fill"));
+
+    } else if (instructionCounter == 6) {
+
+        // clear the 1st stage diagram objects
+        clearStageOne();
+        INST_FIVE_CNT = 0;
+        counter = 0;
+        isFirst = true;
+
+    } else {
+
+        instructionCounter++;
 
     }
 
