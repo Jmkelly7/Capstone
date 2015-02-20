@@ -52,8 +52,9 @@ function setupReg(instArray) {
 }
 
 /**
- * This function initializes the legend for the first ten instructions from the instruction legend and sets the
- *  attribute inst for each of the slots within the legend.
+ * This function initializes the legend for the first eleven instructions from
+ *  the instruction legend and sets the attribute inst for each of the slots
+ *  within the legend.
  *
  * @param instArray - the array of instructions to use to generate the legend.
  */
@@ -82,9 +83,10 @@ function getInstructionForList(instArray) {
 }
 
 /**
- * This function sets up the legend and if it is the first time it calls getInstructionForList and then
- *  it updates the list by moving everything up and taking the first off and adding a new one once the others
- *  are moved up the list on the legend.
+ * This function sets up the legend and if it is the first time it calls
+ *  getInstructionForList and then it updates the list by moving everything up
+ *  and taking the first off and adding a new one once the others are moved up
+ *  the list on the legend.
  */
 function setupLegend() {
 

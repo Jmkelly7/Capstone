@@ -16,22 +16,37 @@
 function colorAndRefreshDiagramObjects(objectName, colorChoice) {
 
     if (colorChoice == "firebrick") {
+
         document.getElementById(objectName).setAttribute("style", "fill:firebrick;stroke-width:3;stroke:black");
+
     } else if (colorChoice == "peru") {
+
         document.getElementById(objectName).setAttribute("style", "fill:peru;stroke-width:3;stroke:black");
+
     } else if (colorChoice == "darkgoldenrod") {
+
         document.getElementById(objectName).setAttribute("style", "fill:darkgoldenrod;stroke-width:3;stroke:black");
+
     } else if (colorChoice == "mediumseagreen") {
+
         document.getElementById(objectName).setAttribute("style", "fill:mediumseagreen;stroke-width:3;stroke:black");
+
     } else if (colorChoice == "darkcyan") {
+
         document.getElementById(objectName).setAttribute("style", "fill:darkcyan;stroke-width:3;stroke:black");
+
     } else if (colorChoice == "darkorchid") {
+
         document.getElementById(objectName).setAttribute("style", "fill:darkorchid;stroke-width:3;stroke:black");
+
     } else if (colorChoice == "dimgray") {
+
         document.getElementById(objectName).setAttribute("style", "fill:dimgray;stroke-width:3;stroke:black");
+
     }
 
     return false;
+
 }
 
 /**
@@ -43,20 +58,35 @@ function colorAndRefreshDiagramObjects(objectName, colorChoice) {
 function colorLines(objectName, colorChoice) {
 
     if (colorChoice == "firebrick") {
+
         document.getElementById(objectName).setAttribute("style", "fill:firebrick;stroke-width:3;stroke:firebrick");
+
     } else if (colorChoice == "peru") {
+
         document.getElementById(objectName).setAttribute("style", "fill:peru;stroke-width:3;stroke:peru");
+
     } else if (colorChoice == "darkgoldenrod") {
+
         document.getElementById(objectName).setAttribute("style", "fill:darkgoldenrod;stroke-width:3;stroke:darkgoldenrod");
+
     } else if (colorChoice == "mediumseagreen") {
+
         document.getElementById(objectName).setAttribute("style", "fill:mediumseagreen;stroke-width:3;stroke:mediumseagreen");
+
     } else if (colorChoice == "darkcyan") {
+
         document.getElementById(objectName).setAttribute("style", "fill:darkcyan;stroke-width:3;stroke:darkcyan");
+
     } else if (colorChoice == "darkorchid") {
+
         document.getElementById(objectName).setAttribute("style", "fill:darkorchid;stroke-width:3;stroke:darkorchid");
+
     } else if (colorChoice == "dimgray") {
+
         document.getElementById(objectName).setAttribute("style", "fill:dimgray;stroke-width:3;stroke:dimgray");
+
     }
+
 }
 
 /**

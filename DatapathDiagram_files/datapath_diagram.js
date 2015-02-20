@@ -20,7 +20,7 @@ var instructionCounter = 0;
 /**
  * The counter representing the current instruction.
  */
-var currentNumInstructions = 0;
+var currentNumInstruction = 0;
 
 /**
  * The counter for the registers that are being put into arrays for the first 5
@@ -179,7 +179,7 @@ function parseFile() {
  */
 function runThrough() {
 
-    currentNumInstructions++;
+    currentNumInstruction++;
 
     if (counter == 1) {
 
@@ -197,6 +197,7 @@ function runThrough() {
             instType(document.getElementById("slot1").getAttribute("inst"),
                 INST_ONE_CNT,
                 document.getElementById("slot1").getAttribute("fill"));
+
             instType(document.getElementById("slot2").getAttribute("inst"),
                 INST_TWO_CNT,
                 document.getElementById("slot2").getAttribute("fill"));
@@ -221,9 +222,11 @@ function runThrough() {
             instType(document.getElementById("slot1").getAttribute("inst"),
                 INST_ONE_CNT,
                 document.getElementById("slot1").getAttribute("fill"));
+
             instType(document.getElementById("slot2").getAttribute("inst"),
                 INST_TWO_CNT,
                 document.getElementById("slot2").getAttribute("fill"));
+
             instType(document.getElementById("slot3").getAttribute("inst"),
                 INST_THREE_CNT,
                 document.getElementById("slot3").getAttribute("fill"));
@@ -250,12 +253,15 @@ function runThrough() {
                 instType(document.getElementById("slot1").getAttribute("inst"),
                     INST_ONE_CNT,
                     document.getElementById("slot1").getAttribute("fill"));
+
                 instType(document.getElementById("slot2").getAttribute("inst"),
                     INST_TWO_CNT,
                     document.getElementById("slot2").getAttribute("fill"));
+
                 instType(document.getElementById("slot3").getAttribute("inst"),
                     INST_THREE_CNT,
                     document.getElementById("slot3").getAttribute("fill"));
+
                 instType(document.getElementById("slot4").getAttribute("inst"),
                     INST_FOUR_CNT,
                     document.getElementById("slot4").getAttribute("fill"));
@@ -301,28 +307,37 @@ function runThrough() {
         }
 
         if (document.getElementById("slot2").textContent == " ") {
+
             document.getElementById("slot1").setAttribute("fill", "white");
             document.getElementById("slot2").setAttribute("fill", "white");
             document.getElementById("slot3").setAttribute("fill", "white");
             document.getElementById("slot4").setAttribute("fill", "white");
             document.getElementById("slot5").setAttribute("fill", "white");
             //console.log("CHANGING TO WHITE 1");
+
         }  else if (document.getElementById("slot3").textContent == " ") {
+
             document.getElementById("slot2").setAttribute("fill", "white");
             document.getElementById("slot3").setAttribute("fill", "white");
             document.getElementById("slot4").setAttribute("fill", "white");
             document.getElementById("slot5").setAttribute("fill", "white");
             //console.log("CHANGING TO WHITE 2");
+
         } else if (document.getElementById("slot4").textContent == " ") {
+
             document.getElementById("slot3").setAttribute("fill", "white");
             document.getElementById("slot4").setAttribute("fill", "white");
             document.getElementById("slot5").setAttribute("fill", "white");
             //console.log("CHANGING TO WHITE 3");
+
         }  else if (document.getElementById("slot5").textContent == " ") {
+
             document.getElementById("slot4").setAttribute("fill", "white");
             document.getElementById("slot5").setAttribute("fill", "white");
             //console.log("CHANGING TO WHITE 4");
+
         } else if (document.getElementById("slot6").textContent == " ") {
+
             //console.log("CHANGING TO WHITE 5");
             document.getElementById("slot5").setAttribute("fill", "white");
 
@@ -350,18 +365,23 @@ function runThrough() {
         instType(document.getElementById("slot1").getAttribute("inst"),
             INST_ONE_CNT,
             document.getElementById("slot1").getAttribute("fill"));
+
         instType(document.getElementById("slot2").getAttribute("inst"),
             INST_TWO_CNT,
             document.getElementById("slot2").getAttribute("fill"));
+
         instType(document.getElementById("slot3").getAttribute("inst"),
             INST_THREE_CNT,
             document.getElementById("slot3").getAttribute("fill"));
+
         instType(document.getElementById("slot4").getAttribute("inst"),
             INST_FOUR_CNT,
             document.getElementById("slot4").getAttribute("fill"));
+
         instType(document.getElementById("slot5").getAttribute("inst"),
             INST_FIVE_CNT,
             document.getElementById("slot5").getAttribute("fill"));
+
         isFirst = false;
 
             /*if (document.getElementById("slot5").textContent == " ") {
@@ -393,7 +413,7 @@ function runThrough() {
 
             stepThroughRType(5,"White");
             window.alert("PROGRAM FINISHED");
-            var r = confirm("Run another program?");
+            var r = confirm("Would you like to upload another program?");
 
             if (r == true) {
 
@@ -409,14 +429,14 @@ function runThrough() {
 
     }
 
-    console.log("counter: " + counter);
+    /*console.log("counter: " + counter);
     console.log("instructionCounter: " + instructionCounter);
-    console.log("currentNumInstructions: " + currentNumInstructions);
+    console.log("currentNumInstructions: " + currentNumInstruction);
     console.log("INST_ONE_CNT: " + INST_ONE_CNT);
     console.log("INST_TWO_CNT: " + INST_TWO_CNT);
     console.log("INST_THREE_CNT: " + INST_THREE_CNT);
     console.log("INST_FOUR_CNT: " + INST_FOUR_CNT);
-    console.log("INST_FIVE_CNT: " + INST_FIVE_CNT);
+    console.log("INST_FIVE_CNT: " + INST_FIVE_CNT);*/
 
 }
 
@@ -425,10 +445,16 @@ function runThrough() {
  *  for that instruction.
  *
  * @param inst - instruction from the legend.
- * @param instCnt - the stage the instruction is in.
+ * @param stage - the stage the instruction is in.
  * @param color - the color to change the objects and lines too.
  */
-function instType(inst, instCnt, color) {
+function instType(inst, stage, color) {
+
+    console.log("instruction is " + inst);
+    console.log("instruction counter is " + instructionCounter);
+    console.log("instruction number is " + currentNumInstruction);
+    console.log("instruction count is " + stage);
+    console.log("color is " + color);
 
     if (inst == ("add")  || inst == ("addu")  ||
         inst == ("and")  || inst == ("div")   ||
@@ -444,7 +470,7 @@ function instType(inst, instCnt, color) {
         inst == ("sub")  || inst == ("subu")  ||
         inst == ("xor")) {
 
-        stepThroughRType(instCnt, color);
+        stepThroughRType(stage, color);
 
     } else if (inst == ("addi") || inst == ("addiu") ||
                inst == ("andi") || inst == ("beq")   ||
@@ -456,11 +482,11 @@ function instType(inst, instCnt, color) {
                inst == ("slti") || inst == ("sltiu") ||
                inst == ("sw")   || inst == ("xori")) {
 
-        stepThroughIType(instCnt, color);
+        stepThroughIType(stage, color);
 
     } else if (inst == ("j") || inst == ("jal")) {
 
-        stepThroughJType(instCnt, color);
+        stepThroughJType(stage, color);
 
     } else if (inst == ("b")    || inst == ("bal")   ||
                inst == ("beqz") || inst == ("bge")   ||
@@ -472,12 +498,12 @@ function instType(inst, instCnt, color) {
                inst == ("mul")  || inst == ("not")   ||
                inst == ("rem")  || inst == ("subi")) {
 
-        stepThroughPseudoInstruction(instCnt, color);
+        stepThroughPseudoInstruction(stage, color);
 
     } else if (inst == ("break")    || inst == ("noop") ||
                inst == ("syscall")) {
 
-        stepThroughOtherInstruction(inst, instCnt, color);
+        stepThroughOtherInstruction(inst, stage, color);
 
     }
 
@@ -581,9 +607,9 @@ function skipTo() {
  */
 function stepBack() {
 
-    if (currentNumInstructions != 0) {
+    if (currentNumInstruction != 0) {
 
-        currentNumInstructions--;
+        currentNumInstruction--;
 
         if (instructionCounter > 11) {
 
@@ -593,7 +619,7 @@ function stepBack() {
 
     }
 
-    if (currentNumInstructions < 5 && counter != 0) {
+    if (currentNumInstruction < 5 && counter != 0) {
 
         counter--;
 
@@ -601,8 +627,8 @@ function stepBack() {
 
     if (counter == 5) {
 
-        var previousInstruction = instructionArray[currentNumInstructions - 5];
-        var inst = instructionArray[currentNumInstructions - 5].split(" ")[0];
+        var previousInstruction = instructionArray[currentNumInstruction - 5];
+        var inst = instructionArray[currentNumInstruction - 5].split(" ")[0];
 
         instType(inst, INST_ONE_CNT, nextColor);
 
@@ -611,12 +637,15 @@ function stepBack() {
         instType(document.getElementById("slot2").getAttribute("inst"),
             INST_TWO_CNT,
             document.getElementById("slot2").getAttribute("fill"));
+
         instType(document.getElementById("slot3").getAttribute("inst"),
             INST_THREE_CNT,
             document.getElementById("slot3").getAttribute("fill"));
+
         instType(document.getElementById("slot4").getAttribute("inst"),
             INST_FOUR_CNT,
             document.getElementById("slot4").getAttribute("fill"));
+
         instType(document.getElementById("slot5").getAttribute("inst"),
             INST_FIVE_CNT,
             document.getElementById("slot5").getAttribute("fill"));
@@ -631,12 +660,15 @@ function stepBack() {
         instType(document.getElementById("slot1").getAttribute("inst"),
             INST_TWO_CNT,
             document.getElementById("slot1").getAttribute("fill"));
+
         instType(document.getElementById("slot2").getAttribute("inst"),
             INST_THREE_CNT,
             document.getElementById("slot2").getAttribute("fill"));
+
         instType(document.getElementById("slot3").getAttribute("inst"),
             INST_FOUR_CNT,
             document.getElementById("slot3").getAttribute("fill"));
+
         instType(document.getElementById("slot4").getAttribute("inst"),
             INST_FIVE_CNT,
             document.getElementById("slot4").getAttribute("fill"));
@@ -650,6 +682,7 @@ function stepBack() {
         instType(document.getElementById("slot1").getAttribute("inst"),
             INST_THREE_CNT,
             document.getElementById("slot1").getAttribute("fill"));
+
         instType(document.getElementById("slot2").getAttribute("inst"),
             INST_FOUR_CNT,
             document.getElementById("slot2").getAttribute("fill"));
@@ -667,6 +700,7 @@ function stepBack() {
         instType(document.getElementById("slot1").getAttribute("inst"),
             INST_FOUR_CNT,
             document.getElementById("slot1").getAttribute("fill"));
+
         instType(document.getElementById("slot2").getAttribute("inst"),
             INST_FIVE_CNT,
             document.getElementById("slot2").getAttribute("fill"));
@@ -689,14 +723,14 @@ function stepBack() {
 
     }
 
-    console.log("counter: " + counter);
+    /*console.log("counter: " + counter);
     console.log("instructionCounter: " + instructionCounter);
-    console.log("currentNumInstructions: " + currentNumInstructions);
+    console.log("currentNumInstructions: " + currentNumInstruction);
     console.log("INST_ONE_CNT: " + INST_ONE_CNT);
     console.log("INST_TWO_CNT: " + INST_TWO_CNT);
     console.log("INST_THREE_CNT: " + INST_THREE_CNT);
     console.log("INST_FOUR_CNT: " + INST_FOUR_CNT);
-    console.log("INST_FIVE_CNT: " + INST_FIVE_CNT);
+    console.log("INST_FIVE_CNT: " + INST_FIVE_CNT);*/
 
 }
 
