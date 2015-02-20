@@ -8,8 +8,8 @@
  */
 
 /**
- * This function is the path for R type instructions to follow in the diagram and colors and clears the
- * appropriate objects in the diagram.
+ * This function handles choosing the path for R-type instructions to follow in
+ *  the diagram and colors and clears the appropriate objects in the diagram.
  *
  * @param stage - The stage the current instruction is in.
  * @param color - The color to change the objects to for the given instruction.
@@ -18,10 +18,19 @@ function stepThroughRType(stage, color) {
 
     if (stage == 0) {
 
+        colorAndRefreshDiagramObjects("ellipse1", color);
+        colorAndRefreshDiagramObjects("poly1", color);
         colorAndRefreshDiagramObjects("rect3", color);
         colorAndRefreshDiagramObjects("rect4", color);
         document.getElementById("txt22").textContent = Inst1[0];
         colorLines("line22", color);
+        colorLines("line3", color);
+        colorLines("line4", color);
+        colorLines("line6", color);
+        colorLines("line19", color);
+        colorLines("line7", color);
+        colorLines("line8", color);
+        colorLines("line9", color);
 
     } else if (stage == 1) {
 
@@ -119,8 +128,8 @@ function stepThroughRType(stage, color) {
 }
 
 /**
- *This function is the path for I type instructions to follow in the diagram and colors and clears the
- * appropriate objects in the diagram.
+ * This function handles choosing the path for I-type instructions to follow in
+ *  the diagram and colors and clears the appropriate objects in the diagram.
  *
  * @param stage - The stage the current instruction is in.
  * @param color - The color to change the objects to for the given instruction.
@@ -230,8 +239,8 @@ function stepThroughIType(stage, color) {
 }
 
 /**
- * This function is the path for J type instructions to follow in the diagram and colors and clears the
- * appropriate objects in the diagram.
+ * This function handles choosing the path for J-type instructions to follow in
+ *  the diagram and colors and clears the appropriate objects in the diagram.
  *
  * @param counter - The stage the current instruction is in.
  * @param color - The color to change the objects to for the given instruction.
@@ -239,5 +248,33 @@ function stepThroughIType(stage, color) {
 function stepThroughJType(counter, color) {
 
     // code for J type instructions goes here
+
+}
+
+/**
+ * This function handles choosing the path for pseudo-instructions to follow in
+ *  the diagram and colors and clears the appropriate objects in the diagram.
+ *
+ * @param stage - The stage the current instruction is in.
+ * @param color - The color to change the objects to for the given instruction.
+ */
+function stepThroughPseudoInstruction(stage, color) {
+
+    // code for pseudo-instructions goes here
+
+}
+
+/**
+ * This function handles other instructions. These could go through the diagram
+ *  like a normal instruction, or they could be dealt with completely
+ *  differently.
+ *
+ * @param inst  - The current instruction.
+ * @param stage - The stage the current instruction is in.
+ * @param color - The color to change the objects to for the given instruction.
+ */
+function stepThroughOtherInstruction(inst, stage, color) {
+
+    // code for pseudo-instructions goes here
 
 }

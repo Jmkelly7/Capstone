@@ -413,26 +413,60 @@ function runThrough() {
 /**
  * This function checks what type the instruction is and calls the correct path for that instruction.
  *
- * @param instruction - instruction from the legend.
+ * @param inst - instruction from the legend.
  * @param instCnt - the stage the instruction is in.
  * @param color - the color to change the objects and lines too.
  */
-function instType(instruction, instCnt, color) {
+function instType(inst, instCnt, color) {
 
-    if (instruction == ("add") || instruction == ("and") || instruction == ("nor") || instruction == ("or") ||
-        instruction == ("sub") || instruction == ("div") || instruction == ("mult")) {
+    if (inst == ("add")  || inst == ("addu")  ||
+        inst == ("and")  || inst == ("div")   ||
+        inst == ("divu") || inst == ("jr")    ||
+        inst == ("mfcZ") || inst == ("mfhi")  ||
+        inst == ("mflo") || inst == ("mtcZ")  ||
+        inst == ("mult") || inst == ("multu") ||
+        inst == ("nor")  || inst == ("or")    ||
+        inst == ("sll")  || inst == ("sllv")  ||
+        inst == ("slt")  || inst == ("sltu")  ||
+        inst == ("sra")  || inst == ("srav")  ||
+        inst == ("srl")  || inst == ("srlv")  ||
+        inst == ("sub")  || inst == ("subu")  ||
+        inst == ("xor")) {
 
         stepThroughRType(instCnt, color);
 
-    } else if (instruction == ("lw") || instruction == ("sw") ||
-        instruction == ("addi") || instruction == ("beq") ||
-        instruction == ("bne") || instruction == ("lb")) {
+    } else if (inst == ("addi") || inst == ("addiu") ||
+               inst == ("andi") || inst == ("beq")   ||
+               inst == ("bne")  || inst == ("lb")    ||
+               inst == ("lbu")  || inst == ("lh")    ||
+               inst == ("lhu")  || inst == ("lui")   ||
+               inst == ("lw")   || inst == ("ori")   ||
+               inst == ("sb")   || inst == ("sh")    ||
+               inst == ("slti") || inst == ("sltiu") ||
+               inst == ("sw")   || inst == ("xori")) {
 
         stepThroughIType(instCnt, color);
 
-    } else if (instruction == ("jump") || instruction == ("jal")) {
+    } else if (inst == ("j") || inst == ("jal")) {
 
-        //stepThroughJType(instCnt, color);
+        stepThroughJType(instCnt, color);
+
+    } else if (inst == ("b")    || inst == ("bal")   ||
+               inst == ("beqz") || inst == ("bge")   ||
+               inst == ("bgt")  || inst == ("bgtu")  ||
+               inst == ("bgtz") || inst == ("ble")   ||
+               inst == ("blt")  || inst == ("clear") ||
+               inst == ("pdiv") || inst == ("la")    ||
+               inst == ("li")   || inst == ("move")  ||
+               inst == ("mul")  || inst == ("not")   ||
+               inst == ("rem")  || inst == ("subi")) {
+
+        stepThroughPseudoInstruction(instCnt, color);
+
+    } else if (inst == ("break")    || inst == ("noop") ||
+               inst == ("syscall")) {
+
+        stepThroughOtherInstruction(inst, instCnt, color);
 
     }
 
@@ -484,27 +518,38 @@ function setName() {
 function play() {
 
     if(!document.getElementById("slot1").textContent == " ") {
+
         if (playCounter == 0) {
+
             var time = prompt("Please enter a speed for the diagram", "");
+
             if (time != null) {
+
                 intervalColor = window.setInterval(function () {
                     runThrough()
                 }, time * 1000);
+
             } else {
+
                 play();
+
             }
-            //  intervalColor = window.setInterval(function () {
-            //    runThrough()
-            //}, 2000);
+
             playCounter = 1;
-            //console.log("IT IS IN THE PLAY FEATURE THINGY");
+
         } else if (playCounter == 1) {
+
             window.clearInterval(intervalColor);
             playCounter = 0;
+
         }
+
     } else {
+
         window.clearInterval(intervalColor);
+
     }
+
 }
 
 /**

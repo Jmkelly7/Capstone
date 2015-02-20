@@ -12,6 +12,16 @@ mult $t5, $t6, $7
 add $t0, $0, $t1
 sub $t2, $t3, $t4
 mult $t5, $t6, $7
+addi $12, $13, 4
+multi $14, $15, 16
+addi $12, $13, 4
+addi $14, $15, 16
+addi $12, $13, 4
+addi $14, $15, 16
+addi $12, $13, 4
+addi $14, $15, 16
+addi $12, $13, 4
+addi $14, $15, 16
 add $t0, $0, $t1
 sub $t2, $t3, $t4
 mult $t5, $t6, $7
