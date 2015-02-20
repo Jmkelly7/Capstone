@@ -721,4 +721,48 @@ function uploadNew() {
 
 }
 
+// Allows the page to receive information about the file that the user uploads.
 window.addEventListener("message", receiveMessage, false);
+
+// Allows the user to use keys on the keyboard to control the diagram:
+//   SPACE BAR   - Play/Pause
+//   LEFT ARROW  - Back
+//   RIGHT ARROW - Step
+window.addEventListener('keyup', function(event) {
+
+    // Checks if space bar
+    if (event.keyCode == 32) {
+
+        play();
+
+    }
+
+    // Checks if left key
+    if (event.keyCode == 37) {
+
+        stepBack();
+
+    }
+
+    // Checks if up key
+    /*if (event.keyCode == 38) {
+
+     this.moveUp();
+
+     }*/
+
+    // Checks if right key
+    if (event.keyCode == 39) {
+
+        runThrough();
+
+    }
+
+    // Checks if down key
+    /*if (event.keyCode == 40) {
+
+     this.moveDown();
+
+     }*/
+
+});
