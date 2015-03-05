@@ -97,7 +97,7 @@ function colorLines(objectName, colorChoice) {
  */
 function clearGivenObject(objectName) {
 
-    document.getElementById(objectName).setAttribute("style", "fill:white;stroke-width:1;stroke:rgb(0,0,0");
+    document.getElementById(objectName).setAttribute("style", "fill:white;stroke-width:3;stroke:rgb(0,0,0");
 
 }
 

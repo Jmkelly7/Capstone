@@ -50,8 +50,7 @@
     <script src="./DatapathDiagram_files/step_instructions.js"></script>
     <script src="./DatapathDiagram_files/page_buttons.js"></script>
     <script src="./DatapathDiagram_files/datapath_diagram.js"></script>
-    <script src="./DatapathDiagram_files/d3.js"></script>
-    <script src="./DatapathDiagram_files/d3.min.js"></script>
+    <script src="./DatapathDiagram_files/TooltipForLines.js"></script>
 
 </head>
 
@@ -179,7 +178,6 @@
                     <path d="M 288.5 146.5 L 288.5 146.5" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
                     <svg>
                         <rect id="rect2" x="213.5" y="256.5" width="120" height="60" fill="#ffffff" stroke="#000000" transform="rotate(90,273.5,286.5)" pointer-events="none"/>
-                        <title>your title</title>
                         <text id="rec2" x="255" y="286.5" fill="black" font-size="20px">Inst.</text>
                         <text id="rect2pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">Instruction Memory takes a mem address as
                             <set attributeName="visibility" from="hidden" to="visible" begin="rec2.mouseover" end="rec2.mouseout"/>
@@ -469,7 +467,7 @@
                         </text>
                     </svg>
                     <svg>
-                        <ellipse id="ellipse3" cx="666" cy="189" rx="18" ry="27.5" fill="#ffffff" stroke="#000000" stroke-width="2" pointer-events="none"/>
+                        <ellipse id="ellipse3" cx="666" cy="189" rx="18" ry="27.5" fill="#ffffff" stroke="#000000" stroke-width="1" pointer-events="none"/>
                         <text id="ell3" x="650" y="189" fill="black" font-size="10px">SN.EX</text>
                         <text id="ell3pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Sign Ext component performs sign extension,
                             <set attributeName="visibility" from="hidden" to="visible" begin="ell3.mouseover" end="ell3.mouseout"/>
@@ -494,28 +492,27 @@
                     <!-- Register text above arrows -->
 
                     <svg>
-                        <path id="line1" d="M 8 261 L 51.62 261.01" fill="black" stroke="black" stroke-miterlimit="10" pointer-events="none"/>
+                        <path id="line1" d="M 8 261 L 51.62 261.01" fill="black" stroke="black" stroke-miterlimit="10" onmouseover="line1ToolTipsMouseOver()" onmouseout="line1ToolTipsMouseOut()"></path>
                         <path d="M 56.87 261.01 L 49.87 264.51 L 51.62 261.01 L 49.87 257.51 Z" fill="black" stroke="black" stroke-miterlimit="10" pointer-events="none"/>
-                        <text id="txt1" x="8" y="261" fill="black" font-size="10px">..............</text>
-                        <text id="line1pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Sign Ext component performs sign extension,
-                            <set attributeName="visibility" from="hidden" to="visible" begin="txt1.mouseover" end="txt1.mouseout"/>
+                        <!--<text id="txt1" x="8" y="261" fill="black" font-size="10px">..............</text>-->
+                        <text id="line1pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Sign Ext component performs sign extension,</text>
+                        <text id="line1pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Sign Ext component performs sign extension,
+                            <!-- <set attributeName="visibility" from="hidden" to="visible" begin="txt3.mouseover" end="txt3.mouseout"/>-->
                         </text>
                     </svg>
                     <g>
                         <path id="line2" d="M 28 221 L 51.62 221" fill="none" stroke="black" stroke-miterlimit="10" pointer-events="none"/>
-                        <path d="M 56.87 221 L 49.87 224.5 L 51.62 221 L 49.87 217.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
-                        <text id="txt2" x="28" y="221" fill="black" font-size="10px">.........</text>
-                        <text id="line2pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Sign Ext component performs sign extension,
-                            <set attributeName="visibility" from="hidden" to="visible" begin="txt2.mouseover" end="txt2.mouseout"/>
-                        </text>
+                        <path d="M 56.87 221 L 49.87 224.5 L 51.62 221 L 49.87 217.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" onmouseover="line2ToolTipsMouseOver()" onmouseout="line2ToolTipsMouseOut()"></path>
+                        <text id="txt2" x="28" y="221" fill="black" font-size="10px"></text>
+                        <text id="line2pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Sign Ext component performs sign extension,</text>
+                        <text id="line2pop2" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Sign Ext component performs sign extension,</text>
                     </g>
                     <g>
-                        <path id="line3" d="M 88.02 251 L 131.63 251" fill="none" stroke="black" stroke-miterlimit="10" pointer-events="none"/>
+                        <path id="line3" d="M 88.02 251 L 131.63 251" fill="none" stroke="black" stroke-miterlimit="10" onmouseover="line3ToolTipsMouseOver()" onmouseout="line3ToolTipsMouseOut()"></path>
                         <path d="M 136.88 251 L 129.88 254.5 L 131.63 251 L 129.88 247.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
-                        <text id="txt3" x="88" y="251" fill="black" font-size="10px">...............</text>
-                        <text id="line3pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Sign Ext component performs sign extension,
-                            <set attributeName="visibility" from="hidden" to="visible" begin="txt3.mouseover" end="txt3.mouseout"/>
-                        </text>
+                        <text id="txt3" x="88" y="251" fill="black" font-size="10px"></text>
+                        <text id="line3pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Sign Ext component performs sign extension,</text>
+                        <text id="line3pop2" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Sign Ext component performs sign extension,</text>
                     </g>
                     <g>
                         <path id="line5" d="M 218 251 L 231.63 251" fill="none" stroke="black" stroke-miterlimit="10" pointer-events="none"/>
