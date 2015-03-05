@@ -115,169 +115,81 @@
                       style="fill:beige; stroke:rgb(79,129,189); stroke-width:10"></rect>
                 <!-- Diagram -->
 
-                    <rect x="712" y="138" rx="20" ry="20" width="60" height="52" fill="none" stroke="none" pointer-events="none"/>
+                    <rect x="712" y="138" rx="20" ry="20" width="60" height="52" fill="none" stroke="none" pointer-events="none"></rect>
                     <svg>
-                        <path id="poly2" d="M 712 190 L 726.54 138 L 757.46 138 L 772 190 Z" fill="#ffffff" stroke="#000000" stroke-width="2" stroke-miterlimit="10" transform="rotate(90,742,164)" pointer-events="none"/>
+                        <path id="poly2" d="M 712 190 L 726.54 138 L 757.46 138 L 772 190 Z" fill="#ffffff" stroke="#000000" stroke-width="1" stroke-miterlimit="10" transform="rotate(90,742,164)" onmouseover="addToolTipsMouseOver()" onmouseout="addToolTipsMouseOut()"></path>
                         <text id="pol2" x="730" y="170" fill="black" font-size="20px">Add</text>
-                        <text id="poly2pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">An adder just performs binary addition of
-                            <set attributeName="visibility" from="hidden" to="visible" begin="pol2.mouseover" end="pol2.mouseout"/>
-                        </text>
-                        <text id="poly2pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">its two inputs to produce a sum output.
-                            <set attributeName="visibility" from="hidden" to="visible" begin="pol2.mouseover" end="pol2.mouseout"/>
-                        </text>
                     </svg>
-                    <path d="M 717.78 153.83 L 725.01 164 L 717.78 174.17 Z" fill="#ffffff" stroke="#000000" stroke-width="3" stroke-miterlimit="10" pointer-events="none"/>
-                    <path d="M 714.4 152.3 L 722.8 164 L 714.4 175.7 Z" fill="#ffffff" stroke="#ffffff" stroke-miterlimit="10" pointer-events="none"/>
-                    <path d="M 718.6 158.15 L 718.6 158.15" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+                    <path d="M 717.78 153.83 L 725.01 164 L 717.78 174.17 Z" fill="#ffffff" stroke="#000000" stroke-width="3" stroke-miterlimit="10" pointer-events="none"></path>
+                    <path d="M 714.4 152.3 L 722.8 164 L 714.4 175.7 Z" fill="#ffffff" stroke="#ffffff" stroke-miterlimit="10" pointer-events="none"></path>
+                    <path d="M 718.6 158.15 L 718.6 158.15" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"></path>
                     <svg>
-                        <path id="ellipse1" d="M 57.1 229 L 88.9 229 C 102.76 229 114 236.84 114 246.5 C 114 256.16 102.76 264 88.9 264 L 57.1 264 C 43.24 264 32 256.16 32 246.5 C 32 236.84 43.24 229 57.1 229 Z" fill="#ffffff" stroke="#000000" stroke-width="2" stroke-miterlimit="10" transform="rotate(90,73,246.5)" pointer-events="none"/>
+                        <path id="ellipse1" d="M 57.1 229 L 88.9 229 C 102.76 229 114 236.84 114 246.5 C 114 256.16 102.76 264 88.9 264 L 57.1 264 C 43.24 264 32 256.16 32 246.5 C 32 236.84 43.24 229 57.1 229 Z" fill="#ffffff" stroke="#000000" stroke-width="1" stroke-miterlimit="10" transform="rotate(90,73,246.5)" onmouseover="mutexToolTipsMouseOver()" onmouseout="mutexToolTipsMouseOut()"></path>
                         <text id="ell1" x="60" y="245" fill="black" font-size="12px">MUX</text>
-                        <text id="ell1pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">A multiplexer is a logic component with multiple
-                            <set attributeName="visibility" from="hidden" to="visible" begin="ell1.mouseover" end="ell1.mouseout"/>
-                        </text>
-                        <text id="ell1pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">data inputs (X and Y), a single control input(Sel),
-                            <set attributeName="visibility" from="hidden" to="visible" begin="ell1.mouseover" end="ell1.mouseout"/>
-                        </text>
-                        <text id="ell1pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">and a single output (Out). At any time its output
-                            <set attributeName="visibility" from="hidden" to="visible" begin="ell1.mouseover" end="ell1.mouseout"/>
-                        </text>
-                        <text id="ell1pop4" x="15" y="494" font-size="30" fill="black" visibility="hidden" style="font-size:16px;"> is the same as one of its inputs. Which one is
-                            <set attributeName="visibility" from="hidden" to="visible" begin="ell1.mouseover" end="ell1.mouseout"/>
-                        </text>
-                        <text id="ell1pop5" x="15" y="512" font-size="30" fill="black" visibility="hidden" style="font-size:16px;"> determined by the control input.
-                            <set attributeName="visibility" from="hidden" to="visible" begin="ell1.mouseover" end="ell1.mouseout"/>
-                        </text>
+                        <text id="ell1pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">A multiplexer is a logic component with multiple</text>
+                        <text id="ell1pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">data inputs (X and Y), a single control input(Sel),</text>
+                        <text id="ell1pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">and a single output (Out). At any time its output</text>
+                        <text id="ell1pop4" x="15" y="494" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">is the same as one of its inputs. Which one is</text>
+                        <text id="ell1pop5" x="15" y="512" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">determined by the control input.</text>
                     </svg>
                     <svg>
-                        <rect id="rect1" x="129" y="224" width="72" height="40" fill="#ffffff" stroke="#000000" transform="rotate(90,165,244)" pointer-events="none"></rect>
+                        <rect id="rect1" x="129" y="224" width="72" height="40" fill="#ffffff" stroke="#000000" transform="rotate(90,165,244)" onmouseover="pcToolTipsMouseOver()" onmouseout="pcToolTipsMouseOut()"></rect>
                         <text id="rec1" x="155" y="244" fill="black" font-size="20px">PC</text>
-                        <text id="rect1pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The PC(Program Counter) is byte-addressable
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec1.mouseover" end="rec1.mouseout"/>
-                        </text>
-                        <text id="rect1pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">register and holds the address of the current
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec1.mouseover" end="rec1.mouseout"/>
-                        </text>
-                        <text id="rect1pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">instruction.
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec1.mouseover" end="rec1.mouseout"/>
-                        </text>
+                        <text id="rect1pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The PC(Program Counter) is byte-addressable</text>
+                        <text id="rect1pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">register and holds the address of the current</text>
+                        <text id="rect1pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">instruction.</text>
                     </svg>
-                    <rect x="286.5" y="126.5" width="50" height="40" fill="none" stroke="none" pointer-events="none"/>
+                    <rect x="286.5" y="126.5" width="50" height="40" fill="none" stroke="none" pointer-events="none"></rect>
                     <svg>
-                        <path id="poly1" d="M 286.5 166.5 L 298.61 126.5 L 324.39 126.5 L 336.5 166.5 Z" fill="#ffffff" stroke="#000000" stroke-width="2" stroke-miterlimit="10" transform="rotate(90,311.5,146.5)" pointer-events="none"/>
+                        <path id="poly1" d="M 286.5 166.5 L 298.61 126.5 L 324.39 126.5 L 336.5 166.5 Z" fill="#ffffff" stroke="#000000" stroke-width="1" stroke-miterlimit="10" transform="rotate(90,311.5,146.5)" onmouseover="addToolTipsMouseOver()" onmouseout="addToolTipsMouseOut()"></path>
                         <text id="pol1" x="295" y="155" fill="black" font-size="20px">Add</text>
-                        <text id="poly1pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">An adder just performs binary addition of
-                            <set attributeName="visibility" from="hidden" to="visible" begin="pol1.mouseover" end="pol1.mouseout"/>
-                        </text>
-                        <text id="poly1pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">its two inputs to produce a sum output.
-                            <set attributeName="visibility" from="hidden" to="visible" begin="pol1.mouseover" end="pol1.mouseout"/>
-                        </text>
+                        <text id="poly1pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">An adder just performs binary addition of</text>
+                        <text id="poly1pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">its two inputs to produce a sum output.</text>
                     </svg>
-                    <path d="M 291.32 138.67 L 297.34 146.5 L 291.32 154.33 Z" fill="#ffffff" stroke="#000000" stroke-width="3" stroke-miterlimit="10" pointer-events="none"/>
-                    <path d="M 288.5 137.5 L 295.5 146.5 L 288.5 155.5 Z" fill="#ffffff" stroke="#ffffff" stroke-miterlimit="10" pointer-events="none"/>
-                    <path d="M 292 142 L 292 142" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
-                    <path d="M 288.5 146.5 L 288.5 146.5" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+                    <path d="M 291.32 138.67 L 297.34 146.5 L 291.32 154.33 Z" fill="#ffffff" stroke="#000000" stroke-width="3" stroke-miterlimit="10" pointer-events="none"></path>
+                    <path d="M 288.5 137.5 L 295.5 146.5 L 288.5 155.5 Z" fill="#ffffff" stroke="#ffffff" stroke-miterlimit="10" pointer-events="none"></path>
+                    <path d="M 292 142 L 292 142" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"></path>
+                    <path d="M 288.5 146.5 L 288.5 146.5" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"></path>
                     <svg>
-                        <rect id="rect2" x="213.5" y="256.5" width="120" height="60" fill="#ffffff" stroke="#000000" transform="rotate(90,273.5,286.5)" pointer-events="none"/>
+                        <rect id="rect2" x="213.5" y="256.5" width="120" height="60" fill="#ffffff" stroke="#000000" transform="rotate(90,273.5,286.5)" onmouseover="instMemToolTipsMouseOver()" onmouseout="instMemToolTipsMouseOut()"></rect>
                         <text id="rec2" x="255" y="286.5" fill="black" font-size="20px">Inst.</text>
-                        <text id="rect2pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">Instruction Memory takes a mem address as
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec2.mouseover" end="rec2.mouseout"/>
-                        </text>
-                        <text id="rect2pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">input and fetches the instruction at the
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec2.mouseover" end="rec2.mouseout"/>
-                        </text>
-                        <text id="rect2pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">address for the output. Only needs one
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec2.mouseover" end="rec2.mouseout"/>
-                        </text>
-                        <text id="rect2pop4" x="15" y="494" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">single read port for the given address.
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec2.mouseover" end="rec2.mouseout"/>
-                        </text>
+                        <text id="rect2pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">Instruction Memory takes a mem address as</text>
+                        <text id="rect2pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">input and fetches the instruction at the</text>
+                        <text id="rect2pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">address for the output. Only needs one</text>
+                        <text id="rect2pop4" x="15" y="494" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">single read port for the given address.</text>
                     </svg>
                     <svg>
-                        <rect id="rect3" x="273.5" y="256.5" width="120" height="60" fill="#ffffff" stroke="#000000" transform="rotate(90,333.5,286.5)" pointer-events="none"/>
+                        <rect id="rect3" x="273.5" y="256.5" width="120" height="60" fill="#ffffff" stroke="#000000" transform="rotate(90,333.5,286.5)" onmouseover="instMemToolTipsMouseOver()" onmouseout="instMemToolTipsMouseOut()"></rect>
                         <text id="rec3" x="305" y="286.5" fill="black" font-size="20px">Mem.</text>
-                        <text id="rect3pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">Instruction Memory takes a mem address as
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec3.mouseover" end="rec3.mouseout"/>
-                        </text>
-                        <text id="rect3pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">input and fetches the instruction at the
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec3.mouseover" end="rec3.mouseout"/>
-                        </text>
-                        <text id="rect3pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">address for the output. Only needs one
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec3.mouseover" end="rec3.mouseout"/>
-                        </text>
-                        <text id="rect3pop4" x="15" y="494" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">single read port for the given address.
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec3.mouseover" end="rec3.mouseout"/>
-                        </text>
                     </svg>
                     <svg>
-                        <rect id="rect4" x="253" y="250" width="309" height="12" fill="#ffffff" stroke="#000000" transform="rotate(90,407.5,256)" pointer-events="none"/>
-                        <rect id="rect5" x="265" y="250" width="309" height="12" fill="#ffffff" stroke="#000000" transform="rotate(90,419.5,256)" pointer-events="none"/>
+                        <rect id="rect4" x="253" y="250" width="309" height="12" fill="#ffffff" stroke="#000000" transform="rotate(90,407.5,256)" onmouseover="ifidToolTipsMouseOver()" onmouseout="ifidToolTipsMouseOut()"></rect>
+                        <rect id="rect5" x="265" y="250" width="309" height="12" fill="#ffffff" stroke="#000000" transform="rotate(90,419.5,256)" onmouseover="ifidToolTipsMouseOver()" onmouseout="ifidToolTipsMouseOut()"></rect>
                         <text id="rec4" x="395" y="100" fill="black" font-size="20px">IF/ID</text>
-                        <text id="rect4pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Instruction Fetch involves accessing
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec4.mouseover" end="rec4.mouseout"/>
-                        </text>
-                        <text id="rect4pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">the memory that the current instruction is in
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec4.mouseover" end="rec4.mouseout"/>
-                        </text>
-                        <text id="rect4pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">and getting its value to pass on. The
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec4.mouseover" end="rec4.mouseout"/>
-                        </text>
-                        <text id="rect4pop4" x="15" y="494" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">Instruction Decode involves sign extending the
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec4.mouseover" end="rec4.mouseout"/>
-                        </text>
-                        <text id="rect4pop5" x="15" y="512" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">immediate field and reading it in along with the
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec4.mouseover" end="rec4.mouseout"/>
-                        </text>
-                        <text id="rect4pop6" x="15" y="530" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">register numbers of the given registers.
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec4.mouseover" end="rec4.mouseout"/>
-                        </text>
+                        <text id="rect4pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Instruction Fetch involves accessing</text>
+                        <text id="rect4pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">the memory that the current instruction is in</text>
+                        <text id="rect4pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">and getting its value to pass on. The</text>
+                        <text id="rect4pop4" x="15" y="494" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">Instruction Decode involves sign extending the</text>
+                        <text id="rect4pop5" x="15" y="512" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">immediate field and reading it in along with the</text>
+                        <text id="rect4pop6" x="15" y="530" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">register numbers of the given registers.</text>
                     </svg>
                     <svg>
-                        <rect id="rect6" x="435.5" y="256.5" width="120" height="60" fill="#ffffff" stroke="#000000" transform="rotate(90,495.5,286.5)" pointer-events="none"/>
+                        <rect id="rect6" x="435.5" y="256.5" width="120" height="60" fill="#ffffff" stroke="#000000" transform="rotate(90,495.5,286.5)" pointer-events="none"></rect>
                         <text id="rec6" x="467" y="286.5" fill="black" font-size="12px">Reg.IN</text>
-                        <text id="rect6pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Register Bank holds multiple registers
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec6.mouseover" end="rec6.mouseout"/>
-                        </text>
-                        <text id="rect6pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">and provides read and write access to them.
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec6.mouseover" end="rec6.mouseout"/>
-                        </text>
-                        <text id="rect6pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The input is the two registers to compute,
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec6.mouseover" end="rec6.mouseout"/>
-                        </text>
-                        <text id="rect6pop4" x="15" y="494" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">the register to write too, and the data
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec6.mouseover" end="rec6.mouseout"/>
-                        </text>
-                        <text id="rect6pop5" x="15" y="512" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">to be written. The output is the content of
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec6.mouseover" end="rec6.mouseout"/>
-                        </text>
-                        <text id="rect6pop6" x="15" y="530" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The registers from the input.
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec6.mouseover" end="rec6.mouseout"/>
-                        </text>
+                        <text id="rect6pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Register Bank holds multiple registers</text>
+                        <text id="rect6pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">and provides read and write access to them.</text>
+                        <text id="rect6pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The input is the two registers to compute,</text>
+                        <text id="rect6pop4" x="15" y="494" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">the register to write too, and the data</text>
+                        <text id="rect6pop5" x="15" y="512" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">to be written. The output is the content of</text>
+                        <text id="rect6pop6" x="15" y="530" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The registers from the input.</text>
                     </svg>
                     <svg>
-                        <rect id="rect7" x="495.5" y="256.5" width="120" height="60" fill="#ffffff" stroke="#000000" transform="rotate(90,555.5,286.5)" pointer-events="none"/>
+                        <rect id="rect7" x="495.5" y="256.5" width="120" height="60" fill="#ffffff" stroke="#000000" transform="rotate(90,555.5,286.5)" pointer-events="none"></rect>
                         <text id="rec7" x="527" y="286.5" fill="black" font-size="12px">Reg.OUT</text>
-                        <text id="rect7pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Register Bank holds multiple registers
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec7.mouseover" end="rec7.mouseout"/>
-                        </text>
-                        <text id="rect7pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">and provides read and write access to them.
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec7.mouseover" end="rec7.mouseout"/>
-                        </text>
-                        <text id="rect7pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The input is the two registers to compute,
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec7.mouseover" end="rec7.mouseout"/>
-                        </text>
-                        <text id="rect7pop4" x="15" y="494" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">the register to write too, and the data
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec7.mouseover" end="rec7.mouseout"/>
-                        </text>
-                        <text id="rect7pop5" x="15" y="512" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">to be written. The output is the content of
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec7.mouseover" end="rec7.mouseout"/>
-                        </text>
-                        <text id="rect7pop6" x="15" y="530" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The registers from the input.
-                            <set attributeName="visibility" from="hidden" to="visible" begin="rec7.mouseover" end="rec7.mouseout"/>
-                        </text>
                     </svg>
                     <rect x="733.5" y="247.5" width="83" height="69" fill="none" stroke="none" pointer-events="none"/>
                     <svg>
-                        <path id="poly3" d="M 733.5 316.5 L 753.61 247.5 L 796.39 247.5 L 816.5 316.5 Z" fill="#ffffff" stroke="#000000" stroke-width="2" stroke-miterlimit="10" transform="rotate(90,775,282)" pointer-events="none"/>
+                        <path id="poly3" d="M 733.5 316.5 L 753.61 247.5 L 796.39 247.5 L 816.5 316.5 Z" fill="#ffffff" stroke="#000000" stroke-width="1" stroke-miterlimit="10" transform="rotate(90,775,282)" pointer-events="none"/>
                         <text id="pol3" x="760" y="290" fill="black" font-size="20px">ALU</text>
                         <text id="poly3pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The ALU (Arithmetic-Logic Unit) can perform a
                             <set attributeName="visibility" from="hidden" to="visible" begin="pol3.mouseover" end="pol3.mouseout"/>
@@ -407,45 +319,15 @@
                     </svg>
                     <path d="M 185 226 L 185 226" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
                     <svg>
-                        <path id="ellipse4" d="M 682.1 311 L 713.9 311 C 727.76 311 739 318.84 739 328.5 C 739 338.16 727.76 346 713.9 346 L 682.1 346 C 668.24 346 657 338.16 657 328.5 C 657 318.84 668.24 311 682.1 311 Z" fill="#ffffff" stroke="#000000" stroke-width="2" stroke-miterlimit="10" transform="rotate(90,698,328.5)" pointer-events="none"/>
+                        <path id="ellipse4" d="M 682.1 311 L 713.9 311 C 727.76 311 739 318.84 739 328.5 C 739 338.16 727.76 346 713.9 346 L 682.1 346 C 668.24 346 657 338.16 657 328.5 C 657 318.84 668.24 311 682.1 311 Z" fill="#ffffff" stroke="#000000" stroke-width="1" stroke-miterlimit="10" transform="rotate(90,698,328.5)" onmouseover="mutexToolTipsMouseOver()" onmouseout="mutexToolTipsMouseOut()"></path>
                         <text id="ell4" x="685" y="328" fill="black" font-size="12px">MUX</text>
-                        <text id="ell4pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">A multiplexer is a logic component with multiple
-                            <set attributeName="visibility" from="hidden" to="visible" begin="ell4.mouseover" end="ell4.mouseout"/>
-                        </text>
-                        <text id="ell4pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">data inputs (X and Y), a single control input(Sel),
-                            <set attributeName="visibility" from="hidden" to="visible" begin="ell4.mouseover" end="ell4.mouseout"/>
-                        </text>
-                        <text id="ell4pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">and a single output (Out). At any time its output
-                            <set attributeName="visibility" from="hidden" to="visible" begin="ell4.mouseover" end="ell4.mouseout"/>
-                        </text>
-                        <text id="ell4pop4" x="15" y="494" font-size="30" fill="black" visibility="hidden" style="font-size:16px;"> is the same as one of its inputs. Which one is
-                            <set attributeName="visibility" from="hidden" to="visible" begin="ell4.mouseover" end="ell4.mouseout"/>
-                        </text>
-                        <text id="ell4pop5" x="15" y="512" font-size="30" fill="black" visibility="hidden" style="font-size:16px;"> determined by the control input.
-                            <set attributeName="visibility" from="hidden" to="visible" begin="ell4.mouseover" end="ell4.mouseout"/>
-                        </text>
                     </svg>
                     <svg>
-                        <path id="ellipse5" d="M 1150.1 328 L 1181.9 328 C 1195.76 328 1207 335.84 1207 345.5 C 1207 355.16 1195.76 363 1181.9 363 L 1150.1 363 C 1136.24 363 1125 355.16 1125 345.5 C 1125 335.84 1136.24 328 1150.1 328 Z" fill="#ffffff" stroke="#000000" stroke-width="2" stroke-miterlimit="10" transform="rotate(90,1166,345.5)" pointer-events="none"/>
+                        <path id="ellipse5" d="M 1150.1 328 L 1181.9 328 C 1195.76 328 1207 335.84 1207 345.5 C 1207 355.16 1195.76 363 1181.9 363 L 1150.1 363 C 1136.24 363 1125 355.16 1125 345.5 C 1125 335.84 1136.24 328 1150.1 328 Z" fill="#ffffff" stroke="#000000" stroke-width="1" stroke-miterlimit="10" transform="rotate(90,1166,345.5)" onmouseover="mutexToolTipsMouseOver()" onmouseout="mutexToolTipsMouseOut()"></path>
                         <text id="ell5" x="1150" y="345" fill="black" font-size="12px">MUX</text>
-                        <text id="ell5pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">A multiplexer is a logic component with multiple
-                            <set attributeName="visibility" from="hidden" to="visible" begin="ell5.mouseover" end="ell5.mouseout"/>
-                        </text>
-                        <text id="ell5pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">data inputs (X and Y), a single control input(Sel),
-                            <set attributeName="visibility" from="hidden" to="visible" begin="ell5.mouseover" end="ell5.mouseout"/>
-                        </text>
-                        <text id="ell5pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">and a single output (Out). At any time its output
-                            <set attributeName="visibility" from="hidden" to="visible" begin="ell5.mouseover" end="ell5.mouseout"/>
-                        </text>
-                        <text id="ell5pop4" x="15" y="494" font-size="30" fill="black" visibility="hidden" style="font-size:16px;"> is the same as one of its inputs. Which one is
-                            <set attributeName="visibility" from="hidden" to="visible" begin="ell5.mouseover" end="ell5.mouseout"/>
-                        </text>
-                        <text id="ell5pop5" x="15" y="512" font-size="30" fill="black" visibility="hidden" style="font-size:16px;"> determined by the control input.
-                            <set attributeName="visibility" from="hidden" to="visible" begin="ell5.mouseover" end="ell5.mouseout"/>
-                        </text>
                     </svg>
                     <svg>
-                        <ellipse id="ellipse2" cx="562" cy="416" rx="23" ry="35" fill="#ffffff" stroke="#000000" stroke-width="2" pointer-events="none"/>
+                        <ellipse id="ellipse2" cx="562" cy="416" rx="23" ry="35" fill="#ffffff" stroke="#000000" stroke-width="1" pointer-events="none"/>
                         <text id="ell2" x="545" y="416" fill="black" font-size="12px">SN.EX</text>
                         <text id="ell2pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Sign Ext component performs sign extension,
                             <set attributeName="visibility" from="hidden" to="visible" begin="ell2.mouseover" end="ell2.mouseout"/>
@@ -468,7 +350,7 @@
                     </svg>
                     <svg>
                         <ellipse id="ellipse3" cx="666" cy="189" rx="18" ry="27.5" fill="#ffffff" stroke="#000000" stroke-width="1" pointer-events="none"/>
-                        <text id="ell3" x="650" y="189" fill="black" font-size="10px">SN.EX</text>
+                        <text id="ell3" x="655" y="189" fill="black" font-size="10px"><<2</text>
                         <text id="ell3pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Sign Ext component performs sign extension,
                             <set attributeName="visibility" from="hidden" to="visible" begin="ell3.mouseover" end="ell3.mouseout"/>
                         </text>
@@ -501,8 +383,8 @@
                         </text>
                     </svg>
                     <g>
-                        <path id="line2" d="M 28 221 L 51.62 221" fill="none" stroke="black" stroke-miterlimit="10" pointer-events="none"/>
-                        <path d="M 56.87 221 L 49.87 224.5 L 51.62 221 L 49.87 217.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" onmouseover="line2ToolTipsMouseOver()" onmouseout="line2ToolTipsMouseOut()"></path>
+                        <path id="line2" d="M 28 221 L 51.62 221" fill="none" stroke="black" stroke-miterlimit="10" onmouseover="line2ToolTipsMouseOver()" onmouseout="line2ToolTipsMouseOut()"></path>
+                        <path d="M 56.87 221 L 49.87 224.5 L 51.62 221 L 49.87 217.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10"/>
                         <text id="txt2" x="28" y="221" fill="black" font-size="10px"></text>
                         <text id="line2pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Sign Ext component performs sign extension,</text>
                         <text id="line2pop2" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Sign Ext component performs sign extension,</text>
@@ -517,14 +399,14 @@
                     <g>
                         <path id="line5" d="M 218 251 L 231.63 251" fill="none" stroke="black" stroke-miterlimit="10" pointer-events="none"/>
                         <path d="M 236.88 251 L 229.88 254.5 L 231.63 251 L 229.88 247.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
-                        <text id="txt5" x="218" y="251" fill="black" font-size="10px">.......</text>
+                        <text id="txt5" x="218" y="251" fill="black" font-size="10px"></text>
                         <text id="line5pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Sign Ext component performs sign extension,
                             <set attributeName="visibility" from="hidden" to="visible" begin="txt5.mouseover" end="txt5.mouseout"/>
                         </text>
                     </g>
                     <g>
                         <path id="line4"d="M 188 251 L 218 251" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
-                        <text id="txt4" x="188" y="251" fill="black" font-size="10px">......</text>
+                        <text id="txt4" x="188" y="251" fill="black" font-size="10px"></text>
                         <text id="line4pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Sign Ext component performs sign extension,
                             <set attributeName="visibility" from="hidden" to="visible" begin="txt4.mouseover" end="txt4.mouseout"/>
                         </text>
@@ -532,7 +414,7 @@
                     <g>
                         <path id="line6" d="M 258 161 L 281.61 161" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
                         <path d="M 286.86 161 L 279.86 164.5 L 281.61 161 L 279.86 157.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
-                        <text id="txt6" x="258" y="161" fill="black" font-size="10px">........</text>
+                        <text id="txt6" x="258" y="161" fill="black" font-size="10px"></text>
                         <text id="line6pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Sign Ext component performs sign extension,
                             <set attributeName="visibility" from="hidden" to="visible" begin="txt6.mouseover" end="txt6.mouseout"/>
                         </text>
@@ -540,7 +422,7 @@
                     <g>
                         <path id="line7" d="M 208 131 L 281.63 131.02" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
                         <path d="M 286.88 131.02 L 279.88 134.52 L 281.63 131.02 L 279.88 127.52 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
-                        <text id="txt7" x="208" y="131" fill="black" font-size="10px">.........................</text>
+                        <text id="txt7" x="208" y="131" fill="black" font-size="10px"></text>
                         <text id="line7pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Sign Ext component performs sign extension,
                             <set attributeName="visibility" from="hidden" to="visible" begin="txt7.mouseover" end="txt7.mouseout"/>
                         </text>
