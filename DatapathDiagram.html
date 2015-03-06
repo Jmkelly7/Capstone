@@ -36,7 +36,7 @@
             padding: 2px;
             font: 12px sans-serif;
             background: lightsteelblue;
-            border: 0px;
+            border: 0;
             border-radius: 8px;
         }
     </style>
@@ -73,8 +73,7 @@
         <div id="left" style="color:rgb(79, 129, 189)" align="center">
             <h2> Instruction Legend </h2>
 
-            <svg width="300" height="600" ><!--style="background-color:rgb(79,
-                129,189)">-->
+            <svg width="300" height="600" >
                 <g>
                     <rect width="300" height="600" rx="20" ry="20" id="legend"
                           style="fill:beige; stroke:rgb(79,129,189); stroke-width:10"></rect>
@@ -94,7 +93,8 @@
 
             <div style="display:inline">
                 <form>
-                    <input type="text" id="numskip" value="Enter line number"></form>
+
+                    <input type="text" id="numskip" value="Enter line number"/>
                     <button id="numskipb"
                             onclick="skipTo()"
                             style="margin-top:15px" ><img
