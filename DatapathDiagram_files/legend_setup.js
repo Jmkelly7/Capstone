@@ -19,34 +19,44 @@ function setupReg(instArray) {
         console.log("value from array" + instArray[regCounter]);
         Inst1 = instArray[regCounter].split(" ");
         Inst1.shift();
-        console.log("REGISTER VALUE 1", Inst1[0]);
+        console.log("REGISTER VALUE 1", Inst1[0], "REGISTER VALUE 2", Inst1[1], "REGISTER VALUE 3", Inst1[2]);
         regCounter++;
         Inst2 = instArray[regCounter].split(" ");
         Inst2.shift();
-        console.log("REGISTER VALUE 1", Inst2);
+        console.log("REGISTER VALUE 1", Inst2[0], "REGISTER VALUE 2", Inst2[1], "REGISTER VALUE 3", Inst2[2]);
         regCounter++;
         Inst3 = instArray[regCounter].split(" ");
         Inst3.shift();
-        console.log("REGISTER VALUE 1", Inst3);
+        console.log("REGISTER VALUE 1", Inst3[0], "REGISTER VALUE 2", Inst3[1], "REGISTER VALUE 3", Inst3[2]);
         regCounter++;
         Inst4 = instArray[regCounter].split(" ");
         Inst4.shift();
-        console.log("REGISTER VALUE 1", Inst4);
+        console.log("REGISTER VALUE 1", Inst4[0], "REGISTER VALUE 2", Inst4[1], "REGISTER VALUE 3", Inst4[2]);
         regCounter++;
         Inst5 = instArray[regCounter].split(" ");
         Inst5.shift();
-        console.log("REGISTER VALUE 1", Inst5);
+        console.log("REGISTER VALUE 1", Inst5[0], "REGISTER VALUE 2", Inst5[1], "REGISTER VALUE 3", Inst5[2]);
         regCounter++;
-        console.log("INSTRUCTIONS" + Inst1[0]);
+        console.log("Iregcounter" + regCounter);
 
     } else {
 
         Inst1 = Inst2;
         Inst2 = Inst3;
+        Inst3 = Inst4;
         Inst4 = Inst5;
+        //instructionArray[regCounter].shift();
         Inst5 = instructionArray[regCounter].split(" ");
-        Inst5.splice(0, 1);
+        //Inst5.splice(1, 4);
+        Inst5.shift();
         regCounter++;
+
+        console.log("REGISTER VALUE 1", Inst1[0], "REGISTER VALUE 2", Inst1[1], "REGISTER VALUE 3", Inst1[2]);
+        console.log("REGISTER VALUE 1", Inst2[0], "REGISTER VALUE 2", Inst2[1], "REGISTER VALUE 3", Inst2[2]);
+        console.log("REGISTER VALUE 1", Inst3[0], "REGISTER VALUE 2", Inst3[1], "REGISTER VALUE 3", Inst3[2]);
+        console.log("REGISTER VALUE 1", Inst4[0], "REGISTER VALUE 2", Inst4[1], "REGISTER VALUE 3", Inst4[2]);
+        console.log("REGISTER VALUE 1", Inst5[0], "REGISTER VALUE 2", Inst5[1], "REGISTER VALUE 3", Inst5[2]);
+        console.log("Iregcounter" + regCounter);
 
     }
 }
@@ -140,7 +150,7 @@ function setupLegend() {
                 }
 
                 instructionCounter++;
-
+                setupReg(instructionArray);
             }
 
         }

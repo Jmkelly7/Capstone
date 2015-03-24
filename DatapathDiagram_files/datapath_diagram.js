@@ -156,7 +156,6 @@ function parseFile() {
             returnInstructions[i].substring(0, 6) != "syscall") {
 
             legendArray[parseCounter] = returnInstructions[i];
-            //console.log("Instruction list is " + legendArray[parseCounter]);
             parseCounter++;
 
         }
@@ -208,7 +207,6 @@ function runThrough() {
 
         } else {
 
-            //console.log("We are going back to 1 instructs");
             counter--;
             runThrough();
             setupLegend();
@@ -238,9 +236,7 @@ function runThrough() {
 
         } else {
 
-            //console.log("We are going back to 2 instructs");
             counter--;
-            //console.log("# OF COUNT   " + counter);
             runThrough();
             setupLegend();
 
@@ -274,10 +270,7 @@ function runThrough() {
 
         } else {
 
-            //console.log("We are going back to 3 instructs");
             counter--;
-            //console.log("# OF COUNT   " + counter);
-            //runThrough();
             setupLegend();
             runThrough();
 
@@ -285,14 +278,11 @@ function runThrough() {
 
     } else if (counter == 5) {
 
-            //if (!document.getElementById("slot5").textContent == " ") {
-
         INST_ONE_CNT++;
         INST_TWO_CNT++;
         INST_THREE_CNT++;
         INST_FOUR_CNT++;
         INST_FIVE_CNT++;
-            //if (INST_ONE_CNT == 5) {
 
         INST_ONE_CNT = INST_TWO_CNT;
         INST_TWO_CNT = INST_THREE_CNT;
@@ -313,7 +303,6 @@ function runThrough() {
             document.getElementById("slot3").setAttribute("fill", "white");
             document.getElementById("slot4").setAttribute("fill", "white");
             document.getElementById("slot5").setAttribute("fill", "white");
-            //console.log("CHANGING TO WHITE 1");
 
         }  else if (document.getElementById("slot3").textContent == " ") {
 
@@ -321,46 +310,23 @@ function runThrough() {
             document.getElementById("slot3").setAttribute("fill", "white");
             document.getElementById("slot4").setAttribute("fill", "white");
             document.getElementById("slot5").setAttribute("fill", "white");
-            //console.log("CHANGING TO WHITE 2");
 
         } else if (document.getElementById("slot4").textContent == " ") {
 
             document.getElementById("slot3").setAttribute("fill", "white");
             document.getElementById("slot4").setAttribute("fill", "white");
             document.getElementById("slot5").setAttribute("fill", "white");
-            //console.log("CHANGING TO WHITE 3");
 
         }  else if (document.getElementById("slot5").textContent == " ") {
 
             document.getElementById("slot4").setAttribute("fill", "white");
             document.getElementById("slot5").setAttribute("fill", "white");
-            //console.log("CHANGING TO WHITE 4");
 
         } else if (document.getElementById("slot6").textContent == " ") {
 
-            //console.log("CHANGING TO WHITE 5");
             document.getElementById("slot5").setAttribute("fill", "white");
 
         }
-
-        /*if (document.getElementById("slot6").textContent == " ") {
-            console.log("CHANGING TO WHITE");
-            document.getElementById("slot5").setAttribute("fill", "white");
-
-        } else if (document.getElementById("slot4").textContent == " ") {
-            document.getElementById("slot4").setAttribute("fill", "white");
-
-        } else if (document.getElementById("slot3").textContent == " ") {
-            document.getElementById("slot3").setAttribute("fill", "white");
-
-        } else if (document.getElementById("slot2").textContent == " ") {
-            document.getElementById("slot2").setAttribute("fill", "white");
-            document.getElementById("slot1").setAttribute("fill", "white");
-
-        } else if (document.getElementById("slot1").textContent == " ") {
-            document.getElementById("slot1").setAttribute("fill", "white");
-
-        }*/
 
         instType(document.getElementById("slot1").getAttribute("inst"),
             INST_ONE_CNT,
@@ -384,31 +350,6 @@ function runThrough() {
 
         isFirst = false;
 
-            /*if (document.getElementById("slot5").textContent == " ") {
-                console.log("CHANGING TO WHITE");
-                document.getElementById("slot5").setAttribute("fill", "white");
-
-            } else if (document.getElementById("slot4").textContent == " ") {
-                document.getElementById("slot4").setAttribute("fill", "white");
-
-            } else if (document.getElementById("slot3").textContent == " ") {
-                document.getElementById("slot3").setAttribute("fill", "white");
-
-            } else if (document.getElementById("slot2").textContent == " ") {
-                document.getElementById("slot2").setAttribute("fill", "white");
-
-            } else if (document.getElementById("slot1").textContent == " ") {
-                document.getElementById("slot1").setAttribute("fill", "white");
-            }*/
-        /*} else {
-            console.log("We are going back to 4 instructs");
-            console.log("inst ciount   " + INST_ONE_CNT);
-            counter--;
-            console.log("# OF COUNT   " + counter);
-            runThrough();
-            //setupLegend();
-        }*/
-
         if(document.getElementById("slot1").getAttribute("fill") == "white") {
 
             stepThroughRType(5,"White");
@@ -428,15 +369,6 @@ function runThrough() {
         }
 
     }
-
-    /*console.log("counter: " + counter);
-    console.log("instructionCounter: " + instructionCounter);
-    console.log("currentNumInstructions: " + currentNumInstruction);
-    console.log("INST_ONE_CNT: " + INST_ONE_CNT);
-    console.log("INST_TWO_CNT: " + INST_TWO_CNT);
-    console.log("INST_THREE_CNT: " + INST_THREE_CNT);
-    console.log("INST_FOUR_CNT: " + INST_FOUR_CNT);
-    console.log("INST_FIVE_CNT: " + INST_FIVE_CNT);*/
 
 }
 
