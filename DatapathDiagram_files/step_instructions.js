@@ -22,7 +22,6 @@ function stepThroughRType(stage, color) {
         colorAndRefreshDiagramObjects("poly1", color);
         colorAndRefreshDiagramObjects("rect3", color);
         colorAndRefreshDiagramObjects("rect4", color);
-        document.getElementById("txt22").textContent = Inst1[0];
         colorLines("line22", color);
         colorLines("line3", color);
         colorLines("line4", color);
@@ -35,18 +34,13 @@ function stepThroughRType(stage, color) {
     } else if (stage == 1) {
 
         clearStageOne();
-        document.getElementById("txt22").textContent = "";
         colorAndRefreshDiagramObjects("rect5", color);
         colorAndRefreshDiagramObjects("rect7", color);
         colorAndRefreshDiagramObjects("rect8", color);
         colorLines("line23", color);
-        document.getElementById("txt24").textContent = Inst1[1];
         colorLines("line24", color);
-        document.getElementById("txt25").textContent = Inst1[0];
         colorLines("line25", color);
-        document.getElementById("txt31").textContent = Inst1[1];
         colorLines("line31", color);
-        document.getElementById("txt32").textContent = Inst1[0];
         colorLines("line32", color);
         colorLines("line49", color);
         colorLines("line50", color);
@@ -54,39 +48,23 @@ function stepThroughRType(stage, color) {
     } else if (stage == 2) {
 
         clearStageTwo();
-        document.getElementById("txt24").textContent = "";
-        document.getElementById("txt25").textContent = "";
-        document.getElementById("txt31").textContent = "";
-        document.getElementById("txt32").textContent = "";
         colorAndRefreshDiagramObjects("rect9", color);
         colorAndRefreshDiagramObjects("rect10", color);
         colorAndRefreshDiagramObjects("ellipse4", color);
         colorAndRefreshDiagramObjects("poly3", color);
-        document.getElementById("txt33").textContent = Inst1[0];
         colorLines("line33", color);
-        document.getElementById("txt34").textContent = Inst1[1];
         colorLines("line34", color);
-        document.getElementById("txt35").textContent = Inst1[1];
         colorLines("line35", color);
-        document.getElementById("txt37").textContent = Inst1[1];
         colorLines("line37", color);
-        document.getElementById("txt39").textContent = Inst1[0];
         colorLines("line39", color);
 
     } else if (stage == 3) {
 
         clearStageThree();
-        document.getElementById("txt33").textContent = "";
-        document.getElementById("txt34").textContent = "";
-        document.getElementById("txt35").textContent = "";
-        document.getElementById("txt37").textContent = "";
-        document.getElementById("txt39").textContent = "";
         colorAndRefreshDiagramObjects("rect11", color);
         colorAndRefreshDiagramObjects("rect13", color);
         colorAndRefreshDiagramObjects("rect14", color);
-        document.getElementById("txt41").textContent = Inst1[0];
         colorLines("line41", color);
-        document.getElementById("txt43").textContent = Inst1[0];
         colorLines("line43", color);
         colorLines("line57", color);
 
@@ -94,21 +72,14 @@ function stepThroughRType(stage, color) {
 
         console.log("4 instructions");
         clearStageFour();
-        document.getElementById("txt41").textContent = "";
-        document.getElementById("txt43").textContent = "";
         colorAndRefreshDiagramObjects("rect15", color);
         colorAndRefreshDiagramObjects("ellipse5", color);
         colorAndRefreshDiagramObjects("rect6", color);
         colorLines("line58", color);
-        document.getElementById("txt48").textContent = Inst1[0];
         colorLines("line48", color);
-        document.getElementById("txt47").textContent = Inst1[0];
         colorLines("line47", color);
-        document.getElementById("txt46").textContent = Inst1[0];
         colorLines("line46", color);
-        document.getElementById("txt26").textContent = Inst1[1];
         colorLines("line26", color);
-        document.getElementById("txt27").textContent = Inst1[0];
         colorLines("line27", color);
         colorLines("line53", color);
         colorLines("line59", color);
@@ -117,12 +88,6 @@ function stepThroughRType(stage, color) {
 
         console.log("CLEARING ALL OF THE OBJECTS WITH 5 INSTRUCTIONS");
         clearStageFive();
-        document.getElementById("txt46").textContent = "";
-        document.getElementById("txt48").textContent = "";
-        document.getElementById("txt27").textContent = "";
-        document.getElementById("txt47").textContent = "";
-        document.getElementById("txt26").textContent = "";
-
     }
 
 }

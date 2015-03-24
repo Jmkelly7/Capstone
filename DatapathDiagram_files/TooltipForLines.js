@@ -224,7 +224,7 @@ function dataToolTipsMouseOver() {
 
     document.getElementById('rect12pop1').style.visibility = "visible";
     document.getElementById('rect12pop2').style.visibility = "visible";
-    document.getElementById('rect12op3').style.visibility = "visible";
+    document.getElementById('rect12pop3').style.visibility = "visible";
     document.getElementById('rect12pop4').style.visibility = "visible";
     document.getElementById('rect12pop5').style.visibility = "visible";
     document.getElementById('rect12pop6').style.visibility = "visible";
@@ -244,7 +244,7 @@ function sgexToolTipsMouseOver() {
 
     document.getElementById('ell2pop1').style.visibility = "visible";
     document.getElementById('ell2pop2').style.visibility = "visible";
-    document.getElementById('ell2op3').style.visibility = "visible";
+    document.getElementById('ell2pop3').style.visibility = "visible";
     document.getElementById('ell2pop4').style.visibility = "visible";
     document.getElementById('ell2pop5').style.visibility = "visible";
     document.getElementById('ell2pop6').style.visibility = "visible";
@@ -264,7 +264,7 @@ function shiftToolTipsMouseOver() {
 
     document.getElementById('ell3pop1').style.visibility = "visible";
     document.getElementById('ell3pop2').style.visibility = "visible";
-    document.getElementById('ell3op3').style.visibility = "visible";
+    document.getElementById('ell3pop3').style.visibility = "visible";
 }
 
 function shiftToolTipsMouseOut() {
