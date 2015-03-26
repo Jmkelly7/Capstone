@@ -37,7 +37,6 @@ function setupReg(instArray) {
         Inst5.shift();
         console.log("REGISTER VALUE 1", Inst5[0], "REGISTER VALUE 2", Inst5[1], "REGISTER VALUE 3", Inst5[2]);
         regCounter++;
-        console.log("Iregcounter" + regCounter);
 
     } else {
 

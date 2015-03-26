@@ -209,7 +209,7 @@ function runThrough() {
                     counter++;
                // } else {
               //      console.log("WHERE I SHOULD BE");
-             ///   }
+            ///   }
           //  } else {
            //     if (Inst1[0] != Inst2[0] && Inst1[1] != Inst2[1] && Inst1[2] != Inst2[2]) {
              //       instType(document.getElementById("slot1").getAttribute("inst"),
