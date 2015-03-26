@@ -4,47 +4,138 @@
 
 function line1ToolTipsMouseOver() {
 
-    //var temp = document.getElementById('line1').getAttribute("stroke");
-    //if(temp != "black") {
+    //This is for lines 1, 17, 16, 21, 14, 13
+    var temp = document.getElementById('line1').getAttribute("stroke");
+    if(temp != "#000000") {
         document.getElementById('line1pop1').style.visibility = "visible";
         document.getElementById('line1pop2').style.visibility = "visible";
-    //}
+    }
 }
 
 function line1ToolTipsMouseOut() {
 
+    //This is for lines 1, 17, 16, 21, 14, 13
     document.getElementById('line1pop1').style.visibility= "hidden";
     document.getElementById('line1pop2').style.visibility= "hidden";
 }
 
 function line2ToolTipsMouseOver() {
 
-    var temp = document.getElementById('line2').getAttribute("stroke");
-    if(temp != "black") {
+    //This is for lines 2, 18, 15, 20, 8
+   // var temp = document.getElementById('line2').getAttribute("stroke");
+    //if(temp != "black") {
         document.getElementById('line2pop1').style.visibility = "visible";
         document.getElementById('line2pop2').style.visibility = "visible";
-    }
+   // }
 }
 
 function line2ToolTipsMouseOut() {
 
+    //This is for lines 2, 18, 15, 20, 8
     document.getElementById('line2pop1').style.visibility= "hidden";
     document.getElementById('line2pop2').style.visibility= "hidden";
 }
 
 function line3ToolTipsMouseOver() {
 
-    var temp = document.getElementById('line3').getAttribute("stroke");
-    if(temp != "black") {
+    //For line 3
+    //var temp = document.getElementById('line3').getAttribute("stroke");
+   // if(temp != "black") {
         document.getElementById('line3pop1').style.visibility = "visible";
         document.getElementById('line3pop2').style.visibility = "visible";
-    }
+   // }
 }
 
 function line3ToolTipsMouseOut() {
 
+    //For line 3
     document.getElementById('line3pop1').style.visibility= "hidden";
     document.getElementById('line3pop2').style.visibility= "hidden";
+}
+
+function line4ToolTipsMouseOver() {
+
+    //For lines 4, 19, 7
+   // var temp = document.getElementById('line3').getAttribute("stroke");
+   // if(temp != "black") {
+        document.getElementById('line4pop1').style.visibility = "visible";
+        document.getElementById('line4pop2').style.visibility = "visible";
+   // }
+}
+
+function line4ToolTipsMouseOut() {
+
+    //For lines 4, 19, 7
+    document.getElementById('line4pop1').style.visibility= "hidden";
+    document.getElementById('line4pop2').style.visibility= "hidden";
+}
+
+function line5ToolTipsMouseOver() {
+
+    //For line 5
+   // var temp = document.getElementById('line3').getAttribute("stroke");
+   // if(temp != "black") {
+        document.getElementById('line5pop1').style.visibility = "visible";
+        document.getElementById('line5pop2').style.visibility = "visible";
+   // }
+}
+
+function line5ToolTipsMouseOut() {
+
+    //For line 5
+    document.getElementById('line5pop1').style.visibility= "hidden";
+    document.getElementById('line5pop2').style.visibility= "hidden";
+}
+
+function line6ToolTipsMouseOver() {
+
+    //For line 6
+   // var temp = document.getElementById('line3').getAttribute("stroke");
+   // if(temp != "black") {
+        document.getElementById('line6pop1').style.visibility = "visible";
+        document.getElementById('line6pop2').style.visibility = "visible";
+   // }
+}
+
+function line6ToolTipsMouseOut() {
+
+    //For line 6
+    document.getElementById('line6pop1').style.visibility= "hidden";
+    document.getElementById('line6pop2').style.visibility= "hidden";
+}
+
+function line8ToolTipsMouseOver() {
+
+    //For lines 8, 9, 10, 11
+   // var temp = document.getElementById('line3').getAttribute("stroke");
+   // if(temp != "black") {
+        document.getElementById('line8pop1').style.visibility = "visible";
+        document.getElementById('line8pop2').style.visibility = "visible";
+   //}
+}
+
+function line8ToolTipsMouseOut() {
+
+    //For lines 8, 9, ,10, 11
+    document.getElementById('line8pop1').style.visibility= "hidden";
+    document.getElementById('line8pop2').style.visibility= "hidden";
+}
+
+function line22ToolTipsMouseOver() {
+
+    //For line 22
+   // var temp = document.getElementById('line3').getAttribute("stroke");
+   // if(temp != "black") {
+        document.getElementById('line22pop1').style.visibility = "visible";
+        document.getElementById('line22pop2').style.visibility = "visible";
+   // }
+}
+
+function line22ToolTipsMouseOut() {
+
+    //For line 22
+    document.getElementById('line22pop1').style.visibility= "hidden";
+    document.getElementById('line22pop2').style.visibility= "hidden";
 }
 
 //###############################################SECTION FOR DIAGRAM PARTS WHICH DOES NOT INCLUDE LINES#####################################################################
