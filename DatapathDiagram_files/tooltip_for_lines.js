@@ -6,6 +6,8 @@ function line1ToolTipsMouseOver() {
 
     //This is for lines 1, 17, 16, 21, 14, 13
     if(document.getElementById('line1').getAttribute("stroke") != "#000000") {
+
+
         document.getElementById('line1pop1').style.visibility = "visible";
         document.getElementById('line1pop2').style.visibility = "visible";
     } else {
@@ -24,6 +26,22 @@ function line2ToolTipsMouseOver() {
 
     //This is for lines 2, 18, 15, 20, 8
     if(document.getElementById('line2').getAttribute("stroke") != "#000000") {
+        if(document.getElementById('line2').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
+            document.getElementById('line2pop1').textContent = "Adds four to the program counter total in order";
+            document.getElementById('line2pop2').textContent = "to set the count for the next instruction.";
+        } else if(document.getElementById('line2').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
+            document.getElementById('line2pop1').textContent = "Adds four to the program counter total in order";
+            document.getElementById('line2pop2').textContent = "to set the count for the next instruction.";
+        } else if(document.getElementById('line2').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
+            document.getElementById('line2pop1').textContent = "Adds four to the program counter total in order";
+            document.getElementById('line2pop2').textContent = "to set the count for the next instruction.";
+        } else if(document.getElementById('line2').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
+            document.getElementById('line2pop1').textContent = "Adds four to the program counter total in order";
+            document.getElementById('line2pop2').textContent = "to set the count for the next instruction.";
+        } else if(document.getElementById('line2').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
+            document.getElementById('line2pop1').textContent = "Adds four to the program counter total in order";
+            document.getElementById('line2pop2').textContent = "to set the count for the next instruction.";
+        }
         document.getElementById('line2pop1').style.visibility = "visible";
         document.getElementById('line2pop2').style.visibility = "visible";
     } else {
@@ -42,8 +60,10 @@ function line3ToolTipsMouseOver() {
 
     //For line 3
     if(document.getElementById('line3').getAttribute("stroke") != "#000000") {
+        document.getElementById('line3pop1').textContent = "Sends the new program counter value back to the ";
+        document.getElementById('line3pop2').textContent = "program counter and sets the new value.";
         document.getElementById('line3pop1').style.visibility = "visible";
-        document.getElementById('line3pop2').style.visibility = "visible";
+        document.getElementById('line3pop2').style.visibility = "visible"
     } else {
         line3ToolTipsMouseOut();
     }
@@ -60,6 +80,22 @@ function line4ToolTipsMouseOver() {
 
     //For lines 4, 19, 7
     if(document.getElementById('line4').getAttribute("stroke") != "#000000") {
+        if(document.getElementById('line2').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
+            document.getElementById('line2pop1').textContent = "Adds four to the program counter total in order to";
+            document.getElementById('line2pop2').textContent = "to set the count for the next instruction.";
+        } else if(document.getElementById('line2').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
+            document.getElementById('line2pop1').textContent = "Adds four to the program counter total in order to";
+            document.getElementById('line2pop2').textContent = "to set the count for the next instruction.";
+        } else if(document.getElementById('line2').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
+            document.getElementById('line2pop1').textContent = "Adds four to the program counter total in order to";
+            document.getElementById('line2pop2').textContent = "to set the count for the next instruction.";
+        } else if(document.getElementById('line2').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
+            document.getElementById('line2pop1').textContent = "Adds four to the program counter total in order to";
+            document.getElementById('line2pop2').textContent = "to set the count for the next instruction.";
+        } else if(document.getElementById('line2').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
+            document.getElementById('line2pop1').textContent = "Adds four to the program counter total in order to";
+            document.getElementById('line2pop2').textContent = "to set the count for the next instruction.";
+        }
         document.getElementById('line4pop1').style.visibility = "visible";
         document.getElementById('line4pop2').style.visibility = "visible";
     } else {

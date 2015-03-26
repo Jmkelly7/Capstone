@@ -216,5 +216,6 @@ function clearStageOne() {
     clearGivenLine("line18");
     clearGivenLine("line15");
     clearGivenLine("line2");
+    clearGivenLine("line5");
 
 }

@@ -33,6 +33,7 @@ function stepThroughRType(stage, color) {
         colorLines("line15", color);
         colorLines("line18", color);
         colorLines("line2", color);
+        colorLines("line5", color);
 
 
     } else if (stage == 1) {
@@ -122,6 +123,7 @@ function stepThroughIType(stage, color) {
         colorLines("line15", color);
         colorLines("line18", color);
         colorLines("line2", color);
+        colorLines("line5", color);
 
     } else if (stage == 1) {
 
