@@ -193,18 +193,40 @@ function runThrough() {
 
         if (!document.getElementById("slot2").textContent == "") {
 
-            instType(document.getElementById("slot1").getAttribute("inst"),
-                INST_ONE_CNT,
-                document.getElementById("slot1").getAttribute("fill"));
+           // if(Inst1[2] == undefined) {
+                console.log("first test");
+             //   if (Inst1[0] != Inst2[0] && Inst1[1] != Inst2[1]) {
+                    instType(document.getElementById("slot1").getAttribute("inst"),
+                        INST_ONE_CNT,
+                        document.getElementById("slot1").getAttribute("fill"));
 
-            instType(document.getElementById("slot2").getAttribute("inst"),
-                INST_TWO_CNT,
-                document.getElementById("slot2").getAttribute("fill"));
+                    instType(document.getElementById("slot2").getAttribute("inst"),
+                        INST_TWO_CNT,
+                        document.getElementById("slot2").getAttribute("fill"));
 
-            INST_ONE_CNT++;
-            INST_TWO_CNT++;
-            counter++;
+                    INST_ONE_CNT++;
+                    INST_TWO_CNT++;
+                    counter++;
+               // } else {
+              //      console.log("WHERE I SHOULD BE");
+             ///   }
+          //  } else {
+           //     if (Inst1[0] != Inst2[0] && Inst1[1] != Inst2[1] && Inst1[2] != Inst2[2]) {
+             //       instType(document.getElementById("slot1").getAttribute("inst"),
+               //         INST_ONE_CNT,
+                 //       document.getElementById("slot1").getAttribute("fill"));
 
+                   // instType(document.getElementById("slot2").getAttribute("inst"),
+                     //   INST_TWO_CNT,
+                       // document.getElementById("slot2").getAttribute("fill"));
+
+           //         INST_ONE_CNT++;
+             //       INST_TWO_CNT++;
+               //     counter++;
+            //    } else {
+
+            //    }
+          //  }
         } else {
 
             counter--;
@@ -325,7 +347,7 @@ function runThrough() {
         } else if (document.getElementById("slot6").textContent == " ") {
 
             document.getElementById("slot5").setAttribute("fill", "white");
-
+            console.log("TURING SHIZ WHITE I GUESS");
         }
 
         instType(document.getElementById("slot1").getAttribute("inst"),
@@ -372,6 +394,181 @@ function runThrough() {
 
 }
 
+function stallRunThrough(tempCounter) {
+
+
+    if (tempCounter == 1) {
+
+        instType(document.getElementById("slot1").getAttribute("inst"),
+            INST_ONE_CNT,
+            document.getElementById("slot1").getAttribute("fill"));
+
+        INST_ONE_CNT++;
+        tempCounter++;
+
+    } else if (tempCounter == 2) {
+
+        if (!document.getElementById("slot2").textContent == "") {
+
+            instType(document.getElementById("slot1").getAttribute("inst"),
+                INST_ONE_CNT,
+                document.getElementById("slot1").getAttribute("fill"));
+
+            instType(document.getElementById("slot1").getAttribute("inst"),
+                INST_TWO_CNT,
+                "white");
+
+            INST_ONE_CNT++;
+            INST_TWO_CNT++;
+            tempCounter++;
+
+        } else {
+
+            tempCounter--;
+            runThrough();
+            setupLegend();
+
+        }
+
+    } else if (tempCounter == 3) {
+
+        if (!document.getElementById("slot3").textContent == "") {
+
+            instType(document.getElementById("slot1").getAttribute("inst"),
+                INST_ONE_CNT,
+                document.getElementById("slot1").getAttribute("fill"));
+
+            instType(document.getElementById("slot1").getAttribute("inst"),
+                INST_TWO_CNT,
+                "white");
+
+            instType(document.getElementById("slot1").getAttribute("inst"),
+                INST_THREE_CNT,
+                "white");
+
+            INST_ONE_CNT++;
+            INST_TWO_CNT++;
+            INST_THREE_CNT++;
+            tempCounter++;
+
+        } else {
+
+            tempCounter--;
+            runThrough();
+            setupLegend();
+
+        }
+
+    } else if (tempCounter == 4) {
+
+        if (!document.getElementById("slot5").textContent == " ") {
+
+            instType(document.getElementById("slot1").getAttribute("inst"),
+                INST_ONE_CNT,
+                document.getElementById("slot1").getAttribute("fill"));
+
+            instType(document.getElementById("slot1").getAttribute("inst"),
+                INST_TWO_CNT,
+                "white");
+
+            instType(document.getElementById("slot1").getAttribute("inst"),
+                INST_THREE_CNT,
+                "white");
+
+            instType(document.getElementById("slot1").getAttribute("inst"),
+                INST_FOUR_CNT,
+                "white");
+
+            INST_ONE_CNT++;
+            INST_TWO_CNT++;
+            INST_THREE_CNT++;
+            INST_FOUR_CNT++;
+            tempCounter++;
+
+        } else {
+
+            tempCounter--;
+            setupLegend();
+            runThrough();
+
+        }
+
+    } else if (tempCounter == 5) {
+
+        INST_ONE_CNT++;
+        INST_TWO_CNT++;
+        INST_THREE_CNT++;
+        INST_FOUR_CNT++;
+        INST_FIVE_CNT++;
+
+        INST_ONE_CNT = INST_TWO_CNT;
+        INST_TWO_CNT = INST_THREE_CNT;
+        INST_THREE_CNT = INST_FOUR_CNT;
+        INST_FOUR_CNT = INST_FIVE_CNT;
+        INST_FIVE_CNT = 0;
+
+        if (!isFirst) {
+
+            setupLegend();
+
+        }
+
+        if (document.getElementById("slot2").textContent == " ") {
+
+            document.getElementById("slot1").setAttribute("fill", "white");
+            document.getElementById("slot2").setAttribute("fill", "white");
+            document.getElementById("slot3").setAttribute("fill", "white");
+            document.getElementById("slot4").setAttribute("fill", "white");
+            document.getElementById("slot5").setAttribute("fill", "white");
+
+        } else if (document.getElementById("slot3").textContent == " ") {
+
+            document.getElementById("slot2").setAttribute("fill", "white");
+            document.getElementById("slot3").setAttribute("fill", "white");
+            document.getElementById("slot4").setAttribute("fill", "white");
+            document.getElementById("slot5").setAttribute("fill", "white");
+
+        } else if (document.getElementById("slot4").textContent == " ") {
+
+            document.getElementById("slot3").setAttribute("fill", "white");
+            document.getElementById("slot4").setAttribute("fill", "white");
+            document.getElementById("slot5").setAttribute("fill", "white");
+
+        } else if (document.getElementById("slot5").textContent == " ") {
+
+            document.getElementById("slot4").setAttribute("fill", "white");
+            document.getElementById("slot5").setAttribute("fill", "white");
+
+        } else if (document.getElementById("slot6").textContent == " ") {
+
+            document.getElementById("slot5").setAttribute("fill", "white");
+
+        }
+
+        instType(document.getElementById("slot1").getAttribute("inst"),
+            INST_ONE_CNT,
+            document.getElementById("slot1").getAttribute("fill"));
+
+        instType(document.getElementById("slot2").getAttribute("inst"),
+            INST_TWO_CNT,
+            document.getElementById("slot2").getAttribute("fill"));
+
+        instType(document.getElementById("slot3").getAttribute("inst"),
+            INST_THREE_CNT,
+            document.getElementById("slot3").getAttribute("fill"));
+
+        instType(document.getElementById("slot4").getAttribute("inst"),
+            INST_FOUR_CNT,
+            document.getElementById("slot4").getAttribute("fill"));
+
+        instType(document.getElementById("slot5").getAttribute("inst"),
+            INST_FIVE_CNT,
+            document.getElementById("slot5").getAttribute("fill"));
+
+        isFirst = false;
+
+    }
+}
 /**
  * This function checks what type the instruction is and calls the correct path
  *  for that instruction.
@@ -678,11 +875,11 @@ function uploadNew() {
         // brings up the upload file prompt
         var upload = window.open('./Upload.html', 'Upload File',
                              'height=300,width=400,left=450,top=200');
-		
+
 		// ***NOT FINISHED***
 		// clear the diagram colors and data
 		//upload.onunload = clearDiagram();
-		
+
     }
 
 }

@@ -41,15 +41,15 @@ function setupReg(instArray) {
 
     } else {
 
-        Inst1 = Inst2;
-        Inst2 = Inst3;
-        Inst3 = Inst4;
-        Inst4 = Inst5;
-        //instructionArray[regCounter].shift();
-        Inst5 = instructionArray[regCounter].split(" ");
-        //Inst5.splice(1, 4);
-        Inst5.shift();
-        regCounter++;
+        if(document.getElementById("slot6").textContent != " ") {
+            Inst1 = Inst2;
+            Inst2 = Inst3;
+            Inst3 = Inst4;
+            Inst4 = Inst5;
+            Inst5 = instructionArray[regCounter].split(" ");
+            Inst5.shift();
+            regCounter++;
+        }
 
         console.log("REGISTER VALUE 1", Inst1[0], "REGISTER VALUE 2", Inst1[1], "REGISTER VALUE 3", Inst1[2]);
         console.log("REGISTER VALUE 1", Inst2[0], "REGISTER VALUE 2", Inst2[1], "REGISTER VALUE 3", Inst2[2]);
