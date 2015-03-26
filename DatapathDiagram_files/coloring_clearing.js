@@ -59,31 +59,38 @@ function colorLines(objectName, colorChoice) {
 
     if (colorChoice == "firebrick") {
 
-        document.getElementById(objectName).setAttribute("style", "fill:firebrick;stroke-width:3;stroke:firebrick");
+        document.getElementById(objectName).setAttribute("stroke", "firebrick");
+        document.getElementById(objectName).setAttribute("stroke-width", "3");
 
     } else if (colorChoice == "peru") {
 
-        document.getElementById(objectName).setAttribute("style", "fill:peru;stroke-width:3;stroke:peru");
+        document.getElementById(objectName).setAttribute("stroke",  "peru");
+        document.getElementById(objectName).setAttribute("stroke-width", "3");
 
     } else if (colorChoice == "darkgoldenrod") {
 
-        document.getElementById(objectName).setAttribute("style", "fill:darkgoldenrod;stroke-width:3;stroke:darkgoldenrod");
+        document.getElementById(objectName).setAttribute("stroke",  "darkgoldenrod");
+        document.getElementById(objectName).setAttribute("stroke-width", "3");
 
     } else if (colorChoice == "mediumseagreen") {
 
-        document.getElementById(objectName).setAttribute("style", "fill:mediumseagreen;stroke-width:3;stroke:mediumseagreen");
+        document.getElementById(objectName).setAttribute("stroke",  "mediumseagreen");
+        document.getElementById(objectName).setAttribute("stroke-width", "3");
 
     } else if (colorChoice == "darkcyan") {
 
-        document.getElementById(objectName).setAttribute("style", "fill:darkcyan;stroke-width:3;stroke:darkcyan");
+        document.getElementById(objectName).setAttribute("stroke", "darkcyan");
+        document.getElementById(objectName).setAttribute("stroke-width", "3");
 
     } else if (colorChoice == "darkorchid") {
 
-        document.getElementById(objectName).setAttribute("style", "fill:darkorchid;stroke-width:3;stroke:darkorchid");
+        document.getElementById(objectName).setAttribute("stroke",  "darkorchid");
+        document.getElementById(objectName).setAttribute("stroke-width", "3");
 
     } else if (colorChoice == "dimgray") {
 
-        document.getElementById(objectName).setAttribute("style", "fill:dimgray;stroke-width:3;stroke:dimgray");
+        document.getElementById(objectName).setAttribute("stroke",  "dimgray");
+        document.getElementById(objectName).setAttribute("stroke-width", "3");
 
     }
 
@@ -101,6 +108,13 @@ function clearGivenObject(objectName) {
 
 }
 
+function clearGivenLine(objectName) {
+
+    document.getElementById(objectName).setAttribute("stroke", "#000000");
+    document.getElementById(objectName).setAttribute("stroke-width", "1");
+
+}
+
 /**
  * This function sets the attributes of the objects in Stage 5 of the diagram
  *  back to the default.
@@ -110,14 +124,14 @@ function clearStageFive() {
     clearGivenObject("rect15");
     clearGivenObject("ellipse5");
     clearGivenObject("rect6");
-    clearGivenObject("line48");
-    clearGivenObject("line47");
-    clearGivenObject("line46");
-    clearGivenObject("line26");
-    clearGivenObject("line27");
-    clearGivenObject("line53");
-    clearGivenObject("line59");
-    clearGivenObject("line58");
+    clearGivenLine("line48");
+    clearGivenLine("line47");
+    clearGivenLine("line46");
+    clearGivenLine("line26");
+    clearGivenLine("line27");
+    clearGivenLine("line53");
+    clearGivenLine("line59");
+    clearGivenLine("line58");
 
 }
 
@@ -130,10 +144,10 @@ function clearStageFour() {
     clearGivenObject("rect11");
     clearGivenObject("rect13");
     clearGivenObject("rect14");
-    clearGivenObject("line41");
-    clearGivenObject("line43");
-    clearGivenObject("line57");
-    clearGivenObject("line58");
+    clearGivenLine("line41");
+    clearGivenLine("line43");
+    clearGivenLine("line57");
+    clearGivenLine("line58");
 
 }
 
@@ -147,14 +161,14 @@ function clearStageThree() {
     clearGivenObject("rect10");
     clearGivenObject("ellipse4");
     clearGivenObject("poly3");
-    clearGivenObject("line33");
-    clearGivenObject("line34");
-    clearGivenObject("line35");
-    clearGivenObject("line37");
-    clearGivenObject("line39");
-    clearGivenObject("line30");
-    clearGivenObject("line61");
-    clearGivenObject("line56");
+    clearGivenLine("line33");
+    clearGivenLine("line34");
+    clearGivenLine("line35");
+    clearGivenLine("line37");
+    clearGivenLine("line39");
+    clearGivenLine("line30");
+    clearGivenLine("line61");
+    clearGivenLine("line56");
 
 }
 
@@ -168,17 +182,17 @@ function clearStageTwo() {
     clearGivenObject("rect7");
     clearGivenObject("rect8");
     clearGivenObject("ellipse2");
-    clearGivenObject("line23");
-    clearGivenObject("line24");
-    clearGivenObject("line25");
-    clearGivenObject("line31");
-    clearGivenObject("line32");
-    clearGivenObject("line49");
-    clearGivenObject("line50");
-    clearGivenObject("line51");
-    clearGivenObject("line52");
-    clearGivenObject("line28");
-    clearGivenObject("line29");
+    clearGivenLine("line23");
+    clearGivenLine("line24");
+    clearGivenLine("line25");
+    clearGivenLine("line31");
+    clearGivenLine("line32");
+    clearGivenLine("line49");
+    clearGivenLine("line50");
+    clearGivenLine("line51");
+    clearGivenLine("line52");
+    clearGivenLine("line28");
+    clearGivenLine("line29");
 }
 
 /**
@@ -191,13 +205,16 @@ function clearStageOne() {
     clearGivenObject("rect4");
     clearGivenObject("ellipse1");
     clearGivenObject("poly1");
-    clearGivenObject("line3");
-    clearGivenObject("line4");
-    clearGivenObject("line22");
-    clearGivenObject("line6");
-    clearGivenObject("line19");
-    clearGivenObject("line7");
-    clearGivenObject("line8");
-    clearGivenObject("line9");
+    clearGivenLine("line3");
+    clearGivenLine("line4");
+    clearGivenLine("line22");
+    clearGivenLine("line6");
+    clearGivenLine("line19");
+    clearGivenLine("line7");
+    clearGivenLine("line8");
+    clearGivenLine("line20");
+    clearGivenLine("line18");
+    clearGivenLine("line15");
+    clearGivenLine("line2");
 
 }

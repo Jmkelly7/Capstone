@@ -5,10 +5,11 @@
 function line1ToolTipsMouseOver() {
 
     //This is for lines 1, 17, 16, 21, 14, 13
-    var temp = document.getElementById('line1').getAttribute("stroke");
-    if(temp != "#000000") {
+    if(document.getElementById('line1').getAttribute("stroke") != "#000000") {
         document.getElementById('line1pop1').style.visibility = "visible";
         document.getElementById('line1pop2').style.visibility = "visible";
+    } else {
+        line1ToolTipsMouseOut();
     }
 }
 
@@ -22,11 +23,12 @@ function line1ToolTipsMouseOut() {
 function line2ToolTipsMouseOver() {
 
     //This is for lines 2, 18, 15, 20, 8
-   // var temp = document.getElementById('line2').getAttribute("stroke");
-    //if(temp != "black") {
+    if(document.getElementById('line2').getAttribute("stroke") != "#000000") {
         document.getElementById('line2pop1').style.visibility = "visible";
         document.getElementById('line2pop2').style.visibility = "visible";
-   // }
+    } else {
+        line2ToolTipsMouseOut();
+    }
 }
 
 function line2ToolTipsMouseOut() {
@@ -39,11 +41,12 @@ function line2ToolTipsMouseOut() {
 function line3ToolTipsMouseOver() {
 
     //For line 3
-    //var temp = document.getElementById('line3').getAttribute("stroke");
-   // if(temp != "black") {
+    if(document.getElementById('line3').getAttribute("stroke") != "#000000") {
         document.getElementById('line3pop1').style.visibility = "visible";
         document.getElementById('line3pop2').style.visibility = "visible";
-   // }
+    } else {
+        line3ToolTipsMouseOut();
+    }
 }
 
 function line3ToolTipsMouseOut() {
@@ -56,11 +59,12 @@ function line3ToolTipsMouseOut() {
 function line4ToolTipsMouseOver() {
 
     //For lines 4, 19, 7
-   // var temp = document.getElementById('line3').getAttribute("stroke");
-   // if(temp != "black") {
+    if(document.getElementById('line4').getAttribute("stroke") != "#000000") {
         document.getElementById('line4pop1').style.visibility = "visible";
         document.getElementById('line4pop2').style.visibility = "visible";
-   // }
+    } else {
+        line4ToolTipsMouseOut();
+    }
 }
 
 function line4ToolTipsMouseOut() {
@@ -73,11 +77,12 @@ function line4ToolTipsMouseOut() {
 function line5ToolTipsMouseOver() {
 
     //For line 5
-   // var temp = document.getElementById('line3').getAttribute("stroke");
-   // if(temp != "black") {
+    if(document.getElementById('line5').getAttribute("stroke") != "#000000") {
         document.getElementById('line5pop1').style.visibility = "visible";
         document.getElementById('line5pop2').style.visibility = "visible";
-   // }
+    } else {
+        line5ToolTipsMouseOut();
+    }
 }
 
 function line5ToolTipsMouseOut() {
@@ -90,11 +95,12 @@ function line5ToolTipsMouseOut() {
 function line6ToolTipsMouseOver() {
 
     //For line 6
-   // var temp = document.getElementById('line3').getAttribute("stroke");
-   // if(temp != "black") {
+    if(document.getElementById('line6').getAttribute("stroke") != "#000000") {
         document.getElementById('line6pop1').style.visibility = "visible";
         document.getElementById('line6pop2').style.visibility = "visible";
-   // }
+    } else {
+        line6ToolTipsMouseOut();
+    }
 }
 
 function line6ToolTipsMouseOut() {
@@ -104,31 +110,15 @@ function line6ToolTipsMouseOut() {
     document.getElementById('line6pop2').style.visibility= "hidden";
 }
 
-function line8ToolTipsMouseOver() {
-
-    //For lines 8, 9, 10, 11
-   // var temp = document.getElementById('line3').getAttribute("stroke");
-   // if(temp != "black") {
-        document.getElementById('line8pop1').style.visibility = "visible";
-        document.getElementById('line8pop2').style.visibility = "visible";
-   //}
-}
-
-function line8ToolTipsMouseOut() {
-
-    //For lines 8, 9, ,10, 11
-    document.getElementById('line8pop1').style.visibility= "hidden";
-    document.getElementById('line8pop2').style.visibility= "hidden";
-}
-
 function line22ToolTipsMouseOver() {
 
     //For line 22
-   // var temp = document.getElementById('line3').getAttribute("stroke");
-   // if(temp != "black") {
+    if(document.getElementById('line22').getAttribute("stroke") != "#000000") {
         document.getElementById('line22pop1').style.visibility = "visible";
         document.getElementById('line22pop2').style.visibility = "visible";
-   // }
+    } else {
+        line22ToolTipsMouseOut();
+    }
 }
 
 function line22ToolTipsMouseOut() {

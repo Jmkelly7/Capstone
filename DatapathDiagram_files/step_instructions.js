@@ -29,7 +29,11 @@ function stepThroughRType(stage, color) {
         colorLines("line19", color);
         colorLines("line7", color);
         colorLines("line8", color);
-        colorLines("line9", color);
+        colorLines("line20", color);
+        colorLines("line15", color);
+        colorLines("line18", color);
+        colorLines("line2", color);
+
 
     } else if (stage == 1) {
 
@@ -114,7 +118,10 @@ function stepThroughIType(stage, color) {
         colorLines("line19", color);
         colorLines("line7", color);
         colorLines("line8", color);
-        colorLines("line9", color);
+        colorLines("line20", color);
+        colorLines("line15", color);
+        colorLines("line18", color);
+        colorLines("line2", color);
 
     } else if (stage == 1) {
 
