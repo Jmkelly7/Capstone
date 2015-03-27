@@ -146,7 +146,6 @@ function setupLegend() {
                     var inst = instructionArray[instructionCounter].split(" ");
                     console.log("INST THAT WER ARE SETING IN THELGEND TO PUT IN THE THING IO PROBS BOB");
                     document.getElementById(word).setAttribute("inst", inst[0]);
-
                 }
 
                 instructionCounter++;
