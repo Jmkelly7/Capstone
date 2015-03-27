@@ -126,6 +126,7 @@ var intervalColor;
  */
 var isFirst = true;
 
+var tempArray;
 /**
  * The popup window that brings the user to upload a file once they visit the
  *  site.
@@ -207,26 +208,6 @@ function runThrough() {
                     INST_ONE_CNT++;
                     INST_TWO_CNT++;
                     counter++;
-               // } else {
-              //      console.log("WHERE I SHOULD BE");
-            ///   }
-          //  } else {
-           //     if (Inst1[0] != Inst2[0] && Inst1[1] != Inst2[1] && Inst1[2] != Inst2[2]) {
-             //       instType(document.getElementById("slot1").getAttribute("inst"),
-               //         INST_ONE_CNT,
-                 //       document.getElementById("slot1").getAttribute("fill"));
-
-                   // instType(document.getElementById("slot2").getAttribute("inst"),
-                     //   INST_TWO_CNT,
-                       // document.getElementById("slot2").getAttribute("fill"));
-
-           //         INST_ONE_CNT++;
-             //       INST_TWO_CNT++;
-               //     counter++;
-            //    } else {
-
-            //    }
-          //  }
         } else {
 
             counter--;
@@ -598,7 +579,7 @@ function instType(inst, stage, color) {
         inst == ("srl")  || inst == ("srlv")  ||
         inst == ("sub")  || inst == ("subu")  ||
         inst == ("xor")) {
-
+        console.log("calling r type");
         stepThroughRType(stage, color);
 
     } else if (inst == ("addi") || inst == ("addiu") ||
@@ -610,7 +591,7 @@ function instType(inst, stage, color) {
                inst == ("sb")   || inst == ("sh")    ||
                inst == ("slti") || inst == ("sltiu") ||
                inst == ("sw")   || inst == ("xori")) {
-
+        console.log("calling I type");
         stepThroughIType(stage, color);
 
     } else if (inst == ("j") || inst == ("jal")) {
