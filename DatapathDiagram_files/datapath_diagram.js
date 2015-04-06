@@ -192,7 +192,7 @@ function runThrough() {
 
     } else if (counter == 2) {
 
-        if (!document.getElementById("slot2").textContent == "") {
+        if (!(document.getElementById("slot2").textContent == "")) {
 
            // if(Inst1[2] == undefined) {
                 console.log("first test");
@@ -218,7 +218,7 @@ function runThrough() {
 
     } else if (counter == 3) {
 
-        if (!document.getElementById("slot3").textContent == "") {
+        if (!(document.getElementById("slot3").textContent == "")) {
 
             instType(document.getElementById("slot1").getAttribute("inst"),
                 INST_ONE_CNT,
@@ -247,7 +247,7 @@ function runThrough() {
 
     } else if (counter == 4) {
 
-        if (!document.getElementById("slot5").textContent == " ") {
+        if (!(document.getElementById("slot5").textContent == "")) {
 
                 instType(document.getElementById("slot1").getAttribute("inst"),
                     INST_ONE_CNT,
@@ -299,7 +299,7 @@ function runThrough() {
 
         }
 
-        if (document.getElementById("slot2").textContent == " ") {
+        if (document.getElementById("slot2").textContent == "") {
 
             document.getElementById("slot1").setAttribute("fill", "white");
             document.getElementById("slot2").setAttribute("fill", "white");
@@ -307,25 +307,25 @@ function runThrough() {
             document.getElementById("slot4").setAttribute("fill", "white");
             document.getElementById("slot5").setAttribute("fill", "white");
 
-        }  else if (document.getElementById("slot3").textContent == " ") {
+        }  else if (document.getElementById("slot3").textContent == "") {
 
             document.getElementById("slot2").setAttribute("fill", "white");
             document.getElementById("slot3").setAttribute("fill", "white");
             document.getElementById("slot4").setAttribute("fill", "white");
             document.getElementById("slot5").setAttribute("fill", "white");
 
-        } else if (document.getElementById("slot4").textContent == " ") {
+        } else if (document.getElementById("slot4").textContent == "") {
 
             document.getElementById("slot3").setAttribute("fill", "white");
             document.getElementById("slot4").setAttribute("fill", "white");
             document.getElementById("slot5").setAttribute("fill", "white");
 
-        }  else if (document.getElementById("slot5").textContent == " ") {
+        }  else if (document.getElementById("slot5").textContent == "") {
 
             document.getElementById("slot4").setAttribute("fill", "white");
             document.getElementById("slot5").setAttribute("fill", "white");
 
-        } else if (document.getElementById("slot6").textContent == " ") {
+        } else if (document.getElementById("slot6").textContent == "") {
 
             document.getElementById("slot5").setAttribute("fill", "white");
             console.log("TURING SHIZ WHITE I GUESS");
@@ -389,7 +389,7 @@ function stallRunThrough(tempCounter) {
 
     } else if (tempCounter == 2) {
 
-        if (!document.getElementById("slot2").textContent == "") {
+        if (!(document.getElementById("slot2").textContent == "")) {
 
             instType(document.getElementById("slot1").getAttribute("inst"),
                 INST_ONE_CNT,
@@ -413,7 +413,7 @@ function stallRunThrough(tempCounter) {
 
     } else if (tempCounter == 3) {
 
-        if (!document.getElementById("slot3").textContent == "") {
+        if (!(document.getElementById("slot3").textContent == "")) {
 
             instType(document.getElementById("slot1").getAttribute("inst"),
                 INST_ONE_CNT,
@@ -442,7 +442,7 @@ function stallRunThrough(tempCounter) {
 
     } else if (tempCounter == 4) {
 
-        if (!document.getElementById("slot5").textContent == " ") {
+        if (!(document.getElementById("slot5").textContent == "")) {
 
             instType(document.getElementById("slot1").getAttribute("inst"),
                 INST_ONE_CNT,
@@ -494,7 +494,7 @@ function stallRunThrough(tempCounter) {
 
         }
 
-        if (document.getElementById("slot2").textContent == " ") {
+        if (document.getElementById("slot2").textContent == "") {
 
             document.getElementById("slot1").setAttribute("fill", "white");
             document.getElementById("slot2").setAttribute("fill", "white");
@@ -502,25 +502,25 @@ function stallRunThrough(tempCounter) {
             document.getElementById("slot4").setAttribute("fill", "white");
             document.getElementById("slot5").setAttribute("fill", "white");
 
-        } else if (document.getElementById("slot3").textContent == " ") {
+        } else if (document.getElementById("slot3").textContent == "") {
 
             document.getElementById("slot2").setAttribute("fill", "white");
             document.getElementById("slot3").setAttribute("fill", "white");
             document.getElementById("slot4").setAttribute("fill", "white");
             document.getElementById("slot5").setAttribute("fill", "white");
 
-        } else if (document.getElementById("slot4").textContent == " ") {
+        } else if (document.getElementById("slot4").textContent == "") {
 
             document.getElementById("slot3").setAttribute("fill", "white");
             document.getElementById("slot4").setAttribute("fill", "white");
             document.getElementById("slot5").setAttribute("fill", "white");
 
-        } else if (document.getElementById("slot5").textContent == " ") {
+        } else if (document.getElementById("slot5").textContent == "") {
 
             document.getElementById("slot4").setAttribute("fill", "white");
             document.getElementById("slot5").setAttribute("fill", "white");
 
-        } else if (document.getElementById("slot6").textContent == " ") {
+        } else if (document.getElementById("slot6").textContent == "") {
 
             document.getElementById("slot5").setAttribute("fill", "white");
 
@@ -665,7 +665,7 @@ function setName() {
  */
 function play() {
 
-    if(!document.getElementById("slot1").textContent == " ") {
+    if(!(document.getElementById("slot1").textContent == " ")) {
 
         if (playCounter == 0) {
 

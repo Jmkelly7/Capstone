@@ -15,85 +15,31 @@
  */
 function colorAndRefreshDiagramObjects(objectName, colorChoice) {
 
-    if (colorChoice == "firebrick") {
-
-        document.getElementById(objectName).setAttribute("style", "fill:firebrick;stroke-width:3;stroke:black");
-
-    } else if (colorChoice == "peru") {
-
-        document.getElementById(objectName).setAttribute("style", "fill:peru;stroke-width:3;stroke:black");
-
-    } else if (colorChoice == "darkgoldenrod") {
-
-        document.getElementById(objectName).setAttribute("style", "fill:darkgoldenrod;stroke-width:3;stroke:black");
-
-    } else if (colorChoice == "mediumseagreen") {
-
-        document.getElementById(objectName).setAttribute("style", "fill:mediumseagreen;stroke-width:3;stroke:black");
-
-    } else if (colorChoice == "darkcyan") {
-
-        document.getElementById(objectName).setAttribute("style", "fill:darkcyan;stroke-width:3;stroke:black");
-
-    } else if (colorChoice == "darkorchid") {
-
-        document.getElementById(objectName).setAttribute("style", "fill:darkorchid;stroke-width:3;stroke:black");
-
-    } else if (colorChoice == "dimgray") {
-
-        document.getElementById(objectName).setAttribute("style", "fill:dimgray;stroke-width:3;stroke:black");
-
-    }
-
-    return false;
+    document.getElementById(objectName).setAttribute("style", "fill:" + colorChoice + ";stroke-width:3;stroke:black");
+    /*document.getElementById(objectName).setAttribute("stroke", colorChoice);
+    document.getElementById(objectName).setAttribute("stroke-width", "3");*/
 
 }
 
 /**
  * This function is used to color the line objects that are passed in with the passed in color.
  *
- * @param objectName - the line that is supposed to be colored.
+ * @param objectName  - the line that will be colored.
  * @param colorChoice - the color to change the stroke too.
  */
 function colorLines(objectName, colorChoice) {
 
-    if (colorChoice == "firebrick") {
+    if (document.getElementById(objectName + "a")) {
 
-        document.getElementById(objectName).setAttribute("stroke", "firebrick");
-        document.getElementById(objectName).setAttribute("stroke-width", "3");
-
-    } else if (colorChoice == "peru") {
-
-        document.getElementById(objectName).setAttribute("stroke",  "peru");
-        document.getElementById(objectName).setAttribute("stroke-width", "3");
-
-    } else if (colorChoice == "darkgoldenrod") {
-
-        document.getElementById(objectName).setAttribute("stroke",  "darkgoldenrod");
-        document.getElementById(objectName).setAttribute("stroke-width", "3");
-
-    } else if (colorChoice == "mediumseagreen") {
-
-        document.getElementById(objectName).setAttribute("stroke",  "mediumseagreen");
-        document.getElementById(objectName).setAttribute("stroke-width", "3");
-
-    } else if (colorChoice == "darkcyan") {
-
-        document.getElementById(objectName).setAttribute("stroke", "darkcyan");
-        document.getElementById(objectName).setAttribute("stroke-width", "3");
-
-    } else if (colorChoice == "darkorchid") {
-
-        document.getElementById(objectName).setAttribute("stroke",  "darkorchid");
-        document.getElementById(objectName).setAttribute("stroke-width", "3");
-
-    } else if (colorChoice == "dimgray") {
-
-        document.getElementById(objectName).setAttribute("stroke",  "dimgray");
-        document.getElementById(objectName).setAttribute("stroke-width", "3");
+        document.getElementById(objectName + "a").setAttribute("style", "fill:" + colorChoice + ";stroke-width:2;stroke:" + colorChoice);
+        /*document.getElementById(objectName + "a").setAttribute("stroke", colorChoice);
+        document.getElementById(objectName + "a").setAttribute("stroke-width", "2");*/
 
     }
 
+    document.getElementById(objectName).setAttribute("style", "fill:" + colorChoice + ";stroke-width:3;stroke:" + colorChoice);
+    /*document.getElementById(objectName).setAttribute("stroke", colorChoice);
+    document.getElementById(objectName).setAttribute("stroke-width", "3");*/
 }
 
 /**
@@ -104,14 +50,31 @@ function colorLines(objectName, colorChoice) {
  */
 function clearGivenObject(objectName) {
 
-    document.getElementById(objectName).setAttribute("style", "fill:white;stroke-width:1;stroke:rgb(0,0,0");
+    document.getElementById(objectName).setAttribute("style", "fill:white;stroke-width:1;stroke:rgb(0,0,0)");
+    /*document.getElementById(objectName).setAttribute("stroke", "#000000");
+    document.getElementById(objectName).setAttribute("stroke-width", "1");*/
 
 }
 
-function clearGivenLine(objectName) {
+/**
+ * This function clears the attributes that have changed and sets them back to
+ *  the default.
+ *
+ * @param lineName - the line to be reset to default.
+ */
+function clearGivenLine(lineName) {
 
-    document.getElementById(objectName).setAttribute("stroke", "#000000");
-    document.getElementById(objectName).setAttribute("stroke-width", "1");
+    if (document.getElementById(lineName + "a")) {
+
+        document.getElementById(lineName + "a").setAttribute("style", "fill:black;stroke-width:2;stroke:rgb(0,0,0)");
+        /*document.getElementById(lineName + "a").setAttribute("stroke", "#FFFFFF");
+        document.getElementById(lineName + "a").setAttribute("stroke-width", "1");*/
+
+    }
+
+    document.getElementById(lineName).setAttribute("style", "fill:black;stroke-width:1;stroke:rgb(0,0,0)");
+    /*document.getElementById(lineName).setAttribute("stroke", "#000000");
+    document.getElementById(lineName).setAttribute("stroke-width", "1");*/
 
 }
 
@@ -124,6 +87,15 @@ function clearStageFive() {
     clearGivenObject("rect15");
     clearGivenObject("ellipse5");
     clearGivenObject("rect6");
+    /*clearGivenObject("line48");
+    clearGivenObject("line47");
+    clearGivenObject("line46");
+    clearGivenObject("line26");
+    clearGivenObject("line27");
+    clearGivenObject("line53");
+    clearGivenObject("line59");
+    clearGivenObject("line58");
+    clearGivenObject("line62");*/
     clearGivenLine("line48");
     clearGivenLine("line47");
     clearGivenLine("line46");
@@ -132,6 +104,7 @@ function clearStageFive() {
     clearGivenLine("line53");
     clearGivenLine("line59");
     clearGivenLine("line58");
+    clearGivenLine("line62");
 
 }
 

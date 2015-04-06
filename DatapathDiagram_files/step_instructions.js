@@ -80,6 +80,7 @@ function stepThroughRType(stage, color) {
         colorAndRefreshDiagramObjects("rect15", color);
         colorAndRefreshDiagramObjects("ellipse5", color);
         colorAndRefreshDiagramObjects("rect6", color);
+        colorLines("line62", color);
         colorLines("line58", color);
         colorLines("line48", color);
         colorLines("line47", color);
@@ -184,6 +185,7 @@ function stepThroughIType(stage, color) {
         colorAndRefreshDiagramObjects("rect15", color);
         colorAndRefreshDiagramObjects("ellipse5", color);
         colorAndRefreshDiagramObjects("rect6", color);
+        colorLines("line62", color);
         colorLines("line58", color);
         colorLines("line46", color);
         colorLines("line48", color);
