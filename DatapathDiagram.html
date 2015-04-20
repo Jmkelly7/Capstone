@@ -224,70 +224,72 @@
         y="245.375"
         x="187.3125"></rect>
 <path
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"
-        onmouseout="line1ToolTipsMouseOut()"
-        onmouseover="line1ToolTipsMouseOver()"
+        stroke="#000000"
+        onmouseout="line4ToolTipsMouseOut()"
+        onmouseover="line4ToolTipsMouseOver()"
         stroke-miterlimit="10"
         d="m 208,251 0,-120"
         id="line19"></path>
 <path
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"
+        stroke="#000000"
         onmouseout="line1ToolTipsMouseOut()"
         onmouseover="line1ToolTipsMouseOver()"
         stroke-miterlimit="10"
         d="m 8,261 0,-260"
         id="line17"></path>
 <path
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"
-        onmouseout="line1ToolTipsMouseOut()"
-        onmouseover="line1ToolTipsMouseOver()"
+        stroke="#000000"
         stroke-miterlimit="10"
         d="m 28,231 0,-189"
-        id="line18"></path>
+        id="line18"
+        onmouseover="line2ToolTipsMouseOver()"
+        onmouseout="line2ToolTipsMouseOut()"></path>
 <path
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"
-        onmouseout="line1ToolTipsMouseOut()"
-        onmouseover="line1ToolTipsMouseOver()"
+        stroke="#000000"
         stroke-miterlimit="10"
         d="m 368,145.5 0,-104.5"
-        id="line20"></path>
+        id="line20"
+        onmouseover="line2ToolTipsMouseOver()"
+        onmouseout="line2ToolTipsMouseOut()"></path>
 <svg>
     <path
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"
+            stroke="#000000"
             pointer-events="none"
             stroke-miterlimit="10"
             d="m 445.5,322 0,-30"
             id="line51"></path>
     <path
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"
-            pointer-events="none"
+            stroke="#000000"
             stroke-miterlimit="10"
             d="m 445.5,262 0,-31"
-            id="line49"></path>
+            id="line49"
+            onmouseout="line50ToolTipsMouseOut()"
+            onmouseover="line50ToolTipsMouseOver()"></path>
     <path
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"
+            stroke="#000000"
             pointer-events="none"
             stroke-miterlimit="10"
             d="m 445.5,322 0,94"
             id="line52"></path>
     <path
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"
-            pointer-events="none"
+            stroke="#000000"
             stroke-miterlimit="10"
             d="m 445.5,292 0,-30"
-            id="line50"></path>
+            id="line50"
+            onmouseout="line50ToolTipsMouseOut()"
+            onmouseover="line50ToolTipsMouseOver()"></path>
 </svg>
 <g
         id="g5490"
         transform="translate(31,0)">
     <path
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"
+            stroke="#000000"
             pointer-events="none"
             stroke-miterlimit="10"
             d="m 666,416 0,-73.5"
             id="line56"></path>
     <path
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"
+            stroke="#000000"
             pointer-events="none"
             stroke-miterlimit="10"
             d="m 666,342.5 0,-126"
@@ -311,7 +313,9 @@
                 font-size="10px"
                 y="194"
                 x="657.5"
-                id="ell3">&lt;&lt;2</text>
+                id="ell3"
+                onmouseout="shiftToolTipsMouseOut()"
+                onmouseover="shiftToolTipsMouseOver()">&lt;&lt;2</text>
     </svg>
 </g>
 <!-- Diagram -->
@@ -325,15 +329,22 @@
             d="m 57.1,229 31.8,0 c 13.86,0 25.1,7.84 25.1,17.5 0,9.66 -11.24,17.5 -25.1,17.5 l -31.8,0 C 43.24,264 32,256.16 32,246.5 32,236.84 43.24,229 57.1,229 Z"
             stroke-miterlimit="10"
             transform="matrix(0,1,-1,0,319.5,173.5)"
+            style="fill:#ffffff;stroke:#000000;stroke-width:1;stroke-miterlimit:10"
             onmouseover="mutexToolTipsMouseOver()"
-            onmouseout="mutexToolTipsMouseOut()"
-            style="fill:#ffffff;stroke:#000000;stroke-width:1;stroke-miterlimit:10"></path>
+            onmouseout="mutexToolTipsMouseOut()"></path>
     <text
             id="ell1"
             x="59"
             y="250"
             font-size="12px"
-            style="font-size:12px;fill:#000000">MUX</text>
+            style="font-size:12px;fill:#000000"
+            onmouseover="mutexToolTipsMouseOver()"
+            onmouseout="mutexToolTipsMouseOut()">MUX</text>
+    <text id="ell1pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">A multiplexer is a logic component with multiple</text>
+    <text id="ell1pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">data inputs (X and Y), a single control input(Sel),</text>
+    <text id="ell1pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">and a single output (Out). At any time its output</text>
+    <text id="ell1pop4" x="15" y="494" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">is the same as one of its inputs. Which one is</text>
+    <text id="ell1pop5" x="15" y="512" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">determined by the control input.</text>
 </svg>
 <svg
         id="svg21"
@@ -347,15 +358,20 @@
             width="72"
             height="40"
             transform="matrix(0,1,-1,0,409,79)"
+            style="fill:#ffffff;stroke:#000000"
             onmouseover="pcToolTipsMouseOver()"
-            onmouseout="pcToolTipsMouseOut()"
-            style="fill:#ffffff;stroke:#000000"></rect>
+            onmouseout="pcToolTipsMouseOut()"></rect>
     <text
             id="rec1"
             x="150"
             y="250"
             font-size="20px"
-            style="font-size:20px;fill:#000000">PC</text>
+            style="font-size:20px;fill:#000000"
+            onmouseover="pcToolTipsMouseOver()"
+            onmouseout="pcToolTipsMouseOut()">PC</text>
+    <text id="rect1pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The PC(Program Counter) is byte-addressable</text>
+    <text id="rect1pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">register and holds the address of the current</text>
+    <text id="rect1pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">instruction.</text>
 </svg>
 <rect
         x="286.5"
@@ -375,15 +391,19 @@
             d="m 285.90497,168.28508 8.42083,-47.14033 34.3484,0 8.30182,47.14033 z"
             stroke-miterlimit="10"
             transform="matrix(0,1,-1,0,458,-165)"
+            style="fill:#ffffff;stroke:#000000;stroke-width:1;stroke-miterlimit:10"
             onmouseover="addToolTipsMouseOver()"
-            onmouseout="addToolTipsMouseOut()"
-            style="fill:#ffffff;stroke:#000000;stroke-width:1;stroke-miterlimit:10"></path>
+            onmouseout="addToolTipsMouseOut()"></path>
     <text
             id="pol1"
             x="294.76459"
             y="153.88605"
             font-size="20px"
-            style="font-size:20px;fill:#000000">Add</text>
+            style="font-size:20px;fill:#000000"
+            onmouseover="addToolTipsMouseOver()"
+            onmouseout="addToolTipsMouseOut()">Add</text>
+    <text id="poly1pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">An adder just performs binary addition of</text>
+    <text id="poly1pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">its two inputs to produce a sum output.</text>
 </svg>
 <path
         d="m 291.5,140 3.5,6.5 -0.5,1 -3,5.75 0,-6.5 0,-1 z"
@@ -402,13 +422,13 @@
         stroke-miterlimit="10"
         pointer-events="none"
         id="path35"
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"></path>
+        stroke="#000000"></path>
 <path
         d="m 288.5,146.5 0,0"
         stroke-miterlimit="10"
         pointer-events="none"
         id="path37"
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"></path>
+        stroke="#000000"></path>
 <svg
         id="svg39"
         version="1.1"
@@ -421,15 +441,21 @@
             width="120"
             height="60"
             transform="matrix(0,1,-1,0,560,13)"
+            style="fill:#ffffff;stroke:#000000"
             onmouseover="instMemToolTipsMouseOver()"
-            onmouseout="instMemToolTipsMouseOut()"
-            style="fill:#ffffff;stroke:#000000"></rect>
+            onmouseout="instMemToolTipsMouseOut()"></rect>
     <text
             id="rec2"
             x="255"
             y="294"
             font-size="20px"
-            style="font-size:20px; fill:#000000">Inst.</text>
+            style="font-size:20px; fill:#000000"
+            onmouseover="instMemToolTipsMouseOver()"
+            onmouseout="instMemToolTipsMouseOut()">Inst.</text>
+    <text id="rect2pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">Instruction Memory takes a mem address as</text>
+    <text id="rect2pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">input and fetches the instruction at the</text>
+    <text id="rect2pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">address for the output. Only needs one</text>
+    <text id="rect2pop4" x="15" y="494" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">single read port for the given address.</text>
 </svg>
 <svg
         id="svg43"
@@ -451,8 +477,16 @@
             x="308"
             y="294"
             font-size="20px"
-            style="font-size:20px;fill:#000000">Mem.</text>
+            style="font-size:20px;fill:#000000"
+            onmouseover="instMemToolTipsMouseOver()"
+            onmouseout="instMemToolTipsMouseOut()">Mem.</text>
 </svg>
+<text id="rect4pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Instruction Fetch involves accessing</text>
+<text id="rect4pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">the memory that the current instruction is in</text>
+<text id="rect4pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">and getting its value to pass on. The</text>
+<text id="rect4pop4" x="15" y="494" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">Instruction Decode involves sign extending the</text>
+<text id="rect4pop5" x="15" y="512" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">immediate field and reading it in along with the</text>
+<text id="rect4pop6" x="15" y="530" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">register numbers of the given registers.</text>
 <g
         id="g4414"
         transform="matrix(0.99518609,0,0,1.2504352,1.9905513,-19.111402)">
@@ -463,9 +497,9 @@
             width="309"
             height="12"
             transform="matrix(0,1,-1,0,0,0)"
+            style="fill:#ffffff;stroke:#000000"
             onmouseover="ifidToolTipsMouseOver()"
-            onmouseout="ifidToolTipsMouseOut()"
-            style="fill:#ffffff;stroke:#000000"></rect>
+            onmouseout="ifidToolTipsMouseOut()"></rect>
     <rect
             id="rect5"
             x="101.5"
@@ -473,51 +507,63 @@
             width="309"
             height="12"
             transform="matrix(0,1,-1,0,0,0)"
+            style="fill:#ffffff;stroke:#000000"
             onmouseover="ifidToolTipsMouseOver()"
-            onmouseout="ifidToolTipsMouseOut()"
-            style="fill:#ffffff;stroke:#000000"></rect>
+            onmouseout="ifidToolTipsMouseOut()"></rect>
+
 </g>
 <text
         style="font-size:20px;fill:#000000"
         font-size="20px"
         y="100"
         x="386.98145"
-        id="rec4">IF/ID</text>
+        id="rec4"
+        onmouseover="ifidToolTipsMouseOver()"
+        onmouseout="ifidToolTipsMouseOut()">IF/ID</text>
 <path
         d="m 185,226 0,0"
         stroke-miterlimit="10"
         pointer-events="none"
         id="path100"
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"></path>
+        stroke="#000000"></path>
 
 <!-- Register text above arrows -->
-
+<text id="line3pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Sign Ext component performs sign extension,</text>
+<text id="line3pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The third group in stage one</text>
+<text id="line3pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The third group in stage one</text>
+<text id="line4pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Sign Ext component performs sign extension,</text>
+<text id="line4pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">4th group section 1 part1</text>
+<text id="line4pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Sign Ext component performs sign extension,</text>
+<text id="line4pop4" x="15" y="494" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">4th group section 1 part2</text>
+<text id="line6pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Sign Ext component performs sign extension,</text>
+<text id="line6pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The 6th group in stage one</text>
 <path
-        style="fill:#000000;stroke:#000000;stroke-miterlimit:10"
+        stroke="#000000"
         onmouseout="line1ToolTipsMouseOut()"
         onmouseover="line1ToolTipsMouseOver()"
         stroke-miterlimit="10"
         d="m 7.5,261 41,0"
         id="line1"></path>
 <path
-        style="fill:#000000;stroke:#000000;stroke-miterlimit:10"
+        fill="#000000"
+        stroke="#000000"
         id="line1a"
         onmouseout="line1ToolTipsMouseOut()"
         onmouseover="line1ToolTipsMouseOver()"
         stroke-miterlimit="10"
         d="m 54,261 -7,3.5 1.75,-3.5 -1.75,-3.5 z"></path>
 <path
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"
-        onmouseout="line1ToolTipsMouseOut()"
-        onmouseover="line1ToolTipsMouseOver()"
+        stroke="#000000"
         stroke-miterlimit="10"
         d="m 27.5,230.5 21,0"
-        id="line2"></path>
+        id="line2"
+        onmouseover="line2ToolTipsMouseOver()"
+        onmouseout="line2ToolTipsMouseOut()"></path>
 <path
-        style="fill:#000000;stroke:#000000;stroke-miterlimit:10"
+        fill="#000000"         stroke="#000000"
         id="line2a"
-        onmouseout="line1ToolTipsMouseOut()"
-        onmouseover="line1ToolTipsMouseOver()"
+        onmouseout="line2ToolTipsMouseOut()"
+        onmouseover="line2ToolTipsMouseOver()"
         stroke-miterlimit="10"
         d="m 54,230.5 -7,3.5 1.75,-3.5 -1.75,-3.5 z"></path>
 <rect
@@ -530,37 +576,38 @@
         y="245"
         x="93"></rect>
 <path
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"
-        onmouseout="line1ToolTipsMouseOut()"
-        onmouseover="line1ToolTipsMouseOver()"
+        stroke="#000000"
+        onmouseout="line3ToolTipsMouseOut()"
+        onmouseover="line3ToolTipsMouseOver()"
         stroke-miterlimit="10"
         d="m 91,251 47,0"
         id="line3"></path>
 <path
-        style="fill:#000000;stroke:#000000;stroke-miterlimit:10"
+        fill="#000000"         
+        stroke="#000000"
         id="line3a"
-        onmouseout="line1ToolTipsMouseOut()"
-        onmouseover="line1ToolTipsMouseOver()"
+        onmouseout="line3ToolTipsMouseOut()"
+        onmouseover="line3ToolTipsMouseOver()"
         stroke-miterlimit="10"
         d="m 143.5,251 -7,3.5 1.75,-3.5 -1.75,-3.5 z"></path>
 <path
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"
-        onmouseout="line1ToolTipsMouseOut()"
-        onmouseover="line1ToolTipsMouseOver()"
+        stroke="#000000"
+        onmouseout="line5ToolTipsMouseOut()"
+        onmouseover="line5ToolTipsMouseOver()"
         stroke-miterlimit="10"
         d="m 208.5,251 28,0"
         id="line5"></path>
 <path
-        style="fill:#000000;stroke:#000000;stroke-miterlimit:10"
+        fill="#000000"         stroke="#000000"
         id="line5a"
-        onmouseout="line1ToolTipsMouseOut()"
-        onmouseover="line1ToolTipsMouseOver()"
+        onmouseout="line5ToolTipsMouseOut()"
+        onmouseover="line5ToolTipsMouseOver()"
         stroke-miterlimit="10"
         d="m 241.8721,251 -7,3.5 1.75,-3.5 -1.75,-3.5 z"></path>
 <path
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"
-        onmouseout="line1ToolTipsMouseOut()"
-        onmouseover="line1ToolTipsMouseOver()"
+        stroke="#000000"
+        onmouseout="line4ToolTipsMouseOut()"
+        onmouseover="line4ToolTipsMouseOver()"
         stroke-miterlimit="10"
         d="m 185.5,251.01563 23.00391,0"
         id="line4"></path>
@@ -579,72 +626,76 @@
             id="line6"
             d="m 259,161 23.5,0"
             stroke-miterlimit="10"
-            onmouseover="line1ToolTipsMouseOver()"
-            onmouseout="line1ToolTipsMouseOut()"
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"></path>
+            onmouseover="line6ToolTipsMouseOver()"
+            onmouseout="line6ToolTipsMouseOut()"
+            stroke="#000000"></path>
     <path
             d="m 288,161 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
             stroke-miterlimit="10"
-            onmouseover="line1ToolTipsMouseOver()"
-            onmouseout="line1ToolTipsMouseOut()"
+            onmouseover="line6ToolTipsMouseOver()"
+            onmouseout="line6ToolTipsMouseOut()"
             id="line6a"
-            style="fill:#000000;stroke:#000000;stroke-miterlimit:10"></path>
+            fill="#000000"
+            stroke="#000000"></path>
 </g>
 <path
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"
-        onmouseout="line1ToolTipsMouseOut()"
-        onmouseover="line1ToolTipsMouseOver()"
+        stroke="#000000"
+        onmouseout="line4ToolTipsMouseOut()"
+        onmouseover="line4ToolTipsMouseOver()"
         stroke-miterlimit="10"
         d="M 207.5,131 283,131"
         id="line7"></path>
 <path
-        style="fill:#000000;stroke:#000000;stroke-miterlimit:10"
+        fill="#000000"
+        stroke="#000000"
         id="line7a"
-        onmouseout="line1ToolTipsMouseOut()"
-        onmouseover="line1ToolTipsMouseOver()"
+        onmouseout="line4ToolTipsMouseOut()"
+        onmouseover="line4ToolTipsMouseOver()"
         stroke-miterlimit="10"
         d="m 288,131 -7,3.5 1.75,-3.5 -1.75,-3.5 z"></path>
 <path
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"
-        onmouseout="line1ToolTipsMouseOut()"
-        onmouseover="line1ToolTipsMouseOver()"
+        stroke="#000000"
         stroke-miterlimit="10"
         d="m 337.34814,145.0421 31.14352,-0.0141"
-        id="line8"></path>
+        id="line8"
+        onmouseover="line2ToolTipsMouseOver()"
+        onmouseout="line2ToolTipsMouseOut()"></path>
 <path
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"
+        stroke="#000000"
         onmouseout="line1ToolTipsMouseOut()"
         onmouseover="line1ToolTipsMouseOver()"
         stroke-miterlimit="10"
         d="m 368.5,145 30,0"
         id="line9"></path>
 <path
-        style="fill:#000000;stroke:#000000;stroke-miterlimit:10"
+        fill="#000000"
+        stroke="#000000"
         id="line9a"
         onmouseout="line1ToolTipsMouseOut()"
         onmouseover="line1ToolTipsMouseOver()"
         stroke-miterlimit="10"
         d="m 400,145 -7,3.5 1.75,-3.5 -1.75,-3.5 z"></path>
 <path
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"
+        stroke="#000000"
         pointer-events="none"
         stroke-miterlimit="10"
         d="m 426,145 204.5,0"
         id="line10"></path>
 <path
-        style="fill:#000000;stroke:#000000;stroke-miterlimit:10"
+        fill="#000000"
+        stroke="#000000"
         id="line10a"
         onmouseout="line1ToolTipsMouseOut()"
         onmouseover="line1ToolTipsMouseOver()"
         stroke-miterlimit="10"
         d="m 632,145 -7,3.5 1.75,-3.5 -1.75,-3.5 z"></path>
 <path
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"
-        onmouseout="line1ToolTipsMouseOut()"
-        onmouseover="line1ToolTipsMouseOver()"
+        stroke="#000000"
         stroke-miterlimit="10"
         d="m 27.484375,41.015625 341.012805,0.0065"
-        id="line15"></path>
+        id="line15"
+        onmouseover="line2ToolTipsMouseOver()"
+        onmouseout="line2ToolTipsMouseOut()"></path>
 <svg
         id="svg201"
         version="1.1"
@@ -655,7 +706,7 @@
             d="m 7.5,1 1001,0"
             stroke-miterlimit="10"
             pointer-events="none"
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"></path>
+            stroke="#000000"></path>
 </svg>
 <rect
         style="fill:#ffffff;stroke:#ffffff"
@@ -667,17 +718,18 @@
         y="281"
         x="369"></rect>
 <path
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"
-        onmouseout="line1ToolTipsMouseOut()"
-        onmouseover="line1ToolTipsMouseOver()"
+        stroke="#000000"
+        onmouseout="line22ToolTipsMouseOut()"
+        onmouseover="line22ToolTipsMouseOver()"
         stroke-miterlimit="10"
         d="m 364,287 33.5,0"
         id="line22"></path>
 <path
-        style="fill:#000000;stroke:#000000;stroke-miterlimit:10"
+        fill="#000000"
+        stroke="#000000"
         id="line22a"
-        onmouseout="line1ToolTipsMouseOut()"
-        onmouseover="line1ToolTipsMouseOver()"
+        onmouseout="line22ToolTipsMouseOut()"
+        onmouseover="line22ToolTipsMouseOver()"
         stroke-miterlimit="10"
         d="m 400,287 -7,3.5 1.75,-3.5 -1.75,-3.5 z"></path>
 <svg
@@ -689,8 +741,9 @@
             id="line23"
             d="m 426,291 20,0"
             stroke-miterlimit="10"
-            pointer-events="none"
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"></path>
+            stroke="#000000"
+            onmouseout="line23ToolTipsMouseOut()"
+            onmouseover="line23ToolTipsMouseOver()"></path>
 </svg>
 <g
         id="g5585">
@@ -699,13 +752,14 @@
             d="m 445,231 29,0"
             stroke-miterlimit="10"
             pointer-events="none"
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"></path>
+            stroke="#000000"></path>
     <path
             d="m 479.5,231 -7,3.48 1.75,-3.49 -1.74,-3.51 z"
             stroke-miterlimit="10"
             pointer-events="none"
             id="line24a"
-            style="fill:#000000;stroke:#000000;stroke-miterlimit:10"></path>
+            fill="#000000"
+            stroke="#000000"></path>
 </g>
 <g
         id="g5591">
@@ -714,13 +768,14 @@
             d="m 445,262 29,0"
             stroke-miterlimit="10"
             pointer-events="none"
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"></path>
+            stroke="#000000"></path>
     <path
             d="m 479.5,262 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
             stroke-miterlimit="10"
             pointer-events="none"
             id="line25a"
-            style="fill:#000000;stroke:#000000;stroke-miterlimit:10"></path>
+            fill="#000000"
+            stroke="#000000"></path>
 </g>
 <g
         id="g5597">
@@ -729,13 +784,14 @@
             d="m 445,322 29,0"
             stroke-miterlimit="10"
             pointer-events="none"
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"></path>
+            stroke="#000000"></path>
     <path
             d="m 479.5,322 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
             stroke-miterlimit="10"
             pointer-events="none"
             id="line26a"
-            style="fill:#000000;stroke:#000000;stroke-miterlimit:10"></path>
+            fill="#000000"
+            stroke="#000000"></path>
 </g>
 <g
         id="g5522"
@@ -745,13 +801,14 @@
             d="m 459,341 17.5,0"
             stroke-miterlimit="10"
             pointer-events="none"
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"></path>
+            stroke="#000000"></path>
     <path
             d="m 479.5,341 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
             stroke-miterlimit="10"
             pointer-events="none"
             id="line27a"
-            style="fill:#000000;stroke:#000000;stroke-miterlimit:10"></path>
+            fill="#000000"
+            stroke="#000000"></path>
 </g>
 <g
         id="g5613">
@@ -760,25 +817,42 @@
             d="m 445,416 103,0"
             stroke-miterlimit="10"
             pointer-events="none"
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"></path>
+            stroke="#000000"></path>
     <path
             d="m 553,416 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
             stroke-miterlimit="10"
             pointer-events="none"
             id="line28a"
-            style="fill:#000000;stroke:#000000;stroke-miterlimit:10"></path>
+            fill="#000000"
+            stroke="#000000"></path>
 </g>
 <path
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"
+        stroke="#000000"
         pointer-events="none"
         stroke-miterlimit="10"
         d="m 658,317 24,0"
         id="line34"></path>
+<text id="rect6pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Register Bank holds multiple registers</text>
+<text id="rect6pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">and provides read and write access to them.</text>
+<text id="rect6pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The input is the two registers to compute,</text>
+<text id="rect6pop4" x="15" y="494" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">the register to write too, and the data</text>
+<text id="rect6pop5" x="15" y="512" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">to be written. The output is the content of</text>
+<text id="rect6pop6" x="15" y="530" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The registers from the input.</text>
+<text id="poly3pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The ALU (Arithmetic-Logic Unit) can perform a</text>
+<text id="poly3pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">number of different operations, combining its two</text>
+<text id="poly3pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">data inputs (X and Y) into a single primary output</text>
+<text id="poly3pop4" x="15" y="494" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">(Out). Typical operations include additions,</text>
+<text id="poly3pop5" x="15" y="512" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">subtractions, and bitwise logical operations.</text>
+<text id="rect8pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">Instruction Decode involves sign extending the</text>
+<text id="rect8pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">immediate field and reading it in along with the</text>
+<text id="rect8pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">register numbers of the given registers. The</text>
+<text id="rect8pop4" x="15" y="494" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">Execute stage takes the pipeline register an adds</text>
+<text id="rect8pop5" x="15" y="512" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">them using the ALU. Sum is passed to EX/MEM.</text>
 <g
         id="g5498"
         transform="translate(16,0)">
     <path
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"
+            stroke="#000000"
             pointer-events="none"
             stroke-miterlimit="10"
             d="m 665,381 0,-64"
@@ -790,8 +864,8 @@
             id="svg53">
         <rect
                 style="fill:#ffffff;stroke:#000000"
-                onmouseout="regToolTipsMouseOut()"
                 onmouseover="regToolTipsMouseOver()"
+                onmouseout="regToolTipsMouseOut()"
                 transform="matrix(0,1,-1,0,782,-209)"
                 height="60"
                 width="120"
@@ -803,7 +877,9 @@
                 font-size="12px"
                 y="289.62305"
                 x="474.94531"
-                id="rec6">Reg. IN</text>
+                id="rec6"
+                onmouseover="regToolTipsMouseOver()"
+                onmouseout="regToolTipsMouseOut()">Reg. IN</text>
     </svg>
     <svg
             height="100%"
@@ -812,8 +888,8 @@
             id="svg57">
         <rect
                 style="fill:#ffffff;stroke:#000000"
-                onmouseout="regToolTipsMouseOut()"
                 onmouseover="regToolTipsMouseOver()"
+                onmouseout="regToolTipsMouseOut()"
                 transform="matrix(0,1,-1,0,842,-269)"
                 height="60"
                 width="120"
@@ -825,7 +901,9 @@
                 font-size="12px"
                 y="289.71387"
                 x="528.57617"
-                id="rec7">Reg. OUT</text>
+                id="rec7"
+                onmouseover="regToolTipsMouseOver()"
+                onmouseout="regToolTipsMouseOut()">Reg. OUT</text>
     </svg>
     <g
             id="g4421"
@@ -856,7 +934,9 @@
             x="599.49512"
             y="100"
             font-size="20px"
-            style="font-size:20px;fill:#000000">ID/EX</text>
+            style="font-size:20px;fill:#000000"
+            onmouseout="idexToolTipsMouseOut()"
+            onmouseover="idexToolTipsMouseOver()">ID/EX</text>
     <svg
             height="100%"
             width="100%"
@@ -876,7 +956,9 @@
                 font-size="12px"
                 y="420.3623"
                 x="543.12695"
-                id="ell2">SN.EX</text>
+                id="ell2"
+                onmouseout="sgexToolTipsMouseOut()"
+                onmouseover="sgexToolTipsMouseOver()">SN.EX</text>
     </svg>
     <svg
             height="100%"
@@ -884,13 +966,14 @@
             version="1.1"
             id="svg258">
         <path
-                style="fill:none;stroke:#000000;stroke-miterlimit:10"
+                stroke="#000000"
                 pointer-events="none"
                 stroke-miterlimit="10"
                 d="m 585,416 29.5,0"
                 id="line29"></path>
         <path
-                style="fill:#000000;stroke:#000000;stroke-miterlimit:10"
+                fill="#000000"
+                stroke="#000000"
                 id="line29a"
                 onmouseout="line1ToolTipsMouseOut()"
                 onmouseover="line1ToolTipsMouseOver()"
@@ -902,9 +985,10 @@
             d="m 586,316 28.5,0"
             stroke-miterlimit="10"
             pointer-events="none"
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"></path>
+            stroke="#000000"></path>
     <path
-            style="fill:#000000;stroke:#000000;stroke-miterlimit:10"
+            fill="#000000"
+            stroke="#000000"
             id="line31a"
             onmouseout="line1ToolTipsMouseOut()"
             onmouseover="line1ToolTipsMouseOver()"
@@ -916,13 +1000,14 @@
             version="1.1"
             id="svg270">
         <path
-                style="fill:none;stroke:#000000;stroke-miterlimit:10"
+                stroke="#000000"
                 pointer-events="none"
                 stroke-miterlimit="10"
                 d="m 586,250 28.5,0"
                 id="line32"></path>
         <path
-                style="fill:#000000;stroke:#000000;stroke-miterlimit:10"
+                fill="#000000"
+                stroke="#000000"
                 id="line32a"
                 onmouseout="line1ToolTipsMouseOut()"
                 onmouseover="line1ToolTipsMouseOver()"
@@ -930,6 +1015,31 @@
                 d="m 616,250 -7,3.5 1.75,-3.5 -1.75,-3.5 z"></path>
     </svg>
 </g>
+<text id="rect14pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">Memory access involves loading registers from</text>
+<text id="rect14pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">the EX/MEM and passes it along to the MEM/WB.</text>
+<text id="rect14pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Write-back stage involves reading the data</text>
+<text id="rect14pop4" x="15" y="494" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">from the MEM/WB pipeline and writing it to a</text>
+<text id="rect14pop5" x="15" y="512" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">register in the middle of the figure.</text>
+<text id="rect12pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Data Memory is an Interface that connects</text>
+<text id="rect12pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">the processor, main memory, and I/O devices.</text>
+<text id="rect12pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The read section has the address as input, and</text>
+<text id="rect12pop4" x="15" y="494" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">the value at the address as the output. The</text>
+<text id="rect12pop5" x="15" y="512" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">write section has the memory address as input</text>
+<text id="rect12pop6" x="15" y="530" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">and the data to be written as the output.</text>
+<text id="rect10pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Execute stage takes the pipeline register an</text>
+<text id="rect10pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">adds them using the ALU. Sum is passed to</text>
+<text id="rect10pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">EX/MEM. Memory access involves loading</text>
+<text id="rect10pop4" x="15" y="494" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">registers from the EX/MEM and passes it along</text>
+<text id="rect10pop5" x="15" y="512" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">to the MEM/WB.</text>
+<text id="ell2pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Sign Ext component performs sign extension,</text>
+<text id="ell2pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">converting a 16-bit 2's complement number to a</text>
+<text id="ell2pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">32-bit 2's complement number. The low-order</text>
+<text id="ell2pop4" x="15" y="494" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">16 bits ofthe output are the same as the input.</text>
+<text id="ell2pop5" x="15" y="512" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The high-order 16 bits of the output are all copies</text>
+<text id="ell2pop6" x="15" y="530" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">of the sign (high-order) bit of the input.</text>
+<text id="ell3pop1" x="15" y="440" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">The Shifter shifts the bits to the left by two</text>
+<text id="ell3pop2" x="15" y="458" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">of the instruction that was sign extended and</text>
+<text id="ell3pop3" x="15" y="476" font-size="30" fill="black" visibility="hidden" style="font-size:16px;">chosen to take the upper branch.</text>
 <g
         id="g5433"
         transform="translate(50,0)">
@@ -961,7 +1071,9 @@
                 font-size="20px"
                 y="171.44629"
                 x="723.47949"
-                id="pol2">Add</text>
+                id="pol2"
+                onmouseover="addToolTipsMouseOver()"
+                onmouseout="addToolTipsMouseOut()">Add</text>
     </svg>
     <path
             style="fill:#ffffff;stroke:#000000;stroke-width:3;stroke-miterlimit:10"
@@ -976,7 +1088,7 @@
             stroke-miterlimit="10"
             d="m 715,150.75 7.5,13 -7.5,14.25 z"></path>
     <path
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"
+            stroke="#000000"
             id="path15"
             pointer-events="none"
             stroke-miterlimit="10"
@@ -1007,7 +1119,9 @@
                 font-size="20px"
                 y="289.11914"
                 x="756.02051"
-                id="pol3">ALU</text>
+                id="pol3"
+                onmouseout="aluToolTipsMouseOut()"
+                onmouseover="aluToolTipsMouseOver()">ALU</text>
     </svg>
     <path
             style="fill:#ffffff;stroke:#000000;stroke-width:3;stroke-miterlimit:10"
@@ -1022,19 +1136,19 @@
             stroke-miterlimit="10"
             d="m 739.25,266.25 8.5,15.5 -8.5,15.5 z"></path>
     <path
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"
+            stroke="#000000"
             id="path71"
             pointer-events="none"
             stroke-miterlimit="10"
             d="m 743.5,275.25 0,0"></path>
     <path
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"
+            stroke="#000000"
             id="path73"
             pointer-events="none"
             stroke-miterlimit="10"
             d="m 738.5,275.25 0,0"></path>
     <path
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"
+            stroke="#000000"
             id="path75"
             pointer-events="none"
             stroke-miterlimit="10"
@@ -1044,32 +1158,34 @@
             d="m 608,145 101,0"
             stroke-miterlimit="10"
             pointer-events="none"
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"></path>
+            stroke="#000000"></path>
     <path
             d="m 714,145 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
             stroke-miterlimit="10"
             pointer-events="none"
             id="line11a"
-            style="fill:#000000;stroke:#000000;stroke-miterlimit:10"></path>
+            fill="#000000"
+            stroke="#000000"></path>
     <path
             id="line12"
             d="m 665.5,189 43.5,0"
             stroke-miterlimit="10"
             pointer-events="none"
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"></path>
+            stroke="#000000"></path>
     <path
             d="m 714,189 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
             stroke-miterlimit="10"
             pointer-events="none"
             id="line12a"
-            style="fill:#000000;stroke:#000000;stroke-miterlimit:10"></path>
+            fill="#000000"
+            stroke="#000000"></path>
     <svg
             height="100%"
             width="100%"
             version="1.1"
             id="svg261">
         <path
-                style="fill:none;stroke:#000000;stroke-miterlimit:10"
+                stroke="#000000"
                 pointer-events="none"
                 stroke-miterlimit="10"
                 d="m 607.93371,416 39.56572,0"
@@ -1080,26 +1196,28 @@
             d="m 608,250 125.5,0"
             stroke-miterlimit="10"
             pointer-events="none"
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"></path>
+            stroke="#000000"></path>
     <path
             d="m 739,250 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
             stroke-miterlimit="10"
             pointer-events="none"
             id="line33a"
-            style="fill:#000000;stroke:#000000;stroke-miterlimit:10"></path>
+            sfill="#000000"
+            stroke="#000000"></path>
     <svg
             height="100%"
             width="100%"
             version="1.1"
             id="svg283">
         <path
-                style="fill:none;stroke:#000000;stroke-miterlimit:10"
+                stroke="#000000"
                 pointer-events="none"
                 stroke-miterlimit="10"
                 d="m 631,381 203.5,0"
                 id="line36"></path>
         <path
-                style="fill:#000000;stroke:#000000;stroke-miterlimit:10"
+                fill="#000000"
+                stroke="#000000"
                 id="line36a"
                 onmouseout="line1ToolTipsMouseOut()"
                 onmouseover="line1ToolTipsMouseOver()"
@@ -1117,37 +1235,37 @@
             d="m 458,521 800.5,0"
             stroke-miterlimit="10"
             pointer-events="none"
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"></path>
+            stroke="#000000"></path>
 </svg>
 <path
         id="line53"
         d="m 458.5,521 0,-180"
         stroke-miterlimit="10"
         pointer-events="none"
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"></path>
+        stroke="#000000"></path>
 <g
         id="g5327"
         transform="translate(50,0)">
 <path
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"
+        stroke="#000000"
         pointer-events="none"
         stroke-miterlimit="10"
         d="m 958,164 0,-163"
         id="line21"></path>
 <path
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"
+        stroke="#000000"
         pointer-events="none"
         stroke-miterlimit="10"
         d="m 1128,431 0,-69.5"
         id="line58"></path>
 <path
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"
+        stroke="#000000"
         pointer-events="none"
         stroke-miterlimit="10"
         d="m 1208,521 0,-188.5"
         id="line59"></path>
 <path
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"
+        stroke="#000000"
         pointer-events="none"
         stroke-miterlimit="10"
         d="m 890,431 0,-134.5"
@@ -1181,7 +1299,9 @@
         x="808.57227"
         y="100"
         font-size="20px"
-        style="font-size:20px;fill:#000000">EX/MEM</text>
+        style="font-size:20px;fill:#000000"
+        onmouseout="exmemToolTipsMouseOut()"
+        onmouseover="exmemToolTipsMouseOver()">EX/MEM</text>
 <g
         id="g4435"
         transform="matrix(0.99518609,0,0,1.2504352,5.2591954,-19.612273)">
@@ -1211,7 +1331,9 @@
         x="1047.4268"
         y="100"
         font-size="20px"
-        style="font-size:20px;fill:#000000">MEM/WB</text>
+        style="font-size:20px;fill:#000000"
+        onmouseout="memwbToolTipsMouseOut()"
+        onmouseover="memwbToolTipsMouseOver()">MEM/WB</text>
 <svg
         height="100%"
         width="100%"
@@ -1232,7 +1354,9 @@
             font-size="20px"
             y="339.25"
             x="933"
-            id="rec12">Data</text>
+            id="rec12"
+            onmouseout="dataToolTipsMouseOut()"
+            onmouseover="dataToolTipsMouseOver()">Data</text>
 </svg>
 <svg
         height="100%"
@@ -1254,7 +1378,9 @@
             font-size="20px"
             y="339.14355"
             x="993"
-            id="rec13">Mem.</text>
+            id="rec13"
+            onmouseout="dataToolTipsMouseOut()"
+            onmouseover="dataToolTipsMouseOver()">Mem.</text>
 </svg>
 <svg
         height="100%"
@@ -1274,7 +1400,9 @@
             font-size="12px"
             y="350"
             x="1152"
-            id="ell5">MUX</text>
+            id="ell5"
+            onmouseout="mutexToolTipsMouseOut()"
+            onmouseover="mutexToolTipsMouseOver()">MUX</text>
 </svg>
 <svg
         height="100%"
@@ -1282,13 +1410,14 @@
         version="1.1"
         id="svg190">
     <path
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"
+            stroke="#000000"
             pointer-events="none"
             stroke-miterlimit="10"
             d="m 768,164 67.5,0"
             id="line13"></path>
     <path
-            style="fill:#000000;stroke:#000000;stroke-miterlimit:10"
+            fill="#000000"
+            stroke="#000000"
             id="line13a"
             onmouseout="line1ToolTipsMouseOut()"
             onmouseover="line1ToolTipsMouseOver()"
@@ -1300,20 +1429,21 @@
         d="m 862,164 96.5,0"
         stroke-miterlimit="10"
         pointer-events="none"
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"></path>
+        stroke="#000000"></path>
 <svg
         height="100%"
         width="100%"
         version="1.1"
         id="svg291">
     <path
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"
+            stroke="#000000"
             pointer-events="none"
             stroke-miterlimit="10"
             d="m 810,271 24.5,0"
             id="line38"></path>
     <path
-            style="fill:#000000;stroke:#000000;stroke-miterlimit:10"
+            fill="#000000"
+            stroke="#000000"
             id="line38a"
             onmouseout="line1ToolTipsMouseOut()"
             onmouseover="line1ToolTipsMouseOver()"
@@ -1326,13 +1456,14 @@
         version="1.1"
         id="svg294">
     <path
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"
+            stroke="#000000"
             pointer-events="none"
             stroke-miterlimit="10"
             d="m 810,296 24.5,0"
             id="line39"></path>
     <path
-            style="fill:#000000;stroke:#000000;stroke-miterlimit:10"
+            fill="#000000"
+            stroke="#000000"
             id="line39a"
             onmouseout="line1ToolTipsMouseOut()"
             onmouseover="line1ToolTipsMouseOver()"
@@ -1344,13 +1475,14 @@
         d="m 862,271 52,0"
         stroke-miterlimit="10"
         pointer-events="none"
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"></path>
+        stroke="#000000"></path>
 <path
         d="m 919.5,271 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
         stroke-miterlimit="10"
         pointer-events="none"
         id="line40a"
-        style="fill:#000000;stroke:#000000;stroke-miterlimit:10"></path>
+        fill="#000000"
+        stroke="#000000"></path>
 <svg
         height="100%"
         width="100%"
@@ -1358,7 +1490,7 @@
         id="svg302"
         transform="translate(0,-4.965)">
     <path
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"
+            stroke="#000000"
             pointer-events="none"
             stroke-miterlimit="10"
             d="m 862,296 28,0"
@@ -1369,26 +1501,28 @@
         d="m 890,296 28,0"
         stroke-miterlimit="10"
         pointer-events="none"
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"></path>
+        stroke="#000000"></path>
 <path
         d="m 919.5,296 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
         stroke-miterlimit="10"
         pointer-events="none"
         id="line42a"
-        style="fill:#000000;stroke:#000000;stroke-miterlimit:10"></path>
+        fill="#000000"
+        stroke="#000000"></path>
 <svg
         height="100%"
         width="100%"
         version="1.1"
         id="svg310">
     <path
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"
+            stroke="#000000"
             pointer-events="none"
             stroke-miterlimit="10"
             d="m 889.5,431 188,0"
             id="line43"></path>
     <path
-            style="fill:#000000;stroke:#000000;stroke-miterlimit:10"
+            fill="#000000"
+            stroke="#000000"
             id="line43a"
             onmouseout="line1ToolTipsMouseOut()"
             onmouseover="line1ToolTipsMouseOver()"
@@ -1400,9 +1534,10 @@
         d="m 1050,333 27.5,0"
         stroke-miterlimit="10"
         pointer-events="none"
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"></path>
+        stroke="#000000"></path>
 <path
-        style="fill:#000000;stroke:#000000;stroke-miterlimit:10"
+        fill="#000000"
+        stroke="#000000"
         id="line44a"
         onmouseout="line1ToolTipsMouseOut()"
         onmouseover="line1ToolTipsMouseOver()"
@@ -1413,26 +1548,28 @@
         d="m 1105,333 36.5,0"
         stroke-miterlimit="10"
         pointer-events="none"
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"></path>
+        stroke="#000000"></path>
 <path
         d="m 1147,333 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
         stroke-miterlimit="10"
         pointer-events="none"
         id="line45a"
-        style="fill:#000000;stroke:#000000;stroke-miterlimit:10"></path>
+        fill="#000000"
+        stroke="#000000"></path>
 <svg
         height="100%"
         width="100%"
         version="1.1"
         id="svg321">
     <path
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"
+            stroke="#000000"
             pointer-events="none"
             stroke-miterlimit="10"
             d="m 1127.5,361.5 14,0"
             id="line46"></path>
     <path
-            style="fill:#000000;stroke:#000000;stroke-miterlimit:10"
+            fill="#000000"
+            stroke="#000000"
             id="line46a"
             pointer-events="none"
             stroke-miterlimit="10"
@@ -1444,7 +1581,7 @@
         version="1.1"
         id="svg326">
     <path
-            style="fill:none;stroke:#000000;stroke-miterlimit:10"
+            stroke="#000000"
             pointer-events="none"
             stroke-miterlimit="10"
             d="m 1184,333 24.5,0"
@@ -1455,15 +1592,16 @@
         d="m 862,381 53.5,0"
         stroke-miterlimit="10"
         pointer-events="none"
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"></path>
+        stroke="#000000"></path>
 <path
         d="m 919.5,381 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
         stroke-miterlimit="10"
         pointer-events="none"
         id="line60a"
-        style="fill:#000000;stroke:#000000;stroke-miterlimit:10"></path>
+        fill="#000000"
+        stroke="#000000"></path>
 <path
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"
+        stroke="#000000"
         pointer-events="none"
         stroke-miterlimit="10"
         d="m 1105,431 23.5,0"
@@ -1490,45 +1628,50 @@
             font-size="12px"
             y="332.77148"
             x="684.04297"
-            id="ell4">MUX</text>
+            id="ell4"
+            onmouseover="mutexToolTipsMouseOver()"
+            onmouseout="mutexToolTipsMouseOut()">MUX</text>
 </svg>
 <path
         id="line35"
         d="m 638,317 35,0"
         stroke-miterlimit="10"
         pointer-events="none"
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"></path>
+        stroke="#000000"></path>
 <path
         d="m 679,317 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
         stroke-miterlimit="10"
         pointer-events="none"
         id="line35a"
-        style="fill:#000000;stroke:#000000;stroke-miterlimit:10"></path>
+        fill="#000000"
+        stroke="#000000"></path>
 <path
         id="line37"
         d="m 716,315 24,0"
         stroke-miterlimit="10"
         pointer-events="none"
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"></path>
+        stroke="#000000"></path>
 <path
         d="m 745,315 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
         stroke-miterlimit="10"
         pointer-events="none"
         id="line37a"
-        style="fill:#000000;stroke:#000000;stroke-miterlimit:10"></path>
+        fill="#000000"
+        stroke="#000000"></path>
 <svg
         height="100%"
         width="100%"
         version="1.1"
         id="svg348">
 <path
-        style="fill:none;stroke:#000000;stroke-miterlimit:10"
+        stroke="#000000"
         pointer-events="none"
         stroke-miterlimit="10"
         d="m 653.5,343 20,0"
         id="line61"></path>
 <path
-        style="fill:#000000;stroke:#000000;stroke-miterlimit:10"
+        fill="#000000"
+        stroke="#000000"
         id="line61a"
         pointer-events="none"
         stroke-miterlimit="10"

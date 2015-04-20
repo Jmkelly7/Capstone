@@ -31,13 +31,18 @@ function colorLines(objectName, colorChoice) {
 
     if (document.getElementById(objectName + "a")) {
 
-        document.getElementById(objectName + "a").setAttribute("style", "fill:" + colorChoice + ";stroke-width:2;stroke:" + colorChoice);
+        //document.getElementById(objectName + "a").setAttribute("style", "fill:" + colorChoice + ";stroke-width:2;stroke:" + colorChoice);
+        document.getElementById(objectName + "a").setAttribute("fill", colorChoice);
+        document.getElementById(objectName + "a").setAttribute("stroke", colorChoice);
+        document.getElementById(objectName + "a").setAttribute("stroke-width", "3");
         /*document.getElementById(objectName + "a").setAttribute("stroke", colorChoice);
         document.getElementById(objectName + "a").setAttribute("stroke-width", "2");*/
 
     }
 
-    document.getElementById(objectName).setAttribute("style", "fill:" + colorChoice + ";stroke-width:3;stroke:" + colorChoice);
+    //document.getElementById(objectName).setAttribute("style", "fill:" + colorChoice + ";stroke-width:3;stroke:" + colorChoice);
+    document.getElementById(objectName).setAttribute("stroke", colorChoice);
+    document.getElementById(objectName).setAttribute("stroke-width", "3");
     /*document.getElementById(objectName).setAttribute("stroke", colorChoice);
     document.getElementById(objectName).setAttribute("stroke-width", "3");*/
 }
@@ -66,13 +71,18 @@ function clearGivenLine(lineName) {
 
     if (document.getElementById(lineName + "a")) {
 
-        document.getElementById(lineName + "a").setAttribute("style", "fill:black;stroke-width:2;stroke:rgb(0,0,0)");
+        //document.getElementById(lineName + "a").setAttribute("style", "fill:black;stroke-width:2;stroke:rgb(0,0,0)");
+        document.getElementById(lineName + "a").setAttribute("fill", "#000000");
+        document.getElementById(lineName + "a").setAttribute("stroke", "#000000");
+        document.getElementById(lineName + "a").setAttribute("stroke-width", "2");
         /*document.getElementById(lineName + "a").setAttribute("stroke", "#FFFFFF");
         document.getElementById(lineName + "a").setAttribute("stroke-width", "1");*/
 
     }
 
-    document.getElementById(lineName).setAttribute("style", "fill:black;stroke-width:1;stroke:rgb(0,0,0)");
+    //document.getElementById(lineName).setAttribute("style", "fill:black;stroke-width:1;stroke:rgb(0,0,0)");
+    document.getElementById(lineName).setAttribute("stroke", "#000000");
+    document.getElementById(lineName).setAttribute("stroke-width", "1");
     /*document.getElementById(lineName).setAttribute("stroke", "#000000");
     document.getElementById(lineName).setAttribute("stroke-width", "1");*/
 

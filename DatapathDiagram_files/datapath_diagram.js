@@ -168,7 +168,12 @@ function parseFile() {
     legendArray[parseCounter + 3] = " ";
     legendArray[parseCounter + 4] = " ";
     legendArray[parseCounter + 5] = " ";
-
+    legendArray[parseCounter + 6] = " ";
+    legendArray[parseCounter + 7] = " ";
+    legendArray[parseCounter + 8] = " ";
+    legendArray[parseCounter + 9] = " ";
+    legendArray[parseCounter + 10] = " ";
+    legendArray[parseCounter + 11] = " ";
     return legendArray;
 
 }
