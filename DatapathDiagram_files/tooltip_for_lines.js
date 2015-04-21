@@ -26,41 +26,17 @@ function line2ToolTipsMouseOver() {
 
     //This is for lines 2, 18, 15, 20, 8
     if(document.getElementById('line2').getAttribute("stroke") != "#000000") {
-        if(document.getElementById('line2').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
-            tempArray = document.getElementById('slot1').textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                document.getElementById('line3pop1').textContent = "Send the new program counter total in order to set";
-                document.getElementById('line3pop2').textContent = "the count for the next instruction. Stage one, ";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-            } else {
-                document.getElementById('line3pop1').textContent = "Send the new program counter total in order to set";
-                document.getElementById('line3pop2').textContent = "the count for the next instruction. Stage one, ";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-            }
-        } else if(document.getElementById('line2').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
-            tempArray = document.getElementById('slot2').textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                document.getElementById('line3pop1').textContent = "Send the new program counter total in order to set";
-                document.getElementById('line3pop2').textContent = "the count for the next instruction. Stage one, ";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-            } else {
-                document.getElementById('line3pop1').textContent = "Send the new program counter total in order to set";
-                document.getElementById('line3pop2').textContent = "the count for the next instruction. Stage one, ";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-            }
-        } else if(document.getElementById('line2').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
+        if (document.getElementById('line2').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
+            tempArray = document.getElementById("slot1").textContent.split(" ");
+        } else if (document.getElementById('line2').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
+            tempArray = document.getElementById("slot2").textContent.split(" ");
+        } else if (document.getElementById('line2').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
             tempArray = document.getElementById("slot3").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                document.getElementById('line3pop1').textContent = "Send the new program counter total in order to set";
-                document.getElementById('line3pop2').textContent = "the count for the next instruction. Stage one, ";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-            } else {
-                document.getElementById('line3pop1').textContent = "Send the new program counter total in order to set";
-                document.getElementById('line3pop2').textContent = "the count for the next instruction. Stage one, ";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-            }
-        } else if(document.getElementById('line2').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
+        } else if (document.getElementById('line2').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
             tempArray = document.getElementById("slot4").textContent.split(" ");
+        } else if (document.getElementById('line2').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
+            tempArray = document.getElementById("slot5").textContent.split(" ");
+        }
             if(tempArray[3] == undefined) {
                 document.getElementById('line3pop1').textContent = "Send the new program counter total in order to set";
                 document.getElementById('line3pop2').textContent = "the count for the next instruction. Stage one, ";
@@ -70,18 +46,6 @@ function line2ToolTipsMouseOver() {
                 document.getElementById('line3pop2').textContent = "the count for the next instruction. Stage one, ";
                 document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
             }
-        } else if(document.getElementById('line2').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
-            tempArray = document.getElementById("slot5").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                document.getElementById('line2pop1').textContent = "Send the newprogram counter total in order to set";
-                document.getElementById('line2pop2').textContent = "the count for the next instruction. Stage one, ";
-                document.getElementById('line2pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-            } else {
-                document.getElementById('line3pop1').textContent = "Send the newprogram counter total in order to set";
-                document.getElementById('line3pop2').textContent = "the count for the next instruction. Stage one, ";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-            }
-        }
         document.getElementById('line3pop1').style.visibility = "visible";
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
@@ -102,52 +66,17 @@ function line3ToolTipsMouseOver() {
 
     //For line 3
     if(document.getElementById('line3').getAttribute("stroke") != "#000000") {
-        if(document.getElementById('line3').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
+        if (document.getElementById('line3').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                document.getElementById('line3pop1').textContent = "Sends the new program counter value back to the ";
-                document.getElementById('line3pop2').textContent = "program counter and sets the new value.";
-                document.getElementById('line3pop3').textContent = "Stage one. Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-            } else {
-                document.getElementById('line3pop1').textContent = "Sends the new program counter value back to the ";
-                document.getElementById('line3pop2').textContent = "program counter and sets the new value.";
-                document.getElementById('line3pop3').textContent = "Stage one. Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-            }
-        } else if(document.getElementById('line3').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
+        } else if (document.getElementById('line3').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
             tempArray = document.getElementById("slot2").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                document.getElementById('line3pop1').textContent = "Sends the new program counter value back to the ";
-                document.getElementById('line3pop2').textContent = "program counter and sets the new value.";
-                document.getElementById('line3pop3').textContent = "Stage one. Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-            } else {
-                document.getElementById('line3pop1').textContent = "Sends the new program counter value back to the ";
-                document.getElementById('line3pop2').textContent = "program counter and sets the new value.";
-                document.getElementById('line3pop3').textContent = "Stage one. Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-            }
-        } else if(document.getElementById('line3').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
+        } else if (document.getElementById('line3').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
             tempArray = document.getElementById("slot3").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                document.getElementById('line3pop1').textContent = "Sends the new program counter value back to the ";
-                document.getElementById('line3pop2').textContent = "program counter and sets the new value.";
-                document.getElementById('line3pop3').textContent = "Stage one. Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-            } else {
-                document.getElementById('line3pop1').textContent = "Sends the new program counter value back to the ";
-                document.getElementById('line3pop2').textContent = "program counter and sets the new value.";
-                document.getElementById('line3pop3').textContent = "Stage one. Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-            }
-        } else if(document.getElementById('line3').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
+        } else if (document.getElementById('line3').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
             tempArray = document.getElementById("slot4").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                document.getElementById('line3pop1').textContent = "Sends the new program counter value back to the ";
-                document.getElementById('line3pop2').textContent = "program counter and sets the new value.";
-                document.getElementById('line3pop3').textContent = "Stage one. Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-            } else {
-                document.getElementById('line3pop1').textContent = "Sends the new program counter value back to the ";
-                document.getElementById('line3pop2').textContent = "program counter and sets the new value.";
-                document.getElementById('line3pop3').textContent = "Stage one. Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-            }
-        } else if(document.getElementById('line3').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
+        } else if (document.getElementById('line3').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
+        }
             if(tempArray[3] == undefined) {
                 document.getElementById('line3pop1').textContent = "Sends the new program counter value back to the ";
                 document.getElementById('line3pop2').textContent = "program counter and sets the new value.";
@@ -157,8 +86,6 @@ function line3ToolTipsMouseOver() {
                 document.getElementById('line3pop2').textContent = "program counter and sets the new value.";
                 document.getElementById('line3pop3').textContent = "Stage one. Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
             }
-        }
-
         document.getElementById('line3pop1').style.visibility = "visible";
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
@@ -179,60 +106,17 @@ function line4ToolTipsMouseOver() {
 
     //For lines 4, 19, 7
     if(document.getElementById('line4').getAttribute("stroke") != "#000000") {
-        if(document.getElementById('line4').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
+        if (document.getElementById('line4').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                document.getElementById('line4pop1').textContent = "Send the program counter to the add alu to get four";
-                document.getElementById('line4pop2').textContent = "added to it for the next instruction. Stage one,";
-                document.getElementById('line4pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-                document.getElementById('line4pop4').textContent = "Also sends the instruction in Instruction Memory.";
-            } else {
-                document.getElementById('line4pop1').textContent = "Send the program counter to the add alu to get four";
-                document.getElementById('line4pop2').textContent = "added to it for the next instruction. Stage one,";
-                document.getElementById('line4pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-                document.getElementById('line4pop4').textContent = "Also sends the instruction in Instruction Memory.";
-            }
-        } else if(document.getElementById('line4').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
+        } else if (document.getElementById('line4').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
             tempArray = document.getElementById("slot2").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                document.getElementById('line4pop1').textContent = "Send the program counter to the add alu to get four";
-                document.getElementById('line4pop2').textContent = "added to it for the next instruction. Stage one,";
-                document.getElementById('line4pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-                document.getElementById('line4pop4').textContent = "Also sends the instruction in Instruction Memory.";
-            } else {
-                document.getElementById('line4pop1').textContent = "Send the program counter to the add alu to get four";
-                document.getElementById('line4pop2').textContent = "added to it for the next instruction. Stage one,";
-                document.getElementById('line4pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-                document.getElementById('line4pop4').textContent = "Also sends the instruction in Instruction Memory.";
-            }
-        } else if(document.getElementById('line4').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
+        } else if (document.getElementById('line4').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
             tempArray = document.getElementById("slot3").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                document.getElementById('line4pop1').textContent = "Send the program counter to the add alu to get four";
-                document.getElementById('line4pop2').textContent = "added to it for the next instruction. Stage one,";
-                document.getElementById('line4pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-                document.getElementById('line4pop4').textContent = "Also sends the instruction in Instruction Memory.";
-            } else {
-                document.getElementById('line4pop1').textContent = "Send the program counter to the add alu to get four";
-                document.getElementById('line4pop2').textContent = "added to it for the next instruction. Stage one,";
-                document.getElementById('line4pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-                document.getElementById('line4pop4').textContent = "Also sends the instruction in Instruction Memory.";
-            }
-        } else if(document.getElementById('line4').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
+        } else if (document.getElementById('line4').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
             tempArray = document.getElementById("slot4").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                document.getElementById('line4pop1').textContent = "Send the program counter to the add alu to get four";
-                document.getElementById('line4pop2').textContent = "added to it for the next instruction. Stage one,";
-                document.getElementById('line4pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-                document.getElementById('line4pop4').textContent = "Also sends the instruction in Instruction Memory.";
-            } else {
-                document.getElementById('line4pop1').textContent = "Send the program counter to the add alu to get four";
-                document.getElementById('line4pop2').textContent = "added to it for the next instruction. Stage one,";
-                document.getElementById('line4pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-                document.getElementById('line4pop4').textContent = "Also sends the instruction in Instruction Memory.";
-            }
-        } else if(document.getElementById('line4').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
+        } else if (document.getElementById('line4').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
+        }
             if(tempArray[3] == undefined) {
                 document.getElementById('line4pop1').textContent = "Send the program counter to the add alu to get four";
                 document.getElementById('line4pop2').textContent = "added to it for the next instruction. Stage one,";
@@ -244,7 +128,6 @@ function line4ToolTipsMouseOver() {
                 document.getElementById('line4pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
                 document.getElementById('line4pop4').textContent = "Also sends the instruction in Instruction Memory.";
             }
-        }
         document.getElementById('line4pop1').style.visibility = "visible";
         document.getElementById('line4pop2').style.visibility = "visible";
         document.getElementById('line4pop3').style.visibility = "visible";
@@ -267,52 +150,17 @@ function line5ToolTipsMouseOver() {
 
     //For line 5
     if(document.getElementById('line5').getAttribute("stroke") != "#000000") {
-        if(document.getElementById('line5').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
+        if (document.getElementById('line5').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                document.getElementById('line3pop1').textContent = "Sending the instruction to Instruction memory to be";
-                document.getElementById('line3pop2').textContent = "stored. Stage one";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-            } else {
-                document.getElementById('line3pop1').textContent = "Sending the instruction to Instruction memory to be";
-                document.getElementById('line3pop2').textContent = "stored. Stage one";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-            }
-        } else if(document.getElementById('line5').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
+        } else if (document.getElementById('line5').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
             tempArray = document.getElementById("slot2").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                document.getElementById('line3pop1').textContent = "Sending the instruction to Instruction memory to be";
-                document.getElementById('line3pop2').textContent = "stored. Stage one";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-            } else {
-                document.getElementById('line3pop1').textContent = "Sending the instruction to Instruction memory to be";
-                document.getElementById('line3pop2').textContent = "stored. Stage one";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-            }
-        } else if(document.getElementById('line5').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
+        } else if (document.getElementById('line5').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
             tempArray = document.getElementById("slot3").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                document.getElementById('line3pop1').textContent = "Sending the instruction to Instruction memory to be";
-                document.getElementById('line3pop2').textContent = "stored. Stage one";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-            } else {
-                document.getElementById('line3pop1').textContent = "Sending the instruction to Instruction memory to be";
-                document.getElementById('line3pop2').textContent = "stored. Stage one";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-            }
-        } else if(document.getElementById('line5').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
+        } else if (document.getElementById('line5').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
             tempArray = document.getElementById("slot4").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                document.getElementById('line3pop1').textContent = "Sending the instruction to Instruction memory to be";
-                document.getElementById('line3pop2').textContent = "stored. Stage one";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-            } else {
-                document.getElementById('line3pop1').textContent = "Sending the instruction to Instruction memory to be";
-                document.getElementById('line3pop2').textContent = "stored. Stage one";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-            }
-        } else if(document.getElementById('line5').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
+        } else if (document.getElementById('line5').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
+        }
             if(tempArray[3] == undefined) {
                 document.getElementById('line3pop1').textContent = "Sending the instruction to Instruction memory to be";
                 document.getElementById('line3pop2').textContent = "stored. Stage one";
@@ -322,7 +170,6 @@ function line5ToolTipsMouseOver() {
                 document.getElementById('line3pop2').textContent = "stored. Stage one";
                 document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
             }
-        }
         document.getElementById('line3pop1').style.visibility = "visible";
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
@@ -363,52 +210,17 @@ function line22ToolTipsMouseOver() {
 
     //For line 22
     if(document.getElementById('line22').getAttribute("stroke") != "#000000") {
-        if(document.getElementById('line22').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
+        if (document.getElementById('line22').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                document.getElementById('line3pop1').textContent = "Storing the instruction into the buffer so it may be";
-                document.getElementById('line3pop2').textContent = "passed into the next stage. Stage one.";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-            } else {
-                document.getElementById('line3pop1').textContent = "Storing the instruction into the buffer so it may be";
-                document.getElementById('line3pop2').textContent = "passed into the next stage. Stage one.";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-            }
-        } else if(document.getElementById('line22').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
+        } else if (document.getElementById('line22').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
             tempArray = document.getElementById("slot2").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                document.getElementById('line3pop1').textContent = "Storing the instruction into the buffer so it may be";
-                document.getElementById('line3pop2').textContent = "passed into the next stage. Stage one.";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-            } else {
-                document.getElementById('line3pop1').textContent = "Storing the instruction into the buffer so it may be";
-                document.getElementById('line3pop2').textContent = "passed into the next stage. Stage one.";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-            }
-        } else if(document.getElementById('line22').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
+        } else if (document.getElementById('line22').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
             tempArray = document.getElementById("slot3").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                document.getElementById('line3pop1').textContent = "Storing the instruction into the buffer so it may be";
-                document.getElementById('line3pop2').textContent = "passed into the next stage. Stage one.";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-            } else {
-                document.getElementById('line3pop1').textContent = "Storing the instruction into the buffer so it may be";
-                document.getElementById('line3pop2').textContent = "passed into the next stage. Stage one.";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-            }
-        } else if(document.getElementById('line22').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
+        } else if (document.getElementById('line22').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
             tempArray = document.getElementById("slot4").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                document.getElementById('line3pop1').textContent = "Storing the instruction into the buffer so it may be";
-                document.getElementById('line3pop2').textContent = "passed into the next stage. Stage one.";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-            } else {
-                document.getElementById('line3pop1').textContent = "Storing the instruction into the buffer so it may be";
-                document.getElementById('line3pop2').textContent = "passed into the next stage. Stage one.";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-            }
-        } else if(document.getElementById('line22').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
+        } else if (document.getElementById('line22').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
+        }
             if(tempArray[3] == undefined) {
                 document.getElementById('line3pop1').textContent = "Storing the instruction into the buffer so it may be";
                 document.getElementById('line3pop2').textContent = "passed into the next stage. Stage one.";
@@ -418,7 +230,6 @@ function line22ToolTipsMouseOver() {
                 document.getElementById('line3pop2').textContent = "passed into the next stage. Stage one.";
                 document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
             }
-        }
         document.getElementById('line3pop1').style.visibility = "visible";
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
@@ -439,52 +250,17 @@ function line23ToolTipsMouseOver() {
 
     //For line 23
     if(document.getElementById('line23').getAttribute("stroke") != "#000000") {
-        if(document.getElementById('line23').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
+        if (document.getElementById('line23').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                document.getElementById('line3pop1').textContent = "Sending the registers out of the buffer so they can";
-                document.getElementById('line3pop2').textContent = "be distributed into the correct places. Stage one.";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-            } else {
-                document.getElementById('line3pop1').textContent = "Sending the registers out of the buffer so they can";
-                document.getElementById('line3pop2').textContent = "be distributed into the correct places. Stage one.";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-            }
-        } else if(document.getElementById('line23').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
+        } else if (document.getElementById('line23').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
             tempArray = document.getElementById("slot2").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                document.getElementById('line3pop1').textContent = "Sending the registers out of the buffer so they can";
-                document.getElementById('line3pop2').textContent = "be distributed into the correct places. Stage one.";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-            } else {
-                document.getElementById('line3pop1').textContent = "Sending the registers out of the buffer so they can";
-                document.getElementById('line3pop2').textContent = "be distributed into the correct places. Stage one.";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-            }
-        } else if(document.getElementById('line23').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
+        } else if (document.getElementById('line23').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
             tempArray = document.getElementById("slot3").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                document.getElementById('line3pop1').textContent = "Sending the registers out of the buffer so they can";
-                document.getElementById('line3pop2').textContent = "be distributed into the correct places. Stage one.";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-            } else {
-                document.getElementById('line3pop1').textContent = "Sending the registers out of the buffer so they can";
-                document.getElementById('line3pop2').textContent = "be distributed into the correct places. Stage one.";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-            }
-        } else if(document.getElementById('line23').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
+        } else if (document.getElementById('line23').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
             tempArray = document.getElementById("slot4").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                document.getElementById('line3pop1').textContent = "Sending the registers out of the buffer so they can";
-                document.getElementById('line3pop2').textContent = "be distributed into the correct places. Stage one.";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-            } else {
-                document.getElementById('line3pop1').textContent = "Sending the registers out of the buffer so they can";
-                document.getElementById('line3pop2').textContent = "be distributed into the correct places. Stage one.";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-            }
-        } else if(document.getElementById('line23').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
+        } else if (document.getElementById('line23').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
+        }
             if(tempArray[3] == undefined) {
                 document.getElementById('line3pop1').textContent = "Sending the registers out of the buffer so they can";
                 document.getElementById('line3pop2').textContent = "be distributed into the correct places. Stage one.";
@@ -494,7 +270,6 @@ function line23ToolTipsMouseOver() {
                 document.getElementById('line3pop2').textContent = "be distributed into the correct places. Stage one.";
                 document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
             }
-        }
         document.getElementById('line3pop1').style.visibility = "visible";
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
@@ -522,142 +297,15 @@ function line50ToolTipsMouseOver() {
         var i = 0;
         if (document.getElementById('line50').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
-            if (tempArray[3] == undefined) {
-                loadArray = tempArray[2];
-                loadTemp = loadArray.split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
-                }
-                while (i < loadTemp.length) {
-                    allValue = allValue + "" + loadTemp[i];
-                    i++;
-
-                }
-                document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
-                document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
-                document.getElementById('line3pop3').textContent = "bottom. Stage two." + "RT: " + tempArray[1] + " RS: " + allValue;
-            } else {
-                loadArray = tempArray[0];
-                loadTemp = loadArray.split("");
-                tempValue = loadTemp[loadTemp.length - 1];
-                if (tempValue == 'i') {
-                    document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
-                    document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
-                    document.getElementById('line3pop3').textContent = "bottom. Stage two." + " RS: " + tempArray[2] + " RT: " + tempArray[1];
-                } else {
-                    document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
-                    document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
-                    document.getElementById('line3pop3').textContent = "bottom. Stage two." + " RS: " + tempArray[2] + " RT: " + tempArray[3];
-                }
-            }
         } else if (document.getElementById('line50').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
             tempArray = document.getElementById("slot2").textContent.split(" ");
-            if (tempArray[3] == undefined) {
-                loadArray = tempArray[2];
-                loadTemp = loadArray.split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
-                }
-                while (i < loadTemp.length) {
-                    allValue = allValue + "" + loadTemp[i];
-                    i++;
-
-                }
-                document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
-                document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
-                document.getElementById('line3pop3').textContent = "bottom. Stage two." + "RT: " + tempArray[1] + " RS: " + allValue;
-            } else {
-                loadArray = tempArray[0];
-                loadTemp = loadArray.split("");
-                tempValue = loadTemp[loadTemp.length - 1];
-                if (tempValue == 'i') {
-                    document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
-                    document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
-                    document.getElementById('line3pop3').textContent = "bottom. Stage two." + " RS: " + tempArray[2] + " RT: " + tempArray[1];
-                } else {
-                    document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
-                    document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
-                    document.getElementById('line3pop3').textContent = "bottom. Stage two." + " RS: " + tempArray[2] + " RT: " + tempArray[3];
-                }
-            }
         } else if (document.getElementById('line50').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
             tempArray = document.getElementById("slot3").textContent.split(" ");
-            if (tempArray[3] == undefined) {
-                loadArray = tempArray[2];
-                loadTemp = loadArray.split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
-                }
-                while (i < loadTemp.length) {
-                    allValue = allValue + "" + loadTemp[i];
-                    i++;
-
-                }
-                document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
-                document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
-                document.getElementById('line3pop3').textContent = "bottom. Stage two." + "RT: " + tempArray[1] + " RS: " + allValue;
-            } else {
-                loadArray = tempArray[0];
-                loadTemp = loadArray.split("");
-                tempValue = loadTemp[loadTemp.length - 1];
-                if (tempValue == 'i') {
-                    document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
-                    document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
-                    document.getElementById('line3pop3').textContent = "bottom. Stage two." + " RS: " + tempArray[2] + " RT: " + tempArray[1];
-                } else {
-                    document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
-                    document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
-                    document.getElementById('line3pop3').textContent = "bottom. Stage two." + " RS: " + tempArray[2] + " RT: " + tempArray[3];
-                }
-            }
         } else if (document.getElementById('line50').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
             tempArray = document.getElementById("slot4").textContent.split(" ");
-            if (tempArray[3] == undefined) {
-                loadArray = tempArray[2];
-                loadTemp = loadArray.split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
-                }
-                while (i < loadTemp.length) {
-                    allValue = allValue + "" + loadTemp[i];
-                    i++;
-
-                }
-                document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
-                document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
-                document.getElementById('line3pop3').textContent = "bottom. Stage two." + "RT: " + tempArray[1] + " RS: " + allValue;
-            } else {
-                loadArray = tempArray[0];
-                loadTemp = loadArray.split("");
-                tempValue = loadTemp[loadTemp.length - 1];
-                if (tempValue == 'i') {
-                    document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
-                    document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
-                    document.getElementById('line3pop3').textContent = "bottom. Stage two." + " RS: " + tempArray[2] + " RT: " + tempArray[1];
-                } else {
-                    document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
-                    document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
-                    document.getElementById('line3pop3').textContent = "bottom. Stage two." + " RS: " + tempArray[2] + " RT: " + tempArray[3];
-                }
-            }
         } else if (document.getElementById('line50').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
+        }
             if (tempArray[3] == undefined) {
                 loadArray = tempArray[2];
                 loadTemp = loadArray.split("");
@@ -690,7 +338,6 @@ function line50ToolTipsMouseOver() {
                     document.getElementById('line3pop3').textContent = "bottom. Stage two." + " RS: " + tempArray[2] + " RT: " + tempArray[3];
                 }
             }
-        }
         document.getElementById('line3pop1').style.visibility = "visible";
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
@@ -716,144 +363,17 @@ function line51ToolTipsMouseOver() {
         var tempValue = "";
         var allValue = "";
         var i = 0;
-        if(document.getElementById('line51').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
+        if (document.getElementById('line51').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                loadArray = tempArray[2];
-                loadTemp = loadArray.split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
-                }
-                while (i < loadTemp.length) {
-                    allValue =  allValue + "" + loadTemp[i];
-                    i++;
-
-                }
-                document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
-                document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
-                document.getElementById('line3pop3').textContent = "to 32. Stage two." + "Offset: " + tempValue;
-            } else {
-                loadArray = tempArray[0];
-                loadTemp = loadArray.split("");
-                tempValue = loadTemp[loadTemp.length-1];
-                if (tempValue == 'i') {
-                    document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
-                    document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
-                    document.getElementById('line3pop3').textContent = "to 32. Stage two."  + " Intermediate value: " + tempArray[3];
-                } else {
-                    document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
-                    document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
-                    document.getElementById('line3pop3').textContent = "to 32. Stage two."  + " Intermediate value: " + tempArray[3];
-                }
-            }
-        } else if(document.getElementById('line51').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
+        } else if (document.getElementById('line51').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
             tempArray = document.getElementById("slot2").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                loadArray = tempArray[2];
-                loadTemp = loadArray.split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
-                }
-                while (i < loadTemp.length) {
-                    allValue =  allValue + "" + loadTemp[i];
-                    i++;
-
-                }
-                document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
-                document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
-                document.getElementById('line3pop3').textContent = "to 32. Stage two." + "Offset: " + tempValue;
-            } else {
-                loadArray = tempArray[0];
-                loadTemp = loadArray.split("");
-                tempValue = loadTemp[loadTemp.length-1];
-                if (tempValue == 'i') {
-                    document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
-                    document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
-                    document.getElementById('line3pop3').textContent = "to 32. Stage two."  + " Intermediate value: " + tempArray[3];
-                } else {
-                    document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
-                    document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
-                    document.getElementById('line3pop3').textContent = "to 32. Stage two."  + " Intermediate value: " + tempArray[3];
-                }
-            }
-        } else if(document.getElementById('line51').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
+        } else if (document.getElementById('line51').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
             tempArray = document.getElementById("slot3").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                loadArray = tempArray[2];
-                loadTemp = loadArray.split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
-                }
-                while (i < loadTemp.length) {
-                    allValue =  allValue + "" + loadTemp[i];
-                    i++;
-
-                }
-                document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
-                document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
-                document.getElementById('line3pop3').textContent = "to 32. Stage two." + "Offset: " + tempValue;
-            } else {
-                loadArray = tempArray[0];
-                loadTemp = loadArray.split("");
-                tempValue = loadTemp[loadTemp.length-1];
-                if (tempValue == 'i') {
-                    document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
-                    document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
-                    document.getElementById('line3pop3').textContent = "to 32. Stage two."  + " Intermediate value: " + tempArray[3];
-                } else {
-                    document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
-                    document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
-                    document.getElementById('line3pop3').textContent = "to 32. Stage two."  + " Intermediate value: " + tempArray[3];
-                }
-            }
-        } else if(document.getElementById('line51').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
+        } else if (document.getElementById('line51').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
             tempArray = document.getElementById("slot4").textContent.split(" ");
-            if(tempArray[3] == undefined) {
-                loadArray = tempArray[2];
-                loadTemp = loadArray.split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
-                }
-                while (i < loadTemp.length) {
-                    allValue =  allValue + "" + loadTemp[i];
-                    i++;
-
-                }
-                document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
-                document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
-                document.getElementById('line3pop3').textContent = "to 32. Stage two." + "Offset: " + tempValue;
-            } else {
-                loadArray = tempArray[0];
-                loadTemp = loadArray.split("");
-                tempValue = loadTemp[loadTemp.length-1];
-                if (tempValue == 'i') {
-                    document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
-                    document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
-                    document.getElementById('line3pop3').textContent = "to 32. Stage two."  + " Intermediate value: " + tempArray[3];
-                } else {
-                    document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
-                    document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
-                    document.getElementById('line3pop3').textContent = "to 32. Stage two."  + " Intermediate value: " + tempArray[3];
-                }
-            }
-        } else if(document.getElementById('line51').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
+        } else if (document.getElementById('line51').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
+        }
             if(tempArray[3] == undefined) {
                 loadArray = tempArray[2];
                 loadTemp = loadArray.split("");
@@ -886,7 +406,6 @@ function line51ToolTipsMouseOver() {
                     document.getElementById('line3pop3').textContent = "to 32. Stage two."  + " Intermediate value: " + tempArray[3];
                 }
             }
-        }
         document.getElementById('line3pop1').style.visibility = "visible";
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
@@ -906,142 +425,15 @@ function line24ToolTipsMouseOver() {
         var i = 0;
         if (document.getElementById('line24').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
-            if (tempArray[3] == undefined) {
-                loadArray = tempArray[2];
-                loadTemp = loadArray.split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
-                }
-                while (i < loadTemp.length) {
-                    allValue = allValue + "" + loadTemp[i];
-                    i++;
-
-                }
-                document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
-                document.getElementById('line3pop2').textContent = "to the correct place with RS";
-                document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + allValue;
-            } else {
-                loadArray = tempArray[0];
-                loadTemp = loadArray.split("");
-                tempValue = loadTemp[loadTemp.length - 1];
-                if (tempValue == 'i') {
-                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
-                    document.getElementById('line3pop2').textContent = "to the correct place with RS";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
-                } else {
-                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
-                    document.getElementById('line3pop2').textContent = "to the correct place with RS";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
-                }
-            }
         } else if (document.getElementById('line24').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
             tempArray = document.getElementById("slot2").textContent.split(" ");
-            if (tempArray[3] == undefined) {
-                loadArray = tempArray[2];
-                loadTemp = loadArray.split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
-                }
-                while (i < loadTemp.length) {
-                    allValue = allValue + "" + loadTemp[i];
-                    i++;
-
-                }
-                document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
-                document.getElementById('line3pop2').textContent = "to the correct place with RS";
-                document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + allValue;
-            } else {
-                loadArray = tempArray[0];
-                loadTemp = loadArray.split("");
-                tempValue = loadTemp[loadTemp.length - 1];
-                if (tempValue == 'i') {
-                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
-                    document.getElementById('line3pop2').textContent = "to the correct place with RS";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
-                } else {
-                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
-                    document.getElementById('line3pop2').textContent = "to the correct place with RS";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
-                }
-            }
         } else if (document.getElementById('line24').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
             tempArray = document.getElementById("slot3").textContent.split(" ");
-            if (tempArray[3] == undefined) {
-                loadArray = tempArray[2];
-                loadTemp = loadArray.split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
-                }
-                while (i < loadTemp.length) {
-                    allValue = allValue + "" + loadTemp[i];
-                    i++;
-
-                }
-                document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
-                document.getElementById('line3pop2').textContent = "to the correct place with RS";
-                document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + allValue;
-            } else {
-                loadArray = tempArray[0];
-                loadTemp = loadArray.split("");
-                tempValue = loadTemp[loadTemp.length - 1];
-                if (tempValue == 'i') {
-                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
-                    document.getElementById('line3pop2').textContent = "to the correct place with RS";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
-                } else {
-                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
-                    document.getElementById('line3pop2').textContent = "to the correct place with RS";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
-                }
-            }
         } else if (document.getElementById('line24').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
             tempArray = document.getElementById("slot4").textContent.split(" ");
-            if (tempArray[3] == undefined) {
-                loadArray = tempArray[2];
-                loadTemp = loadArray.split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
-                }
-                while (i < loadTemp.length) {
-                    allValue = allValue + "" + loadTemp[i];
-                    i++;
-
-                }
-                document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
-                document.getElementById('line3pop2').textContent = "to the correct place with RS";
-                document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + allValue;
-            } else {
-                loadArray = tempArray[0];
-                loadTemp = loadArray.split("");
-                tempValue = loadTemp[loadTemp.length - 1];
-                if (tempValue == 'i') {
-                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
-                    document.getElementById('line3pop2').textContent = "to the correct place with RS";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
-                } else {
-                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
-                    document.getElementById('line3pop2').textContent = "to the correct place with RS";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
-                }
-            }
         } else if (document.getElementById('line24').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
+        }
             if (tempArray[3] == undefined) {
                 loadArray = tempArray[2];
                 loadTemp = loadArray.split("");
@@ -1074,7 +466,6 @@ function line24ToolTipsMouseOver() {
                     document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
                 }
             }
-        }
         document.getElementById('line3pop1').style.visibility = "visible";
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
@@ -1094,142 +485,15 @@ function line25ToolTipsMouseOver() {
         var i = 0;
         if (document.getElementById('line25').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
-            if (tempArray[3] == undefined) {
-                loadArray = tempArray[2];
-                loadTemp = loadArray.split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
-                }
-                while (i < loadTemp.length) {
-                    allValue = allValue + "" + loadTemp[i];
-                    i++;
-
-                }
-                document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
-                document.getElementById('line3pop2').textContent = "to the correct place with RT";
-                document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
-            } else {
-                loadArray = tempArray[0];
-                loadTemp = loadArray.split("");
-                tempValue = loadTemp[loadTemp.length - 1];
-                if (tempValue == 'i') {
-                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
-                    document.getElementById('line3pop2').textContent = "to the correct place with RT";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
-                } else {
-                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
-                    document.getElementById('line3pop2').textContent = "to the correct place with RT";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[3];
-                }
-            }
         } else if (document.getElementById('line25').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
             tempArray = document.getElementById("slot2").textContent.split(" ");
-            if (tempArray[3] == undefined) {
-                loadArray = tempArray[2];
-                loadTemp = loadArray.split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
-                }
-                while (i < loadTemp.length) {
-                    allValue = allValue + "" + loadTemp[i];
-                    i++;
-
-                }
-                document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
-                document.getElementById('line3pop2').textContent = "to the correct place with RT";
-                document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
-            } else {
-                loadArray = tempArray[0];
-                loadTemp = loadArray.split("");
-                tempValue = loadTemp[loadTemp.length - 1];
-                if (tempValue == 'i') {
-                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
-                    document.getElementById('line3pop2').textContent = "to the correct place with RT";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
-                } else {
-                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
-                    document.getElementById('line3pop2').textContent = "to the correct place with RT";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[3];
-                }
-            }
         } else if (document.getElementById('line25').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
             tempArray = document.getElementById("slot3").textContent.split(" ");
-            if (tempArray[3] == undefined) {
-                loadArray = tempArray[2];
-                loadTemp = loadArray.split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
-                }
-                while (i < loadTemp.length) {
-                    allValue = allValue + "" + loadTemp[i];
-                    i++;
-
-                }
-                document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
-                document.getElementById('line3pop2').textContent = "to the correct place with RT";
-                document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
-            } else {
-                loadArray = tempArray[0];
-                loadTemp = loadArray.split("");
-                tempValue = loadTemp[loadTemp.length - 1];
-                if (tempValue == 'i') {
-                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
-                    document.getElementById('line3pop2').textContent = "to the correct place with RT";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
-                } else {
-                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
-                    document.getElementById('line3pop2').textContent = "to the correct place with RT";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[3];
-                }
-            }
         } else if (document.getElementById('line25').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
             tempArray = document.getElementById("slot4").textContent.split(" ");
-            if (tempArray[3] == undefined) {
-                loadArray = tempArray[2];
-                loadTemp = loadArray.split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
-                }
-                while (i < loadTemp.length) {
-                    allValue = allValue + "" + loadTemp[i];
-                    i++;
-
-                }
-                document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
-                document.getElementById('line3pop2').textContent = "to the correct place with RT";
-                document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
-            } else {
-                loadArray = tempArray[0];
-                loadTemp = loadArray.split("");
-                tempValue = loadTemp[loadTemp.length - 1];
-                if (tempValue == 'i') {
-                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
-                    document.getElementById('line3pop2').textContent = "to the correct place with RT";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
-                } else {
-                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
-                    document.getElementById('line3pop2').textContent = "to the correct place with RT";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[3];
-                }
-            }
         } else if (document.getElementById('line25').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
+        }
             if (tempArray[3] == undefined) {
                 loadArray = tempArray[2];
                 loadTemp = loadArray.split("");
@@ -1262,7 +526,6 @@ function line25ToolTipsMouseOver() {
                     document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[3];
                 }
             }
-        }
         document.getElementById('line3pop1').style.visibility = "visible";
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
@@ -1282,142 +545,15 @@ function line32ToolTipsMouseOver() {
         var i = 0;
         if (document.getElementById('line32').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
-            if (tempArray[3] == undefined) {
-                loadArray = tempArray[2];
-                loadTemp = loadArray.split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
-                }
-                while (i < loadTemp.length) {
-                    allValue = allValue + "" + loadTemp[i];
-                    i++;
-
-                }
-                document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
-                document.getElementById('line3pop2').textContent = "read into the correct place with RS";
-                document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + allValue;
-            } else {
-                loadArray = tempArray[0];
-                loadTemp = loadArray.split("");
-                tempValue = loadTemp[loadTemp.length - 1];
-                if (tempValue == 'i') {
-                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
-                    document.getElementById('line3pop2').textContent = "read into the correct place with RS";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
-                } else {
-                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
-                    document.getElementById('line3pop2').textContent = "read into the correct place with RS";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
-                }
-            }
         } else if (document.getElementById('line32').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
             tempArray = document.getElementById("slot2").textContent.split(" ");
-            if (tempArray[3] == undefined) {
-                loadArray = tempArray[2];
-                loadTemp = loadArray.split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
-                }
-                while (i < loadTemp.length) {
-                    allValue = allValue + "" + loadTemp[i];
-                    i++;
-
-                }
-                document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
-                document.getElementById('line3pop2').textContent = "read into the correct place with RS";
-                document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + allValue;
-            } else {
-                loadArray = tempArray[0];
-                loadTemp = loadArray.split("");
-                tempValue = loadTemp[loadTemp.length - 1];
-                if (tempValue == 'i') {
-                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
-                    document.getElementById('line3pop2').textContent = "read into the correct place with RS";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
-                } else {
-                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
-                    document.getElementById('line3pop2').textContent = "read into the correct place with RS";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
-                }
-            }
         } else if (document.getElementById('line32').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
             tempArray = document.getElementById("slot3").textContent.split(" ");
-            if (tempArray[3] == undefined) {
-                loadArray = tempArray[2];
-                loadTemp = loadArray.split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
-                }
-                while (i < loadTemp.length) {
-                    allValue = allValue + "" + loadTemp[i];
-                    i++;
-
-                }
-                document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
-                document.getElementById('line3pop2').textContent = "read into the correct place with RS";
-                document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + allValue;
-            } else {
-                loadArray = tempArray[0];
-                loadTemp = loadArray.split("");
-                tempValue = loadTemp[loadTemp.length - 1];
-                if (tempValue == 'i') {
-                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
-                    document.getElementById('line3pop2').textContent = "read into the correct place with RS";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
-                } else {
-                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
-                    document.getElementById('line3pop2').textContent = "read into the correct place with RS";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
-                }
-            }
         } else if (document.getElementById('line32').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
             tempArray = document.getElementById("slot4").textContent.split(" ");
-            if (tempArray[3] == undefined) {
-                loadArray = tempArray[2];
-                loadTemp = loadArray.split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
-                }
-                while (i < loadTemp.length) {
-                    allValue = allValue + "" + loadTemp[i];
-                    i++;
-
-                }
-                document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
-                document.getElementById('line3pop2').textContent = "read into the correct place with RS";
-                document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + allValue;
-            } else {
-                loadArray = tempArray[0];
-                loadTemp = loadArray.split("");
-                tempValue = loadTemp[loadTemp.length - 1];
-                if (tempValue == 'i') {
-                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
-                    document.getElementById('line3pop2').textContent = "read into the correct place with RS";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
-                } else {
-                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
-                    document.getElementById('line3pop2').textContent = "read into the correct place with RS";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
-                }
-            }
         } else if (document.getElementById('line32').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
+        }
             if (tempArray[3] == undefined) {
                 loadArray = tempArray[2];
                 loadTemp = loadArray.split("");
@@ -1450,7 +586,67 @@ function line32ToolTipsMouseOver() {
                     document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
                 }
             }
+        document.getElementById('line3pop1').style.visibility = "visible";
+        document.getElementById('line3pop2').style.visibility = "visible";
+        document.getElementById('line3pop3').style.visibility = "visible";
+    } else {
+        line50ToolTipsMouseOut();
+    }
+}
+
+function line33ToolTipsMouseOver() {
+
+    //For line 33
+    if (document.getElementById('line33').getAttribute("stroke") != "#000000") {
+        var loadArray;
+        var loadTemp;
+        var tempValue = "";
+        var allValue = "";
+        var i = 0;
+        if (document.getElementById('line33').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
+            tempArray = document.getElementById("slot1").textContent.split(" ");
+        } else if (document.getElementById('line33').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
+            tempArray = document.getElementById("slot2").textContent.split(" ");
+        } else if (document.getElementById('line33').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
+            tempArray = document.getElementById("slot3").textContent.split(" ");
+        } else if (document.getElementById('line33').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
+            tempArray = document.getElementById("slot4").textContent.split(" ");
+        } else if (document.getElementById('line33').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
+            tempArray = document.getElementById("slot5").textContent.split(" ");
         }
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending out the data from RS to be placed into the ";
+                document.getElementById('line3pop2').textContent = "ALU to perform whatever code has been sent to it.";
+                document.getElementById('line3pop3').textContent = "Stage three." + " RS: " + allValue;
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from RS to be placed into the ";
+                    document.getElementById('line3pop2').textContent = "ALU to perform whatever code has been sent to it.";
+                    document.getElementById('line3pop3').textContent = "Stage three." + " RS: " + tempArray[2];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from RS to be placed into the ";
+                    document.getElementById('line3pop2').textContent = "ALU to perform whatever code has been sent to it.";
+                    document.getElementById('line3pop3').textContent = "Stage three." + " RS: " + tempArray[2];
+                }
+            }
+
         document.getElementById('line3pop1').style.visibility = "visible";
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
@@ -1470,142 +666,15 @@ function line31ToolTipsMouseOver() {
         var i = 0;
         if (document.getElementById('line31').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
-            if (tempArray[3] == undefined) {
-                loadArray = tempArray[2];
-                loadTemp = loadArray.split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
-                }
-                while (i < loadTemp.length) {
-                    allValue = allValue + "" + loadTemp[i];
-                    i++;
-
-                }
-                document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
-                document.getElementById('line3pop2').textContent = "read into the correct place with RT";
-                document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
-            } else {
-                loadArray = tempArray[0];
-                loadTemp = loadArray.split("");
-                tempValue = loadTemp[loadTemp.length - 1];
-                if (tempValue == 'i') {
-                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
-                    document.getElementById('line3pop2').textContent = "read into the correct place with RT";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
-                } else {
-                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
-                    document.getElementById('line3pop2').textContent = "read into the correct place with RT";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[3];
-                }
-            }
         } else if (document.getElementById('line31').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
             tempArray = document.getElementById("slot2").textContent.split(" ");
-            if (tempArray[3] == undefined) {
-                loadArray = tempArray[2];
-                loadTemp = loadArray.split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
-                }
-                while (i < loadTemp.length) {
-                    allValue = allValue + "" + loadTemp[i];
-                    i++;
-
-                }
-                document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
-                document.getElementById('line3pop2').textContent = "read into the correct place with RT";
-                document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
-            } else {
-                loadArray = tempArray[0];
-                loadTemp = loadArray.split("");
-                tempValue = loadTemp[loadTemp.length - 1];
-                if (tempValue == 'i') {
-                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
-                    document.getElementById('line3pop2').textContent = "read into the correct place with RT";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
-                } else {
-                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
-                    document.getElementById('line3pop2').textContent = "read into the correct place with RT";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[3];
-                }
-            }
         } else if (document.getElementById('line31').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
             tempArray = document.getElementById("slot3").textContent.split(" ");
-            if (tempArray[3] == undefined) {
-                loadArray = tempArray[2];
-                loadTemp = loadArray.split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
-                }
-                while (i < loadTemp.length) {
-                    allValue = allValue + "" + loadTemp[i];
-                    i++;
-
-                }
-                document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
-                document.getElementById('line3pop2').textContent = "read into the correct place with RT";
-                document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
-            } else {
-                loadArray = tempArray[0];
-                loadTemp = loadArray.split("");
-                tempValue = loadTemp[loadTemp.length - 1];
-                if (tempValue == 'i') {
-                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
-                    document.getElementById('line3pop2').textContent = "read into the correct place with RT";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
-                } else {
-                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
-                    document.getElementById('line3pop2').textContent = "read into the correct place with RT";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[3];
-                }
-            }
         } else if (document.getElementById('line31').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
             tempArray = document.getElementById("slot4").textContent.split(" ");
-            if (tempArray[3] == undefined) {
-                loadArray = tempArray[2];
-                loadTemp = loadArray.split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
-                }
-                while (i < loadTemp.length) {
-                    allValue = allValue + "" + loadTemp[i];
-                    i++;
-
-                }
-                document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
-                document.getElementById('line3pop2').textContent = "read into the correct place with RT";
-                document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
-            } else {
-                loadArray = tempArray[0];
-                loadTemp = loadArray.split("");
-                tempValue = loadTemp[loadTemp.length - 1];
-                if (tempValue == 'i') {
-                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
-                    document.getElementById('line3pop2').textContent = "read into the correct place with RT";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
-                } else {
-                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
-                    document.getElementById('line3pop2').textContent = "read into the correct place with RT";
-                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[3];
-                }
-            }
         } else if (document.getElementById('line31').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
+        }
             if (tempArray[3] == undefined) {
                 loadArray = tempArray[2];
                 loadTemp = loadArray.split("");
@@ -1638,7 +707,67 @@ function line31ToolTipsMouseOver() {
                     document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[3];
                 }
             }
+        document.getElementById('line3pop1').style.visibility = "visible";
+        document.getElementById('line3pop2').style.visibility = "visible";
+        document.getElementById('line3pop3').style.visibility = "visible";
+    } else {
+        line50ToolTipsMouseOut();
+    }
+}
+
+function line34ToolTipsMouseOver() {
+
+    //For line 33
+    if (document.getElementById('line33').getAttribute("stroke") != "#000000") {
+        var loadArray;
+        var loadTemp;
+        var tempValue = "";
+        var allValue = "";
+        var i = 0;
+        if (document.getElementById('line34').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
+            tempArray = document.getElementById("slot1").textContent.split(" ");
+        } else if (document.getElementById('line34').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
+            tempArray = document.getElementById("slot2").textContent.split(" ");
+        } else if (document.getElementById('line34').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
+            tempArray = document.getElementById("slot3").textContent.split(" ");
+        } else if (document.getElementById('line34').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
+            tempArray = document.getElementById("slot4").textContent.split(" ");
+        } else if (document.getElementById('line34').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
+            tempArray = document.getElementById("slot5").textContent.split(" ");
         }
+        if (tempArray[3] == undefined) {
+            loadArray = tempArray[2];
+            loadTemp = loadArray.split("");
+            tempValue = "";
+            allValue = "";
+            i = 0;
+            while (loadTemp[i] != '(') {
+                tempValue = tempValue + "" + loadTemp[i];
+                i++;
+            }
+            while (i < loadTemp.length) {
+                allValue = allValue + "" + loadTemp[i];
+                i++;
+
+            }
+            document.getElementById('line3pop1').textContent = "Sending out the data from RT to be placed into the ";
+            document.getElementById('line3pop2').textContent = "mutex to see if it is needed in the ALU";
+            document.getElementById('line3pop3').textContent = "Stage three." + " RT: " + tempArray[1];
+        } else {
+            loadArray = tempArray[0];
+            loadTemp = loadArray.split("");
+            tempValue = loadTemp[loadTemp.length - 1];
+            if (tempValue == 'i') {
+                document.getElementById('line3pop1').textContent = "Sending out the data from RT to be placed into the ";
+                document.getElementById('line3pop2').textContent = "mutex to see if it is needed in the ALU";
+                document.getElementById('line3pop3').textContent = "Stage three." + " RT: " + tempArray[1];
+            } else {
+                document.getElementById('line3pop1').textContent = "Sending out the data from RT to be placed into the ";
+                document.getElementById('line3pop2').textContent = "mutex to see if it is needed in the ALU";
+                document.getElementById('line3pop3').textContent = "Stage three." + " RT: " + tempArray[3];
+            }
+        }
+
         document.getElementById('line3pop1').style.visibility = "visible";
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
