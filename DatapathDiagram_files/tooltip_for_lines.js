@@ -1,5 +1,9 @@
 /**
- * Created by Josh on 3/4/2015.
+ *
+ *
+ * @author  Josh Kelly
+ * @author  Trevor Griggs
+ * @version 03/04/2015.
  */
 
 function line2ToolTipsMouseOver() {

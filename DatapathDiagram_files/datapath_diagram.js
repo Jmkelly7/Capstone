@@ -323,6 +323,7 @@ function runThrough() {
  * @param numSlots
  */
 function callInst(numSlots) {
+
     var cnt = INST_ONE_CNT;
 
     for (var i = 1; i <= numSlots; i++) {
