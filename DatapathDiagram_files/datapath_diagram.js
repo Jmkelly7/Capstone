@@ -304,36 +304,27 @@ function runThrough() {
 
         }
 
-        if (document.getElementById("slot2").textContent == "") {
+        // Handles the last 5 instructions falling off the diagram
+        if (document.getElementById("slot1").textContent == "") {
 
-            document.getElementById("slot1").setAttribute("fill", "white");
-            document.getElementById("slot2").setAttribute("fill", "white");
-            document.getElementById("slot3").setAttribute("fill", "white");
-            document.getElementById("slot4").setAttribute("fill", "white");
-            document.getElementById("slot5").setAttribute("fill", "white");
+            colorWhite(1);
 
-        }  else if (document.getElementById("slot3").textContent == "") {
+        } else if (document.getElementById("slot2").textContent == "") {
 
-            document.getElementById("slot2").setAttribute("fill", "white");
-            document.getElementById("slot3").setAttribute("fill", "white");
-            document.getElementById("slot4").setAttribute("fill", "white");
-            document.getElementById("slot5").setAttribute("fill", "white");
+            colorWhite(2);
+
+        } else if (document.getElementById("slot3").textContent == "") {
+
+            colorWhite(3);
 
         } else if (document.getElementById("slot4").textContent == "") {
 
-            document.getElementById("slot3").setAttribute("fill", "white");
-            document.getElementById("slot4").setAttribute("fill", "white");
-            document.getElementById("slot5").setAttribute("fill", "white");
+            colorWhite(4);
 
-        }  else if (document.getElementById("slot5").textContent == "") {
+        } else if (document.getElementById("slot5").textContent == "") {
 
-            document.getElementById("slot4").setAttribute("fill", "white");
-            document.getElementById("slot5").setAttribute("fill", "white");
+            colorWhite(5);
 
-        } else if (document.getElementById("slot6").textContent == "") {
-
-            document.getElementById("slot5").setAttribute("fill", "white");
-            console.log("TURING SHIZ WHITE I GUESS");
         }
 
         instType(document.getElementById("slot1").getAttribute("inst"),
@@ -381,7 +372,6 @@ function runThrough() {
 }
 
 function stallRunThrough(tempCounter) {
-
 
     if (tempCounter == 1) {
 

@@ -141,7 +141,7 @@ function setupLegend() {
                 word = word + i;
                 document.getElementById(word).textContent = instructionArray[instructionCounter];
 
-                if (document.getElementById(word).textContent != " ") {
+                if (document.getElementById(word).textContent != "") {
 
                     var inst = instructionArray[instructionCounter].split(" ");
                     console.log("INST THAT WER ARE SETING IN THELGEND TO PUT IN THE THING IO PROBS BOB");

@@ -16,7 +16,8 @@
 function colorAndRefreshDiagramObjects(objectName, colorChoice) {
 
     document.getElementById(objectName).setAttribute("style", "fill:" + colorChoice + ";stroke-width:3;stroke:black");
-    /*document.getElementById(objectName).setAttribute("stroke", colorChoice);
+    /*document.getElementById(objectName).setAttribute("fill", colorChoice);
+    document.getElementById(objectName).setAttribute("stroke", colorChoice);
     document.getElementById(objectName).setAttribute("stroke-width", "3");*/
 
 }
@@ -34,7 +35,7 @@ function colorLines(objectName, colorChoice) {
         //document.getElementById(objectName + "a").setAttribute("style", "fill:" + colorChoice + ";stroke-width:2;stroke:" + colorChoice);
         document.getElementById(objectName + "a").setAttribute("fill", colorChoice);
         document.getElementById(objectName + "a").setAttribute("stroke", colorChoice);
-        document.getElementById(objectName + "a").setAttribute("stroke-width", "3");
+        document.getElementById(objectName + "a").setAttribute("stroke-width", "2");
         /*document.getElementById(objectName + "a").setAttribute("stroke", colorChoice);
         document.getElementById(objectName + "a").setAttribute("stroke-width", "2");*/
 
@@ -74,7 +75,7 @@ function clearGivenLine(lineName) {
         //document.getElementById(lineName + "a").setAttribute("style", "fill:black;stroke-width:2;stroke:rgb(0,0,0)");
         document.getElementById(lineName + "a").setAttribute("fill", "#000000");
         document.getElementById(lineName + "a").setAttribute("stroke", "#000000");
-        document.getElementById(lineName + "a").setAttribute("stroke-width", "2");
+        document.getElementById(lineName + "a").setAttribute("stroke-width", "1");
         /*document.getElementById(lineName + "a").setAttribute("stroke", "#FFFFFF");
         document.getElementById(lineName + "a").setAttribute("stroke-width", "1");*/
 
@@ -85,6 +86,22 @@ function clearGivenLine(lineName) {
     document.getElementById(lineName).setAttribute("stroke-width", "1");
     /*document.getElementById(lineName).setAttribute("stroke", "#000000");
     document.getElementById(lineName).setAttribute("stroke-width", "1");*/
+
+}
+
+/**
+ * This function
+ *
+ * @param slot
+ */
+function colorWhite(slot) {
+
+    for (var i = 5; slot <= i; slot++) {
+
+
+        //document.getElementById("slot" + slot).setAttribute("fill", "black");
+
+    }
 
 }
 
@@ -152,6 +169,8 @@ function clearStageThree() {
     clearGivenLine("line30");
     clearGivenLine("line61");
     clearGivenLine("line56");
+    clearGivenLine("line54");
+    clearGivenLine("line36");
 
 }
 
@@ -176,8 +195,7 @@ function clearStageTwo() {
     clearGivenLine("line52");
     clearGivenLine("line28");
     clearGivenLine("line29");
-    clearGivenLine("line36");
-    clearGivenLine("line54");
+
 }
 
 /**
