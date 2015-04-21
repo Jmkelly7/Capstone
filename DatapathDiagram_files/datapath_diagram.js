@@ -7,11 +7,6 @@
  */
 
 /**
- * The array that holds the list of instructions from the file that is read in.
- */
-var instructionArray = null;
-
-/**
  * The counter that keeps track of what instruction is going to go on the legend
  *  next.
  */
@@ -100,7 +95,7 @@ var Inst5 = [""];
  */
 var nextColor = "darkorchid";
 
-var colors = ["firebrick", "peru", "darkgoldenrod", "mediumseagreen", "darkcyan", "darkorchid"];
+//var colors = ["firebrick", "peru", "darkgoldenrod", "mediumseagreen", "darkcyan", "darkorchid"];
 
 /**
  * The name of the file that is uploaded.
@@ -165,6 +160,7 @@ function parseFile() {
 
     }
 
+    legendArray[parseCounter] = " ";
     legendArray[parseCounter + 1] = " ";
     legendArray[parseCounter + 2] = " ";
     legendArray[parseCounter + 3] = " ";
@@ -175,7 +171,6 @@ function parseFile() {
     legendArray[parseCounter + 8] = " ";
     legendArray[parseCounter + 9] = " ";
     legendArray[parseCounter + 10] = " ";
-    legendArray[parseCounter + 11] = " ";
     return legendArray;
 
 }
@@ -191,9 +186,6 @@ function runThrough() {
     if (counter == 1) {
 
         callInst(counter);
-        /*instType(document.getElementById("slot1").getAttribute("inst"),
-            INST_ONE_CNT,
-            document.getElementById("slot1").getAttribute("fill"));*/
 
         INST_ONE_CNT++;
         counter++;
@@ -202,17 +194,7 @@ function runThrough() {
 
         if (!(document.getElementById("slot2").textContent == "")) {
 
-            // if(Inst1[2] == undefined) {
-                console.log("first test");
-            //   if (Inst1[0] != Inst2[0] && Inst1[1] != Inst2[1]) {
             callInst(counter);
-                    /*instType(document.getElementById("slot1").getAttribute("inst"),
-                        INST_ONE_CNT,
-                        document.getElementById("slot1").getAttribute("fill"));
-
-                    instType(document.getElementById("slot2").getAttribute("inst"),
-                        INST_TWO_CNT,
-                        document.getElementById("slot2").getAttribute("fill"));*/
 
             INST_ONE_CNT++;
             INST_TWO_CNT++;
@@ -231,17 +213,6 @@ function runThrough() {
         if (!(document.getElementById("slot3").textContent == "")) {
 
             callInst(counter);
-            /*instType(document.getElementById("slot1").getAttribute("inst"),
-                INST_ONE_CNT,
-                document.getElementById("slot1").getAttribute("fill"));
-
-            instType(document.getElementById("slot2").getAttribute("inst"),
-                INST_TWO_CNT,
-                document.getElementById("slot2").getAttribute("fill"));
-
-            instType(document.getElementById("slot3").getAttribute("inst"),
-                INST_THREE_CNT,
-                document.getElementById("slot3").getAttribute("fill"));*/
 
             INST_ONE_CNT++;
             INST_TWO_CNT++;
@@ -261,21 +232,6 @@ function runThrough() {
         if (!(document.getElementById("slot5").textContent == "")) {
 
             callInst(counter);
-            /*instType(document.getElementById("slot1").getAttribute("inst"),
-                INST_ONE_CNT,
-                document.getElementById("slot1").getAttribute("fill"));
-
-            instType(document.getElementById("slot2").getAttribute("inst"),
-                INST_TWO_CNT,
-                document.getElementById("slot2").getAttribute("fill"));
-
-            instType(document.getElementById("slot3").getAttribute("inst"),
-                INST_THREE_CNT,
-                document.getElementById("slot3").getAttribute("fill"));
-
-            instType(document.getElementById("slot4").getAttribute("inst"),
-                INST_FOUR_CNT,
-                document.getElementById("slot4").getAttribute("fill"));*/
 
             INST_ONE_CNT++;
             INST_TWO_CNT++;
@@ -293,22 +249,16 @@ function runThrough() {
 
     } else if (counter == 5) {
 
-        if (!(document.getElementById("slot6").textContent == "")) {
+        INST_TWO_CNT++;
+        INST_THREE_CNT++;
+        INST_FOUR_CNT++;
+        INST_FIVE_CNT++;
 
-            //callInst(counter);
-            //INST_ONE_CNT++;
-            INST_TWO_CNT++;
-            INST_THREE_CNT++;
-            INST_FOUR_CNT++;
-            INST_FIVE_CNT++;
-
-            INST_ONE_CNT = INST_TWO_CNT;
-            INST_TWO_CNT = INST_THREE_CNT;
-            INST_THREE_CNT = INST_FOUR_CNT;
-            INST_FOUR_CNT = INST_FIVE_CNT;
-            INST_FIVE_CNT = 0;
-
-        }
+        INST_ONE_CNT = INST_TWO_CNT;
+        INST_TWO_CNT = INST_THREE_CNT;
+        INST_THREE_CNT = INST_FOUR_CNT;
+        INST_FOUR_CNT = INST_FIVE_CNT;
+        INST_FIVE_CNT = 0;
 
         if(!isFirst) {
 
@@ -344,29 +294,8 @@ function runThrough() {
         }
 
         callInst(counter);
-        /*instType(document.getElementById("slot1").getAttribute("inst"),
-            INST_ONE_CNT,
-            document.getElementById("slot1").getAttribute("fill"));
 
-        instType(document.getElementById("slot2").getAttribute("inst"),
-            INST_TWO_CNT,
-            document.getElementById("slot2").getAttribute("fill"));
-
-        instType(document.getElementById("slot3").getAttribute("inst"),
-            INST_THREE_CNT,
-            document.getElementById("slot3").getAttribute("fill"));
-
-        instType(document.getElementById("slot4").getAttribute("inst"),
-            INST_FOUR_CNT,
-            document.getElementById("slot4").getAttribute("fill"));
-
-        instType(document.getElementById("slot5").getAttribute("inst"),
-            INST_FIVE_CNT,
-            document.getElementById("slot5").getAttribute("fill"));*/
-
-        //isFirst = false;
-
-        if(document.getElementById("slot1").getAttribute("fill") == "white") {
+        if(document.getElementById("slot1").textContent == " ") {
 
             stepThroughRType(5,"White");
             window.alert("PROGRAM FINISHED");
@@ -764,7 +693,7 @@ function skipTo() {
 /**
  * This function reverts the diagram back one step in the code.
  */
-function stepBack() {
+/*function stepBack() {
 
     if (currentNumInstruction != 0) {
 
@@ -882,16 +811,16 @@ function stepBack() {
 
     }
 
-    /*console.log("counter: " + counter);
+    console.log("counter: " + counter);
     console.log("instructionCounter: " + instructionCounter);
     console.log("currentNumInstructions: " + currentNumInstruction);
     console.log("INST_ONE_CNT: " + INST_ONE_CNT);
     console.log("INST_TWO_CNT: " + INST_TWO_CNT);
     console.log("INST_THREE_CNT: " + INST_THREE_CNT);
     console.log("INST_FOUR_CNT: " + INST_FOUR_CNT);
-    console.log("INST_FIVE_CNT: " + INST_FIVE_CNT);*/
+    console.log("INST_FIVE_CNT: " + INST_FIVE_CNT);
 
-}
+}*/
 
 /**
  * This function launches a popup window that allows the user to

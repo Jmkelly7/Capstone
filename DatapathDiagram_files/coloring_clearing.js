@@ -27,16 +27,27 @@ function colorObject(objectName, colorChoice) {
  */
 function colorLine(objectName, colorChoice) {
 
+    var arrowWidth = "2";
+    var lineWidth  = "3";
+
+    if (colorChoice == "white") {
+
+        colorChoice = "black";
+        arrowWidth  = "1";
+        lineWidth   = "1";
+
+    }
+
     if (document.getElementById(objectName + "a")) {
 
         document.getElementById(objectName + "a").setAttribute("fill", colorChoice);
         document.getElementById(objectName + "a").setAttribute("stroke", colorChoice);
-        document.getElementById(objectName + "a").setAttribute("stroke-width", "2");
+        document.getElementById(objectName + "a").setAttribute("stroke-width", arrowWidth);
 
     }
 
     document.getElementById(objectName).setAttribute("stroke", colorChoice);
-    document.getElementById(objectName).setAttribute("stroke-width", "3");
+    document.getElementById(objectName).setAttribute("stroke-width", lineWidth);
 
 }
 

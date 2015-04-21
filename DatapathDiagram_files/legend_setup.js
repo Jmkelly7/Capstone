@@ -8,6 +8,11 @@
  */
 
 /**
+ * The array that holds the list of instructions from the file that is read in.
+ */
+var instructionArray = [];
+
+/**
  * This function that sets up the register arrays for the first five instructions within the legend.
  *
  * @param instArray - the array to set up for the given instruction.
@@ -122,7 +127,8 @@ function setupLegend() {
                 word = word + i;
                 document.getElementById(word).textContent =
                     document.getElementById(word2).textContent;
-                document.getElementById(word).setAttribute("inst", document.getElementById(word2).getAttribute("inst"));
+                document.getElementById(word).setAttribute("inst",
+                    document.getElementById(word2).getAttribute("inst"));
 
                 if (i < 5) {
 
@@ -131,7 +137,9 @@ function setupLegend() {
 
                 } else if (i == 5) {
 
-                    document.getElementById(word).setAttribute("fill", nextColor);
+                    console.log(nextColor);
+                    document.getElementById(word).setAttribute("fill",
+                        nextColor);
                     nextColor = colorQueue;
 
                 }
@@ -139,7 +147,8 @@ function setupLegend() {
             } else {
 
                 word = word + i;
-                document.getElementById(word).textContent = instructionArray[instructionCounter];
+                document.getElementById(word).textContent =
+                    instructionArray[instructionCounter];
 
                 if (document.getElementById(word).textContent != "") {
 
