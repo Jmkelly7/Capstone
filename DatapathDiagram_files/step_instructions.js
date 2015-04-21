@@ -8,6 +8,19 @@
  */
 
 /**
+ * The array of colors for the diagram.
+ *
+ * 0 = black (black)
+ * 1 = red (firebrick)
+ * 2 = orange (peru)
+ * 3 = yellow/gold (darkgoldenrod)
+ * 4 = green (mediumseagreen)
+ * 5 = blue (darkcyan)
+ * 6 = purple (darkorchid)
+ */
+//var colors = ["firebrick", "peru", "darkgoldenrod", "mediumseagreen", "darkcyan", "darkorchid"];
+
+/**
  * This function handles choosing the path for R-type instructions to follow in
  *  the diagram and colors and clears the appropriate objects in the diagram.
  *
@@ -18,76 +31,76 @@ function stepThroughRType(stage, color) {
 
     if (stage == 0) {
 
-        colorAndRefreshDiagramObjects("ellipse1", color);
-        colorAndRefreshDiagramObjects("poly1", color);
-        colorAndRefreshDiagramObjects("rect3", color);
-        colorAndRefreshDiagramObjects("rect4", color);
-        colorLines("line22", color);
-        colorLines("line3", color);
-        colorLines("line4", color);
-        colorLines("line6", color);
-        colorLines("line19", color);
-        colorLines("line7", color);
-        colorLines("line8", color);
-        colorLines("line20", color);
-        colorLines("line15", color);
-        colorLines("line18", color);
-        colorLines("line2", color);
-        colorLines("line5", color);
+        colorObject("ellipse1", color);
+        colorObject("poly1", color);
+        colorObject("rect3", color);
+        colorObject("rect4", color);
+        colorLine("line22", color);
+        colorLine("line3", color);
+        colorLine("line4", color);
+        colorLine("line6", color);
+        colorLine("line19", color);
+        colorLine("line7", color);
+        colorLine("line8", color);
+        colorLine("line20", color);
+        colorLine("line15", color);
+        colorLine("line18", color);
+        colorLine("line2", color);
+        colorLine("line5", color);
 
 
     } else if (stage == 1) {
 
         clearStageOne();
-        colorAndRefreshDiagramObjects("rect5", color);
-        colorAndRefreshDiagramObjects("rect7", color);
-        colorAndRefreshDiagramObjects("rect8", color);
-        colorLines("line23", color);
-        colorLines("line24", color);
-        colorLines("line25", color);
-        colorLines("line31", color);
-        colorLines("line32", color);
-        colorLines("line49", color);
-        colorLines("line50", color);
+        colorObject("rect5", color);
+        colorObject("rect7", color);
+        colorObject("rect8", color);
+        colorLine("line23", color);
+        colorLine("line24", color);
+        colorLine("line25", color);
+        colorLine("line31", color);
+        colorLine("line32", color);
+        colorLine("line49", color);
+        colorLine("line50", color);
 
     } else if (stage == 2) {
 
         clearStageTwo();
-        colorAndRefreshDiagramObjects("rect9", color);
-        colorAndRefreshDiagramObjects("rect10", color);
-        colorAndRefreshDiagramObjects("ellipse4", color);
-        colorAndRefreshDiagramObjects("poly3", color);
-        colorLines("line33", color);
-        colorLines("line34", color);
-        colorLines("line35", color);
-        colorLines("line37", color);
-        colorLines("line39", color);
+        colorObject("rect9", color);
+        colorObject("rect10", color);
+        colorObject("ellipse4", color);
+        colorObject("poly3", color);
+        colorLine("line33", color);
+        colorLine("line34", color);
+        colorLine("line35", color);
+        colorLine("line37", color);
+        colorLine("line39", color);
 
     } else if (stage == 3) {
 
         clearStageThree();
-        colorAndRefreshDiagramObjects("rect11", color);
-        colorAndRefreshDiagramObjects("rect14", color);
-        colorLines("line41", color);
-        colorLines("line43", color);
-        colorLines("line57", color);
+        colorObject("rect11", color);
+        colorObject("rect14", color);
+        colorLine("line41", color);
+        colorLine("line43", color);
+        colorLine("line57", color);
 
     } else if (stage == 4) {
 
         console.log("4 instructions");
         clearStageFour();
-        colorAndRefreshDiagramObjects("rect15", color);
-        colorAndRefreshDiagramObjects("ellipse5", color);
-        colorAndRefreshDiagramObjects("rect6", color);
-        colorLines("line62", color);
-        colorLines("line58", color);
-        colorLines("line48", color);
-        colorLines("line47", color);
-        colorLines("line46", color);
-        colorLines("line26", color);
-        colorLines("line27", color);
-        colorLines("line53", color);
-        colorLines("line59", color);
+        colorObject("rect15", color);
+        colorObject("ellipse5", color);
+        colorObject("rect6", color);
+        colorLine("line62", color);
+        colorLine("line58", color);
+        colorLine("line48", color);
+        colorLine("line47", color);
+        colorLine("line46", color);
+        colorLine("line26", color);
+        colorLine("line27", color);
+        colorLine("line53", color);
+        colorLine("line59", color);
 
     } else if (stage == 5) {
 
@@ -103,146 +116,160 @@ function stepThroughRType(stage, color) {
  *
  * @param stage - The stage the current instruction is in.
  * @param color - The color to change the objects to for the given instruction.
+ * @param inst  - The current instruction.
  **/
 function stepThroughIType(stage, color, inst) {
 
     if (stage == 0) {
 
-        colorAndRefreshDiagramObjects("ellipse1", color);
-        colorAndRefreshDiagramObjects("poly1", color);
-        colorAndRefreshDiagramObjects("rect3", color);
-        colorAndRefreshDiagramObjects("rect4", color);
-        colorLines("line22", color);
-        colorLines("line3", color);
-        colorLines("line4", color);
-        colorLines("line6", color);
-        colorLines("line19", color);
-        colorLines("line7", color);
-        colorLines("line8", color);
-        colorLines("line20", color);
-        colorLines("line15", color);
-        colorLines("line18", color);
-        colorLines("line2", color);
-        colorLines("line5", color);
+        colorObject("ellipse1", color);
+        colorObject("poly1", color);
+        colorObject("rect3", color);
+        colorObject("rect4", color);
+        colorLine("line22", color);
+        colorLine("line3", color);
+        colorLine("line4", color);
+        colorLine("line6", color);
+        colorLine("line19", color);
+        colorLine("line7", color);
+        colorLine("line8", color);
+        colorLine("line20", color);
+        colorLine("line15", color);
+        colorLine("line18", color);
+        colorLine("line2", color);
+        colorLine("line5", color);
 
     } else if (stage == 1) {
 
         clearStageOne();
-        colorAndRefreshDiagramObjects("rect5", color);
-        colorAndRefreshDiagramObjects("rect7", color);
-        colorAndRefreshDiagramObjects("rect8", color);
-        colorAndRefreshDiagramObjects("ellipse2", color);
-        colorLines("line23", color);
-        colorLines("line24", color);
-        colorLines("line25", color);
-        colorLines("line31", color);
-        colorLines("line32", color);
-        colorLines("line49", color);
-        colorLines("line50", color);
-        colorLines("line51", color);
-        colorLines("line52", color);
-        colorLines("line28", color);
-        colorLines("line29", color);
+        colorObject("rect5", color);
+        colorObject("rect7", color);
+        colorObject("rect8", color);
+        colorObject("ellipse2", color);
+        colorLine("line23", color);
+        colorLine("line24", color);
+        colorLine("line25", color);
+        colorLine("line31", color);
+        colorLine("line32", color);
+        colorLine("line49", color);
+        colorLine("line50", color);
+        colorLine("line51", color);
+        colorLine("line52", color);
+        colorLine("line28", color);
+        colorLine("line29", color);
 
     } else if (stage == 2) {
 
+        clearStageTwo();
+
         if(inst == ("sw") || inst == ("sb") || inst == ("sh")) {
 
-            clearStageTwo();
-            colorAndRefreshDiagramObjects("rect9", color);
-            colorAndRefreshDiagramObjects("rect10", color);
-            colorAndRefreshDiagramObjects("ellipse4", color);
-            colorAndRefreshDiagramObjects("poly3", color);
-            colorLines("line33", color);
-            colorLines("line34", color);
-            colorLines("line37", color);
-            colorLines("line39", color);
-            colorLines("line30", color);
-            colorLines("line61", color);
-            colorLines("line56", color);
-            colorLines("line54", color);
-            colorLines("line36", color);
+            colorObject("rect9", color);
+            colorObject("rect10", color);
+            colorObject("ellipse4", color);
+            colorObject("poly3", color);
+            colorLine("line33", color);
+            colorLine("line34", color);
+            colorLine("line37", color);
+            colorLine("line39", color);
+            colorLine("line30", color);
+            colorLine("line61", color);
+            colorLine("line56", color);
+            colorLine("line54", color);
+            colorLine("line36", color);
+
         } else {
-            clearStageTwo();
-            colorAndRefreshDiagramObjects("rect9", color);
-            colorAndRefreshDiagramObjects("rect10", color);
-            colorAndRefreshDiagramObjects("ellipse4", color);
-            colorAndRefreshDiagramObjects("poly3", color);
-            colorLines("line33", color);
-            colorLines("line34", color);
-            colorLines("line35", color);
-            colorLines("line37", color);
-            colorLines("line39", color);
-            colorLines("line30", color);
-            colorLines("line61", color);
-            colorLines("line56", color);
+
+            colorObject("rect9", color);
+            colorObject("rect10", color);
+            colorObject("ellipse4", color);
+            colorObject("poly3", color);
+            colorLine("line33", color);
+            colorLine("line34", color);
+            colorLine("line35", color);
+            colorLine("line37", color);
+            colorLine("line39", color);
+            colorLine("line30", color);
+            colorLine("line61", color);
+            colorLine("line56", color);
+
         }
 
     } else if (stage == 3) {
 
-        if (inst == ("lb") || inst == ("lbu") || inst == ("lh") ||
-            inst == ("lhu") || inst == ("lui") || inst == ("lw")) {
+        clearStageThree();
 
-            clearStageThree();
-            colorAndRefreshDiagramObjects("rect11", color);
-            colorAndRefreshDiagramObjects("rect13", color);
-            colorAndRefreshDiagramObjects("rect14", color);
-            colorLines("line41", color);
-            colorLines("line42", color);
-            colorLines("line44", color);
+        if (inst == ("lb")   || inst == ("lbu") || inst == ("lh") ||
+            inst == ("lhu")  || inst == ("lui") || inst == ("lw")) {
+
+            colorObject("rect11", color);
+            colorObject("rect13", color);
+            colorObject("rect14", color);
+            colorLine("line41", color);
+            colorLine("line42", color);
+            colorLine("line44", color);
+            
         } else if (inst == ("sw") || inst == ("sb") || inst == ("sh")) {
 
-            clearStageThree();
-            colorAndRefreshDiagramObjects("rect11", color);
-            colorAndRefreshDiagramObjects("rect12", color);
-            colorLines("line41", color);
-            colorLines("line42", color);
-            colorLines("line60", color);
+            colorObject("rect11", color);
+            colorObject("rect12", color);
+            colorLine("line41", color);
+            colorLine("line42", color);
+            colorLine("line60", color);
+            
         } else {
-            clearStageThree();
-            colorAndRefreshDiagramObjects("rect11", color);
-            colorAndRefreshDiagramObjects("rect14", color);
-            colorLines("line41", color);
-            colorLines("line43", color);
-            colorLines("line57", color);
+
+            colorObject("rect11", color);
+            colorObject("rect14", color);
+            colorLine("line41", color);
+            colorLine("line43", color);
+            colorLine("line57", color);
+
         }
 
     } else if (stage == 4) {
 
+        clearStageFour();
+
         if (inst == ("lb")    || inst == ("lbu")  || inst == ("lh")    ||
             inst == ("lhu")  || inst == ("lui")   || inst == ("lw")) {
-            clearStageFour();
-            colorAndRefreshDiagramObjects("rect15", color);
-            colorAndRefreshDiagramObjects("ellipse5", color);
-            colorAndRefreshDiagramObjects("rect6", color);
-            colorLines("line45", color);
-            colorLines("line48", color);
-            colorLines("line47", color);
-            colorLines("line26", color);
-            colorLines("line27", color);
-            colorLines("line53", color);
-            colorLines("line59", color);
+
+            colorObject("rect15", color);
+            colorObject("ellipse5", color);
+            colorObject("rect6", color);
+            colorLine("line45", color);
+            colorLine("line48", color);
+            colorLine("line47", color);
+            colorLine("line26", color);
+            colorLine("line27", color);
+            colorLine("line53", color);
+            colorLine("line59", color);
+
         } else if (inst == ("sw") || inst == ("sb") || inst == ("sh")) {
+
             clearStageFive();
+
         } else {
-            clearStageFour();
-            colorAndRefreshDiagramObjects("rect15", color);
-            colorAndRefreshDiagramObjects("ellipse5", color);
-            colorAndRefreshDiagramObjects("rect6", color);
-            colorLines("line62", color);
-            colorLines("line58", color);
-            colorLines("line46", color);
-            colorLines("line48", color);
-            colorLines("line47", color);
-            colorLines("line26", color);
-            colorLines("line27", color);
-            colorLines("line53", color);
-            colorLines("line59", color);
+
+            colorObject("rect15", color);
+            colorObject("ellipse5", color);
+            colorObject("rect6", color);
+            colorLine("line62", color);
+            colorLine("line58", color);
+            colorLine("line46", color);
+            colorLine("line48", color);
+            colorLine("line47", color);
+            colorLine("line26", color);
+            colorLine("line27", color);
+            colorLine("line53", color);
+            colorLine("line59", color);
+
         }
 
     } else if (stage == 5) {
 
         clearStageFive();
+        
     }
 
 }

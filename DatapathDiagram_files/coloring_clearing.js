@@ -13,12 +13,9 @@
  * @param objectName - the object to be colored.
  * @param colorChoice - the color that the object needs to be changed too.
  */
-function colorAndRefreshDiagramObjects(objectName, colorChoice) {
+function colorObject(objectName, colorChoice) {
 
     document.getElementById(objectName).setAttribute("style", "fill:" + colorChoice + ";stroke-width:3;stroke:black");
-    /*document.getElementById(objectName).setAttribute("fill", colorChoice);
-    document.getElementById(objectName).setAttribute("stroke", colorChoice);
-    document.getElementById(objectName).setAttribute("stroke-width", "3");*/
 
 }
 
@@ -28,24 +25,19 @@ function colorAndRefreshDiagramObjects(objectName, colorChoice) {
  * @param objectName  - the line that will be colored.
  * @param colorChoice - the color to change the stroke too.
  */
-function colorLines(objectName, colorChoice) {
+function colorLine(objectName, colorChoice) {
 
     if (document.getElementById(objectName + "a")) {
 
-        //document.getElementById(objectName + "a").setAttribute("style", "fill:" + colorChoice + ";stroke-width:2;stroke:" + colorChoice);
         document.getElementById(objectName + "a").setAttribute("fill", colorChoice);
         document.getElementById(objectName + "a").setAttribute("stroke", colorChoice);
         document.getElementById(objectName + "a").setAttribute("stroke-width", "2");
-        /*document.getElementById(objectName + "a").setAttribute("stroke", colorChoice);
-        document.getElementById(objectName + "a").setAttribute("stroke-width", "2");*/
 
     }
 
-    //document.getElementById(objectName).setAttribute("style", "fill:" + colorChoice + ";stroke-width:3;stroke:" + colorChoice);
     document.getElementById(objectName).setAttribute("stroke", colorChoice);
     document.getElementById(objectName).setAttribute("stroke-width", "3");
-    /*document.getElementById(objectName).setAttribute("stroke", colorChoice);
-    document.getElementById(objectName).setAttribute("stroke-width", "3");*/
+
 }
 
 /**
@@ -57,8 +49,6 @@ function colorLines(objectName, colorChoice) {
 function clearGivenObject(objectName) {
 
     document.getElementById(objectName).setAttribute("style", "fill:white;stroke-width:1;stroke:rgb(0,0,0)");
-    /*document.getElementById(objectName).setAttribute("stroke", "#000000");
-    document.getElementById(objectName).setAttribute("stroke-width", "1");*/
 
 }
 
@@ -72,20 +62,14 @@ function clearGivenLine(lineName) {
 
     if (document.getElementById(lineName + "a")) {
 
-        //document.getElementById(lineName + "a").setAttribute("style", "fill:black;stroke-width:2;stroke:rgb(0,0,0)");
         document.getElementById(lineName + "a").setAttribute("fill", "#000000");
         document.getElementById(lineName + "a").setAttribute("stroke", "#000000");
         document.getElementById(lineName + "a").setAttribute("stroke-width", "1");
-        /*document.getElementById(lineName + "a").setAttribute("stroke", "#FFFFFF");
-        document.getElementById(lineName + "a").setAttribute("stroke-width", "1");*/
 
     }
 
-    //document.getElementById(lineName).setAttribute("style", "fill:black;stroke-width:1;stroke:rgb(0,0,0)");
     document.getElementById(lineName).setAttribute("stroke", "#000000");
     document.getElementById(lineName).setAttribute("stroke-width", "1");
-    /*document.getElementById(lineName).setAttribute("stroke", "#000000");
-    document.getElementById(lineName).setAttribute("stroke-width", "1");*/
 
 }
 
@@ -98,8 +82,7 @@ function colorWhite(slot) {
 
     for (var i = 5; slot <= i; slot++) {
 
-
-        //document.getElementById("slot" + slot).setAttribute("fill", "black");
+        document.getElementById("slot" + slot).setAttribute("fill", "white");
 
     }
 
@@ -200,6 +183,8 @@ function clearStageTwo() {
  */
 function clearStageOne() {
 
+    clearGivenObject("rect1");
+    clearGivenObject("rect2");
     clearGivenObject("rect3");
     clearGivenObject("rect4");
     clearGivenObject("ellipse1");
@@ -211,6 +196,7 @@ function clearStageOne() {
     clearGivenLine("line19");
     clearGivenLine("line7");
     clearGivenLine("line8");
+    clearGivenLine("line9");
     clearGivenLine("line20");
     clearGivenLine("line18");
     clearGivenLine("line15");

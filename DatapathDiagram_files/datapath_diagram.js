@@ -100,6 +100,8 @@ var Inst5 = [""];
  */
 var nextColor = "darkorchid";
 
+var colors = ["firebrick", "peru", "darkgoldenrod", "mediumseagreen", "darkcyan", "darkorchid"];
+
 /**
  * The name of the file that is uploaded.
  */
@@ -188,9 +190,10 @@ function runThrough() {
 
     if (counter == 1) {
 
-        instType(document.getElementById("slot1").getAttribute("inst"),
+        callInst(counter);
+        /*instType(document.getElementById("slot1").getAttribute("inst"),
             INST_ONE_CNT,
-            document.getElementById("slot1").getAttribute("fill"));
+            document.getElementById("slot1").getAttribute("fill"));*/
 
         INST_ONE_CNT++;
         counter++;
@@ -199,20 +202,22 @@ function runThrough() {
 
         if (!(document.getElementById("slot2").textContent == "")) {
 
-           // if(Inst1[2] == undefined) {
+            // if(Inst1[2] == undefined) {
                 console.log("first test");
-             //   if (Inst1[0] != Inst2[0] && Inst1[1] != Inst2[1]) {
-                    instType(document.getElementById("slot1").getAttribute("inst"),
+            //   if (Inst1[0] != Inst2[0] && Inst1[1] != Inst2[1]) {
+            callInst(counter);
+                    /*instType(document.getElementById("slot1").getAttribute("inst"),
                         INST_ONE_CNT,
                         document.getElementById("slot1").getAttribute("fill"));
 
                     instType(document.getElementById("slot2").getAttribute("inst"),
                         INST_TWO_CNT,
-                        document.getElementById("slot2").getAttribute("fill"));
+                        document.getElementById("slot2").getAttribute("fill"));*/
 
-                    INST_ONE_CNT++;
-                    INST_TWO_CNT++;
-                    counter++;
+            INST_ONE_CNT++;
+            INST_TWO_CNT++;
+            counter++;
+
         } else {
 
             counter--;
@@ -225,7 +230,8 @@ function runThrough() {
 
         if (!(document.getElementById("slot3").textContent == "")) {
 
-            instType(document.getElementById("slot1").getAttribute("inst"),
+            callInst(counter);
+            /*instType(document.getElementById("slot1").getAttribute("inst"),
                 INST_ONE_CNT,
                 document.getElementById("slot1").getAttribute("fill"));
 
@@ -235,7 +241,7 @@ function runThrough() {
 
             instType(document.getElementById("slot3").getAttribute("inst"),
                 INST_THREE_CNT,
-                document.getElementById("slot3").getAttribute("fill"));
+                document.getElementById("slot3").getAttribute("fill"));*/
 
             INST_ONE_CNT++;
             INST_TWO_CNT++;
@@ -254,27 +260,28 @@ function runThrough() {
 
         if (!(document.getElementById("slot5").textContent == "")) {
 
-                instType(document.getElementById("slot1").getAttribute("inst"),
-                    INST_ONE_CNT,
-                    document.getElementById("slot1").getAttribute("fill"));
+            callInst(counter);
+            /*instType(document.getElementById("slot1").getAttribute("inst"),
+                INST_ONE_CNT,
+                document.getElementById("slot1").getAttribute("fill"));
 
-                instType(document.getElementById("slot2").getAttribute("inst"),
-                    INST_TWO_CNT,
-                    document.getElementById("slot2").getAttribute("fill"));
+            instType(document.getElementById("slot2").getAttribute("inst"),
+                INST_TWO_CNT,
+                document.getElementById("slot2").getAttribute("fill"));
 
-                instType(document.getElementById("slot3").getAttribute("inst"),
-                    INST_THREE_CNT,
-                    document.getElementById("slot3").getAttribute("fill"));
+            instType(document.getElementById("slot3").getAttribute("inst"),
+                INST_THREE_CNT,
+                document.getElementById("slot3").getAttribute("fill"));
 
-                instType(document.getElementById("slot4").getAttribute("inst"),
-                    INST_FOUR_CNT,
-                    document.getElementById("slot4").getAttribute("fill"));
+            instType(document.getElementById("slot4").getAttribute("inst"),
+                INST_FOUR_CNT,
+                document.getElementById("slot4").getAttribute("fill"));*/
 
-                INST_ONE_CNT++;
-                INST_TWO_CNT++;
-                INST_THREE_CNT++;
-                INST_FOUR_CNT++;
-                counter++;
+            INST_ONE_CNT++;
+            INST_TWO_CNT++;
+            INST_THREE_CNT++;
+            INST_FOUR_CNT++;
+            counter++;
 
         } else {
 
@@ -286,21 +293,30 @@ function runThrough() {
 
     } else if (counter == 5) {
 
-        INST_ONE_CNT++;
-        INST_TWO_CNT++;
-        INST_THREE_CNT++;
-        INST_FOUR_CNT++;
-        INST_FIVE_CNT++;
+        if (!(document.getElementById("slot6").textContent == "")) {
 
-        INST_ONE_CNT = INST_TWO_CNT;
-        INST_TWO_CNT = INST_THREE_CNT;
-        INST_THREE_CNT = INST_FOUR_CNT;
-        INST_FOUR_CNT = INST_FIVE_CNT;
-        INST_FIVE_CNT = 0;
+            //callInst(counter);
+            //INST_ONE_CNT++;
+            INST_TWO_CNT++;
+            INST_THREE_CNT++;
+            INST_FOUR_CNT++;
+            INST_FIVE_CNT++;
+
+            INST_ONE_CNT = INST_TWO_CNT;
+            INST_TWO_CNT = INST_THREE_CNT;
+            INST_THREE_CNT = INST_FOUR_CNT;
+            INST_FOUR_CNT = INST_FIVE_CNT;
+            INST_FIVE_CNT = 0;
+
+        }
 
         if(!isFirst) {
 
             setupLegend();
+
+        } else {
+
+            isFirst = false;
 
         }
 
@@ -327,7 +343,8 @@ function runThrough() {
 
         }
 
-        instType(document.getElementById("slot1").getAttribute("inst"),
+        callInst(counter);
+        /*instType(document.getElementById("slot1").getAttribute("inst"),
             INST_ONE_CNT,
             document.getElementById("slot1").getAttribute("fill"));
 
@@ -345,9 +362,9 @@ function runThrough() {
 
         instType(document.getElementById("slot5").getAttribute("inst"),
             INST_FIVE_CNT,
-            document.getElementById("slot5").getAttribute("fill"));
+            document.getElementById("slot5").getAttribute("fill"));*/
 
-        isFirst = false;
+        //isFirst = false;
 
         if(document.getElementById("slot1").getAttribute("fill") == "white") {
 
@@ -366,6 +383,42 @@ function runThrough() {
             }
 
         }
+
+    }
+
+}
+
+/**
+ * This function
+ *
+ * @param numSlots
+ */
+function callInst(numSlots) {
+    var cnt = INST_ONE_CNT;
+
+    for (var i = 1; i <= numSlots; i++) {
+
+        if (i == 2) {
+
+            cnt = INST_TWO_CNT;
+
+        } else if (i == 3) {
+
+            cnt = INST_THREE_CNT;
+
+        } else if (i == 4) {
+
+            cnt = INST_FOUR_CNT;
+
+        } else if (i == 5) {
+
+            cnt = INST_FIVE_CNT;
+
+        }
+
+        instType(document.getElementById("slot" + i).getAttribute("inst"),
+            cnt,
+            document.getElementById("slot" + i).getAttribute("fill"));
 
     }
 
@@ -545,6 +598,7 @@ function stallRunThrough(tempCounter) {
 
     }
 }
+
 /**
  * This function checks what type the instruction is and calls the correct path
  *  for that instruction.
