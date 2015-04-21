@@ -105,7 +105,7 @@ function stepThroughRType(stage, color) {
  * @param stage - The stage the current instruction is in.
  * @param color - The color to change the objects to for the given instruction.
  **/
-function stepThroughIType(stage, color) {
+function stepThroughIType(stage, color, inst) {
 
     if (stage == 0) {
 
@@ -147,19 +147,37 @@ function stepThroughIType(stage, color) {
 
     } else if (stage == 2) {
 
-        clearStageTwo();
-        colorAndRefreshDiagramObjects("rect9", color);
-        colorAndRefreshDiagramObjects("rect10", color);
-        colorAndRefreshDiagramObjects("ellipse4", color);
-        colorAndRefreshDiagramObjects("poly3", color);
-        colorLines("line33", color);
-        colorLines("line34", color);
-        colorLines("line35", color);
-        colorLines("line37", color);
-        colorLines("line39", color);
-        colorLines("line30", color);
-        colorLines("line61", color);
-        colorLines("line56", color);
+        if(inst == ("sw") || inst == ("sb") || inst == ("sh")) {
+
+            clearStageTwo();
+            colorAndRefreshDiagramObjects("rect9", color);
+            colorAndRefreshDiagramObjects("rect10", color);
+            colorAndRefreshDiagramObjects("ellipse4", color);
+            colorAndRefreshDiagramObjects("poly3", color);
+            colorLines("line33", color);
+            colorLines("line34", color);
+            colorLines("line37", color);
+            colorLines("line39", color);
+            colorLines("line30", color);
+            colorLines("line61", color);
+            colorLines("line56", color);
+            colorLines("line54", color);
+            colorLines("line36", color);
+        } else {
+            clearStageTwo();
+            colorAndRefreshDiagramObjects("rect9", color);
+            colorAndRefreshDiagramObjects("rect10", color);
+            colorAndRefreshDiagramObjects("ellipse4", color);
+            colorAndRefreshDiagramObjects("poly3", color);
+            colorLines("line33", color);
+            colorLines("line34", color);
+            colorLines("line35", color);
+            colorLines("line37", color);
+            colorLines("line39", color);
+            colorLines("line30", color);
+            colorLines("line61", color);
+            colorLines("line56", color);
+        }
 
     } else if (stage == 3) {
 

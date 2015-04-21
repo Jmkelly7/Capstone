@@ -597,7 +597,7 @@ function instType(inst, stage, color) {
                inst == ("slti") || inst == ("sltiu") ||
                inst == ("sw")   || inst == ("xori")) {
         console.log("calling I type");
-        stepThroughIType(stage, color);
+        stepThroughIType(stage, color, inst);
 
     } else if (inst == ("j") || inst == ("jal")) {
 
