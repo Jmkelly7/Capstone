@@ -166,6 +166,7 @@ function clearStageThree() {
     clearGivenLine("line36");
     clearGivenLine("line42");
     clearGivenLine("line44");
+    clearGivenLine("line60");
 
 }
 

@@ -67,7 +67,6 @@ function stepThroughRType(stage, color) {
 
         clearStageThree();
         colorAndRefreshDiagramObjects("rect11", color);
-        colorAndRefreshDiagramObjects("rect13", color);
         colorAndRefreshDiagramObjects("rect14", color);
         colorLines("line41", color);
         colorLines("line43", color);
@@ -181,8 +180,8 @@ function stepThroughIType(stage, color, inst) {
 
     } else if (stage == 3) {
 
-        if (inst == ("lb")    || inst == ("lbu")  || inst == ("lh")    ||
-            inst == ("lhu")  || inst == ("lui")   || inst == ("lw")) {
+        if (inst == ("lb") || inst == ("lbu") || inst == ("lh") ||
+            inst == ("lhu") || inst == ("lui") || inst == ("lw")) {
 
             clearStageThree();
             colorAndRefreshDiagramObjects("rect11", color);
@@ -198,10 +197,10 @@ function stepThroughIType(stage, color, inst) {
             colorAndRefreshDiagramObjects("rect12", color);
             colorLines("line41", color);
             colorLines("line42", color);
+            colorLines("line60", color);
         } else {
             clearStageThree();
             colorAndRefreshDiagramObjects("rect11", color);
-            colorAndRefreshDiagramObjects("rect13", color);
             colorAndRefreshDiagramObjects("rect14", color);
             colorLines("line41", color);
             colorLines("line43", color);
