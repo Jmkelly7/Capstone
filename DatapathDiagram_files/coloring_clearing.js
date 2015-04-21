@@ -114,15 +114,6 @@ function clearStageFive() {
     clearGivenObject("rect15");
     clearGivenObject("ellipse5");
     clearGivenObject("rect6");
-    /*clearGivenObject("line48");
-    clearGivenObject("line47");
-    clearGivenObject("line46");
-    clearGivenObject("line26");
-    clearGivenObject("line27");
-    clearGivenObject("line53");
-    clearGivenObject("line59");
-    clearGivenObject("line58");
-    clearGivenObject("line62");*/
     clearGivenLine("line48");
     clearGivenLine("line47");
     clearGivenLine("line46");
@@ -132,6 +123,7 @@ function clearStageFive() {
     clearGivenLine("line59");
     clearGivenLine("line58");
     clearGivenLine("line62");
+    clearGivenLine("line45");
 
 }
 
@@ -157,6 +149,7 @@ function clearStageFour() {
  */
 function clearStageThree() {
 
+    clearGivenObject("rect12");
     clearGivenObject("rect9");
     clearGivenObject("rect10");
     clearGivenObject("ellipse4");
@@ -171,6 +164,8 @@ function clearStageThree() {
     clearGivenLine("line56");
     clearGivenLine("line54");
     clearGivenLine("line36");
+    clearGivenLine("line42");
+    clearGivenLine("line44");
 
 }
 

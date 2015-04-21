@@ -181,53 +181,69 @@ function stepThroughIType(stage, color, inst) {
 
     } else if (stage == 3) {
 
-        clearStageThree();
-        colorAndRefreshDiagramObjects("rect11", color);
-        colorAndRefreshDiagramObjects("rect13", color);
-        colorAndRefreshDiagramObjects("rect14", color);
-        colorLines("line41", color);
-        colorLines("line43", color);
-        colorLines("line57", color);
+        if (inst == ("lb")    || inst == ("lbu")  || inst == ("lh")    ||
+            inst == ("lhu")  || inst == ("lui")   || inst == ("lw")) {
+
+            clearStageThree();
+            colorAndRefreshDiagramObjects("rect11", color);
+            colorAndRefreshDiagramObjects("rect13", color);
+            colorAndRefreshDiagramObjects("rect14", color);
+            colorLines("line41", color);
+            colorLines("line42", color);
+            colorLines("line44", color);
+        } else if (inst == ("sw") || inst == ("sb") || inst == ("sh")) {
+
+            clearStageThree();
+            colorAndRefreshDiagramObjects("rect11", color);
+            colorAndRefreshDiagramObjects("rect12", color);
+            colorLines("line41", color);
+            colorLines("line42", color);
+        } else {
+            clearStageThree();
+            colorAndRefreshDiagramObjects("rect11", color);
+            colorAndRefreshDiagramObjects("rect13", color);
+            colorAndRefreshDiagramObjects("rect14", color);
+            colorLines("line41", color);
+            colorLines("line43", color);
+            colorLines("line57", color);
+        }
 
     } else if (stage == 4) {
 
-        clearStageFour();
-        /*clearGivenObject("rect11");
-        clearGivenObject("rect13");
-        clearGivenObject("rect14");
-        clearGivenObject("line41");
-        clearGivenObject("line46");
-        clearGivenObject("line43");
-        clearGivenObject("line57");
-        clearGivenObject("line58");*/
-        colorAndRefreshDiagramObjects("rect15", color);
-        colorAndRefreshDiagramObjects("ellipse5", color);
-        colorAndRefreshDiagramObjects("rect6", color);
-        colorLines("line62", color);
-        colorLines("line58", color);
-        colorLines("line46", color);
-        colorLines("line48", color);
-        colorLines("line47", color);
-        colorLines("line26", color);
-        colorLines("line27", color);
-        colorLines("line53", color);
-        colorLines("line59", color);
+        if (inst == ("lb")    || inst == ("lbu")  || inst == ("lh")    ||
+            inst == ("lhu")  || inst == ("lui")   || inst == ("lw")) {
+            clearStageFour();
+            colorAndRefreshDiagramObjects("rect15", color);
+            colorAndRefreshDiagramObjects("ellipse5", color);
+            colorAndRefreshDiagramObjects("rect6", color);
+            colorLines("line45", color);
+            colorLines("line48", color);
+            colorLines("line47", color);
+            colorLines("line26", color);
+            colorLines("line27", color);
+            colorLines("line53", color);
+            colorLines("line59", color);
+        } else if (inst == ("sw") || inst == ("sb") || inst == ("sh")) {
+            clearStageFive();
+        } else {
+            clearStageFour();
+            colorAndRefreshDiagramObjects("rect15", color);
+            colorAndRefreshDiagramObjects("ellipse5", color);
+            colorAndRefreshDiagramObjects("rect6", color);
+            colorLines("line62", color);
+            colorLines("line58", color);
+            colorLines("line46", color);
+            colorLines("line48", color);
+            colorLines("line47", color);
+            colorLines("line26", color);
+            colorLines("line27", color);
+            colorLines("line53", color);
+            colorLines("line59", color);
+        }
 
     } else if (stage == 5) {
 
         clearStageFive();
-        /*clearGivenObject("rect15");
-        clearGivenObject("ellipse5");
-        clearGivenObject("rect6");
-        clearGivenObject("line48");
-        clearGivenObject("line47");
-        clearGivenObject("line26");
-        clearGivenObject("line27");
-        clearGivenObject("line53");
-        clearGivenObject("line59");
-        clearGivenObject("line58");
-        clearGivenObject("line46");*/
-
     }
 
 }
