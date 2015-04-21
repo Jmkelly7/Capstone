@@ -123,7 +123,9 @@ function clearStageFour() {
     clearGivenLine("line43");
     clearGivenLine("line57");
     clearGivenLine("line58");
-
+    clearGivenLine("line45");
+    clearGivenLine("line46");
+    clearGivenLine("line62");
 }
 
 /**

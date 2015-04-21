@@ -698,7 +698,7 @@ function line31ToolTipsMouseOver() {
 function line34ToolTipsMouseOver() {
 
     //For line 33
-    if (document.getElementById('line33').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line34').getAttribute("stroke") != "#000000") {
         var loadArray;
         var loadTemp;
         var tempValue = "";
@@ -759,7 +759,7 @@ function line34ToolTipsMouseOver() {
 function line37ToolTipsMouseOver() {
 
     //For line 30, 56, 62
-    if (document.getElementById('line33').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line37').getAttribute("stroke") != "#000000") {
         var loadArray;
         var loadTemp;
         var tempValue = "";
@@ -820,7 +820,7 @@ function line37ToolTipsMouseOver() {
 function line30ToolTipsMouseOver() {
 
     //For line 30, 56, 62
-    if (document.getElementById('line33').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line30').getAttribute("stroke") != "#000000") {
         var loadArray;
         var loadTemp;
         var tempValue = "";
@@ -881,7 +881,7 @@ function line30ToolTipsMouseOver() {
 function line39ToolTipsMouseOver() {
 
     //For line 30, 56, 62
-    if (document.getElementById('line33').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line39').getAttribute("stroke") != "#000000") {
         var loadArray;
         var loadTemp;
         var tempValue = "";
@@ -942,7 +942,7 @@ function line39ToolTipsMouseOver() {
 function line54ToolTipsMouseOver() {
 
     //For line 54, 36
-    if (document.getElementById('line33').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line54').getAttribute("stroke") != "#000000") {
         var loadArray;
         var loadTemp;
         var tempValue = "";
