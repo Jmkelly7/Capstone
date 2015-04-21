@@ -2,26 +2,6 @@
  * Created by Josh on 3/4/2015.
  */
 
-function line1ToolTipsMouseOver() {
-
-    //This is for lines 1, 17, 16, 21, 14, 13
-    if(document.getElementById('line1').getAttribute("stroke") != "#000000") {
-
-
-        document.getElementById('line1pop1').style.visibility = "visible";
-        document.getElementById('line1pop2').style.visibility = "visible";
-    } else {
-        line1ToolTipsMouseOut();
-    }
-}
-
-function line1ToolTipsMouseOut() {
-
-    //This is for lines 1, 17, 16, 21, 14, 13
-    document.getElementById('line1pop1').style.visibility= "hidden";
-    document.getElementById('line1pop2').style.visibility= "hidden";
-}
-
 function line2ToolTipsMouseOver() {
 
     //This is for lines 2, 18, 15, 20, 8
