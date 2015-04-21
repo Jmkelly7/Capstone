@@ -514,61 +514,181 @@ function line23ToolTipsMouseOut() {
 function line50ToolTipsMouseOver() {
 
     //For line 23
-    if(document.getElementById('line50').getAttribute("stroke") != "#000000") {
-        if(document.getElementById('line50').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
+    if (document.getElementById('line50').getAttribute("stroke") != "#000000") {
+        var loadArray;
+        var loadTemp;
+        var tempValue = "";
+        var allValue = "";
+        var i = 0;
+        if (document.getElementById('line50').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
-            if(tempArray[3] == undefined) {
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
                 document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
                 document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
-                document.getElementById('line3pop3').textContent = "bottom. Stage one." + "RT: " +tempArray[1] + " RS: " + tempArray[2];
+                document.getElementById('line3pop3').textContent = "bottom. Stage two." + "RT: " + tempArray[1] + " RS: " + allValue;
             } else {
-                document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
-                document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
-                document.getElementById('line3pop3').textContent = "bottom. Stage one." + " RS: " + tempArray[2] + " RT: " + tempArray[3];
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
+                    document.getElementById('line3pop3').textContent = "bottom. Stage two." + " RS: " + tempArray[2] + " RT: " + tempArray[1];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
+                    document.getElementById('line3pop3').textContent = "bottom. Stage two." + " RS: " + tempArray[2] + " RT: " + tempArray[3];
+                }
             }
-        } else if(document.getElementById('line50').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
+        } else if (document.getElementById('line50').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
             tempArray = document.getElementById("slot2").textContent.split(" ");
-            if(tempArray[3] == undefined) {
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
                 document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
                 document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
-                document.getElementById('line3pop3').textContent = "bottom. Stage one." + "RT: " +tempArray[1] + " RS: " + tempArray[2];
+                document.getElementById('line3pop3').textContent = "bottom. Stage two." + "RT: " + tempArray[1] + " RS: " + allValue;
             } else {
-                document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";;
-                document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
-                document.getElementById('line3pop3').textContent = "bottom. Stage one." + " RS: " + tempArray[2] + " RT: " + tempArray[3];
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
+                    document.getElementById('line3pop3').textContent = "bottom. Stage two." + " RS: " + tempArray[2] + " RT: " + tempArray[1];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
+                    document.getElementById('line3pop3').textContent = "bottom. Stage two." + " RS: " + tempArray[2] + " RT: " + tempArray[3];
+                }
             }
-        } else if(document.getElementById('line50').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
+        } else if (document.getElementById('line50').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
             tempArray = document.getElementById("slot3").textContent.split(" ");
-            if(tempArray[3] == undefined) {
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
                 document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
                 document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
-                document.getElementById('line3pop3').textContent = "bottom. Stage one." + "RT: " +tempArray[1] + " RS: " + tempArray[2];
+                document.getElementById('line3pop3').textContent = "bottom. Stage two." + "RT: " + tempArray[1] + " RS: " + allValue;
             } else {
-                document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
-                document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
-                document.getElementById('line3pop3').textContent = "bottom. Stage one." + " RS: " + tempArray[2] + " RT: " + tempArray[3];
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
+                    document.getElementById('line3pop3').textContent = "bottom. Stage two." + " RS: " + tempArray[2] + " RT: " + tempArray[1];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
+                    document.getElementById('line3pop3').textContent = "bottom. Stage two." + " RS: " + tempArray[2] + " RT: " + tempArray[3];
+                }
             }
-        } else if(document.getElementById('line50').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
+        } else if (document.getElementById('line50').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
             tempArray = document.getElementById("slot4").textContent.split(" ");
-            if(tempArray[3] == undefined) {
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
                 document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
                 document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
-                document.getElementById('line3pop3').textContent = "bottom. Stage one." + "RT: " +tempArray[1] + " RS: " + tempArray[2];
+                document.getElementById('line3pop3').textContent = "bottom. Stage two." + "RT: " + tempArray[1] + " RS: " + allValue;
             } else {
-                document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
-                document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
-                document.getElementById('line3pop3').textContent = "bottom. Stage one." + " RS: " + tempArray[2] + " RT: " + tempArray[3];
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
+                    document.getElementById('line3pop3').textContent = "bottom. Stage two." + " RS: " + tempArray[2] + " RT: " + tempArray[1];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
+                    document.getElementById('line3pop3').textContent = "bottom. Stage two." + " RS: " + tempArray[2] + " RT: " + tempArray[3];
+                }
             }
-        } else if(document.getElementById('line50').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
+        } else if (document.getElementById('line50').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
-            if(tempArray[3] == undefined) {
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
                 document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
                 document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
-                document.getElementById('line3pop3').textContent = "bottom. Stage one." + "RT: " +tempArray[1] + " RS: " + tempArray[2];
+                document.getElementById('line3pop3').textContent = "bottom. Stage two." + "RT: " + tempArray[1] + " RS: " + allValue;
             } else {
-                document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
-                document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
-                document.getElementById('line3pop3').textContent = "bottom. Stage one." + " RS: " + tempArray[2] + " RT: " + tempArray[3];
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
+                    document.getElementById('line3pop3').textContent = "bottom. Stage two." + " RS: " + tempArray[2] + " RT: " + tempArray[1];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
+                    document.getElementById('line3pop3').textContent = "bottom. Stage two." + " RS: " + tempArray[2] + " RT: " + tempArray[3];
+                }
             }
         }
         document.getElementById('line3pop1').style.visibility = "visible";
@@ -587,6 +707,945 @@ function line50ToolTipsMouseOut() {
     document.getElementById('line3pop3').style.visibility= "hidden";
 }
 
+function line51ToolTipsMouseOver() {
+
+    //For line 23
+    if(document.getElementById('line51').getAttribute("stroke") != "#000000") {
+        var loadArray;
+        var loadTemp;
+        var tempValue = "";
+        var allValue = "";
+        var i = 0;
+        if(document.getElementById('line51').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
+            tempArray = document.getElementById("slot1").textContent.split(" ");
+            if(tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue =  allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
+                document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
+                document.getElementById('line3pop3').textContent = "to 32. Stage two." + "Offset: " + tempValue;
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length-1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
+                    document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
+                    document.getElementById('line3pop3').textContent = "to 32. Stage two."  + " Intermediate value: " + tempArray[3];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
+                    document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
+                    document.getElementById('line3pop3').textContent = "to 32. Stage two."  + " Intermediate value: " + tempArray[3];
+                }
+            }
+        } else if(document.getElementById('line51').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
+            tempArray = document.getElementById("slot2").textContent.split(" ");
+            if(tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue =  allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
+                document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
+                document.getElementById('line3pop3').textContent = "to 32. Stage two." + "Offset: " + tempValue;
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length-1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
+                    document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
+                    document.getElementById('line3pop3').textContent = "to 32. Stage two."  + " Intermediate value: " + tempArray[3];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
+                    document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
+                    document.getElementById('line3pop3').textContent = "to 32. Stage two."  + " Intermediate value: " + tempArray[3];
+                }
+            }
+        } else if(document.getElementById('line51').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
+            tempArray = document.getElementById("slot3").textContent.split(" ");
+            if(tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue =  allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
+                document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
+                document.getElementById('line3pop3').textContent = "to 32. Stage two." + "Offset: " + tempValue;
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length-1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
+                    document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
+                    document.getElementById('line3pop3').textContent = "to 32. Stage two."  + " Intermediate value: " + tempArray[3];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
+                    document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
+                    document.getElementById('line3pop3').textContent = "to 32. Stage two."  + " Intermediate value: " + tempArray[3];
+                }
+            }
+        } else if(document.getElementById('line51').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
+            tempArray = document.getElementById("slot4").textContent.split(" ");
+            if(tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue =  allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
+                document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
+                document.getElementById('line3pop3').textContent = "to 32. Stage two." + "Offset: " + tempValue;
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length-1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
+                    document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
+                    document.getElementById('line3pop3').textContent = "to 32. Stage two."  + " Intermediate value: " + tempArray[3];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
+                    document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
+                    document.getElementById('line3pop3').textContent = "to 32. Stage two."  + " Intermediate value: " + tempArray[3];
+                }
+            }
+        } else if(document.getElementById('line51').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
+            tempArray = document.getElementById("slot5").textContent.split(" ");
+            if(tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue =  allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
+                document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
+                document.getElementById('line3pop3').textContent = "to 32. Stage two." + "Offset: " + tempValue;
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length-1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
+                    document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
+                    document.getElementById('line3pop3').textContent = "to 32. Stage two."  + " Intermediate value: " + tempArray[3];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
+                    document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
+                    document.getElementById('line3pop3').textContent = "to 32. Stage two."  + " Intermediate value: " + tempArray[3];
+                }
+            }
+        }
+        document.getElementById('line3pop1').style.visibility = "visible";
+        document.getElementById('line3pop2').style.visibility = "visible";
+        document.getElementById('line3pop3').style.visibility = "visible";
+    } else {
+        line50ToolTipsMouseOut();
+    }
+}
+
+function line24ToolTipsMouseOver() {
+
+    //For line 23
+    if (document.getElementById('line24').getAttribute("stroke") != "#000000") {
+        var loadArray;
+        var loadTemp;
+        var tempValue = "";
+        var allValue = "";
+        var i = 0;
+        if (document.getElementById('line24').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
+            tempArray = document.getElementById("slot1").textContent.split(" ");
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                document.getElementById('line3pop2').textContent = "to the correct place with RS";
+                document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + allValue;
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct place with RS";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct place with RS";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
+                }
+            }
+        } else if (document.getElementById('line24').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
+            tempArray = document.getElementById("slot2").textContent.split(" ");
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                document.getElementById('line3pop2').textContent = "to the correct place with RS";
+                document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + allValue;
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct place with RS";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct place with RS";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
+                }
+            }
+        } else if (document.getElementById('line24').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
+            tempArray = document.getElementById("slot3").textContent.split(" ");
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                document.getElementById('line3pop2').textContent = "to the correct place with RS";
+                document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + allValue;
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct place with RS";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct place with RS";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
+                }
+            }
+        } else if (document.getElementById('line24').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
+            tempArray = document.getElementById("slot4").textContent.split(" ");
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                document.getElementById('line3pop2').textContent = "to the correct place with RS";
+                document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + allValue;
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct place with RS";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct place with RS";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
+                }
+            }
+        } else if (document.getElementById('line24').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
+            tempArray = document.getElementById("slot5").textContent.split(" ");
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                document.getElementById('line3pop2').textContent = "to the correct place with RS";
+                document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + allValue;
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct place with RS";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct place with RS";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
+                }
+            }
+        }
+        document.getElementById('line3pop1').style.visibility = "visible";
+        document.getElementById('line3pop2').style.visibility = "visible";
+        document.getElementById('line3pop3').style.visibility = "visible";
+    } else {
+        line50ToolTipsMouseOut();
+    }
+}
+
+function line25ToolTipsMouseOver() {
+
+    //For line 23
+    if (document.getElementById('line25').getAttribute("stroke") != "#000000") {
+        var loadArray;
+        var loadTemp;
+        var tempValue = "";
+        var allValue = "";
+        var i = 0;
+        if (document.getElementById('line25').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
+            tempArray = document.getElementById("slot1").textContent.split(" ");
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                document.getElementById('line3pop2').textContent = "to the correct place with RT";
+                document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct place with RT";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct place with RT";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[3];
+                }
+            }
+        } else if (document.getElementById('line25').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
+            tempArray = document.getElementById("slot2").textContent.split(" ");
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                document.getElementById('line3pop2').textContent = "to the correct place with RT";
+                document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct place with RT";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct place with RT";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[3];
+                }
+            }
+        } else if (document.getElementById('line25').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
+            tempArray = document.getElementById("slot3").textContent.split(" ");
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                document.getElementById('line3pop2').textContent = "to the correct place with RT";
+                document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct place with RT";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct place with RT";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[3];
+                }
+            }
+        } else if (document.getElementById('line25').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
+            tempArray = document.getElementById("slot4").textContent.split(" ");
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                document.getElementById('line3pop2').textContent = "to the correct place with RT";
+                document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct place with RT";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct place with RT";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[3];
+                }
+            }
+        } else if (document.getElementById('line25').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
+            tempArray = document.getElementById("slot5").textContent.split(" ");
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                document.getElementById('line3pop2').textContent = "to the correct place with RT";
+                document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct place with RT";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
+                    document.getElementById('line3pop2').textContent = "to the correct place with RT";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[3];
+                }
+            }
+        }
+        document.getElementById('line3pop1').style.visibility = "visible";
+        document.getElementById('line3pop2').style.visibility = "visible";
+        document.getElementById('line3pop3').style.visibility = "visible";
+    } else {
+        line50ToolTipsMouseOut();
+    }
+}
+
+function line32ToolTipsMouseOver() {
+
+    //For line 23
+    if (document.getElementById('line32').getAttribute("stroke") != "#000000") {
+        var loadArray;
+        var loadTemp;
+        var tempValue = "";
+        var allValue = "";
+        var i = 0;
+        if (document.getElementById('line32').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
+            tempArray = document.getElementById("slot1").textContent.split(" ");
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                document.getElementById('line3pop2').textContent = "read into the correct place with RS";
+                document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + allValue;
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                    document.getElementById('line3pop2').textContent = "read into the correct place with RS";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                    document.getElementById('line3pop2').textContent = "read into the correct place with RS";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
+                }
+            }
+        } else if (document.getElementById('line32').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
+            tempArray = document.getElementById("slot2").textContent.split(" ");
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                document.getElementById('line3pop2').textContent = "read into the correct place with RS";
+                document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + allValue;
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                    document.getElementById('line3pop2').textContent = "read into the correct place with RS";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                    document.getElementById('line3pop2').textContent = "read into the correct place with RS";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
+                }
+            }
+        } else if (document.getElementById('line32').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
+            tempArray = document.getElementById("slot3").textContent.split(" ");
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                document.getElementById('line3pop2').textContent = "read into the correct place with RS";
+                document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + allValue;
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                    document.getElementById('line3pop2').textContent = "read into the correct place with RS";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                    document.getElementById('line3pop2').textContent = "read into the correct place with RS";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
+                }
+            }
+        } else if (document.getElementById('line32').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
+            tempArray = document.getElementById("slot4").textContent.split(" ");
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                document.getElementById('line3pop2').textContent = "read into the correct place with RS";
+                document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + allValue;
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                    document.getElementById('line3pop2').textContent = "read into the correct place with RS";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                    document.getElementById('line3pop2').textContent = "read into the correct place with RS";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
+                }
+            }
+        } else if (document.getElementById('line32').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
+            tempArray = document.getElementById("slot5").textContent.split(" ");
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                document.getElementById('line3pop2').textContent = "read into the correct place with RS";
+                document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + allValue;
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                    document.getElementById('line3pop2').textContent = "read into the correct place with RS";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                    document.getElementById('line3pop2').textContent = "read into the correct place with RS";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + tempArray[2];
+                }
+            }
+        }
+        document.getElementById('line3pop1').style.visibility = "visible";
+        document.getElementById('line3pop2').style.visibility = "visible";
+        document.getElementById('line3pop3').style.visibility = "visible";
+    } else {
+        line50ToolTipsMouseOut();
+    }
+}
+
+function line31ToolTipsMouseOver() {
+
+    //For line 23
+    if (document.getElementById('line31').getAttribute("stroke") != "#000000") {
+        var loadArray;
+        var loadTemp;
+        var tempValue = "";
+        var allValue = "";
+        var i = 0;
+        if (document.getElementById('line31').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
+            tempArray = document.getElementById("slot1").textContent.split(" ");
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                document.getElementById('line3pop2').textContent = "read into the correct place with RT";
+                document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                    document.getElementById('line3pop2').textContent = "read into the correct place with RT";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                    document.getElementById('line3pop2').textContent = "read into the correct place with RT";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[3];
+                }
+            }
+        } else if (document.getElementById('line31').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
+            tempArray = document.getElementById("slot2").textContent.split(" ");
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                document.getElementById('line3pop2').textContent = "read into the correct place with RT";
+                document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                    document.getElementById('line3pop2').textContent = "read into the correct place with RT";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                    document.getElementById('line3pop2').textContent = "read into the correct place with RT";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[3];
+                }
+            }
+        } else if (document.getElementById('line31').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
+            tempArray = document.getElementById("slot3").textContent.split(" ");
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                document.getElementById('line3pop2').textContent = "read into the correct place with RT";
+                document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                    document.getElementById('line3pop2').textContent = "read into the correct place with RT";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                    document.getElementById('line3pop2').textContent = "read into the correct place with RT";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[3];
+                }
+            }
+        } else if (document.getElementById('line31').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
+            tempArray = document.getElementById("slot4").textContent.split(" ");
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                document.getElementById('line3pop2').textContent = "read into the correct place with RT";
+                document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                    document.getElementById('line3pop2').textContent = "read into the correct place with RT";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                    document.getElementById('line3pop2').textContent = "read into the correct place with RT";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[3];
+                }
+            }
+        } else if (document.getElementById('line31').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
+            tempArray = document.getElementById("slot5").textContent.split(" ");
+            if (tempArray[3] == undefined) {
+                loadArray = tempArray[2];
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+
+                }
+                document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                document.getElementById('line3pop2').textContent = "read into the correct place with RT";
+                document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                    document.getElementById('line3pop2').textContent = "read into the correct place with RT";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
+                    document.getElementById('line3pop2').textContent = "read into the correct place with RT";
+                    document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[3];
+                }
+            }
+        }
+        document.getElementById('line3pop1').style.visibility = "visible";
+        document.getElementById('line3pop2').style.visibility = "visible";
+        document.getElementById('line3pop3').style.visibility = "visible";
+    } else {
+        line50ToolTipsMouseOut();
+    }
+}
 //###############################################SECTION FOR DIAGRAM PARTS WHICH DOES NOT INCLUDE LINES#####################################################################
 
 function mutexToolTipsMouseOver() {
