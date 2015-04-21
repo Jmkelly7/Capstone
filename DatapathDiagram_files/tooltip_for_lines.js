@@ -994,9 +994,9 @@ function line54ToolTipsMouseOver() {
                 i++;
 
             }
-            document.getElementById('line3pop1').textContent = "Sending out the correct result of the ALU operation";
-            document.getElementById('line3pop2').textContent = "which in this case is the address to load or store";
-            document.getElementById('line3pop3').textContent = "Stage three." + "Address: " + tempArray[2];
+            document.getElementById('line3pop1').textContent = "Sending the value of the register to be written into";
+            document.getElementById('line3pop2').textContent = "the memory at the other register.";
+            document.getElementById('line3pop3').textContent = "Stage three." + "Data Reg: " + tempArray[1] + " Store Reg: " + allValue;
         } else {
             loadArray = tempArray[0];
             loadTemp = loadArray.split("");
