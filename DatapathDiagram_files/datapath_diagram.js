@@ -341,9 +341,11 @@ function runThrough() {
 }
 
 /**
- * This function
+ * This function calls the instType function to determine the instruction type
+ *  and the path that needs to be colored in the diagram.
  *
- * @param numSlots
+ * @param numSlots - the number of instructions currently displayed in the
+ *  diagram.
  */
 function callInst(numSlots) {
 
@@ -379,6 +381,7 @@ function callInst(numSlots) {
 
 /**
  * This function
+ *
  * @param tempCounter
  */
 function stallRunThrough(tempCounter) {
