@@ -361,6 +361,10 @@ function callInst(numSlots) {
 
 }
 
+/**
+ * This function
+ * @param tempCounter
+ */
 function stallRunThrough(tempCounter) {
 
     if (tempCounter == 1) {
