@@ -140,6 +140,14 @@ function stepThroughIType(stage, color, inst) {
     } else if (stage == 1) {
 
         clearStageOne();
+
+        if(!(inst == ("sw")) && !(inst == ("sb")) && !(inst == ("sh"))) {
+
+            colorLine("line63", color);
+            colorLine("line64", color);
+
+        }
+
         colorObject("rect5", color);
         colorObject("rect7", color);
         colorObject("rect8", color);
@@ -190,6 +198,7 @@ function stepThroughIType(stage, color, inst) {
             colorLine("line30", color);
             colorLine("line61", color);
             colorLine("line56", color);
+            colorLine("line65", color);
 
         }
 
@@ -206,7 +215,8 @@ function stepThroughIType(stage, color, inst) {
             colorLine("line41", color);
             colorLine("line42", color);
             colorLine("line44", color);
-            
+            colorLine("line66", color);
+
         } else if (inst == ("sw") || inst == ("sb") || inst == ("sh")) {
 
             colorObject("rect11", color);
@@ -222,6 +232,7 @@ function stepThroughIType(stage, color, inst) {
             colorLine("line41", color);
             colorLine("line43", color);
             colorLine("line57", color);
+            colorLine("line66", color);
 
         }
 
@@ -242,6 +253,10 @@ function stepThroughIType(stage, color, inst) {
             colorLine("line27", color);
             colorLine("line53", color);
             colorLine("line59", color);
+            colorLine("line67", color);
+            colorLine("line68", color);
+            colorLine("line69", color);
+            colorLine("line70", color);
 
         } else if (inst == ("sw") || inst == ("sb") || inst == ("sh")) {
 
@@ -261,6 +276,10 @@ function stepThroughIType(stage, color, inst) {
             colorLine("line27", color);
             colorLine("line53", color);
             colorLine("line59", color);
+            colorLine("line67", color);
+            colorLine("line68", color);
+            colorLine("line69", color);
+            colorLine("line70", color);
 
         }
 
