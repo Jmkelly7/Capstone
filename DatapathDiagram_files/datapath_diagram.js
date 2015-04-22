@@ -315,6 +315,13 @@ function runThrough() {
 
     }
 
+    if (isHazard()) {
+
+        console.log(isHazard());
+        // blah
+
+    }
+
 }
 
 /**
@@ -841,6 +848,35 @@ function uploadNew() {
 		//upload.onunload = clearDiagram();
 
     }
+
+}
+
+/**
+ * This function
+ */
+function isHazard() {
+
+    console.log("IS HAZARD?!?!?!?!?!?!?!?!?!?!?!?!?!?");
+
+    var isHazard = false;
+
+    console.log(document.getElementById("slot4").textContent);
+    console.log(document.getElementById("slot4").getAttribute("inst") == "lw");
+
+    if (document.getElementById("slot4").textContent != " " &&
+        document.getElementById("slot4").getAttribute("inst") == "lw") {
+
+        if ((Inst3[0] == Inst2[1]) || (Inst3[0] == Inst2[2])) {
+
+            isHazard = true;
+
+        }
+
+    }
+
+    console.log("IS HAZARD: " + isHazard);
+
+    return isHazard;
 
 }
 
