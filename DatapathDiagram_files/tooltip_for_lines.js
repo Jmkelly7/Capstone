@@ -1,5 +1,6 @@
 /**
- *
+ * This file contains functions that are used to update and display
+ *  component/register information, in the Tooltip Module.
  *
  * @author  Josh Kelly
  * @author  Trevor Griggs

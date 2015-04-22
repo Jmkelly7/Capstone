@@ -8,19 +8,6 @@
  */
 
 /**
- * The array of colors for the diagram.
- *
- * 0 = black (black)
- * 1 = red (firebrick)
- * 2 = orange (peru)
- * 3 = yellow/gold (darkgoldenrod)
- * 4 = green (mediumseagreen)
- * 5 = blue (darkcyan)
- * 6 = purple (darkorchid)
- */
-//var colors = ["firebrick", "peru", "darkgoldenrod", "mediumseagreen", "darkcyan", "darkorchid"];
-
-/**
  * This function handles choosing the path for R-type instructions to follow in
  *  the diagram and colors and clears the appropriate objects in the diagram.
  *

@@ -95,7 +95,19 @@ var Inst5 = [""];
  */
 var nextColor = "darkorchid";
 
-//var colors = ["firebrick", "peru", "darkgoldenrod", "mediumseagreen", "darkcyan", "darkorchid"];
+/**
+ * The array of colors for the diagram.
+ *
+ * 0 = black (black)
+ * 1 = red (firebrick)
+ * 2 = orange (peru)
+ * 3 = yellow/gold (darkgoldenrod)
+ * 4 = green (mediumseagreen)
+ * 5 = blue (darkcyan)
+ * 6 = purple (darkorchid)
+ */
+var colors = ["black", "firebrick", "peru", "darkgoldenrod", "mediumseagreen",
+    "darkcyan", "darkorchid"];
 
 /**
  * The name of the file that is uploaded.
@@ -123,7 +135,11 @@ var intervalColor;
  */
 var isFirst = true;
 
+/**
+ * An array that
+ */
 var tempArray;
+
 /**
  * The popup window that brings the user to upload a file once they visit the
  *  site.
@@ -550,6 +566,16 @@ function stallRunThrough(tempCounter) {
  */
 function instType(inst, stage, color) {
 
+    // Colors the first 5 instructions, one at a time, as they enter the
+    //  diagram.
+    if (color == "black" && counter <= 5) {
+
+        color = colors[counter];
+        document.getElementById("slot" + counter).setAttribute("fill", color);
+        document.getElementById("slot" + counter).setAttribute("font-weight", "bold");
+
+    }
+
     console.log("instruction is " + inst);
     console.log("instruction counter is " + instructionCounter);
     console.log("instruction number is " + currentNumInstruction);
@@ -864,13 +890,14 @@ function isHazard() {
 
     var isHazard = false;
 
-    console.log(document.getElementById("slot4").textContent);
-    console.log(document.getElementById("slot4").getAttribute("inst") == "lw");
+    console.log("counter > 3: " + (counter > 3));
+    console.log("slot4 != \" \": " + !(document.getElementById("slot4").textContent == " "));
+    console.log("slot3 == lw: " + (document.getElementById("slot3").getAttribute("inst") == "lw"));
 
-    if (document.getElementById("slot4").textContent != " " &&
-        document.getElementById("slot4").getAttribute("inst") == "lw") {
+    if (counter > 3 && !(document.getElementById("slot4").textContent == "") &&
+        document.getElementById("slot3").getAttribute("inst") == "lw") {
 
-        if ((Inst3[0] == Inst2[1]) || (Inst3[0] == Inst2[2])) {
+        if ((Inst3[0] == Inst4[1]) || (Inst3[0] == Inst4[2])) {
 
             isHazard = true;
 
