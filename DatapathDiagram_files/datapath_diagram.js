@@ -727,7 +727,36 @@ function play() {
  */
 function skipTo() {
 
-    // goes to specified line in code
+    var instNum = prompt("Please enter the number of the instruction you want" +
+                         " to skip to:", "");
+
+    // need to check if instNum is a number
+    INST_ONE_CNT = 0;
+    INST_TWO_CNT = 0;
+    INST_THREE_CNT = 0;
+    INST_FOUR_CNT = 0;
+    INST_FIVE_CNT = 0;
+
+    Inst1 = [""];
+    Inst2 = [""];
+    Inst3 = [""];
+    Inst4 = [""];
+    Inst5 = [""];
+
+    currentNumInstruction = 0;
+    instructionCounter = 0;
+    regCounter = 0;
+    counter = 1;
+    nextColor = "darkorchid";
+    isFirst = true;
+
+    setupLegend();
+
+    for (var i = 0; i < instNum; i++) {
+
+        runThrough();
+
+    }
 
 }
 
@@ -876,10 +905,6 @@ function uploadNew() {
         var upload = window.open('./Upload.html', 'Upload File',
                              'height=300,width=400,left=450,top=200');
 
-		// ***NOT FINISHED***
-		// clear the diagram colors and data
-		//upload.onunload = clearDiagram();
-
     }
 
 }
@@ -931,18 +956,11 @@ window.addEventListener('keyup', function(event) {
     }
 
     // Checks if left key
-    if (event.keyCode == 37) {
+    /*if (event.keyCode == 37) {
 
         stepBack();
 
-    }
-
-    // Checks if up key
-    /*if (event.keyCode == 38) {
-
-     this.moveUp();
-
-     }*/
+    }*/
 
     // Checks if right key
     if (event.keyCode == 39) {
@@ -950,12 +968,5 @@ window.addEventListener('keyup', function(event) {
         runThrough();
 
     }
-
-    // Checks if down key
-    /*if (event.keyCode == 40) {
-
-     this.moveDown();
-
-     }*/
 
 });

@@ -76,11 +76,6 @@
         <g>
             <rect width="300" height="600" rx="20" ry="20" id="legend"
                   style="fill:beige; stroke:rgb(79,129,189); stroke-width:10"></rect>
-            <!--<text x="30" y="50" fill="firebrick" id="slot1" font-size="20px" font-weight = "bold"></text>
-            <text x="30" y="100" fill="peru" id="slot2" font-size="20px" font-weight = "bold"></text>
-            <text x="30" y="150" fill="darkgoldenrod" id="slot3" font-size="20px" font-weight = "bold"></text>
-            <text x="30" y="200" fill="mediumseagreen" id="slot4" font-size="20px" font-weight = "bold"></text>
-            <text x="30" y="250" fill="darkcyan" id="slot5" font-size="20px" font-weight = "bold"></text>-->
             <text x="30" y="50" fill="black" id="slot1" font-size="20px"></text>
             <text x="30" y="100" fill="black" id="slot2" font-size="20px"></text>
             <text x="30" y="150" fill="black" id="slot3" font-size="20px"></text>
@@ -99,12 +94,12 @@
     <div style="display:inline">
         <form>
 
-            <input type="text" id="numskip" value="Enter line number"/>
-            <button id="numskipb"
+            <!--<input type="text" id="numskip" placeholder="Enter line number"/>-->
+            <button id="numskipb" type="button"
                     onclick="skipTo()"
                     style="margin-top:15px" ><img
                     src="./DatapathDiagram_files/images/numskip.png"
-                    alt="Submit" ></button>
+                    alt="Submit"></button>
         </form>
     </div>
 </div>
@@ -1807,9 +1802,9 @@ Sorry, your browser does not support inline SVG.
                src="./DatapathDiagram_files/images/help.png"
                height="30" width="30" style="float:right" >
 
-        <input type="image" id="download" onclick="download()"
+        <!--<input type="image" id="download" onclick="download()"
                src="./DatapathDiagram_files/images/download.png"
-               height="30" width="30" style="float:right" >
+               height="30" width="30" style="float:right" >-->
 
         <input type="image" id="upload" onclick="uploadNew()"
                src="./DatapathDiagram_files/images/upload.png"
