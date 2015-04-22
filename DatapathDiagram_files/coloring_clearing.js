@@ -118,6 +118,10 @@ function clearStageFive() {
     clearGivenLine("line58");
     clearGivenLine("line62");
     clearGivenLine("line45");
+    clearGivenLine("line67");
+    clearGivenLine("line68");
+    clearGivenLine("line69");
+    clearGivenLine("line70");
 
 }
 
@@ -137,6 +141,7 @@ function clearStageFour() {
     clearGivenLine("line45");
     clearGivenLine("line46");
     clearGivenLine("line62");
+    clearGivenLine("line66");
 }
 
 /**
@@ -163,6 +168,7 @@ function clearStageThree() {
     clearGivenLine("line42");
     clearGivenLine("line44");
     clearGivenLine("line60");
+    clearGivenLine("line65");
 
 }
 
@@ -187,6 +193,8 @@ function clearStageTwo() {
     clearGivenLine("line52");
     clearGivenLine("line28");
     clearGivenLine("line29");
+    clearGivenLine("line63");
+    clearGivenLine("line64");
 
 }
 

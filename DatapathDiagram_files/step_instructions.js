@@ -49,6 +49,10 @@ function stepThroughRType(stage, color) {
         colorLine("line32", color);
         colorLine("line49", color);
         colorLine("line50", color);
+        colorLine("line51", color);
+        colorLine("line52", color);
+        colorLine("line63", color);
+        colorLine("line64", color);
 
     } else if (stage == 2) {
 
@@ -62,6 +66,7 @@ function stepThroughRType(stage, color) {
         colorLine("line35", color);
         colorLine("line37", color);
         colorLine("line39", color);
+        colorLine("line65", color);
 
     } else if (stage == 3) {
 
@@ -71,6 +76,8 @@ function stepThroughRType(stage, color) {
         colorLine("line41", color);
         colorLine("line43", color);
         colorLine("line57", color);
+        colorLine("line66", color);
+
 
     } else if (stage == 4) {
 
@@ -88,6 +95,10 @@ function stepThroughRType(stage, color) {
         colorLine("line27", color);
         colorLine("line53", color);
         colorLine("line59", color);
+        colorLine("line67", color);
+        colorLine("line68", color);
+        colorLine("line69", color);
+        colorLine("line70", color);
 
     } else if (stage == 5) {
 
