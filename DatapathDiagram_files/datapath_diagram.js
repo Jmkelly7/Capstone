@@ -982,31 +982,25 @@ function instType(inst) {
 
     var type = "";
 
-    if (inst == ("add")  || inst == ("addu")  ||
-        inst == ("and")  || inst == ("div")   ||
-        inst == ("divu") || inst == ("jr")    ||
-        inst == ("mfcZ") || inst == ("mfhi")  ||
-        inst == ("mflo") || inst == ("mtcZ")  ||
-        inst == ("mult") || inst == ("multu") ||
-        inst == ("nor")  || inst == ("or")    ||
-        inst == ("sll")  || inst == ("sllv")  ||
-        inst == ("slt")  || inst == ("sltu")  ||
-        inst == ("sra")  || inst == ("srav")  ||
-        inst == ("srl")  || inst == ("srlv")  ||
-        inst == ("sub")  || inst == ("subu")  ||
+    if (inst == ("add")  || inst == ("addu") || inst == ("and")   ||
+        inst == ("div")  || inst == ("divu") || inst == ("jr")    ||
+        inst == ("mfcZ") || inst == ("mfhi") || inst == ("mflo")  ||
+        inst == ("mtcZ") || inst == ("mult") || inst == ("multu") ||
+        inst == ("nor")  || inst == ("or")   || inst == ("sll")   ||
+        inst == ("sllv") || inst == ("slt")  || inst == ("sltu")  ||
+        inst == ("sra")  || inst == ("srav") || inst == ("srl")   ||
+        inst == ("srlv") || inst == ("sub")  || inst == ("subu")  ||
         inst == ("xor")) {
 
         type = "r";
 
-    } else if (inst == ("addi") || inst == ("addiu") ||
-        inst == ("andi") || inst == ("beq")   ||
-        inst == ("bne")  || inst == ("lb")    ||
-        inst == ("lbu")  || inst == ("lh")    ||
-        inst == ("lhu")  || inst == ("lui")   ||
-        inst == ("lw")   || inst == ("ori")   ||
-        inst == ("sb")   || inst == ("sh")    ||
-        inst == ("slti") || inst == ("sltiu") ||
-        inst == ("sw")   || inst == ("xori")) {
+    } else if (inst == ("addi") || inst == ("addiu") || inst == ("andi")  ||
+               inst == ("beq")  || inst == ("bne")   || inst == ("lb")    ||
+               inst == ("lbu")  || inst == ("lh")    || inst == ("lhu")   ||
+               inst == ("lui")  || inst == ("lw")    || inst == ("la")    ||
+               inst == ("li")   || inst == ("ori")   || inst == ("sb")    ||
+               inst == ("sh")   || inst == ("slti")  || inst == ("sltiu") ||
+               inst == ("sw")   || inst == ("xori")) {
 
         type = "i";
 
@@ -1014,20 +1008,16 @@ function instType(inst) {
 
         type = "j";
 
-    } else if (inst == ("b")    || inst == ("bal")   ||
-        inst == ("beqz") || inst == ("bge")   ||
-        inst == ("bgt")  || inst == ("bgtu")  ||
-        inst == ("bgtz") || inst == ("ble")   ||
-        inst == ("blt")  || inst == ("clear") ||
-        inst == ("pdiv") || inst == ("la")    ||
-        inst == ("li")   || inst == ("move")  ||
-        inst == ("mul")  || inst == ("not")   ||
-        inst == ("rem")  || inst == ("subi")) {
+    } else if (inst == ("b")     || inst == ("bal")  || inst == ("beqz") ||
+               inst == ("bge")   || inst == ("bgt")  || inst == ("bgtu") ||
+               inst == ("bgtz")  || inst == ("ble")  || inst == ("blt")  ||
+               inst == ("clear") || inst == ("pdiv") || inst == ("la")   ||
+               inst == ("li")    || inst == ("move") || inst == ("mul")  ||
+               inst == ("not")   || inst == ("rem")  || inst == ("subi")) {
 
         type = "p";
 
-    } else if (inst == ("break")    || inst == ("noop") ||
-        inst == ("syscall")) {
+    } else if (inst == ("break") || inst == ("noop") || inst == ("syscall")) {
 
         type = "o";
 
