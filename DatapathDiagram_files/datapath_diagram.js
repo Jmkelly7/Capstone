@@ -176,8 +176,18 @@ function parseFile() {
             returnInstructions[i].substring(0, 1) != "#" &&
             returnInstructions[i].substring(0, 6) != "syscall") {
 
-            legendArray[parseCounter] = returnInstructions[i];
-            parseCounter++;
+            var pieces = returnInstructions[i].split(" ");
+            var type = instType(pieces[0]);
+
+            console.log("!!!!!!!!!!!!!!!!!!!!!!!!!" + pieces[0] + "!!!!!!!!!!!!!!!!!!!!!!");
+            console.log("!!!!!!!!!!!!!!!!!!!!!!!!!" + type + "!!!!!!!!!!!!!!!!!!!!!!");
+
+            if (type == "r" || type == "i") {
+
+                legendArray[parseCounter] = returnInstructions[i];
+                parseCounter++;
+
+            }
 
         }
 
@@ -944,7 +954,7 @@ function uploadNew() {
 }
 
 /**
- * This function
+ * This function checks for hazards
  */
 function isHazard() {
 
@@ -983,7 +993,7 @@ function instType(inst) {
     var type = "";
 
     if (inst == ("add")  || inst == ("addu") || inst == ("and")   ||
-        inst == ("div")  || inst == ("divu") || inst == ("jr")    ||
+        inst == ("div")  || inst == ("divu") ||/*inst == ("jr")   ||*/
         inst == ("mfcZ") || inst == ("mfhi") || inst == ("mflo")  ||
         inst == ("mtcZ") || inst == ("mult") || inst == ("multu") ||
         inst == ("nor")  || inst == ("or")   || inst == ("sll")   ||
@@ -994,8 +1004,8 @@ function instType(inst) {
 
         type = "r";
 
-    } else if (inst == ("addi") || inst == ("addiu") || inst == ("andi")  ||
-               inst == ("beq")  || inst == ("bne")   || inst == ("lb")    ||
+    } else if (inst == ("addi") || inst == ("addiu") || inst == ("andi")/*||
+               inst == ("beq")  || inst == ("bne")*/ || inst == ("lb")    ||
                inst == ("lbu")  || inst == ("lh")    || inst == ("lhu")   ||
                inst == ("lui")  || inst == ("lw")    || inst == ("la")    ||
                inst == ("li")   || inst == ("ori")   || inst == ("sb")    ||

@@ -63,7 +63,7 @@ function colorLine(objectName, colorChoice) {
  *
  * @param objectName - the object to be reset to default.
  */
-function clearGivenObject(objectName) {
+function clearObject(objectName) {
 
     if (objectName == "ellipse5") {
         document.getElementById(objectName).setAttribute("fill", "white");
@@ -81,7 +81,7 @@ function clearGivenObject(objectName) {
  *
  * @param lineName - the line to be reset to default.
  */
-function clearGivenLine(lineName) {
+function clearLine(lineName) {
 
     if (document.getElementById(lineName + "a")) {
 
@@ -108,6 +108,91 @@ function clearGivenLine(lineName) {
 
 /**
  * This function
+ */
+function colorNoOp() {
+
+    if (document.getElementById("slot3").textContent == "noop") {
+
+        clearStageThree();
+
+        colorObject("poly2");
+        colorObject("poly3");
+        colorObject("rect9");
+        colorObject("rect10");
+        colorObject("ellipse3");
+        colorObject("ellipse4");
+        colorLine("line11");
+        colorLine("line12");
+        colorLine("line13");
+        colorLine("line30");
+        colorLine("line33");
+        colorLine("line34");
+        colorLine("line35");
+        colorLine("line36");
+        colorLine("line37");
+        colorLine("line38");
+        colorLine("line39");
+        colorLine("line42");
+        colorLine("line44");
+        colorLine("line54");
+        colorLine("line56");
+        colorLine("line60");
+        colorLine("line61");
+        colorLine("line65");
+
+    } else if (document.getElementById("slot2").textContent == "noop") {
+
+        clearStageFour();
+
+        colorObject("rect11");
+        colorObject("rect12");
+        colorObject("rect13");
+        colorObject("rect14");
+        colorLine("line1");
+        colorLine("line14");
+        colorLine("line16");
+        colorLine("line17");
+        colorLine("line21");
+        colorLine("line40");
+        colorLine("line41");
+        colorLine("line42");
+        colorLine("line43");
+        colorLine("line45");
+        colorLine("line46");
+        colorLine("line57");
+        colorLine("line58");
+        colorLine("line60");
+        colorLine("line62");
+        colorLine("line66");
+
+    } else {
+
+        clearStageFive();
+
+        colorObject("rect6");
+        colorObject("rect15");
+        colorObject("ellipse5");
+        colorLine("line26");
+        colorLine("line27");
+        colorLine("line45");
+        colorLine("line46");
+        colorLine("line47");
+        colorLine("line48");
+        colorLine("line53");
+        colorLine("line58");
+        colorLine("line59");
+        colorLine("line62");
+        colorLine("line67");
+        colorLine("line68");
+        colorLine("line69");
+        colorLine("line70");
+
+    }
+
+}
+
+/**
+ * This function
  *
  * @param slot
  */
@@ -127,23 +212,23 @@ function colorWhite(slot) {
  */
 function clearStageFive() {
 
-    clearGivenObject("rect15");
-    clearGivenObject("ellipse5");
-    clearGivenObject("rect6");
-    clearGivenLine("line48");
-    clearGivenLine("line47");
-    clearGivenLine("line46");
-    clearGivenLine("line26");
-    clearGivenLine("line27");
-    clearGivenLine("line53");
-    clearGivenLine("line59");
-    clearGivenLine("line58");
-    clearGivenLine("line62");
-    clearGivenLine("line45");
-    clearGivenLine("line67");
-    clearGivenLine("line68");
-    clearGivenLine("line69");
-    clearGivenLine("line70");
+    clearObject("rect6");
+    clearObject("rect15");
+    clearObject("ellipse5");
+    clearLine("line26");
+    clearLine("line27");
+    clearLine("line45");
+    clearLine("line46");
+    clearLine("line47");
+    clearLine("line48");
+    clearLine("line53");
+    clearLine("line58");
+    clearLine("line59");
+    clearLine("line62");
+    clearLine("line67");
+    clearLine("line68");
+    clearLine("line69");
+    clearLine("line70");
 
 }
 
@@ -153,17 +238,26 @@ function clearStageFive() {
  */
 function clearStageFour() {
 
-    clearGivenObject("rect11");
-    clearGivenObject("rect13");
-    clearGivenObject("rect14");
-    clearGivenLine("line41");
-    clearGivenLine("line43");
-    clearGivenLine("line57");
-    clearGivenLine("line58");
-    clearGivenLine("line45");
-    clearGivenLine("line46");
-    clearGivenLine("line62");
-    clearGivenLine("line66");
+    clearObject("rect11");
+    clearObject("rect12");
+    clearObject("rect13");
+    clearObject("rect14");
+    clearLine("line1");
+    clearLine("line14");
+    clearLine("line16");
+    clearLine("line17");
+    clearLine("line21");
+    clearLine("line40");
+    clearLine("line41");
+    clearLine("line42");
+    clearLine("line43");
+    clearLine("line45");
+    clearLine("line46");
+    clearLine("line57");
+    clearLine("line58");
+    clearLine("line60");
+    clearLine("line62");
+    clearLine("line66");
 }
 
 /**
@@ -172,25 +266,30 @@ function clearStageFour() {
  */
 function clearStageThree() {
 
-    clearGivenObject("rect12");
-    clearGivenObject("rect9");
-    clearGivenObject("rect10");
-    clearGivenObject("ellipse4");
-    clearGivenObject("poly3");
-    clearGivenLine("line33");
-    clearGivenLine("line34");
-    clearGivenLine("line35");
-    clearGivenLine("line37");
-    clearGivenLine("line39");
-    clearGivenLine("line30");
-    clearGivenLine("line61");
-    clearGivenLine("line56");
-    clearGivenLine("line54");
-    clearGivenLine("line36");
-    clearGivenLine("line42");
-    clearGivenLine("line44");
-    clearGivenLine("line60");
-    clearGivenLine("line65");
+    clearObject("ellipse4");
+    clearObject("ellipse3");
+    clearObject("rect10");
+    clearObject("rect9");
+    clearObject("poly3");
+    clearObject("poly2");
+    clearLine("line11");
+    clearLine("line12");
+    clearLine("line13");
+    clearLine("line30");
+    clearLine("line33");
+    clearLine("line34");
+    clearLine("line35");
+    clearLine("line36");
+    clearLine("line37");
+    clearLine("line38");
+    clearLine("line39");
+    clearLine("line42");
+    clearLine("line44");
+    clearLine("line54");
+    clearLine("line56");
+    clearLine("line60");
+    clearLine("line61");
+    clearLine("line65");
 
 }
 
@@ -200,23 +299,23 @@ function clearStageThree() {
  */
 function clearStageTwo() {
 
-    clearGivenObject("rect5");
-    clearGivenObject("rect7");
-    clearGivenObject("rect8");
-    clearGivenObject("ellipse2");
-    clearGivenLine("line23");
-    clearGivenLine("line24");
-    clearGivenLine("line25");
-    clearGivenLine("line31");
-    clearGivenLine("line32");
-    clearGivenLine("line49");
-    clearGivenLine("line50");
-    clearGivenLine("line51");
-    clearGivenLine("line52");
-    clearGivenLine("line28");
-    clearGivenLine("line29");
-    clearGivenLine("line63");
-    clearGivenLine("line64");
+    clearObject("rect5");
+    clearObject("rect7");
+    clearObject("rect8");
+    clearObject("ellipse2");
+    clearLine("line23");
+    clearLine("line24");
+    clearLine("line25");
+    clearLine("line31");
+    clearLine("line32");
+    clearLine("line49");
+    clearLine("line50");
+    clearLine("line51");
+    clearLine("line52");
+    clearLine("line28");
+    clearLine("line29");
+    clearLine("line63");
+    clearLine("line64");
 
 }
 
@@ -226,25 +325,25 @@ function clearStageTwo() {
  */
 function clearStageOne() {
 
-    clearGivenObject("rect1");
-    clearGivenObject("rect2");
-    clearGivenObject("rect3");
-    clearGivenObject("rect4");
-    clearGivenObject("ellipse1");
-    clearGivenObject("poly1");
-    clearGivenLine("line3");
-    clearGivenLine("line4");
-    clearGivenLine("line22");
-    clearGivenLine("line6");
-    clearGivenLine("line19");
-    clearGivenLine("line7");
-    clearGivenLine("line8");
-    clearGivenLine("line9");
-    clearGivenLine("line20");
-    clearGivenLine("line18");
-    clearGivenLine("line15");
-    clearGivenLine("line2");
-    clearGivenLine("line5");
+    clearObject("rect1");
+    clearObject("rect2");
+    clearObject("rect3");
+    clearObject("rect4");
+    clearObject("ellipse1");
+    clearObject("poly1");
+    clearLine("line3");
+    clearLine("line4");
+    clearLine("line22");
+    clearLine("line6");
+    clearLine("line19");
+    clearLine("line7");
+    clearLine("line8");
+    clearLine("line9");
+    clearLine("line20");
+    clearLine("line18");
+    clearLine("line15");
+    clearLine("line2");
+    clearLine("line5");
 
 }
 
