@@ -177,7 +177,9 @@ function parseFile() {
             returnInstructions[i].substring(0, 1) != "" &&
             returnInstructions[i].substring(0, 1) != "#" &&
             returnInstructions[i].substring(0, 6) != "syscall") {
-
+            if(returnInstructions[i].indexOf("#") != -1) {
+                returnInstructions[i] = returnInstructions[i].slice(0,returnInstructions[i].indexOf("#"));
+            }
             var pieces = returnInstructions[i].split(" ");
             var type = instType(pieces[0]);
 
