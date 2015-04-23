@@ -96,6 +96,16 @@ function clearGivenLine(lineName) {
 
 }
 
+/*function clearSlots() {
+
+    for (var i = 1; i <= 5; i++) {
+
+        document.getElementById("slot" + i).setAttribute("fill", "#000000");
+
+    }
+
+}*/
+
 /**
  * This function
  *
@@ -235,5 +245,26 @@ function clearStageOne() {
     clearGivenLine("line15");
     clearGivenLine("line2");
     clearGivenLine("line5");
+
+}
+
+/**
+ * This function clears the whole diagram.
+ */
+function clearAllColor() {
+
+    clearStageFive();
+    clearStageFour();
+    clearStageThree();
+    clearStageTwo();
+    clearStageOne();
+
+    for (var i = 1; i <= 5; i++) {
+
+        document.getElementById("slot" + i).setAttribute("fill", "black");
+        document.getElementById("slot" + i).setAttribute("font-weight", "normal");
+
+
+    }
 
 }

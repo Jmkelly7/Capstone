@@ -32,7 +32,7 @@ var counter = 1;
  * The counter used to parse through the given file and help construct the array
  *  of instructions
  */
-var parseCounter = 0;
+//var parseCounter = 0;
 
 /**
  * The counter for what step the 1st instruction is on in the pipeline.
@@ -151,8 +151,8 @@ var popup = window.open('./Upload.html', 'Upload File',
 popup.focus();
 
 /**
- * This function that parsers through the given file contents and gets the array
- *  of instructions.
+ * This function parses through the given file contents and creates an array of
+ *  instructions.
  */
 function parseFile() {
 
@@ -161,13 +161,14 @@ function parseFile() {
     //  individual instructions and pull that whole line out.
     var returnInstructions = fileContents.split("\n");
     var legendArray = [""];
+    var parseCounter = 0;
 
     for (var i = 0; i < returnInstructions.length; i++) {
 
-        if (returnInstructions.indexOf("$") != -1 ||
-            returnInstructions.indexOf(";") == -1 &&
-            returnInstructions[i].substring(0, 1) != "#" &&
-            returnInstructions[i].substring(0, 6) != "syscall") {
+        if ((returnInstructions.indexOf("$") != -1 ||
+            returnInstructions.indexOf(";") == -1) &&
+            (returnInstructions[i].substring(0, 1) != "#" &&
+            returnInstructions[i].substring(0, 6) != "syscall")) {
 
             legendArray[parseCounter] = returnInstructions[i];
             parseCounter++;
@@ -399,6 +400,7 @@ function callInst(numSlots) {
 
         }
 
+        console.log(document.getElementById("slot" + i).getAttribute("fill"));
         instType(document.getElementById("slot" + i).getAttribute("inst"),
             cnt,
             document.getElementById("slot" + i).getAttribute("fill"));
@@ -599,6 +601,8 @@ function instType(inst, stage, color) {
 
     // Colors the first 5 instructions, one at a time, as they enter the
     //  diagram.
+    console.log("counter is " + counter);
+    console.log("is color black? " + color);
     if (color == "black" && counter <= 5) {
 
         color = colors[counter];
@@ -610,7 +614,7 @@ function instType(inst, stage, color) {
     console.log("instruction is " + inst);
     console.log("instruction counter is " + instructionCounter);
     console.log("instruction number is " + currentNumInstruction);
-    console.log("instruction count is " + stage);
+    console.log("instruction is in stage " + stage);
     console.log("color is " + color);
 
     if (inst == ("add")  || inst == ("addu")  ||
@@ -718,11 +722,20 @@ function play() {
 
             var time = prompt("Please enter a speed for the diagram", "");
 
-            if (time != null) {
+            // need to check if time is a number
+            if (time != null && !isNaN(time)) {
 
-                intervalColor = window.setInterval(function () {
-                    runThrough()
-                }, time * 1000);
+                if (time > 0) {
+
+                    intervalColor = window.setInterval(function () {
+                        runThrough()
+                    }, time * 1000);
+
+                } else {
+
+                    alert("Please input a number greater than 0.");
+
+                }
 
             } else {
 
@@ -758,27 +771,36 @@ function skipTo() {
     var instNum = prompt("Please enter the number of the instruction you want" +
                          " to skip to:", "");
 
+    console.log(!isNaN(instNum));
+    console.log(0 < instNum < instructionArray.length);
     // need to check if instNum is a number
-    INST_ONE_CNT = 0;
-    INST_TWO_CNT = 0;
-    INST_THREE_CNT = 0;
-    INST_FOUR_CNT = 0;
-    INST_FIVE_CNT = 0;
+    if (!isNaN(instNum) && 0 < instNum < instructionArray.length) {
 
-    Inst1 = [""];
-    Inst2 = [""];
-    Inst3 = [""];
-    Inst4 = [""];
-    Inst5 = [""];
+        INST_ONE_CNT = 0;
+        INST_TWO_CNT = 0;
+        INST_THREE_CNT = 0;
+        INST_FOUR_CNT = 0;
+        INST_FIVE_CNT = 0;
 
-    currentNumInstruction = 0;
-    instructionCounter = 0;
-    regCounter = 0;
-    counter = 1;
-    nextColor = "darkorchid";
-    isFirst = true;
+        Inst1 = [""];
+        Inst2 = [""];
+        Inst3 = [""];
+        Inst4 = [""];
+        Inst5 = [""];
 
-    setupLegend();
+        currentNumInstruction = 0;
+        instructionCounter = 0;
+        regCounter = 0;
+        counter = 1;
+        nextColor = "darkorchid";
+        isFirst = true;
+
+        console.log("clearing!!!!!!!!!!!!!!!!")
+        clearAllColor();
+
+        setupLegend();
+
+    }
 
     for (var i = 0; i < instNum; i++) {
 

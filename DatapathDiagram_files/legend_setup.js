@@ -104,6 +104,8 @@ function getInstructionForList(instArray) {
  */
 function setupLegend() {
 
+    console.log("setupLegend() CALLED!!!!!!!");
+
     // Going to call getInstructionForList and build it while keeping it
     //  refreshing when it needs to be.
 

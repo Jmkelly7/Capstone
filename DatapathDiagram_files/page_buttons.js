@@ -27,12 +27,12 @@ function about() {
  *  The page will open in a new tab or a new window (this depends on
  *  your browser settings).
  */
-function download() {
+/*function download() {
 
     // opens download page
     window.open("./Download.html");
 
-}
+}*/
 
 /**
  * This function opens the help page for the web application. This
