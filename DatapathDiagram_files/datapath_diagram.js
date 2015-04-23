@@ -190,7 +190,34 @@ function parseFile() {
     return legendArray;
 
 }
-
+function validate() {
+    console.log("CALLING VALIDATE");
+    if (document.getElementById('checkLine').checked) {
+        document.getElementById('line63').style.visibility = "visible";
+        document.getElementById('line64').style.visibility = "visible";
+        document.getElementById('line64a').style.visibility = "visible";
+        document.getElementById('line65').style.visibility = "visible";
+        document.getElementById('line65a').style.visibility = "visible";
+        document.getElementById('line66').style.visibility = "visible";
+        document.getElementById('line66a').style.visibility = "visible";
+        document.getElementById('line67').style.visibility = "visible";
+        document.getElementById('line68').style.visibility = "visible";
+        document.getElementById('line69').style.visibility = "visible";
+        document.getElementById('line70').style.visibility = "visible";
+    } else {
+        document.getElementById('line63').style.visibility = "hidden";
+        document.getElementById('line64').style.visibility = "hidden";
+        document.getElementById('line64a').style.visibility = "hidden";
+        document.getElementById('line65').style.visibility = "hidden";
+        document.getElementById('line65a').style.visibility = "hidden";
+        document.getElementById('line66').style.visibility = "hidden";
+        document.getElementById('line66a').style.visibility = "hidden";
+        document.getElementById('line67').style.visibility = "hidden";
+        document.getElementById('line68').style.visibility = "hidden";
+        document.getElementById('line69').style.visibility = "hidden";
+        document.getElementById('line70').style.visibility = "hidden";
+    }
+}
 /**
  * This function is ran when the step button is clicked and calls the instType
  *  to update the diagram for how many of instructions there are on the diagram.
@@ -339,6 +366,7 @@ function runThrough() {
     }
 
 }
+
 
 /**
  * This function calls the instType function to determine the instruction type

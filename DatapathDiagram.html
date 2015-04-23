@@ -101,6 +101,12 @@
                     src="./DatapathDiagram_files/images/numskip.png"
                     alt="Submit"></button>
         </form>
+        <form>
+            <br />
+            <br />
+            <br />
+            <input id="checkLine" type="checkbox" name="checkLine" value="Bike" onclick="validate()"style="margin-left:60px" >Show write back line<br>
+        </form>
     </div>
 </div>
 
@@ -258,23 +264,26 @@
             stroke-miterlimit="10"
             d="m 445.5,416 0,66"
             id="line63"
+            visibility="hidden"
             onmouseout="line50ToolTipsMouseOut()"
-            onmouseover="line54ToolTipsMouseOver()"></path>
+            onmouseover="line63ToolTipsMouseOver()"></path>
     <path
             stroke="#000000"
             stroke-miterlimit="10"
             d="m 445,482 185,0"
             id="line64"
+            visibility="hidden"
             onmouseout="line50ToolTipsMouseOut()"
-            onmouseover="line54ToolTipsMouseOver()"></path>
+            onmouseover="line63ToolTipsMouseOver()"></path>
     <path
             fill="#000000"
             stroke="#000000"
             id="line64a"
+            visibility="hidden"
             stroke-miterlimit="10"
             d="m 632,482 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
             onmouseout="line50ToolTipsMouseOut()"
-            onmouseover="line54ToolTipsMouseOver()"></path>
+            onmouseover="line63ToolTipsMouseOver()"></path>
 </svg>
 <g
         id="g5490"
@@ -785,6 +794,7 @@
             stroke-miterlimit="10"
             d="m 435,322 0,190"
             id="line70"
+            visibility="hidden"
             onmouseout="line50ToolTipsMouseOut()"
             onmouseover="line26ToolTipsMouseOver()"></path>
     <path
@@ -792,6 +802,7 @@
             stroke-miterlimit="10"
             d="m 435,512 775,0"
             id="line69"
+            visibility="hidden"
             onmouseout="line50ToolTipsMouseOut()"
             onmouseover="line26ToolTipsMouseOver()"></path>
     <path
@@ -799,6 +810,7 @@
             stroke-miterlimit="10"
             d="m 1210,512 0,-30"
             id="line68"
+            visibility="hidden"
             onmouseout="line50ToolTipsMouseOut()"
             onmouseover="line26ToolTipsMouseOver()"></path>
     <path
@@ -806,6 +818,7 @@
             stroke-miterlimit="10"
             d="m 1155,482 55,0"
             id="line67"
+            visibility="hidden"
             onmouseout="line50ToolTipsMouseOut()"
             onmouseover="line26ToolTipsMouseOver()"></path>
 </g>
@@ -969,7 +982,9 @@
                 rx="23"
                 cy="416"
                 cx="562"
-                id="ellipse2"></ellipse>
+                id="ellipse2"
+                onmouseout="sgexToolTipsMouseOut()"
+                onmouseover="sgexToolTipsMouseOver()"></ellipse>
         <text
                 style="font-size:12px;fill:#000000"
                 font-size="12px"
@@ -1256,16 +1271,18 @@
         stroke-miterlimit="10"
         d="m 658,482 226,0"
         id="line65"
+        visibility="hidden"
         onmouseout="line50ToolTipsMouseOut()"
-        onmouseover="line54ToolTipsMouseOver()"></path>
+        onmouseover="line65ToolTipsMouseOver()"></path>
 <path
         fill="#000000"
         stroke="#000000"
         id="line65a"
+        visibility="hidden"
         stroke-miterlimit="10"
         d="m 886,482 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
         onmouseout="line50ToolTipsMouseOut()"
-        onmouseover="line54ToolTipsMouseOver()"></path>
+        onmouseover="line65ToolTipsMouseOver()"></path>
 <svg
         id="svg329"
         version="1.1"
@@ -1434,9 +1451,11 @@
         version="1.1"
         id="svg106">
     <path
-            style="fill:#ffffff;stroke:#000000;stroke-width:1;stroke-miterlimit:10"
-            onmouseout="mutexToolTipsMouseOut()"
-            onmouseover="mutexToolTipsMouseOver()"
+            fill = "#ffffff"
+            stroke = "#000000"
+            stroke-width = "1"
+            onmouseout="mutexTool1TipsMouseOut()"
+            onmouseover="mutexTool1TipsMouseOver()"
             transform="matrix(0,1,-1,0,1511.5,-820.5)"
             stroke-miterlimit="10"
             d="m 1150.1,328 31.8,0 c 13.86,0 25.1,7.84 25.1,17.5 0,9.66 -11.24,17.5 -25.1,17.5 l -31.8,0 c -13.86,0 -25.1,-7.84 -25.1,-17.5 0,-9.66 11.24,-17.5 25.1,-17.5 z"
@@ -1447,8 +1466,8 @@
             y="350"
             x="1152"
             id="ell5"
-            onmouseout="mutexToolTipsMouseOut()"
-            onmouseover="mutexToolTipsMouseOver()">MUX</text>
+            onmouseout="mutexTool1TipsMouseOut()"
+            onmouseover="mutexTool1TipsMouseOver()">MUX</text>
 </svg>
 <svg
         height="100%"
@@ -1596,12 +1615,14 @@
         stroke-miterlimit="10"
         d="m 862,482 213,0"
         id="line66"
+        visibility="hidden"
         onmouseout="line50ToolTipsMouseOut()"
-        onmouseover="line26ToolTipsMouseOver()"></path>
+        onmouseover="line66ToolTipsMouseOver()"></path>
 <path
         fill="#000000"
         stroke="#000000"
         id="line66a"
+        visibility="hidden"
         stroke-miterlimit="10"
         d="m 1079,482 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
         onmouseout="line50ToolTipsMouseOut()"
@@ -1783,6 +1804,7 @@ Sorry, your browser does not support inline SVG.
                         </span>-->
                     <span style="margin-left:30px; margin-right:40px"> Step
                         </span>
+
         </b>
     </div>
 </div>

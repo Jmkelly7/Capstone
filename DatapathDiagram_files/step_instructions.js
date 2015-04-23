@@ -118,6 +118,7 @@ function stepThroughRType(stage, color) {
  **/
 function stepThroughIType(stage, color, inst) {
 
+
     if (stage == 0) {
 
         colorObject("ellipse1", color);

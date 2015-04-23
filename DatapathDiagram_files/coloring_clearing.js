@@ -15,7 +15,13 @@
  */
 function colorObject(objectName, colorChoice) {
 
-    document.getElementById(objectName).setAttribute("style", "fill:" + colorChoice + ";stroke-width:3;stroke:black");
+    if (objectName == "ellipse5") {
+        document.getElementById(objectName).setAttribute("fill", colorChoice);
+        document.getElementById(objectName).setAttribute("stroke", "black");
+        document.getElementById(objectName).setAttribute("stroke-width", "3");
+    } else {
+        document.getElementById(objectName).setAttribute("style", "fill:" + colorChoice + ";stroke-width:3;stroke:black");
+    }
 
 }
 
@@ -59,7 +65,13 @@ function colorLine(objectName, colorChoice) {
  */
 function clearGivenObject(objectName) {
 
-    document.getElementById(objectName).setAttribute("style", "fill:white;stroke-width:1;stroke:rgb(0,0,0)");
+    if (objectName == "ellipse5") {
+        document.getElementById(objectName).setAttribute("fill", "white");
+        document.getElementById(objectName).setAttribute("stroke", "black");
+        document.getElementById(objectName).setAttribute("stroke-width", "1");
+    } else {
+        document.getElementById(objectName).setAttribute("style", "fill:white;stroke-width:1;stroke:rgb(0,0,0)");
+    }
 
 }
 
