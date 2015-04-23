@@ -115,77 +115,77 @@ function colorNoOp() {
 
         clearStageThree();
 
-        colorObject("poly2");
-        colorObject("poly3");
-        colorObject("rect9");
-        colorObject("rect10");
-        colorObject("ellipse3");
-        colorObject("ellipse4");
-        colorLine("line11");
-        colorLine("line12");
-        colorLine("line13");
-        colorLine("line30");
-        colorLine("line33");
-        colorLine("line34");
-        colorLine("line35");
-        colorLine("line36");
-        colorLine("line37");
-        colorLine("line38");
-        colorLine("line39");
-        colorLine("line42");
-        colorLine("line44");
-        colorLine("line54");
-        colorLine("line56");
-        colorLine("line60");
-        colorLine("line61");
-        colorLine("line65");
+        colorObject("poly2", "darkgray");
+        colorObject("poly3", "darkgray");
+        colorObject("rect9", "darkgray");
+        colorObject("rect10", "darkgray");
+        colorObject("ellipse3", "darkgray");
+        colorObject("ellipse4", "darkgray");
+        colorLine("line11", "darkgray");
+        colorLine("line12", "darkgray");
+        colorLine("line13", "darkgray");
+        colorLine("line30", "darkgray");
+        colorLine("line33", "darkgray");
+        colorLine("line34", "darkgray");
+        colorLine("line35", "darkgray");
+        colorLine("line36", "darkgray");
+        colorLine("line37", "darkgray");
+        colorLine("line38", "darkgray");
+        colorLine("line39", "darkgray");
+        colorLine("line42", "darkgray");
+        colorLine("line44", "darkgray");
+        colorLine("line54", "darkgray");
+        colorLine("line56", "darkgray");
+        colorLine("line60", "darkgray");
+        colorLine("line61", "darkgray");
+        colorLine("line65", "darkgray");
 
     } else if (document.getElementById("slot2").textContent == "noop") {
 
         clearStageFour();
 
-        colorObject("rect11");
-        colorObject("rect12");
-        colorObject("rect13");
-        colorObject("rect14");
-        colorLine("line1");
-        colorLine("line14");
-        colorLine("line16");
-        colorLine("line17");
-        colorLine("line21");
-        colorLine("line40");
-        colorLine("line41");
-        colorLine("line42");
-        colorLine("line43");
-        colorLine("line45");
-        colorLine("line46");
-        colorLine("line57");
-        colorLine("line58");
-        colorLine("line60");
-        colorLine("line62");
-        colorLine("line66");
+        colorObject("rect11", "darkgray");
+        colorObject("rect12", "darkgray");
+        colorObject("rect13", "darkgray");
+        colorObject("rect14", "darkgray");
+        colorLine("line1", "darkgray");
+        colorLine("line14", "darkgray");
+        colorLine("line16", "darkgray");
+        colorLine("line17", "darkgray");
+        colorLine("line21", "darkgray");
+        colorLine("line40", "darkgray");
+        colorLine("line41", "darkgray");
+        colorLine("line42", "darkgray");
+        colorLine("line43", "darkgray");
+        colorLine("line45", "darkgray");
+        colorLine("line46", "darkgray");
+        colorLine("line57", "darkgray");
+        colorLine("line58", "darkgray");
+        colorLine("line60", "darkgray");
+        colorLine("line62", "darkgray");
+        colorLine("line66", "darkgray");
 
     } else {
 
         clearStageFive();
 
-        colorObject("rect6");
-        colorObject("rect15");
-        colorObject("ellipse5");
-        colorLine("line26");
-        colorLine("line27");
-        colorLine("line45");
-        colorLine("line46");
-        colorLine("line47");
-        colorLine("line48");
-        colorLine("line53");
-        colorLine("line58");
-        colorLine("line59");
-        colorLine("line62");
-        colorLine("line67");
-        colorLine("line68");
-        colorLine("line69");
-        colorLine("line70");
+        colorObject("rect6", "darkgray");
+        colorObject("rect15", "darkgray");
+        colorObject("ellipse5", "darkgray");
+        colorLine("line26", "darkgray");
+        colorLine("line27", "darkgray");
+        colorLine("line45", "darkgray");
+        colorLine("line46", "darkgray");
+        colorLine("line47", "darkgray");
+        colorLine("line48", "darkgray");
+        colorLine("line53", "darkgray");
+        colorLine("line58", "darkgray");
+        colorLine("line59", "darkgray");
+        colorLine("line62", "darkgray");
+        colorLine("line67", "darkgray");
+        colorLine("line68", "darkgray");
+        colorLine("line69", "darkgray");
+        colorLine("line70", "darkgray");
 
     }
 

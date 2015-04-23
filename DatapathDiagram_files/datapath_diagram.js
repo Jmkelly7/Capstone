@@ -105,9 +105,10 @@ var nextColor = "darkorchid";
  * 4 = green (mediumseagreen)
  * 5 = blue (darkcyan)
  * 6 = purple (darkorchid)
+ * 7 = gray (darkgray)
  */
 var colors = ["black", "firebrick", "peru", "darkgoldenrod", "mediumseagreen",
-    "darkcyan", "darkorchid"];
+    "darkcyan", "darkorchid", "darkgray"];
 
 /**
  * The name of the file that is uploaded.
