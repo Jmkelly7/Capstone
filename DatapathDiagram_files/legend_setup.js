@@ -172,7 +172,7 @@ function setupLegend() {
  * This function handles updating the instruction legend when the back button is
  *  clicked.
  */
-function backLegend(previousInstruction, inst, colorInQueue) {
+/*function backLegend(previousInstruction, inst, colorInQueue) {
 
     var newColorInQueue = document.getElementById("slot5").getAttribute("fill");
 
@@ -207,5 +207,5 @@ function backLegend(previousInstruction, inst, colorInQueue) {
 
     return newColorInQueue;
 
-}
+}*/
 

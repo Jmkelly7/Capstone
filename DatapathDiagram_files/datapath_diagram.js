@@ -165,10 +165,16 @@ function parseFile() {
 
     for (var i = 0; i < returnInstructions.length; i++) {
 
-        if ((returnInstructions.indexOf("$") != -1 ||
-            returnInstructions.indexOf(";") == -1) &&
-            (returnInstructions[i].substring(0, 1) != "#" &&
-            returnInstructions[i].substring(0, 6) != "syscall")) {
+        returnInstructions[i] = returnInstructions[i].trim();
+
+        if (i < 5) {
+            console.log("\""+returnInstructions[i]+"\"");
+        }
+
+        if (returnInstructions[i].indexOf("$") != -1 &&
+            returnInstructions[i].substring(0, 1) != "" &&
+            returnInstructions[i].substring(0, 1) != "#" &&
+            returnInstructions[i].substring(0, 6) != "syscall") {
 
             legendArray[parseCounter] = returnInstructions[i];
             parseCounter++;
@@ -191,6 +197,7 @@ function parseFile() {
     return legendArray;
 
 }
+
 function validate() {
     console.log("CALLING VALIDATE");
     if (document.getElementById('checkLine').checked) {
@@ -219,8 +226,9 @@ function validate() {
         document.getElementById('line70').style.visibility = "hidden";
     }
 }
+
 /**
- * This function is ran when the step button is clicked and calls the instType
+ * This function is ran when the step button is clicked and calls the runInst
  *  to update the diagram for how many of instructions there are on the diagram.
  */
 function runThrough() {
@@ -370,7 +378,7 @@ function runThrough() {
 
 
 /**
- * This function calls the instType function to determine the instruction type
+ * This function calls the runInst function to determine the instruction type
  *  and the path that needs to be colored in the diagram.
  *
  * @param numSlots - the number of instructions currently displayed in the
@@ -401,7 +409,7 @@ function callInst(numSlots) {
         }
 
         console.log(document.getElementById("slot" + i).getAttribute("fill"));
-        instType(document.getElementById("slot" + i).getAttribute("inst"),
+        runInst(document.getElementById("slot" + i).getAttribute("inst"),
             cnt,
             document.getElementById("slot" + i).getAttribute("fill"));
 
@@ -418,7 +426,7 @@ function stallRunThrough(tempCounter) {
 
     if (tempCounter == 1) {
 
-        instType(document.getElementById("slot1").getAttribute("inst"),
+        runInst(document.getElementById("slot1").getAttribute("inst"),
             INST_ONE_CNT,
             document.getElementById("slot1").getAttribute("fill"));
 
@@ -429,11 +437,11 @@ function stallRunThrough(tempCounter) {
 
         if (!(document.getElementById("slot2").textContent == "")) {
 
-            instType(document.getElementById("slot1").getAttribute("inst"),
+            runInst(document.getElementById("slot1").getAttribute("inst"),
                 INST_ONE_CNT,
                 document.getElementById("slot1").getAttribute("fill"));
 
-            instType(document.getElementById("slot1").getAttribute("inst"),
+            runInst(document.getElementById("slot1").getAttribute("inst"),
                 INST_TWO_CNT,
                 "white");
 
@@ -453,15 +461,15 @@ function stallRunThrough(tempCounter) {
 
         if (!(document.getElementById("slot3").textContent == "")) {
 
-            instType(document.getElementById("slot1").getAttribute("inst"),
+            runInst(document.getElementById("slot1").getAttribute("inst"),
                 INST_ONE_CNT,
                 document.getElementById("slot1").getAttribute("fill"));
 
-            instType(document.getElementById("slot1").getAttribute("inst"),
+            runInst(document.getElementById("slot1").getAttribute("inst"),
                 INST_TWO_CNT,
                 "white");
 
-            instType(document.getElementById("slot1").getAttribute("inst"),
+            runInst(document.getElementById("slot1").getAttribute("inst"),
                 INST_THREE_CNT,
                 "white");
 
@@ -482,19 +490,19 @@ function stallRunThrough(tempCounter) {
 
         if (!(document.getElementById("slot5").textContent == "")) {
 
-            instType(document.getElementById("slot1").getAttribute("inst"),
+            runInst(document.getElementById("slot1").getAttribute("inst"),
                 INST_ONE_CNT,
                 document.getElementById("slot1").getAttribute("fill"));
 
-            instType(document.getElementById("slot1").getAttribute("inst"),
+            runInst(document.getElementById("slot1").getAttribute("inst"),
                 INST_TWO_CNT,
                 "white");
 
-            instType(document.getElementById("slot1").getAttribute("inst"),
+            runInst(document.getElementById("slot1").getAttribute("inst"),
                 INST_THREE_CNT,
                 "white");
 
-            instType(document.getElementById("slot1").getAttribute("inst"),
+            runInst(document.getElementById("slot1").getAttribute("inst"),
                 INST_FOUR_CNT,
                 "white");
 
@@ -564,23 +572,23 @@ function stallRunThrough(tempCounter) {
 
         }
 
-        instType(document.getElementById("slot1").getAttribute("inst"),
+        runInst(document.getElementById("slot1").getAttribute("inst"),
             INST_ONE_CNT,
             document.getElementById("slot1").getAttribute("fill"));
 
-        instType(document.getElementById("slot2").getAttribute("inst"),
+        runInst(document.getElementById("slot2").getAttribute("inst"),
             INST_TWO_CNT,
             document.getElementById("slot2").getAttribute("fill"));
 
-        instType(document.getElementById("slot3").getAttribute("inst"),
+        runInst(document.getElementById("slot3").getAttribute("inst"),
             INST_THREE_CNT,
             document.getElementById("slot3").getAttribute("fill"));
 
-        instType(document.getElementById("slot4").getAttribute("inst"),
+        runInst(document.getElementById("slot4").getAttribute("inst"),
             INST_FOUR_CNT,
             document.getElementById("slot4").getAttribute("fill"));
 
-        instType(document.getElementById("slot5").getAttribute("inst"),
+        runInst(document.getElementById("slot5").getAttribute("inst"),
             INST_FIVE_CNT,
             document.getElementById("slot5").getAttribute("fill"));
 
@@ -590,14 +598,17 @@ function stallRunThrough(tempCounter) {
 }
 
 /**
- * This function checks what type the instruction is and calls the correct path
- *  for that instruction.
+ * This function calls the correct path for the given instruction, once the
+ *  instruction type is determined.
  *
  * @param inst - instruction from the legend.
  * @param stage - the stage the instruction is in.
  * @param color - the color to change the objects and lines too.
  */
-function instType(inst, stage, color) {
+function runInst(inst, stage, color) {
+
+    // Determines the instruction type.
+    var type = instType(inst);
 
     // Colors the first 5 instructions, one at a time, as they enter the
     //  diagram.
@@ -612,57 +623,29 @@ function instType(inst, stage, color) {
     }
 
     console.log("instruction is " + inst);
+    console.log("instruction type is " + type);
     console.log("instruction counter is " + instructionCounter);
     console.log("instruction number is " + currentNumInstruction);
     console.log("instruction is in stage " + stage);
     console.log("color is " + color);
 
-    if (inst == ("add")  || inst == ("addu")  ||
-        inst == ("and")  || inst == ("div")   ||
-        inst == ("divu") || inst == ("jr")    ||
-        inst == ("mfcZ") || inst == ("mfhi")  ||
-        inst == ("mflo") || inst == ("mtcZ")  ||
-        inst == ("mult") || inst == ("multu") ||
-        inst == ("nor")  || inst == ("or")    ||
-        inst == ("sll")  || inst == ("sllv")  ||
-        inst == ("slt")  || inst == ("sltu")  ||
-        inst == ("sra")  || inst == ("srav")  ||
-        inst == ("srl")  || inst == ("srlv")  ||
-        inst == ("sub")  || inst == ("subu")  ||
-        inst == ("xor")) {
+    if (type == "r") {
         console.log("calling r type");
         stepThroughRType(stage, color);
 
-    } else if (inst == ("addi") || inst == ("addiu") ||
-               inst == ("andi") || inst == ("beq")   ||
-               inst == ("bne")  || inst == ("lb")    ||
-               inst == ("lbu")  || inst == ("lh")    ||
-               inst == ("lhu")  || inst == ("lui")   ||
-               inst == ("lw")   || inst == ("ori")   ||
-               inst == ("sb")   || inst == ("sh")    ||
-               inst == ("slti") || inst == ("sltiu") ||
-               inst == ("sw")   || inst == ("xori")) {
+    } else if (type == "i") {
         console.log("calling I type");
         stepThroughIType(stage, color, inst);
 
-    } else if (inst == ("j") || inst == ("jal")) {
+    } else if (type == "j") {
 
         stepThroughJType(stage, color);
 
-    } else if (inst == ("b")    || inst == ("bal")   ||
-               inst == ("beqz") || inst == ("bge")   ||
-               inst == ("bgt")  || inst == ("bgtu")  ||
-               inst == ("bgtz") || inst == ("ble")   ||
-               inst == ("blt")  || inst == ("clear") ||
-               inst == ("pdiv") || inst == ("la")    ||
-               inst == ("li")   || inst == ("move")  ||
-               inst == ("mul")  || inst == ("not")   ||
-               inst == ("rem")  || inst == ("subi")) {
+    } else if (type == "p") {
 
         stepThroughPseudoInstruction(stage, color);
 
-    } else if (inst == ("break")    || inst == ("noop") ||
-               inst == ("syscall")) {
+    } else if (type == "o") {
 
         stepThroughOtherInstruction(inst, stage, color);
 
@@ -772,9 +755,10 @@ function skipTo() {
                          " to skip to:", "");
 
     console.log(!isNaN(instNum));
-    console.log(0 < instNum < instructionArray.length);
+    console.log(0 <= instNum < (instructionArray.length - 11));
+    console.log(instructionArray.length - 11);
     // need to check if instNum is a number
-    if (!isNaN(instNum) && 0 < instNum < instructionArray.length) {
+    if (!isNaN(instNum) && (0 <= instNum < (instructionArray.length - 11))) {
 
         INST_ONE_CNT = 0;
         INST_TWO_CNT = 0;
@@ -800,11 +784,11 @@ function skipTo() {
 
         setupLegend();
 
-    }
+        for (var i = 0; i < instNum; i++) {
 
-    for (var i = 0; i < instNum; i++) {
+            runThrough();
 
-        runThrough();
+        }
 
     }
 
@@ -838,23 +822,23 @@ function skipTo() {
         var previousInstruction = instructionArray[currentNumInstruction - 5];
         var inst = instructionArray[currentNumInstruction - 5].split(" ")[0];
 
-        instType(inst, INST_ONE_CNT, nextColor);
+        runInst(inst, INST_ONE_CNT, nextColor);
 
         nextColor = backLegend(previousInstruction, inst, nextColor);
 
-        instType(document.getElementById("slot2").getAttribute("inst"),
+        runInst(document.getElementById("slot2").getAttribute("inst"),
             INST_TWO_CNT,
             document.getElementById("slot2").getAttribute("fill"));
 
-        instType(document.getElementById("slot3").getAttribute("inst"),
+        runInst(document.getElementById("slot3").getAttribute("inst"),
             INST_THREE_CNT,
             document.getElementById("slot3").getAttribute("fill"));
 
-        instType(document.getElementById("slot4").getAttribute("inst"),
+        runInst(document.getElementById("slot4").getAttribute("inst"),
             INST_FOUR_CNT,
             document.getElementById("slot4").getAttribute("fill"));
 
-        instType(document.getElementById("slot5").getAttribute("inst"),
+        runInst(document.getElementById("slot5").getAttribute("inst"),
             INST_FIVE_CNT,
             document.getElementById("slot5").getAttribute("fill"));
 
@@ -865,19 +849,19 @@ function skipTo() {
         INST_ONE_CNT = 0;
         isFirst = true;
 
-        instType(document.getElementById("slot1").getAttribute("inst"),
+        runInst(document.getElementById("slot1").getAttribute("inst"),
             INST_TWO_CNT,
             document.getElementById("slot1").getAttribute("fill"));
 
-        instType(document.getElementById("slot2").getAttribute("inst"),
+        runInst(document.getElementById("slot2").getAttribute("inst"),
             INST_THREE_CNT,
             document.getElementById("slot2").getAttribute("fill"));
 
-        instType(document.getElementById("slot3").getAttribute("inst"),
+        runInst(document.getElementById("slot3").getAttribute("inst"),
             INST_FOUR_CNT,
             document.getElementById("slot3").getAttribute("fill"));
 
-        instType(document.getElementById("slot4").getAttribute("inst"),
+        runInst(document.getElementById("slot4").getAttribute("inst"),
             INST_FIVE_CNT,
             document.getElementById("slot4").getAttribute("fill"));
 
@@ -887,15 +871,15 @@ function skipTo() {
         clearStageFour();
         INST_TWO_CNT = 0;
 
-        instType(document.getElementById("slot1").getAttribute("inst"),
+        runInst(document.getElementById("slot1").getAttribute("inst"),
             INST_THREE_CNT,
             document.getElementById("slot1").getAttribute("fill"));
 
-        instType(document.getElementById("slot2").getAttribute("inst"),
+        runInst(document.getElementById("slot2").getAttribute("inst"),
             INST_FOUR_CNT,
             document.getElementById("slot2").getAttribute("fill"));
 
-        instType(document.getElementById("slot3").getAttribute("inst"),
+        runInst(document.getElementById("slot3").getAttribute("inst"),
             INST_FIVE_CNT,
             document.getElementById("slot3").getAttribute("fill"));
 
@@ -905,11 +889,11 @@ function skipTo() {
         clearStageThree();
         INST_THREE_CNT = 0;
 
-        instType(document.getElementById("slot1").getAttribute("inst"),
+        runInst(document.getElementById("slot1").getAttribute("inst"),
             INST_FOUR_CNT,
             document.getElementById("slot1").getAttribute("fill"));
 
-        instType(document.getElementById("slot2").getAttribute("inst"),
+        runInst(document.getElementById("slot2").getAttribute("inst"),
             INST_FIVE_CNT,
             document.getElementById("slot2").getAttribute("fill"));
 
@@ -919,7 +903,7 @@ function skipTo() {
         clearStageTwo();
         INST_FOUR_CNT = 0;
 
-        instType(document.getElementById("slot1").getAttribute("inst"),
+        runInst(document.getElementById("slot1").getAttribute("inst"),
             INST_FIVE_CNT,
             document.getElementById("slot1").getAttribute("fill"));
 
@@ -986,6 +970,70 @@ function isHazard() {
     console.log("IS HAZARD: " + isHazard);
 
     return isHazard;
+
+}
+
+/**
+ * This function determines the type of the given instruction.
+ *
+ * @param inst - an instruction from the uploaded file.
+ */
+function instType(inst) {
+
+    var type = "";
+
+    if (inst == ("add")  || inst == ("addu")  ||
+        inst == ("and")  || inst == ("div")   ||
+        inst == ("divu") || inst == ("jr")    ||
+        inst == ("mfcZ") || inst == ("mfhi")  ||
+        inst == ("mflo") || inst == ("mtcZ")  ||
+        inst == ("mult") || inst == ("multu") ||
+        inst == ("nor")  || inst == ("or")    ||
+        inst == ("sll")  || inst == ("sllv")  ||
+        inst == ("slt")  || inst == ("sltu")  ||
+        inst == ("sra")  || inst == ("srav")  ||
+        inst == ("srl")  || inst == ("srlv")  ||
+        inst == ("sub")  || inst == ("subu")  ||
+        inst == ("xor")) {
+
+        type = "r";
+
+    } else if (inst == ("addi") || inst == ("addiu") ||
+        inst == ("andi") || inst == ("beq")   ||
+        inst == ("bne")  || inst == ("lb")    ||
+        inst == ("lbu")  || inst == ("lh")    ||
+        inst == ("lhu")  || inst == ("lui")   ||
+        inst == ("lw")   || inst == ("ori")   ||
+        inst == ("sb")   || inst == ("sh")    ||
+        inst == ("slti") || inst == ("sltiu") ||
+        inst == ("sw")   || inst == ("xori")) {
+
+        type = "i";
+
+    } else if (inst == ("j") || inst == ("jal")) {
+
+        type = "j";
+
+    } else if (inst == ("b")    || inst == ("bal")   ||
+        inst == ("beqz") || inst == ("bge")   ||
+        inst == ("bgt")  || inst == ("bgtu")  ||
+        inst == ("bgtz") || inst == ("ble")   ||
+        inst == ("blt")  || inst == ("clear") ||
+        inst == ("pdiv") || inst == ("la")    ||
+        inst == ("li")   || inst == ("move")  ||
+        inst == ("mul")  || inst == ("not")   ||
+        inst == ("rem")  || inst == ("subi")) {
+
+        type = "p";
+
+    } else if (inst == ("break")    || inst == ("noop") ||
+        inst == ("syscall")) {
+
+        type = "o";
+
+    }
+
+    return type;
 
 }
 
