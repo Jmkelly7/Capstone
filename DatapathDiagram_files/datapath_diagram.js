@@ -140,6 +140,7 @@ var isFirst = true;
  */
 var tempArray;
 
+var hazardCount;
 /**
  * The popup window that brings the user to upload a file once they visit the
  *  site.
@@ -204,6 +205,7 @@ function parseFile() {
     legendArray[parseCounter + 8] = " ";
     legendArray[parseCounter + 9] = " ";
     legendArray[parseCounter + 10] = " ";
+    hazardCount = parseCounter + 10;
     return legendArray;
 
 }
@@ -380,6 +382,7 @@ function runThrough() {
     if (isHazard()) {
 
         console.log(isHazard());
+        //setupLegend();
         // blah
 
     }
@@ -950,6 +953,12 @@ function uploadNew() {
                              'height=300,width=400,left=450,top=200');
 
     }
+
+}
+
+
+function onward() {
+
 
 }
 
