@@ -108,64 +108,65 @@ function setupLegend() {
 
     // Going to call getInstructionForList and build it while keeping it
     //  refreshing when it needs to be.
+        if (instructionCounter == 0) {
 
-    if (instructionCounter == 0) {
+            instructionArray = parseFile();
+            getInstructionForList(instructionArray);
 
-        instructionArray = parseFile();
-        getInstructionForList(instructionArray);
+        } else {
 
-    } else {
+            var colorQueue = document.getElementById("slot1").getAttribute("fill");
 
-        var colorQueue = document.getElementById("slot1").getAttribute("fill");
+            for (var i = 1; i < 12; i++) {
 
-        for (var i = 1; i < 12; i++) {
+                var word = "slot";
 
-            var word = "slot";
+                if (i < 11) {
 
-            if (i < 11) {
+                    var num = i + 1;
+                    var word2 = word + num;
+                    word = word + i;
+                 //   if (isHazard()) {
 
-                var num = i + 1;
-                var word2 = word + num;
-                word = word + i;
-                document.getElementById(word).textContent =
-                    document.getElementById(word2).textContent;
-                document.getElementById(word).setAttribute("inst",
-                    document.getElementById(word2).getAttribute("inst"));
+                 //   }
+                    document.getElementById(word).textContent =
+                        document.getElementById(word2).textContent;
+                    document.getElementById(word).setAttribute("inst",
+                        document.getElementById(word2).getAttribute("inst"));
 
-                if (i < 5) {
+                    if (i < 5) {
 
-                    document.getElementById(word).setAttribute("fill",
-                        document.getElementById(word2).getAttribute("fill"));
+                        document.getElementById(word).setAttribute("fill",
+                            document.getElementById(word2).getAttribute("fill"));
 
-                } else if (i == 5) {
+                    } else if (i == 5) {
 
-                    document.getElementById(word).setAttribute("fill",
-                        nextColor);
-                    nextColor = colorQueue;
+                        document.getElementById(word).setAttribute("fill",
+                            nextColor);
+                        nextColor = colorQueue;
 
+                    }
+
+                } else {
+
+                    word = word + i;
+                    document.getElementById(word).textContent =
+                        instructionArray[instructionCounter];
+
+                    if (document.getElementById(word).textContent != "") {
+
+                        var inst = instructionArray[instructionCounter].split(" ");
+                        console.log("INST THAT WE ARE SETTING IN THE LEGEND TO PUT IN THE THING IO PROBS BOB");
+                        document.getElementById(word).setAttribute("inst", inst[0]);
+                    }
+
+                    instructionCounter++;
+                    setupReg(instructionArray);
                 }
 
-            } else {
-
-                word = word + i;
-                document.getElementById(word).textContent =
-                    instructionArray[instructionCounter];
-
-                if (document.getElementById(word).textContent != "") {
-
-                    var inst = instructionArray[instructionCounter].split(" ");
-                    console.log("INST THAT WE ARE SETTING IN THE LEGEND TO PUT IN THE THING IO PROBS BOB");
-                    document.getElementById(word).setAttribute("inst", inst[0]);
-                }
-
-                instructionCounter++;
-                setupReg(instructionArray);
             }
 
         }
-
-    }
-
 }
 
 /**

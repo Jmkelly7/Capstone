@@ -960,7 +960,7 @@ function uploadNew() {
 }
 
 
-function onward() {
+function forward() {
 
 
 }
