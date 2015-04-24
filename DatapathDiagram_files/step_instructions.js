@@ -40,7 +40,9 @@ function stepThroughRType(stage, color) {
 
     } else if (stage == 1) {
 
+        clearStageOne();
         clearStageTwo();
+
         colorObject("rect5", color);
         colorObject("rect7", color);
         colorObject("rect8", color);
@@ -58,7 +60,9 @@ function stepThroughRType(stage, color) {
 
     } else if (stage == 2) {
 
+        clearStageTwo();
         clearStageThree();
+
         colorObject("rect9", color);
         colorObject("rect10", color);
         colorObject("ellipse4", color);
@@ -72,7 +76,9 @@ function stepThroughRType(stage, color) {
 
     } else if (stage == 3) {
 
+        clearStageThree();
         clearStageFour();
+
         colorObject("rect11", color);
         colorObject("rect14", color);
         colorLine("line41", color);
@@ -83,8 +89,9 @@ function stepThroughRType(stage, color) {
 
     } else if (stage == 4) {
 
-        console.log("4 instructions");
+        clearStageFour();
         clearStageFive();
+
         colorObject("rect15", color);
         colorObject("ellipse5", color);
         colorObject("rect6", color);
@@ -105,6 +112,7 @@ function stepThroughRType(stage, color) {
     } else if (stage == 5) {
 
         clearStageFive();
+
     }
 
 }
@@ -268,7 +276,7 @@ function stepThroughIType(stage, color, inst) {
 
         } else if (inst == ("sw") || inst == ("sb") || inst == ("sh")) {
 
-            // clearStageFive();
+            // Would call clearStageFive(), but it has already been done.
 
         } else {
 
