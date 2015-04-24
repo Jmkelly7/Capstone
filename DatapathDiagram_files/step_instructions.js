@@ -143,6 +143,7 @@ function stepThroughIType(stage, color, inst) {
 
     } else if (stage == 1) {
 
+        clearStageOne();
         clearStageTwo();
 
         if(!(inst == ("sw")) && !(inst == ("sb")) && !(inst == ("sh"))) {
@@ -170,6 +171,7 @@ function stepThroughIType(stage, color, inst) {
 
     } else if (stage == 2) {
 
+        clearStageTwo();
         clearStageThree();
 
         if(inst == ("sw") || inst == ("sb") || inst == ("sh")) {
@@ -208,6 +210,7 @@ function stepThroughIType(stage, color, inst) {
 
     } else if (stage == 3) {
 
+        clearStageThree();
         clearStageFour();
 
         if (inst == ("lb")   || inst == ("lbu") || inst == ("lh") ||
@@ -242,6 +245,7 @@ function stepThroughIType(stage, color, inst) {
 
     } else if (stage == 4) {
 
+        clearStageFour();
         clearStageFive();
 
         if (inst == ("lb")    || inst == ("lbu")  || inst == ("lh")    ||
