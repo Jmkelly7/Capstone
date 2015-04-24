@@ -8,7 +8,8 @@
  */
 
 /**
- * This function colors the objects that are passed into it with the passed in color choice.
+ * This function colors the objects that are passed into it with the given
+ *  color.
  *
  * @param objectName - the object to be colored.
  * @param colorChoice - the color that the object needs to be changed too.
@@ -26,7 +27,8 @@ function colorObject(objectName, colorChoice) {
 }
 
 /**
- * This function is used to color the line objects that are passed in with the passed in color.
+ * This function is used to color the line objects that are passed in with the
+ *  given in color.
  *
  * @param objectName  - the line that will be colored.
  * @param colorChoice - the color to change the stroke too.
@@ -58,8 +60,7 @@ function colorLine(objectName, colorChoice) {
 }
 
 /**
- * This function clears the attributes that have changed and sets them back to
- *  the default.
+ * This function resets the attributes of objects back to the default values.
  *
  * @param objectName - the object to be reset to default.
  */
@@ -76,8 +77,7 @@ function clearObject(objectName) {
 }
 
 /**
- * This function clears the attributes that have changed and sets them back to
- *  the default.
+ * This function resets the attributes of lines back to the default values.
  *
  * @param lineName - the line to be reset to default.
  */
@@ -107,85 +107,88 @@ function clearLine(lineName) {
 }*/
 
 /**
- * This function
+ * This function colors all of the diagram components of certain stages of the
+ *  diagram. This symbolizes a noop instruction.
+ *
+ * @param color - the color that the diagram components will be changed to.
  */
-function colorNoOp() {
+function colorNoOp(color) {
 
     if (document.getElementById("slot3").textContent == "noop") {
 
         clearStageThree();
 
-        colorObject("poly2", "darkgray");
-        colorObject("poly3", "darkgray");
-        colorObject("rect9", "darkgray");
-        colorObject("rect10", "darkgray");
-        colorObject("ellipse3", "darkgray");
-        colorObject("ellipse4", "darkgray");
-        colorLine("line11", "darkgray");
-        colorLine("line12", "darkgray");
-        colorLine("line13", "darkgray");
-        colorLine("line30", "darkgray");
-        colorLine("line33", "darkgray");
-        colorLine("line34", "darkgray");
-        colorLine("line35", "darkgray");
-        colorLine("line36", "darkgray");
-        colorLine("line37", "darkgray");
-        colorLine("line38", "darkgray");
-        colorLine("line39", "darkgray");
-        colorLine("line42", "darkgray");
-        colorLine("line44", "darkgray");
-        colorLine("line54", "darkgray");
-        colorLine("line56", "darkgray");
-        colorLine("line60", "darkgray");
-        colorLine("line61", "darkgray");
-        colorLine("line65", "darkgray");
+        colorObject("poly2", color);
+        colorObject("poly3", color);
+        colorObject("rect9", color);
+        colorObject("rect10", color);
+        colorObject("ellipse3", color);
+        colorObject("ellipse4", color);
+        colorLine("line11", color);
+        colorLine("line12", color);
+        colorLine("line13", color);
+        colorLine("line30", color);
+        colorLine("line33", color);
+        colorLine("line34", color);
+        colorLine("line35", color);
+        colorLine("line36", color);
+        colorLine("line37", color);
+        colorLine("line38", color);
+        colorLine("line39", color);
+        colorLine("line42", color);
+        colorLine("line44", color);
+        colorLine("line54", color);
+        colorLine("line56", color);
+        colorLine("line60", color);
+        colorLine("line61", color);
+        colorLine("line65", color);
 
     } else if (document.getElementById("slot2").textContent == "noop") {
 
         clearStageFour();
 
-        colorObject("rect11", "darkgray");
-        colorObject("rect12", "darkgray");
-        colorObject("rect13", "darkgray");
-        colorObject("rect14", "darkgray");
-        colorLine("line1", "darkgray");
-        colorLine("line14", "darkgray");
-        colorLine("line16", "darkgray");
-        colorLine("line17", "darkgray");
-        colorLine("line21", "darkgray");
-        colorLine("line40", "darkgray");
-        colorLine("line41", "darkgray");
-        colorLine("line42", "darkgray");
-        colorLine("line43", "darkgray");
-        colorLine("line45", "darkgray");
-        colorLine("line46", "darkgray");
-        colorLine("line57", "darkgray");
-        colorLine("line58", "darkgray");
-        colorLine("line60", "darkgray");
-        colorLine("line62", "darkgray");
-        colorLine("line66", "darkgray");
+        colorObject("rect11", color);
+        colorObject("rect12", color);
+        colorObject("rect13", color);
+        colorObject("rect14", color);
+        colorLine("line1", color);
+        colorLine("line14", color);
+        colorLine("line16", color);
+        colorLine("line17", color);
+        colorLine("line21", color);
+        colorLine("line40", color);
+        colorLine("line41", color);
+        colorLine("line42", color);
+        colorLine("line43", color);
+        colorLine("line45", color);
+        colorLine("line46", color);
+        colorLine("line57", color);
+        colorLine("line58", color);
+        colorLine("line60", color);
+        colorLine("line62", color);
+        colorLine("line66", color);
 
-    } else {
+    } else if (document.getElementById("slot1").textContent == "noop") {
 
         clearStageFive();
 
-        colorObject("rect6", "darkgray");
-        colorObject("rect15", "darkgray");
-        colorObject("ellipse5", "darkgray");
-        colorLine("line26", "darkgray");
-        colorLine("line27", "darkgray");
-        colorLine("line45", "darkgray");
-        colorLine("line46", "darkgray");
-        colorLine("line47", "darkgray");
-        colorLine("line48", "darkgray");
-        colorLine("line53", "darkgray");
-        colorLine("line58", "darkgray");
-        colorLine("line59", "darkgray");
-        colorLine("line62", "darkgray");
-        colorLine("line67", "darkgray");
-        colorLine("line68", "darkgray");
-        colorLine("line69", "darkgray");
-        colorLine("line70", "darkgray");
+        colorObject("rect6", color);
+        colorObject("rect15", color);
+        colorObject("ellipse5", color);
+        colorLine("line26", color);
+        colorLine("line27", color);
+        colorLine("line45", color);
+        colorLine("line46", color);
+        colorLine("line47", color);
+        colorLine("line48", color);
+        colorLine("line53", color);
+        colorLine("line58", color);
+        colorLine("line59", color);
+        colorLine("line62", color);
+        colorLine("line67", color);
+        colorLine("line68", color);
+        colorLine("line69", color);
+        colorLine("line70", color);
 
     }
 

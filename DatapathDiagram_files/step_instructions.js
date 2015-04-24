@@ -18,6 +18,8 @@ function stepThroughRType(stage, color) {
 
     if (stage == 0) {
 
+        clearStageOne();
+
         colorObject("ellipse1", color);
         colorObject("poly1", color);
         colorObject("rect3", color);
@@ -38,7 +40,7 @@ function stepThroughRType(stage, color) {
 
     } else if (stage == 1) {
 
-        clearStageOne();
+        clearStageTwo();
         colorObject("rect5", color);
         colorObject("rect7", color);
         colorObject("rect8", color);
@@ -56,7 +58,7 @@ function stepThroughRType(stage, color) {
 
     } else if (stage == 2) {
 
-        clearStageTwo();
+        clearStageThree();
         colorObject("rect9", color);
         colorObject("rect10", color);
         colorObject("ellipse4", color);
@@ -70,7 +72,7 @@ function stepThroughRType(stage, color) {
 
     } else if (stage == 3) {
 
-        clearStageThree();
+        clearStageFour();
         colorObject("rect11", color);
         colorObject("rect14", color);
         colorLine("line41", color);
@@ -82,7 +84,7 @@ function stepThroughRType(stage, color) {
     } else if (stage == 4) {
 
         console.log("4 instructions");
-        clearStageFour();
+        clearStageFive();
         colorObject("rect15", color);
         colorObject("ellipse5", color);
         colorObject("rect6", color);
@@ -102,7 +104,6 @@ function stepThroughRType(stage, color) {
 
     } else if (stage == 5) {
 
-        console.log("CLEARING ALL OF THE OBJECTS WITH 5 INSTRUCTIONS");
         clearStageFive();
     }
 
@@ -120,6 +121,8 @@ function stepThroughIType(stage, color, inst) {
 
 
     if (stage == 0) {
+
+        clearStageOne();
 
         colorObject("ellipse1", color);
         colorObject("poly1", color);
@@ -140,7 +143,7 @@ function stepThroughIType(stage, color, inst) {
 
     } else if (stage == 1) {
 
-        clearStageOne();
+        clearStageTwo();
 
         if(!(inst == ("sw")) && !(inst == ("sb")) && !(inst == ("sh"))) {
 
@@ -167,7 +170,7 @@ function stepThroughIType(stage, color, inst) {
 
     } else if (stage == 2) {
 
-        clearStageTwo();
+        clearStageThree();
 
         if(inst == ("sw") || inst == ("sb") || inst == ("sh")) {
 
@@ -205,7 +208,7 @@ function stepThroughIType(stage, color, inst) {
 
     } else if (stage == 3) {
 
-        clearStageThree();
+        clearStageFour();
 
         if (inst == ("lb")   || inst == ("lbu") || inst == ("lh") ||
             inst == ("lhu")  || inst == ("lui") || inst == ("lw")) {
@@ -239,7 +242,7 @@ function stepThroughIType(stage, color, inst) {
 
     } else if (stage == 4) {
 
-        clearStageFour();
+        clearStageFive();
 
         if (inst == ("lb")    || inst == ("lbu")  || inst == ("lh")    ||
             inst == ("lhu")  || inst == ("lui")   || inst == ("lw")) {
@@ -261,7 +264,7 @@ function stepThroughIType(stage, color, inst) {
 
         } else if (inst == ("sw") || inst == ("sb") || inst == ("sh")) {
 
-            clearStageFive();
+            // clearStageFive();
 
         } else {
 
@@ -330,5 +333,17 @@ function stepThroughPseudoInstruction(stage, color) {
 function stepThroughOtherInstruction(inst, stage, color) {
 
     // code for pseudo-instructions goes here
+
+}
+
+/**
+ * This function handles noop instructions. These instructions will turn all
+ *  the lines and objects of a stage grey.
+ *
+ * @param color - The color to change the objects to for the given instruction.
+ */
+function stepThroughNoOpInstruction(color) {
+
+    colorNoOp(color);
 
 }

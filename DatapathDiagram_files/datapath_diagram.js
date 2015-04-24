@@ -95,6 +95,8 @@ var Inst5 = [""];
  */
 var nextColor = "darkorchid";
 
+var nextNextColor = "";
+
 /**
  * The array of colors for the diagram.
  *
@@ -108,7 +110,7 @@ var nextColor = "darkorchid";
  * 7 = gray (darkgray)
  */
 var colors = ["black", "firebrick", "peru", "darkgoldenrod", "mediumseagreen",
-    "darkcyan", "darkorchid", "darkgray"];
+    "darkcyan", "darkorchid", "slategrey"];
 
 /**
  * The name of the file that is uploaded.
@@ -141,7 +143,16 @@ var isFirst = true;
  */
 var tempArray;
 
-var hazardCount;
+/**
+ *
+ */
+var instListCounter;
+
+/**
+ *
+ */
+var hazard;
+
 /**
  * The popup window that brings the user to upload a file once they visit the
  *  site.
@@ -177,14 +188,15 @@ function parseFile() {
             returnInstructions[i].substring(0, 1) != "" &&
             returnInstructions[i].substring(0, 1) != "#" &&
             returnInstructions[i].substring(0, 6) != "syscall") {
+
             if(returnInstructions[i].indexOf("#") != -1) {
+
                 returnInstructions[i] = returnInstructions[i].slice(0,returnInstructions[i].indexOf("#"));
+
             }
+
             var pieces = returnInstructions[i].split(" ");
             var type = instType(pieces[0]);
-
-            console.log("!!!!!!!!!!!!!!!!!!!!!!!!!" + pieces[0] + "!!!!!!!!!!!!!!!!!!!!!!");
-            console.log("!!!!!!!!!!!!!!!!!!!!!!!!!" + type + "!!!!!!!!!!!!!!!!!!!!!!");
 
             if (type == "r" || type == "i") {
 
@@ -208,7 +220,7 @@ function parseFile() {
     legendArray[parseCounter + 8] = " ";
     legendArray[parseCounter + 9] = " ";
     legendArray[parseCounter + 10] = " ";
-    hazardCount = parseCounter + 10;
+    instListCounter = parseCounter + 10;
     return legendArray;
 
 }
@@ -381,10 +393,14 @@ function runThrough() {
         }
 
     }
+    
     forward();
-    if (isHazard()) {
 
-        console.log(isHazard());
+    isHazard();
+
+    if (hazard) {
+
+        console.log(hazard);
         //setupLegend();
         // blah
 
@@ -664,6 +680,10 @@ function runInst(inst, stage, color) {
     } else if (type == "o") {
 
         stepThroughOtherInstruction(inst, stage, color);
+
+    } else if (type == "no") {
+
+        stepThroughNoOpInstruction(color);
 
     }
 
@@ -961,59 +981,88 @@ function uploadNew() {
 
 
 function forward() {
+    
     var oneArray;
     var twoArray;
     var threeArray;
     var fourArray;
     var temp;
     console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! IN FORWARD");
+    
     if(document.getElementById('rect10').getAttribute("fill") != "#ffffff") {
+        
         console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!PASSING FIRST IF");
+        
         if (document.getElementById('rect11').getAttribute("fill") == "#ffffff" && document.getElementById('rect10').getAttribute("fill") != "#ffffff") {
+            
             console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!PASSING  2nd IF");
             oneArray = document.getElementById("slot1").textContent.split(" ");
             twoArray = document.getElementById("slot2").textContent.split(" ");
             oneArray[1] = oneArray[1].substring(0,oneArray[1].length-1);
             twoArray[2] = twoArray[2].substring(0,twoArray[2].length-1);
+            
             if (oneArray[1] == twoArray[2]) {
-                    document.getElementById('slot2a').textContent = "F: " + oneArray[1];
+                    
+                document.getElementById('slot2a').textContent = "F: " + oneArray[1];
                     document.getElementById('slot2a').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
+            
             } else if (oneArray[1] == twoArray[3]) {
+                
                 if (twoArray[3] != twoArray[2]) {
+                    
                     document.getElementById('slot2a').textContent = "F: " + oneArray[1];
                     document.getElementById('slot2a').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
+                
                 }
+            
             }
+        
         } else if (document.getElementById('rect15').getAttribute('fill') == "white" && document.getElementById('rect14').getAttribute('fill') != "white") {
+        
             oneArray = document.getElementById("slot1").textContent.split(" ");
             twoArray = document.getElementById("slot2").textContent.split(" ");
             threeArray = document.getElementById("slot3").textContent.split(" ");
             oneArray[1] = oneArray[1].substring(0,oneArray[1].length-1);
             twoArray[2] = twoArray[2].substring(0,twoArray[2].length-1);
             threeArray[2] = threeArray[2].substring(0,threeArray[2].length-1);
+        
             if (oneArray[1] == threeArray[2]) {
+        
                 document.getElementById('slot3a').textContent = "F: " + oneArray[1];
                 document.getElementById('slot3a').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
+        
             } else if (oneArray[1] == threeArray[3]) {
+        
                 document.getElementById('slot3a').textContent = "F: " + oneArray[1];
                 document.getElementById('slot3a').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
+        
             } else if (twoArray[1] == threeArray[2]) {
+        
                 temp = document.getElementById('slot3').textContent;
                 document.getElementById('slot3a').textContent = temp + " F: " + twoArray[1];
                 document.getElementById('slot3a').setAttribute('fill', document.getElementById('slot2').getAttribute('fill'));
+        
             } else if (twoArray[1] == threeArray[3]) {
+        
                 if (threeArray[3] != threeArray[2]) {
+        
                     temp = document.getElementById('slot3').textContent;
                     document.getElementById('slot3a').textContent = temp + " F: " + twoArray[1];
                     document.getElementById('slot3a').setAttribute('fill', document.getElementById('slot2').getAttribute('fill'));
+        
                 }
+        
             }
+        
         } else {
+        
             oneArray = document.getElementById("slot1").textContent.split(" ");
             twoArray = document.getElementById("slot2").textContent.split(" ");
             threeArray = document.getElementById("slot3").textContent.split(" ");
             fourArray = document.getElementById("slot4").textContent.split(" ");
+        
         }
+    
     }
 
 }
@@ -1024,27 +1073,55 @@ function forward() {
 function isHazard() {
 
     console.log("IS HAZARD?!?!?!?!?!?!?!?!?!?!?!?!?!?");
-
-    var isHazard = false;
-
     console.log("counter > 3: " + (counter > 3));
     console.log("slot4 != \" \": " + !(document.getElementById("slot4").textContent == " "));
     console.log("slot3 == lw: " + (document.getElementById("slot3").getAttribute("inst") == "lw"));
 
-    if (counter > 3 && !(document.getElementById("slot4").textContent == "") &&
-        document.getElementById("slot3").getAttribute("inst") == "lw") {
+    if (counter > 3 && !(document.getElementById("slot4").textContent == " ") &&
+        (document.getElementById("slot3").getAttribute("inst") == "lw")) {
 
-        if ((Inst3[0] == Inst4[1]) || (Inst3[0] == Inst4[2])) {
+        var inst1 = "";
+        var inst2 = "";
+        var inst3 = "";
 
-            isHazard = true;
+        console.log(Inst3);
+        console.log(Inst4);
+        console.log((Inst4[3] != "")/* || (Inst4[0] == "sw") || (Inst4[0] == "sh") ||
+            (Inst4[0] == "sb")*/ + " \"" + Inst4[3] + "\"");
+        if ((Inst4[3] != "")/* || (Inst4[0] == "sw") || (Inst4[0] == "sh") ||
+            (Inst4[0] == "sb")*/) {
+
+            console.log("first if");
+            inst1 = Inst3[1].substring(0, Inst3[1].length - 1);
+            inst2 = Inst4[2].substring(0, Inst4[2].length - 1);
+            inst3 = Inst4[3];
+
+        } else if ((Inst4[0] == "la") || (Inst4[0] == "li") ||
+                   (Inst4[0] == "lw") || (Inst4[0] == "lh") ||
+                   (Inst4[0] == "lb") || (Inst4[0] == "sw") ||
+                   (Inst4[0] == "sh") || (Inst4[0] == "sb")) {
+
+            console.log("second if");
+            inst1 = Inst3[1].substring(0, Inst3[1].length - 1);
+            inst2 = Inst4[1].substring(0, Inst4[2].length - 1);
+            inst3 = Inst4[2].slice((Inst4[2].indexOf("(") + 1), (Inst4[2].indexOf(")") + 1));
+
+        }
+
+        console.log(inst1 + " == " + inst2 + "?");
+        console.log(inst1 + " == " + inst3 + "?");
+        console.log(inst1 == inst2);
+        console.log(inst1 == inst3);
+
+        if ((inst1 == inst2) || (inst1 == inst3)) {
+
+            hazard = true;
 
         }
 
     }
 
-    console.log("IS HAZARD: " + isHazard);
-
-    return isHazard;
+    console.log("IS HAZARD: " + hazard);
 
 }
 
@@ -1055,7 +1132,7 @@ function isHazard() {
  */
 function instType(inst) {
 
-    var type = "";
+    var type;
 
     if (inst == ("add")  || inst == ("addu") || inst == ("and")   ||
         inst == ("div")  || inst == ("divu") ||/*inst == ("jr")   ||*/
@@ -1072,10 +1149,9 @@ function instType(inst) {
     } else if (inst == ("addi") || inst == ("addiu") || inst == ("andi")/*||
                inst == ("beq")  || inst == ("bne")*/ || inst == ("lb")    ||
                inst == ("lbu")  || inst == ("lh")    || inst == ("lhu")   ||
-               inst == ("lui")  || inst == ("lw")    || inst == ("la")    ||
-               inst == ("li")   || inst == ("ori")   || inst == ("sb")    ||
-               inst == ("sh")   || inst == ("slti")  || inst == ("sltiu") ||
-               inst == ("sw")   || inst == ("xori")) {
+               inst == ("lui")  || inst == ("lw")    || inst == ("ori")   ||
+               inst == ("sb")   || inst == ("sh")    || inst == ("slti")  ||
+               inst == ("sltiu")|| inst == ("sw")    || inst == ("xori")) {
 
         type = "i";
 
@@ -1092,9 +1168,13 @@ function instType(inst) {
 
         type = "p";
 
-    } else if (inst == ("break") || inst == ("noop") || inst == ("syscall")) {
+    } else if (inst == ("break") || inst == ("syscall")) {
 
         type = "o";
+
+    } else if (inst == ("noop")) {
+
+        type = "no";
 
     }
 
