@@ -15,7 +15,7 @@
  */
 function colorObject(objectName, colorChoice) {
 
-    if (objectName == "ellipse5") {
+    if (objectName == "ellipse5" || objectName == "rect11" || objectName == "rect10" || objectName == "rect14" || objectName == "rect15") {
         document.getElementById(objectName).setAttribute("fill", colorChoice);
         document.getElementById(objectName).setAttribute("stroke", "black");
         document.getElementById(objectName).setAttribute("stroke-width", "3");
@@ -65,7 +65,7 @@ function colorLine(objectName, colorChoice) {
  */
 function clearObject(objectName) {
 
-    if (objectName == "ellipse5") {
+    if (objectName == "ellipse5" || objectName == "rect11" || objectName == "rect10" || objectName == "rect14" || objectName == "rect15") {
         document.getElementById(objectName).setAttribute("fill", "white");
         document.getElementById(objectName).setAttribute("stroke", "black");
         document.getElementById(objectName).setAttribute("stroke-width", "1");
