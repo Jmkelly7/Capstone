@@ -2,7 +2,7 @@
 # pass parameters: dest, src, max num
 
 add $t0, $t1, $t2
-sub $t2, $t0, $t4
+sub $t6, $t0, $t4
 mult $t5, $t6, $t0
 addi $12, $0, 4
 andi $14, $t0, 16

@@ -1,5 +1,17 @@
 ########################################################
 # pass parameters: dest, src, max num
+add $t0, $0, $t1
+sub $t2, $t0, $t4
+mult $t5, $t2, $t0
+add $t0, $0, $t1
+sub $t2, $t3, $0
+mult $t5, $0, $t0
+add $t0, $0, $t1
+sub $t2, $t0, $t4
+mult $t5, $t2, $0
+add $t0, $0, $t1
+sub $t2, $t3, $0
+mult $t5, $0, $t0
 lw $t20, 52($s0)
 lw $t20, 56($s1)
 lw $t22, 60($s2)
@@ -7,11 +19,17 @@ sw $t23, 0($a0)
 lw $t24, 64($s3)
 sw $t25, 24($a1)
 add $t0, $0, $t1
-sub $t2, $t3, $t4
-mult $t5, $t6, $7
+sub $t2, $t0, $t4
+mult $t5, $t2, $0
 add $t0, $0, $t1
-sub $t2, $t3, $t4
-mult $t5, $t6, $7
+sub $t2, $t3, $0
+mult $t5, $0, $t0
+add $t0, $0, $t1
+sub $t2, $t0, $t4
+mult $t5, $t2, $0
+add $t0, $0, $t1
+sub $t2, $t3, $0
+mult $t5, $0, $t0
 addi $12, $13, 4
 andi $14, $15, 16
 ori $16, $17, 20
