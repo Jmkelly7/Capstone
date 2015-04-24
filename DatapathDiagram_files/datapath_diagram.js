@@ -979,7 +979,10 @@ function uploadNew() {
 
 }
 
-
+/**
+ * This function handles catching and displaying register forwarding in the
+ *  diagram.
+ */
 function forward() {
     
     var oneArray;
@@ -1068,7 +1071,8 @@ function forward() {
 }
 
 /**
- * This function checks for hazards
+ * This function checks for hazards. Hazards are when instructions, that are
+ *  near each other in code, try to use the same registers at the same time.
  */
 function isHazard() {
 
