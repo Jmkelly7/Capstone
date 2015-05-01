@@ -984,6 +984,8 @@ function uploadNew() {
  *  diagram.
  */
 function forward() {
+    //Need to do check to string 05($1) off of the register in order to check it properly
+    //also need to deal with clearing off forwarding registers when the user cancels the skip-to method.
     var oneArray;
     var twoArray;
     var threeArray;
@@ -992,7 +994,7 @@ function forward() {
     console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! IN FORWARD");
     if(document.getElementById('rect10').getAttribute("fill") != "#ffffff") {
         console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!PASSING FIRST IF");
-        if (document.getElementById('rect11').getAttribute("fill") == "#ffffff" && document.getElementById('rect10').getAttribute("fill") != "#ffffff") {
+      /**  if (document.getElementById('rect11').getAttribute("fill") == "#ffffff" && document.getElementById('rect10').getAttribute("fill") != "#ffffff") {
             console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!PASSING  2nd IF");
             oneArray = document.getElementById("slot1").textContent.split(" ");
             twoArray = document.getElementById("slot2").textContent.split(" ");
@@ -1008,7 +1010,7 @@ function forward() {
                     document.getElementById('slot2a').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
                 }
             }
-        } else if (document.getElementById('rect15').getAttribute('fill') == "#ffffff" && document.getElementById('rect14').getAttribute('fill') != "#ffffff") {
+        } else */if (document.getElementById('rect15').getAttribute('fill') == "#ffffff" && document.getElementById('rect14').getAttribute('fill') != "#ffffff") {
             console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!INCHECK FOR SECOND ROW OF THINGGIES");
             oneArray = document.getElementById("slot1").textContent.split(" ");
             twoArray = document.getElementById("slot2").textContent.split(" ");
@@ -1019,25 +1021,14 @@ function forward() {
             threeArray[2] = threeArray[2].substring(0,threeArray[2].length-1);
             if (oneArray[1] == threeArray[2]) {
                 console.log("FIRST IF THE SAME AS THE SECOND OF THRIRD");
-                document.getElementById('slot3a').textContent = "" + oneArray[1];
-                document.getElementById('slot3a').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
+                document.getElementById('slot2a').textContent = "" + oneArray[1];
+                document.getElementById('slot2a').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
             } else if (oneArray[1] == threeArray[3]) {
                 console.log("FIRST IS SAME AS THIRD OF THIRD");
-                document.getElementById('slot3a').textContent = "" + oneArray[1];
-                document.getElementById('slot3a').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
+                document.getElementById('slot2a').textContent = "" + oneArray[1];
+                document.getElementById('slot2a').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
             }
-            if (twoArray[1] == threeArray[2]) {
-                console.log("SECOND IS SAME AS SECOND OF THIRD");
-                document.getElementById('slot3b').textContent = "" + twoArray[1];
-                document.getElementById('slot3b').setAttribute('fill', document.getElementById('slot2').getAttribute('fill'));
-            } else if (twoArray[1] == threeArray[3]) {
-                if (threeArray[3] != threeArray[2]) {
-                    console.log("SECOND IS SAME AS THIRD OF THIRD");
-                    document.getElementById('slot3b').textContent = "" + twoArray[1];
-                    document.getElementById('slot3b').setAttribute('fill', document.getElementById('slot2').getAttribute('fill'));
-                }
-            }
-        } else {
+        } else if (document.getElementById('rect15').getAttribute('fill') != "#ffffff"){
             //document.getElementById('slot2a').textContent = document.getElementById('slot3a').textContent;
             document.getElementById('slot2a').textContent = "";
            // document.getElementById('slot2a').setAttribute('fill', document.getElementById('slot3a').getAttribute('fill'));
@@ -1048,63 +1039,110 @@ function forward() {
             document.getElementById('slot3a').setAttribute('fill', "beige");
             document.getElementById('slot3b').textContent = "";
             document.getElementById('slot3b').setAttribute('fill', "beige");
-            document.getElementById('slot4a').textContent = "";
-            document.getElementById('slot4a').setAttribute('fill', "beige");
-            document.getElementById('slot4b').textContent = "";
-            document.getElementById('slot4b').setAttribute('fill', "beige");
-            twoArray = document.getElementById("slot2").textContent.split(" ");
-            threeArray = document.getElementById("slot3").textContent.split(" ");
-            fourArray = document.getElementById("slot4").textContent.split(" ");
+//            document.getElementById('slot4a').textContent = "";
+  //          document.getElementById('slot4a').setAttribute('fill', "beige");
+    //        document.getElementById('slot4b').textContent = "";
+      //      document.getElementById('slot4b').setAttribute('fill', "beige");
+         //   if(document.getElementById('slot1').textContent != "noop") {
+                oneArray = document.getElementById("slot1").textContent.split(" ");
+          //  }
+         //   if(document.getElementById('slot2').textContent != "noop") {
+                twoArray = document.getElementById("slot2").textContent.split(" ");
+         //   }
+          //  if(document.getElementById('slot3').textContent != "noop") {
+                threeArray = document.getElementById("slot3").textContent.split(" ");
+           // }
+       //     fourArray = document.getElementById("slot4").textContent.split(" ");
+            var loadTemp, tempValue, allValue, i;
+            if(oneArray[3] == undefined && document.getElementById('slot1').textContent != "noop") {
+                loadTemp = oneArray[2].split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+                }
+                oneArray[2] = allValue;
+                oneArray[2] = oneArray[2].substring(0, oneArray[2].length - 1);
+                oneArray[2] = oneArray[2].substring(1, oneArray[2].length);
+                oneArray[1] = oneArray[1].substring(0, oneArray[1].length - 1);
+            } else {
+                if (document.getElementById('slot1').textContent != "noop") {
+                    oneArray[1] = oneArray[1].substring(0, oneArray[1].length - 1);
+                }
+            }
+            if(twoArray[3] == undefined && document.getElementById('slot2').textContent != "noop") {
+                loadTemp = twoArray[2].split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+                }
+                twoArray[2] = allValue;
                 twoArray[2] = twoArray[2].substring(0, twoArray[2].length - 1);
+                twoArray[2] = twoArray[2].substring(1, twoArray[2].length);
                 twoArray[1] = twoArray[1].substring(0, twoArray[1].length - 1);
+            } else {
+                if (document.getElementById('slot2').textContent != "noop") {
+                    twoArray[2] = twoArray[2].substring(0, twoArray[2].length - 1);
+                    twoArray[1] = twoArray[1].substring(0, twoArray[1].length - 1);
+                }
+            }
+            if(threeArray[3] == undefined && document.getElementById('slot3').textContent != "noop") {
+                loadTemp = threeArray[2].split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+                }
+                threeArray[2] = allValue;
                 threeArray[2] = threeArray[2].substring(0, threeArray[2].length - 1);
+                threeArray[2] = threeArray[2].substring(1, threeArray[2].length);
                 threeArray[1] = threeArray[1].substring(0, threeArray[1].length - 1);
-                fourArray[2] = fourArray[2].substring(0,fourArray[2].length-1);
-            if (twoArray[1] == threeArray[2]) {
-                document.getElementById('slot3a').textContent = "" + twoArray[1];
-                document.getElementById('slot3a').setAttribute('fill', document.getElementById('slot2').getAttribute('fill'));
-            } else if (twoArray[1] == threeArray[3]) {
-                document.getElementById('slot3a').textContent = "" + twoArray[1];
-                document.getElementById('slot3a').setAttribute('fill', document.getElementById('slot2').getAttribute('fill'));
-            }
-            /**if (twoArray[1] == threeArray[2]) {
-                document.getElementById('slot3b').textContent = "" + twoArray[1];
-                document.getElementById('slot3b').setAttribute('fill', document.getElementById('slot2').getAttribute('fill'));
-            } else if (twoArray[1] == threeArray[3]) {
-                if (threeArray[3] != threeArray[2]) {
-                    document.getElementById('slot3b').textContent = "" + twoArray[1];
-                    document.getElementById('slot3b').setAttribute('fill', document.getElementById('slot2').getAttribute('fill'));
+            } else {
+                if (document.getElementById('slot3').textContent != "noop") {
+                    threeArray[2] = threeArray[2].substring(0, threeArray[2].length - 1);
+                    threeArray[1] = threeArray[1].substring(0, threeArray[1].length - 1);
                 }
+            }
+//                fourArray[2] = fourArray[2].substring(0,fourArray[2].length-1);
+            if (oneArray[1] == twoArray[2] || oneArray[1] == twoArray[3]) {
+                document.getElementById('slot2a').textContent = "" + oneArray[1];
+                document.getElementById('slot2a').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
+            } /**else if (oneArray[1] == twoArray[3]) {
+                document.getElementById('slot2a').textContent = "" + oneArray[1];
+                document.getElementById('slot2a').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
             }*/
-            /**if (twoArray[1] == fourArray[2]) {
+            if (twoArray[1] == threeArray[2] || twoArray[1] == threeArray[3]) {
                 document.getElementById('slot3a').textContent = "" + twoArray[1];
                 document.getElementById('slot3a').setAttribute('fill', document.getElementById('slot2').getAttribute('fill'));
-            } else if (twoArray[1] == fourArray[3]) {
+            } /**else if (twoArray[1] == threeArray[3]) {
                 document.getElementById('slot3a').textContent = "" + twoArray[1];
                 document.getElementById('slot3a').setAttribute('fill', document.getElementById('slot2').getAttribute('fill'));
-            } else */if (twoArray[1] == fourArray[2]) {
-                document.getElementById('slot4b').textContent = "" + twoArray[1];
-                document.getElementById('slot4b').setAttribute('fill', document.getElementById('slot2').getAttribute('fill'));
-            } else if (twoArray[1] == fourArray[3]) {
-                if (fourArray[3] != fourArray[2]) {
-                    document.getElementById('slot4b').textContent = "" + twoArray[1];
-                    document.getElementById('slot4b').setAttribute('fill', document.getElementById('slot2').getAttribute('fill'));
-                }
-            }
-            if (threeArray[1] == fourArray[2]) {
-                document.getElementById('slot4a').textContent = "" + threeArray[1];
-                document.getElementById('slot4a').setAttribute('fill', document.getElementById('slot3').getAttribute('fill'));
-            } else if (threeArray[1] == fourArray[3]) {
-                document.getElementById('slot4a').textContent = "" + threeArray[1];
-                document.getElementById('slot4a').setAttribute('fill', document.getElementById('slot3').getAttribute('fill'));
-            }/** else if (threeArray[1] == fourArray[2]) {
-                document.getElementById('slot4b').textContent = "" + threeArray[1];
-                document.getElementById('slot4b').setAttribute('fill', document.getElementById('slot3').getAttribute('fill'));
-            } else if (threeArray[1] == fourArray[3]) {
-                if (fourArray[3] != fourArray[2]) {
-                    document.getElementById('slot4b').textContent = "" + threeArray[1];
-                    document.getElementById('slot4b').setAttribute('fill', document.getElementById('slot3').getAttribute('fill'));
-                }
+            }*/
+            if (oneArray[1] == threeArray[2] || oneArray[1] == threeArray[3]) {
+                document.getElementById('slot3b').textContent = "" + oneArray[1];
+                document.getElementById('slot3b').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
+            } /**else if (oneArray[1] == threeArray[3]) {
+                document.getElementById('slot3b').textContent = "" + oneArray[1];
+                document.getElementById('slot3b').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
             }*/
         }
     }

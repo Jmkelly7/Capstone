@@ -21,7 +21,7 @@ sw $t25, 24($a1)
 add $t0, $0, $t1
 sub $t2, $t3, $t4
 mult $t5, $t6, $7
-lw $t1, 52($s0)
+lw $t1, 52($t5)
 add $t0, $t1, $t2
 lw $t1, 52($s0)
 add $t0, $t2, $t1
