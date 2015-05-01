@@ -41,7 +41,7 @@ function stepThroughRType(stage, color) {
     } else if (stage == 1) {
 
         clearStageOne();
-        clearStageTwo();
+       // clearStageTwo();
 
         colorObject("rect5", color);
         colorObject("rect7", color);
@@ -61,7 +61,7 @@ function stepThroughRType(stage, color) {
     } else if (stage == 2) {
 
         clearStageTwo();
-        clearStageThree();
+        //clearStageThree();
 
         colorObject("rect9", color);
         colorObject("rect10", color);
@@ -77,7 +77,7 @@ function stepThroughRType(stage, color) {
     } else if (stage == 3) {
 
         clearStageThree();
-        clearStageFour();
+        ///clearStageFour();
 
         colorObject("rect11", color);
         colorObject("rect14", color);
@@ -90,7 +90,7 @@ function stepThroughRType(stage, color) {
     } else if (stage == 4) {
 
         clearStageFour();
-        clearStageFive();
+        //clearStageFive();
 
         colorObject("rect15", color);
         colorObject("ellipse5", color);
@@ -152,7 +152,7 @@ function stepThroughIType(stage, color, inst) {
     } else if (stage == 1) {
 
         clearStageOne();
-        clearStageTwo();
+        //clearStageTwo();
 
         if(!(inst == ("sw")) && !(inst == ("sb")) && !(inst == ("sh"))) {
 
@@ -180,7 +180,7 @@ function stepThroughIType(stage, color, inst) {
     } else if (stage == 2) {
 
         clearStageTwo();
-        clearStageThree();
+        //clearStageThree();
 
         if(inst == ("sw") || inst == ("sb") || inst == ("sh")) {
 
@@ -219,10 +219,10 @@ function stepThroughIType(stage, color, inst) {
     } else if (stage == 3) {
 
         clearStageThree();
-        clearStageFour();
+        //clearStageFour();
 
-        if (inst == ("lb")   || inst == ("lbu") || inst == ("lh") ||
-            inst == ("lhu")  || inst == ("lui") || inst == ("lw")) {
+        if (inst == ("lb") || inst == ("lbu") || inst == ("lh") ||
+            inst == ("lhu") || inst == ("lui") || inst == ("lw")) {
 
             colorObject("rect11", color);
             colorObject("rect13", color);
@@ -254,10 +254,10 @@ function stepThroughIType(stage, color, inst) {
     } else if (stage == 4) {
 
         clearStageFour();
-        clearStageFive();
+        //clearStageFive();
 
-        if (inst == ("lb")    || inst == ("lbu")  || inst == ("lh")    ||
-            inst == ("lhu")  || inst == ("lui")   || inst == ("lw")) {
+        if (inst == ("lb") || inst == ("lbu") || inst == ("lh") ||
+            inst == ("lhu") || inst == ("lui") || inst == ("lw")) {
 
             colorObject("rect15", color);
             colorObject("ellipse5", color);
@@ -277,6 +277,7 @@ function stepThroughIType(stage, color, inst) {
         } else if (inst == ("sw") || inst == ("sb") || inst == ("sh")) {
 
             // Would call clearStageFive(), but it has already been done.
+            clearStageFive();
 
         } else {
 
