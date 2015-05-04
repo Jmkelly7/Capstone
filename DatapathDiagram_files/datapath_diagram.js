@@ -791,7 +791,9 @@ function skipTo() {
 
     var instNum = prompt("Please enter the number of the instruction you want" +
                          " to skip to:", "");
-
+    if (instNum === null) {
+        return; //break out of the function early
+    }
     console.log(!isNaN(instNum));
     console.log(0 <= instNum < (instructionArray.length - 11));
     console.log(instructionArray.length - 11);
