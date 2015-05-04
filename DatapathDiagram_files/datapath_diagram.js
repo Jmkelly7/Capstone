@@ -740,7 +740,9 @@ function play() {
         if (playCounter == 0) {
 
             var time = prompt("Please enter a speed for the diagram", "");
-
+            if (time === null) {
+                return; //break out of the function early
+            }
             // need to check if time is a number
             if (time != null && !isNaN(time)) {
 
