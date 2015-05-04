@@ -827,7 +827,10 @@ function skipTo() {
             runThrough();
 
         }
-
+        document.getElementById('slot2a').textContent = "";
+        document.getElementById('slot2b').textContent = "";
+        document.getElementById('slot3a').textContent = "";
+        document.getElementById('slot3b').textContent = "";
     }
 
 }
