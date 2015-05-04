@@ -994,23 +994,7 @@ function forward() {
     console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! IN FORWARD");
     if(document.getElementById('rect10').getAttribute("fill") != "#ffffff") {
         console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!PASSING FIRST IF");
-      /**  if (document.getElementById('rect11').getAttribute("fill") == "#ffffff" && document.getElementById('rect10').getAttribute("fill") != "#ffffff") {
-            console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!PASSING  2nd IF");
-            oneArray = document.getElementById("slot1").textContent.split(" ");
-            twoArray = document.getElementById("slot2").textContent.split(" ");
-            oneArray[1] = oneArray[1].substring(0,oneArray[1].length-1);
-            twoArray[2] = twoArray[2].substring(0,twoArray[2].length-1);
-            if (oneArray[1] == twoArray[2]) {
-                document.getElementById('slot2a').textContent = "" + oneArray[1];
-                document.getElementById('slot2a').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
-            }
-            if (oneArray[1] == twoArray[3]) {
-                if (twoArray[3] != twoArray[2]) {
-                    document.getElementById('slot2a').textContent = "" + oneArray[1];
-                    document.getElementById('slot2a').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
-                }
-            }
-        } else */if (document.getElementById('rect15').getAttribute('fill') == "#ffffff" && document.getElementById('rect14').getAttribute('fill') != "#ffffff") {
+      if (document.getElementById('rect15').getAttribute('fill') == "#ffffff" && document.getElementById('rect14').getAttribute('fill') != "#ffffff") {
             console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!INCHECK FOR SECOND ROW OF THINGGIES");
             oneArray = document.getElementById("slot1").textContent.split(" ");
             twoArray = document.getElementById("slot2").textContent.split(" ");
@@ -1126,24 +1110,15 @@ function forward() {
             if (oneArray[1] == twoArray[2] || oneArray[1] == twoArray[3]) {
                 document.getElementById('slot2a').textContent = "" + oneArray[1];
                 document.getElementById('slot2a').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
-            } /**else if (oneArray[1] == twoArray[3]) {
-                document.getElementById('slot2a').textContent = "" + oneArray[1];
-                document.getElementById('slot2a').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
-            }*/
+            }
             if (twoArray[1] == threeArray[2] || twoArray[1] == threeArray[3]) {
                 document.getElementById('slot3a').textContent = "" + twoArray[1];
                 document.getElementById('slot3a').setAttribute('fill', document.getElementById('slot2').getAttribute('fill'));
-            } /**else if (twoArray[1] == threeArray[3]) {
-                document.getElementById('slot3a').textContent = "" + twoArray[1];
-                document.getElementById('slot3a').setAttribute('fill', document.getElementById('slot2').getAttribute('fill'));
-            }*/
+            }
             if (oneArray[1] == threeArray[2] || oneArray[1] == threeArray[3]) {
                 document.getElementById('slot3b').textContent = "" + oneArray[1];
                 document.getElementById('slot3b').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
-            } /**else if (oneArray[1] == threeArray[3]) {
-                document.getElementById('slot3b').textContent = "" + oneArray[1];
-                document.getElementById('slot3b').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
-            }*/
+            }
         }
     }
 

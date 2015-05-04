@@ -6,6 +6,29 @@
  * @author  Trevor Griggs
  * @version 03/04/2015.
  */
+function toolTipClearForTwoLines() {
+
+    // For line 6
+    document.getElementById('line6pop1').style.visibility= "hidden";
+    document.getElementById('line6pop2').style.visibility= "hidden";
+}
+
+function toolTipClearForThreeLines() {
+
+    // For line 22
+    document.getElementById('line3pop1').style.visibility= "hidden";
+    document.getElementById('line3pop2').style.visibility= "hidden";
+    document.getElementById('line3pop3').style.visibility= "hidden";
+}
+
+function toolTipClearForFourLines() {
+
+    // For lines 4, 19, 7
+    document.getElementById('line4pop1').style.visibility= "hidden";
+    document.getElementById('line4pop2').style.visibility= "hidden";
+    document.getElementById('line4pop3').style.visibility= "hidden";
+    document.getElementById('line4pop4').style.visibility= "hidden";
+}
 
 function line2ToolTipsMouseOver() {
 
@@ -35,16 +58,8 @@ function line2ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line2ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
-}
-
-function line2ToolTipsMouseOut() {
-
-    // This is for lines 2, 18, 15, 20, 8
-    document.getElementById('line3pop1').style.visibility= "hidden";
-    document.getElementById('line3pop2').style.visibility= "hidden";
-    document.getElementById('line3pop3').style.visibility= "hidden";
 }
 
 function line3ToolTipsMouseOver() {
@@ -75,16 +90,8 @@ function line3ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line3ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
-}
-
-function line3ToolTipsMouseOut() {
-
-    // For line 3
-    document.getElementById('line3pop1').style.visibility= "hidden";
-    document.getElementById('line3pop2').style.visibility= "hidden";
-    document.getElementById('line3pop3').style.visibility= "hidden";
 }
 
 function line4ToolTipsMouseOver() {
@@ -118,17 +125,8 @@ function line4ToolTipsMouseOver() {
         document.getElementById('line4pop3').style.visibility = "visible";
         document.getElementById('line4pop4').style.visibility = "visible";
     } else {
-        line4ToolTipsMouseOut();
+        toolTipClearForFourLines();
     }
-}
-
-function line4ToolTipsMouseOut() {
-
-    // For lines 4, 19, 7
-    document.getElementById('line4pop1').style.visibility= "hidden";
-    document.getElementById('line4pop2').style.visibility= "hidden";
-    document.getElementById('line4pop3').style.visibility= "hidden";
-    document.getElementById('line4pop4').style.visibility= "hidden";
 }
 
 function line5ToolTipsMouseOver() {
@@ -159,16 +157,8 @@ function line5ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line5ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
-}
-
-function line5ToolTipsMouseOut() {
-
-    // For line 5
-    document.getElementById('line3pop1').style.visibility= "hidden";
-    document.getElementById('line3pop2').style.visibility= "hidden";
-    document.getElementById('line3pop3').style.visibility= "hidden";
 }
 
 function line6ToolTipsMouseOver() {
@@ -180,15 +170,8 @@ function line6ToolTipsMouseOver() {
         document.getElementById('line6pop1').style.visibility = "visible";
         document.getElementById('line6pop2').style.visibility = "visible";
     } else {
-        line6ToolTipsMouseOut();
+        toolTipClearForTwoLines();
     }
-}
-
-function line6ToolTipsMouseOut() {
-
-    // For line 6
-    document.getElementById('line6pop1').style.visibility= "hidden";
-    document.getElementById('line6pop2').style.visibility= "hidden";
 }
 
 function line22ToolTipsMouseOver() {
@@ -219,16 +202,8 @@ function line22ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line22ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
-}
-
-function line22ToolTipsMouseOut() {
-
-    // For line 22
-    document.getElementById('line3pop1').style.visibility= "hidden";
-    document.getElementById('line3pop2').style.visibility= "hidden";
-    document.getElementById('line3pop3').style.visibility= "hidden";
 }
 
 function line23ToolTipsMouseOver() {
@@ -259,16 +234,8 @@ function line23ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line23ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
-}
-
-function line23ToolTipsMouseOut() {
-
-    // For line 22
-    document.getElementById('line3pop1').style.visibility= "hidden";
-    document.getElementById('line3pop2').style.visibility= "hidden";
-    document.getElementById('line3pop3').style.visibility= "hidden";
 }
 
 function line50ToolTipsMouseOver() {
@@ -330,16 +297,8 @@ function line50ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line50ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
-}
-
-function line50ToolTipsMouseOut() {
-
-    // For line 22
-    document.getElementById('line3pop1').style.visibility= "hidden";
-    document.getElementById('line3pop2').style.visibility= "hidden";
-    document.getElementById('line3pop3').style.visibility= "hidden";
 }
 
 function line51ToolTipsMouseOver() {
@@ -401,7 +360,71 @@ function line51ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line50ToolTipsMouseOut();
+        toolTipClearForThreeLines();
+    }
+}
+
+function line28ToolTipsMouseOver() {
+
+    // For line 23
+    if(document.getElementById('line28').getAttribute("stroke") != "#000000") {
+        var loadArray;
+        var loadTemp;
+        var tempValue = "";
+        var allValue = "";
+        var i = 0;
+        if (document.getElementById('line28').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
+            tempArray = document.getElementById("slot1").textContent.split(" ");
+        } else if (document.getElementById('line28').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
+            tempArray = document.getElementById("slot2").textContent.split(" ");
+        } else if (document.getElementById('line28').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
+            tempArray = document.getElementById("slot3").textContent.split(" ");
+        } else if (document.getElementById('line28').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
+            tempArray = document.getElementById("slot4").textContent.split(" ");
+        } else if (document.getElementById('line28' +
+            '').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
+            tempArray = document.getElementById("slot5").textContent.split(" ");
+        }
+        if (tempArray[3] == undefined) {
+            loadArray = tempArray[2];
+            if(loadArray.indexOf("(") != -1) {
+                loadTemp = loadArray.split("");
+                tempValue = "";
+                allValue = "";
+                i = 0;
+                while (loadTemp[i] != '(') {
+                    tempValue = tempValue + "" + loadTemp[i];
+                    i++;
+                }
+                while (i < loadTemp.length) {
+                    allValue = allValue + "" + loadTemp[i];
+                    i++;
+                }
+            } else {
+                tempValue = tempArray[2];
+            }
+            document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
+            document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
+            document.getElementById('line3pop3').textContent = "to 32. Stage two." + "Offset: " + tempValue;
+        } else {
+            loadArray = tempArray[0];
+            loadTemp = loadArray.split("");
+            tempValue = loadTemp[loadTemp.length-1];
+            if (tempValue == 'i') {
+                document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
+                document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
+                document.getElementById('line3pop3').textContent = "to 32. Stage two."  + " Intermediate value: " + tempArray[3];
+            } else {
+                document.getElementById('line3pop1').textContent = "Sending the offset amount to be sign extended or";
+                document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
+                document.getElementById('line3pop3').textContent = "to 32. Stage two."  + " Intermediate value: " + tempArray[3];
+            }
+        }
+        document.getElementById('line3pop1').style.visibility = "visible";
+        document.getElementById('line3pop2').style.visibility = "visible";
+        document.getElementById('line3pop3').style.visibility = "visible";
+    } else {
+        toolTipClearForThreeLines();
     }
 }
 
@@ -464,7 +487,7 @@ function line24ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line50ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
 }
 
@@ -511,7 +534,7 @@ function line25ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line50ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
 }
 
@@ -574,7 +597,7 @@ function line32ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line50ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
 }
 
@@ -638,7 +661,7 @@ function line33ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line50ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
 }
 
@@ -684,54 +707,105 @@ function line31ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line50ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
 }
 
 function line34ToolTipsMouseOver() {
 
-    // For line 33
+    // For line 34, 35
     if (document.getElementById('line34').getAttribute("stroke") != "#000000") {
-        var loadArray;
-        var loadTemp;
-        var tempValue = "";
-        var allValue = "";
-        var i = 0;
-        if (document.getElementById('line34').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
-            tempArray = document.getElementById("slot1").textContent.split(" ");
-        } else if (document.getElementById('line34').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
-            tempArray = document.getElementById("slot2").textContent.split(" ");
-        } else if (document.getElementById('line34').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
-            tempArray = document.getElementById("slot3").textContent.split(" ");
-        } else if (document.getElementById('line34').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
-            tempArray = document.getElementById("slot4").textContent.split(" ");
-        } else if (document.getElementById('line34').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
-            tempArray = document.getElementById("slot5").textContent.split(" ");
-        }
-        if (tempArray[3] == undefined) {
-            document.getElementById('line3pop1').textContent = "Sending out the data from RT to be placed into the ";
-            document.getElementById('line3pop2').textContent = "mutex to see if it is needed in the ALU or the data";
-            document.getElementById('line3pop3').textContent = "to be written to data. Stage three." + " RT: " + tempArray[1];
-        } else {
-            loadArray = tempArray[0];
-            loadTemp = loadArray.split("");
-            tempValue = loadTemp[loadTemp.length - 1];
-            if (tempValue == 'i') {
-                document.getElementById('line3pop1').textContent = "Sending out the data from RT to be placed into the ";
-                document.getElementById('line3pop2').textContent = "mutex to see if it is needed in the ALU";
-                document.getElementById('line3pop3').textContent = "Stage three." + " RT: " + tempArray[1];
-            } else {
-                document.getElementById('line3pop1').textContent = "Sending out the data from RT to be placed into the ";
-                document.getElementById('line3pop2').textContent = "mutex to see if it is needed in the ALU";
-                document.getElementById('line3pop3').textContent = "Stage three." + " RT: " + tempArray[3];
+        if (document.getElementById('line35').getAttribute("stroke") != '#000000') {
+            var loadArray;
+            var loadTemp;
+            var tempValue = "";
+            var allValue = "";
+            var i = 0;
+            if (document.getElementById('line34').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
+                tempArray = document.getElementById("slot1").textContent.split(" ");
+            } else if (document.getElementById('line34').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
+                tempArray = document.getElementById("slot2").textContent.split(" ");
+            } else if (document.getElementById('line34').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
+                tempArray = document.getElementById("slot3").textContent.split(" ");
+            } else if (document.getElementById('line34').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
+                tempArray = document.getElementById("slot4").textContent.split(" ");
+            } else if (document.getElementById('line34').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
+                tempArray = document.getElementById("slot5").textContent.split(" ");
             }
-        }
+            if (tempArray[3] == undefined) {
+                document.getElementById('line3pop1').textContent = "Sending out the data from RT to be placed into the ";
+                document.getElementById('line3pop2').textContent = "mutex to see if it is needed in the ALU or the data";
+                document.getElementById('line3pop3').textContent = "to be written to data. Stage three." + " RT: " + tempArray[1];
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from RT to be placed into the ";
+                    document.getElementById('line3pop2').textContent = "mutex to see if it is needed in the ALU";
+                    document.getElementById('line3pop3').textContent = "Stage three." + " RT: " + tempArray[1];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from RT to be placed into the ";
+                    document.getElementById('line3pop2').textContent = "mutex to see if it is needed in the ALU";
+                    document.getElementById('line3pop3').textContent = "Stage three." + " RT: " + tempArray[3];
+                }
+            }
 
-        document.getElementById('line3pop1').style.visibility = "visible";
-        document.getElementById('line3pop2').style.visibility = "visible";
-        document.getElementById('line3pop3').style.visibility = "visible";
+            document.getElementById('line3pop1').style.visibility = "visible";
+            document.getElementById('line3pop2').style.visibility = "visible";
+            document.getElementById('line3pop3').style.visibility = "visible";
+        } else {
+            line54ToolTipsMouseOver();
+        }
     } else {
-        line50ToolTipsMouseOut();
+        toolTipClearForThreeLines();
+    }
+}
+
+function line35ToolTipsMouseOver() {
+
+    // For line 34, 35
+    if (document.getElementById('line35').getAttribute("stroke") != "#000000") {
+            var loadArray;
+            var loadTemp;
+            var tempValue = "";
+            var allValue = "";
+            var i = 0;
+            if (document.getElementById('line35').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
+                tempArray = document.getElementById("slot1").textContent.split(" ");
+            } else if (document.getElementById('line35').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
+                tempArray = document.getElementById("slot2").textContent.split(" ");
+            } else if (document.getElementById('line35').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
+                tempArray = document.getElementById("slot3").textContent.split(" ");
+            } else if (document.getElementById('line35').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
+                tempArray = document.getElementById("slot4").textContent.split(" ");
+            } else if (document.getElementById('line35').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
+                tempArray = document.getElementById("slot5").textContent.split(" ");
+            }
+            if (tempArray[3] == undefined) {
+                document.getElementById('line3pop1').textContent = "Sending out the data from RT to be placed into the ";
+                document.getElementById('line3pop2').textContent = "mutex to see if it is needed in the ALU or the data";
+                document.getElementById('line3pop3').textContent = "to be written to data. Stage three." + " RT: " + tempArray[1];
+            } else {
+                loadArray = tempArray[0];
+                loadTemp = loadArray.split("");
+                tempValue = loadTemp[loadTemp.length - 1];
+                if (tempValue == 'i') {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from RT to be placed into the ";
+                    document.getElementById('line3pop2').textContent = "mutex to see if it is needed in the ALU";
+                    document.getElementById('line3pop3').textContent = "Stage three." + " RT: " + tempArray[1];
+                } else {
+                    document.getElementById('line3pop1').textContent = "Sending out the data from RT to be placed into the ";
+                    document.getElementById('line3pop2').textContent = "mutex to see if it is needed in the ALU";
+                    document.getElementById('line3pop3').textContent = "Stage three." + " RT: " + tempArray[3];
+                }
+            }
+
+            document.getElementById('line3pop1').style.visibility = "visible";
+            document.getElementById('line3pop2').style.visibility = "visible";
+            document.getElementById('line3pop3').style.visibility = "visible";
+    } else {
+        toolTipClearForThreeLines();
     }
 }
 
@@ -795,7 +869,7 @@ function line37ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line50ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
 }
 
@@ -859,7 +933,7 @@ function line30ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line50ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
 }
 
@@ -906,7 +980,7 @@ function line39ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line50ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
 }
 
@@ -970,7 +1044,7 @@ function line54ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line50ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
 }
 
@@ -1014,7 +1088,7 @@ function line41ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line50ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
 }
 
@@ -1041,7 +1115,7 @@ function line57ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line50ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
 }
 
@@ -1081,7 +1155,7 @@ function line42ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line50ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
 }
 
@@ -1107,7 +1181,7 @@ function line60ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line50ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
 }
 
@@ -1133,7 +1207,7 @@ function line44ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line50ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
 }
 
@@ -1161,7 +1235,7 @@ function line45ToolTipsMouseOver() {
         document.getElementById('line4pop3').style.visibility = "visible";
         document.getElementById('line4pop4').style.visibility = "visible";
     } else {
-        line4ToolTipsMouseOut();
+        toolTipClearForFourLines();
     }
 }
 
@@ -1187,7 +1261,7 @@ function line46ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line50ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
 }
 
@@ -1221,7 +1295,7 @@ function line47ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line50ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
 }
 
@@ -1255,7 +1329,7 @@ function line26ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line50ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
 }
 
@@ -1289,7 +1363,7 @@ function line63ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line50ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
 }
 
@@ -1323,7 +1397,7 @@ function line65ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line50ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
 }
 
@@ -1357,7 +1431,7 @@ function line66ToolTipsMouseOver() {
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
     } else {
-        line50ToolTipsMouseOut();
+        toolTipClearForThreeLines();
     }
 }
 //###############################################SECTION FOR DIAGRAM PARTS WHICH DOES NOT INCLUDE LINES#####################################################################
