@@ -785,7 +785,7 @@ function play() {
  * This function allows the user to input a line number that they wish to jump
  *  to, the legend/diagram go to that location in the code, and start from the
  *  specified line. Up to four previous instructions will be displayed and
- *  pre-highlighted in the diagram.
+ *  pre-highlighted in the diagram
  */
 function skipTo() {
 
