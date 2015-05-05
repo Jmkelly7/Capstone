@@ -33,7 +33,7 @@ function toolTipClearForFourLines() {
 function line2ToolTipsMouseOver() {
 
     // This is for lines 2, 18, 15, 20, 8
-    if(document.getElementById('line2').getAttribute("stroke") != "#000000") {
+    if(document.getElementById('line2').getAttribute("stroke") != "#000000" && document.getElementById('line2').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line2').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
         } else if (document.getElementById('line2').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
@@ -65,7 +65,7 @@ function line2ToolTipsMouseOver() {
 function line3ToolTipsMouseOver() {
 
     // For line 3
-    if(document.getElementById('line3').getAttribute("stroke") != "#000000") {
+    if(document.getElementById('line3').getAttribute("stroke") != "#000000" && document.getElementById('line3').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line3').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
         } else if (document.getElementById('line3').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
@@ -97,7 +97,7 @@ function line3ToolTipsMouseOver() {
 function line4ToolTipsMouseOver() {
 
     // For lines 4, 19, 7
-    if(document.getElementById('line4').getAttribute("stroke") != "#000000") {
+    if(document.getElementById('line4').getAttribute("stroke") != "#000000" && document.getElementById('line4').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line4').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
         } else if (document.getElementById('line4').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
@@ -132,7 +132,7 @@ function line4ToolTipsMouseOver() {
 function line5ToolTipsMouseOver() {
 
     // For line 5
-    if(document.getElementById('line5').getAttribute("stroke") != "#000000") {
+    if(document.getElementById('line5').getAttribute("stroke") != "#000000" && document.getElementById('line5').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line5').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
         } else if (document.getElementById('line5').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
@@ -164,7 +164,7 @@ function line5ToolTipsMouseOver() {
 function line6ToolTipsMouseOver() {
 
     // For line 6
-    if(document.getElementById('line6').getAttribute("stroke") != "#000000") {
+    if(document.getElementById('line6').getAttribute("stroke") != "#000000" && document.getElementById('line6').getAttribute("stroke") != "slategrey") {
         document.getElementById('line6pop1').textContent = "Sending the value of four to be added to the";
         document.getElementById('line6pop2').textContent = "program counter to move it to the next instruction.";
         document.getElementById('line6pop1').style.visibility = "visible";
@@ -177,7 +177,7 @@ function line6ToolTipsMouseOver() {
 function line22ToolTipsMouseOver() {
 
     // For line 22
-    if(document.getElementById('line22').getAttribute("stroke") != "#000000") {
+    if(document.getElementById('line22').getAttribute("stroke") != "#000000" && document.getElementById('line22').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line22').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
         } else if (document.getElementById('line22').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
@@ -209,7 +209,7 @@ function line22ToolTipsMouseOver() {
 function line23ToolTipsMouseOver() {
 
     // For line 23
-    if(document.getElementById('line23').getAttribute("stroke") != "#000000") {
+    if(document.getElementById('line23').getAttribute("stroke") != "#000000" && document.getElementById('line23').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line23').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
         } else if (document.getElementById('line23').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
@@ -241,7 +241,7 @@ function line23ToolTipsMouseOver() {
 function line50ToolTipsMouseOver() {
 
     // For line 23
-    if (document.getElementById('line50').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line50').getAttribute("stroke") != "#000000" && document.getElementById('line50').getAttribute("stroke") != "slategrey") {
         var loadArray;
         var loadTemp;
         var tempValue = "";
@@ -304,7 +304,7 @@ function line50ToolTipsMouseOver() {
 function line51ToolTipsMouseOver() {
 
     // For line 23
-    if(document.getElementById('line51').getAttribute("stroke") != "#000000") {
+    if(document.getElementById('line51').getAttribute("stroke") != "#000000" && document.getElementById('line51').getAttribute("stroke") != "slategrey") {
         var loadArray;
         var loadTemp;
         var tempValue = "";
@@ -367,7 +367,7 @@ function line51ToolTipsMouseOver() {
 function line28ToolTipsMouseOver() {
 
     // For line 23
-    if(document.getElementById('line28').getAttribute("stroke") != "#000000") {
+    if(document.getElementById('line28').getAttribute("stroke") != "#000000" && document.getElementById('line28').getAttribute("stroke") != "slategrey") {
         var loadArray;
         var loadTemp;
         var tempValue = "";
@@ -431,7 +431,7 @@ function line28ToolTipsMouseOver() {
 function line24ToolTipsMouseOver() {
 
     // For line 23
-    if (document.getElementById('line24').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line24').getAttribute("stroke") != "#000000" && document.getElementById('line24').getAttribute("stroke") != "slategrey") {
         var loadArray;
         var loadTemp;
         var tempValue = "";
@@ -494,7 +494,7 @@ function line24ToolTipsMouseOver() {
 function line25ToolTipsMouseOver() {
 
     // For line 23
-    if (document.getElementById('line25').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line25').getAttribute("stroke") != "#000000" && document.getElementById('line25').getAttribute("stroke") != "slategrey") {
         var loadArray;
         var loadTemp;
         var tempValue = "";
@@ -541,7 +541,7 @@ function line25ToolTipsMouseOver() {
 function line32ToolTipsMouseOver() {
 
     // For line 23
-    if (document.getElementById('line32').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line32').getAttribute("stroke") != "#000000" && document.getElementById('line32').getAttribute("stroke") != "slategrey") {
         var loadArray;
         var loadTemp;
         var tempValue = "";
@@ -604,7 +604,7 @@ function line32ToolTipsMouseOver() {
 function line33ToolTipsMouseOver() {
 
     // For line 33
-    if (document.getElementById('line33').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line33').getAttribute("stroke") != "#000000" && document.getElementById('line33').getAttribute("stroke") != "slategrey") {
         var loadArray;
         var loadTemp;
         var tempValue = "";
@@ -668,7 +668,7 @@ function line33ToolTipsMouseOver() {
 function line31ToolTipsMouseOver() {
 
     // For line 23
-    if (document.getElementById('line31').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line31').getAttribute("stroke") != "#000000" && document.getElementById('line31').getAttribute("stroke") != "slategrey") {
         var loadArray;
         var loadTemp;
         var tempValue = "";
@@ -714,8 +714,8 @@ function line31ToolTipsMouseOver() {
 function line34ToolTipsMouseOver() {
 
     // For line 34, 35
-    if (document.getElementById('line34').getAttribute("stroke") != "#000000") {
-        if (document.getElementById('line35').getAttribute("stroke") != '#000000') {
+    if (document.getElementById('line34').getAttribute("stroke") != "#000000" && document.getElementById('line34').getAttribute("stroke") != "slategrey") {
+        if (document.getElementById('line35').getAttribute("stroke") != '#000000' && document.getElementById('line35').getAttribute("stroke") != "slategrey") {
             var loadArray;
             var loadTemp;
             var tempValue = "";
@@ -765,7 +765,7 @@ function line34ToolTipsMouseOver() {
 function line35ToolTipsMouseOver() {
 
     // For line 34, 35
-    if (document.getElementById('line35').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line35').getAttribute("stroke") != "#000000" && document.getElementById('line35').getAttribute("stroke") != "slategrey") {
             var loadArray;
             var loadTemp;
             var tempValue = "";
@@ -812,7 +812,7 @@ function line35ToolTipsMouseOver() {
 function line37ToolTipsMouseOver() {
 
     // For line 30, 56, 62
-    if (document.getElementById('line37').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line37').getAttribute("stroke") != "#000000" && document.getElementById('line37').getAttribute("stroke") != "slategrey") {
         var loadArray;
         var loadTemp;
         var tempValue = "";
@@ -876,7 +876,7 @@ function line37ToolTipsMouseOver() {
 function line30ToolTipsMouseOver() {
 
     // For line 30, 56, 62
-    if (document.getElementById('line30').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line30').getAttribute("stroke") != "#000000" && document.getElementById('line30').getAttribute("stroke") != "slategrey") {
         var loadArray;
         var loadTemp;
         var tempValue = "";
@@ -940,7 +940,7 @@ function line30ToolTipsMouseOver() {
 function line39ToolTipsMouseOver() {
 
     // For line 30, 56, 62
-    if (document.getElementById('line39').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line39').getAttribute("stroke") != "#000000" && document.getElementById('line39').getAttribute("stroke") != "slategrey") {
         var loadArray;
         var loadTemp;
         var tempValue = "";
@@ -987,7 +987,7 @@ function line39ToolTipsMouseOver() {
 function line54ToolTipsMouseOver() {
 
     // For line 54, 36
-    if (document.getElementById('line54').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line54').getAttribute("stroke") != "#000000" && document.getElementById('line54').getAttribute("stroke") != "slategrey") {
         var loadArray;
         var loadTemp;
         var tempValue = "";
@@ -1051,7 +1051,7 @@ function line54ToolTipsMouseOver() {
 function line41ToolTipsMouseOver() {
 
     // For line 54, 36
-    if (document.getElementById('line41').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line41').getAttribute("stroke") != "#000000" && document.getElementById('line41').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line41').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
             instructionCheck = document.getElementById("slot1").getAttribute("inst");
@@ -1095,7 +1095,7 @@ function line41ToolTipsMouseOver() {
 function line57ToolTipsMouseOver() {
 
     // For line 57, 43
-    if (document.getElementById('line57').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line57').getAttribute("stroke") != "#000000" && document.getElementById('line57').getAttribute("stroke") != "slategrey") {
 
         if (document.getElementById('line57').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
@@ -1122,7 +1122,7 @@ function line57ToolTipsMouseOver() {
 function line42ToolTipsMouseOver() {
 
     // For line 54, 36
-    if (document.getElementById('line42').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line42').getAttribute("stroke") != "#000000" && document.getElementById('line42').getAttribute("stroke") != "slategrey") {
         var instructionCheck;
         if (document.getElementById('line42').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
@@ -1162,7 +1162,7 @@ function line42ToolTipsMouseOver() {
 function line60ToolTipsMouseOver() {
 
     // For line 54, 36
-    if (document.getElementById('line60').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line60').getAttribute("stroke") != "#000000" && document.getElementById('line60').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line60').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
         } else if (document.getElementById('line60').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
@@ -1188,7 +1188,7 @@ function line60ToolTipsMouseOver() {
 function line44ToolTipsMouseOver() {
 
     // For line 54, 36
-    if (document.getElementById('line44').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line44').getAttribute("stroke") != "#000000" && document.getElementById('line44').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line44').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
         } else if (document.getElementById('line44').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
@@ -1214,7 +1214,7 @@ function line44ToolTipsMouseOver() {
 function line45ToolTipsMouseOver() {
 
     // For line 54, 36
-    if (document.getElementById('line45').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line45').getAttribute("stroke") != "#000000" && document.getElementById('line45').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line45').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
         } else if (document.getElementById('line45').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
@@ -1242,7 +1242,7 @@ function line45ToolTipsMouseOver() {
 function line46ToolTipsMouseOver() {
 
     // For line 54, 36
-    if (document.getElementById('line46').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line46').getAttribute("stroke") != "#000000" && document.getElementById('line46').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line46').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
         } else if (document.getElementById('line46').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
@@ -1268,7 +1268,7 @@ function line46ToolTipsMouseOver() {
 function line47ToolTipsMouseOver() {
 
     // For line 47, 59, 48, 53, 27
-    if (document.getElementById('line47').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line47').getAttribute("stroke") != "#000000" && document.getElementById('line47').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line47').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
         } else if (document.getElementById('line47').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
@@ -1302,7 +1302,7 @@ function line47ToolTipsMouseOver() {
 function line26ToolTipsMouseOver() {
 
     // For line 26
-    if (document.getElementById('line26').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line26').getAttribute("stroke") != "#000000" && document.getElementById('line26').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line26').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
         } else if (document.getElementById('line26').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
@@ -1336,7 +1336,7 @@ function line26ToolTipsMouseOver() {
 function line63ToolTipsMouseOver() {
 
     // For line 26
-    if (document.getElementById('line63').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line63').getAttribute("stroke") != "#000000" && document.getElementById('line63').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line63').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
         } else if (document.getElementById('line63').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
@@ -1370,7 +1370,7 @@ function line63ToolTipsMouseOver() {
 function line65ToolTipsMouseOver() {
 
     // For line 26
-    if (document.getElementById('line65').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line65').getAttribute("stroke") != "#000000" && document.getElementById('line65').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line65').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
         } else if (document.getElementById('line65').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
@@ -1404,7 +1404,7 @@ function line65ToolTipsMouseOver() {
 function line66ToolTipsMouseOver() {
 
     // For line 26
-    if (document.getElementById('line66').getAttribute("stroke") != "#000000") {
+    if (document.getElementById('line66').getAttribute("stroke") != "#000000" && document.getElementById('line66').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line66').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
         } else if (document.getElementById('line66').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {

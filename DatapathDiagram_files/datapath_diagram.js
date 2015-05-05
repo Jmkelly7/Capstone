@@ -684,6 +684,7 @@ function runInst(inst, stage, color) {
     } else if (type == "no") {
 
         stepThroughNoOpInstruction(color);
+        console.log(color);
 
     }
 
@@ -1114,15 +1115,15 @@ function forward() {
                 }
             }
 //                fourArray[2] = fourArray[2].substring(0,fourArray[2].length-1);
-            if (oneArray[1] == twoArray[2] || oneArray[1] == twoArray[3]) {
+            if ((oneArray[1] == twoArray[2] || oneArray[1] == twoArray[3]) && document.getElementById('slot1').textContent != "noop") {
                 document.getElementById('slot2a').textContent = "" + oneArray[1];
                 document.getElementById('slot2a').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
             }
-            if (twoArray[1] == threeArray[2] || twoArray[1] == threeArray[3]) {
+            if ((twoArray[1] == threeArray[2] || twoArray[1] == threeArray[3]) && document.getElementById('slot2').textContent != "noop") {
                 document.getElementById('slot3a').textContent = "" + twoArray[1];
                 document.getElementById('slot3a').setAttribute('fill', document.getElementById('slot2').getAttribute('fill'));
             }
-            if (oneArray[1] == threeArray[2] || oneArray[1] == threeArray[3]) {
+            if ((oneArray[1] == threeArray[2] || oneArray[1] == threeArray[3]) && document.getElementById('slot1').textContent != "noop") {
                 document.getElementById('slot3b').textContent = "" + oneArray[1];
                 document.getElementById('slot3b').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
             }

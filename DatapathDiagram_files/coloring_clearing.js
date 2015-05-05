@@ -117,7 +117,6 @@ function colorNoOp(color) {
     if (document.getElementById("slot3").textContent == "noop") {
 
         clearStageThree();
-
         colorObject("poly2", color);
         colorObject("poly3", color);
         colorObject("rect9", color);
@@ -135,18 +134,26 @@ function colorNoOp(color) {
         colorLine("line37", color);
         colorLine("line38", color);
         colorLine("line39", color);
-        colorLine("line42", color);
-        colorLine("line44", color);
+        //colorLine("line42", color);
+        //colorLine("line44", color);
         colorLine("line54", color);
         colorLine("line56", color);
-        colorLine("line60", color);
+        //colorLine("line60", color);
         colorLine("line61", color);
         colorLine("line65", color);
 
     } else if (document.getElementById("slot2").textContent == "noop") {
 
         clearStageFour();
-
+        clearLine('line11');
+        clearLine('line54');
+        clearLine('line30');
+        clearLine('line56');
+        clearLine('line61');
+        clearLine('line38');
+        clearLine('line12');
+        clearLine('line13');
+        clearLine('line36');
         colorObject("rect11", color);
         colorObject("rect12", color);
         colorObject("rect13", color);
@@ -215,6 +222,16 @@ function colorWhite(slot) {
  */
 function clearStageFive() {
 
+    clearObject('rect12');
+    clearObject('rect13');
+    clearLine('line40');
+    clearLine('line42');
+    clearLine('line60');
+    clearLine('line14');
+    clearLine('line21');
+    clearLine('line16');
+    clearLine('line1');
+    clearLine('line17');
     clearObject("rect6");
     clearObject("rect15");
     clearObject("ellipse5");
@@ -245,6 +262,8 @@ function clearStageFour() {
     clearObject("rect12");
     clearObject("rect13");
     clearObject("rect14");
+    clearObject('ellipse3');
+    clearObject('poly2');
     clearLine("line1");
     clearLine("line14");
     clearLine("line16");
@@ -254,6 +273,7 @@ function clearStageFour() {
     clearLine("line41");
     clearLine("line42");
     clearLine("line43");
+    clearLine("line44");
     clearLine("line45");
     clearLine("line46");
     clearLine("line57");
@@ -286,11 +306,11 @@ function clearStageThree() {
     clearLine("line37");
     clearLine("line38");
     clearLine("line39");
-    clearLine("line42");
-    clearLine("line44");
+    //clearLine("line42");
+    //clearLine("line44");
     clearLine("line54");
     clearLine("line56");
-    clearLine("line60");
+   // clearLine("line60");
     clearLine("line61");
     clearLine("line65");
 
