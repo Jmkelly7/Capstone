@@ -1021,30 +1021,15 @@ function forward() {
                 document.getElementById('slot2a').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
             }
         } else if (document.getElementById('rect15').getAttribute('fill') != "#ffffff"){
-            //document.getElementById('slot2a').textContent = document.getElementById('slot3a').textContent;
             document.getElementById('slot2a').textContent = "";
-           // document.getElementById('slot2a').setAttribute('fill', document.getElementById('slot3a').getAttribute('fill'));
-            //document.getElementById('slot2b').textContent = document.getElementById('slot3b').textContent;
             document.getElementById('slot2b').textContent = "";
-           // document.getElementById('slot2b').setAttribute('fill', document.getElementById('slot3b').getAttribute('fill'));
             document.getElementById('slot3a').textContent = "";
             document.getElementById('slot3a').setAttribute('fill', "beige");
             document.getElementById('slot3b').textContent = "";
             document.getElementById('slot3b').setAttribute('fill', "beige");
-//            document.getElementById('slot4a').textContent = "";
-  //          document.getElementById('slot4a').setAttribute('fill', "beige");
-    //        document.getElementById('slot4b').textContent = "";
-      //      document.getElementById('slot4b').setAttribute('fill', "beige");
-         //   if(document.getElementById('slot1').textContent != "noop") {
                 oneArray = document.getElementById("slot1").textContent.split(" ");
-          //  }
-         //   if(document.getElementById('slot2').textContent != "noop") {
                 twoArray = document.getElementById("slot2").textContent.split(" ");
-         //   }
-          //  if(document.getElementById('slot3').textContent != "noop") {
                 threeArray = document.getElementById("slot3").textContent.split(" ");
-           // }
-       //     fourArray = document.getElementById("slot4").textContent.split(" ");
             var loadTemp, tempValue, allValue, i;
             if(oneArray[3] == undefined && document.getElementById('slot1').textContent != "noop") {
                 loadTemp = oneArray[2].split("");

@@ -6,30 +6,49 @@
  * @author  Trevor Griggs
  * @version 03/04/2015.
  */
+
+/**
+ * This method is used to clear the tooltip message that was displayed by a method that needs two lines to print its
+ * message
+ */
 function toolTipClearForTwoLines() {
 
-    // For line 6
+    // For Any lines having two lines of tooltips
     document.getElementById('line6pop1').style.visibility= "hidden";
     document.getElementById('line6pop2').style.visibility= "hidden";
 }
 
+/**
+ * This method is used to clear the tooltip message that was displayed by a method that needs three lines to prints its
+ * message.
+ */
 function toolTipClearForThreeLines() {
 
-    // For line 22
+    // For Any lines having three lines of tooltips
     document.getElementById('line3pop1').style.visibility= "hidden";
     document.getElementById('line3pop2').style.visibility= "hidden";
     document.getElementById('line3pop3').style.visibility= "hidden";
 }
 
+/**
+ * This method is used to clear the tooltip message that was displayed by a method that needs four lines to prints its
+ * message.
+ */
 function toolTipClearForFourLines() {
 
-    // For lines 4, 19, 7
+    // For Any lines having four lines of tooltips
     document.getElementById('line4pop1').style.visibility= "hidden";
     document.getElementById('line4pop2').style.visibility= "hidden";
     document.getElementById('line4pop3').style.visibility= "hidden";
     document.getElementById('line4pop4').style.visibility= "hidden";
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line2ToolTipsMouseOver() {
 
     // This is for lines 2, 18, 15, 20, 8
@@ -62,6 +81,12 @@ function line2ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line3ToolTipsMouseOver() {
 
     // For line 3
@@ -77,15 +102,17 @@ function line3ToolTipsMouseOver() {
         } else if (document.getElementById('line3').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
         }
-            if(tempArray[3] == undefined) {
-                document.getElementById('line3pop1').textContent = "Sends the new program counter value back to the ";
-                document.getElementById('line3pop2').textContent = "program counter and sets the new value.";
-                document.getElementById('line3pop3').textContent = "Stage one. Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-            } else {
-                document.getElementById('line3pop1').textContent = "Sends the new program counter value back to the ";
-                document.getElementById('line3pop2').textContent = "program counter and sets the new value.";
-                document.getElementById('line3pop3').textContent = "Stage one. Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-            }
+
+        //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
+        if(tempArray[3] == undefined) {
+            document.getElementById('line3pop1').textContent = "Sends the new program counter value back to the ";
+            document.getElementById('line3pop2').textContent = "program counter and sets the new value.";
+            document.getElementById('line3pop3').textContent = "Stage one. Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
+        } else {
+            document.getElementById('line3pop1').textContent = "Sends the new program counter value back to the ";
+            document.getElementById('line3pop2').textContent = "program counter and sets the new value.";
+            document.getElementById('line3pop3').textContent = "Stage one. Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
+        }
         document.getElementById('line3pop1').style.visibility = "visible";
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
@@ -94,6 +121,12 @@ function line3ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line4ToolTipsMouseOver() {
 
     // For lines 4, 19, 7
@@ -109,17 +142,19 @@ function line4ToolTipsMouseOver() {
         } else if (document.getElementById('line4').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
         }
-            if(tempArray[3] == undefined) {
-                document.getElementById('line4pop1').textContent = "Send the program counter to the add alu to get four";
-                document.getElementById('line4pop2').textContent = "added to it for the next instruction. Stage one,";
-                document.getElementById('line4pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-                document.getElementById('line4pop4').textContent = "Also sends the instruction in Instruction Memory.";
-            } else {
-                document.getElementById('line4pop1').textContent = "Send the program counter to the add alu to get four";
-                document.getElementById('line4pop2').textContent = "added to it for the next instruction. Stage one,";
-                document.getElementById('line4pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-                document.getElementById('line4pop4').textContent = "Also sends the instruction in Instruction Memory.";
-            }
+
+        //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
+        if(tempArray[3] == undefined) {
+            document.getElementById('line4pop1').textContent = "Send the program counter to the add alu to get four";
+            document.getElementById('line4pop2').textContent = "added to it for the next instruction. Stage one,";
+            document.getElementById('line4pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
+            document.getElementById('line4pop4').textContent = "Also sends the instruction in Instruction Memory.";
+        } else {
+            document.getElementById('line4pop1').textContent = "Send the program counter to the add alu to get four";
+            document.getElementById('line4pop2').textContent = "added to it for the next instruction. Stage one,";
+            document.getElementById('line4pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
+            document.getElementById('line4pop4').textContent = "Also sends the instruction in Instruction Memory.";
+        }
         document.getElementById('line4pop1').style.visibility = "visible";
         document.getElementById('line4pop2').style.visibility = "visible";
         document.getElementById('line4pop3').style.visibility = "visible";
@@ -129,6 +164,12 @@ function line4ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line5ToolTipsMouseOver() {
 
     // For line 5
@@ -144,15 +185,17 @@ function line5ToolTipsMouseOver() {
         } else if (document.getElementById('line5').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
         }
-            if(tempArray[3] == undefined) {
-                document.getElementById('line3pop1').textContent = "Sending the instruction to Instruction memory to be";
-                document.getElementById('line3pop2').textContent = "stored. Stage one";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-            } else {
-                document.getElementById('line3pop1').textContent = "Sending the instruction to Instruction memory to be";
-                document.getElementById('line3pop2').textContent = "stored. Stage one";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-            }
+
+        //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
+        if(tempArray[3] == undefined) {
+            document.getElementById('line3pop1').textContent = "Sending the instruction to Instruction memory to be";
+            document.getElementById('line3pop2').textContent = "stored. Stage one";
+            document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
+        } else {
+            document.getElementById('line3pop1').textContent = "Sending the instruction to Instruction memory to be";
+            document.getElementById('line3pop2').textContent = "stored. Stage one";
+            document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
+        }
         document.getElementById('line3pop1').style.visibility = "visible";
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
@@ -161,6 +204,12 @@ function line5ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line6ToolTipsMouseOver() {
 
     // For line 6
@@ -174,6 +223,12 @@ function line6ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line22ToolTipsMouseOver() {
 
     // For line 22
@@ -189,15 +244,17 @@ function line22ToolTipsMouseOver() {
         } else if (document.getElementById('line22').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
         }
-            if(tempArray[3] == undefined) {
-                document.getElementById('line3pop1').textContent = "Storing the instruction into the buffer so it may be";
-                document.getElementById('line3pop2').textContent = "passed into the next stage. Stage one.";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-            } else {
-                document.getElementById('line3pop1').textContent = "Storing the instruction into the buffer so it may be";
-                document.getElementById('line3pop2').textContent = "passed into the next stage. Stage one.";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-            }
+
+        //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
+        if(tempArray[3] == undefined) {
+            document.getElementById('line3pop1').textContent = "Storing the instruction into the buffer so it may be";
+            document.getElementById('line3pop2').textContent = "passed into the next stage. Stage one.";
+            document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
+        } else {
+            document.getElementById('line3pop1').textContent = "Storing the instruction into the buffer so it may be";
+            document.getElementById('line3pop2').textContent = "passed into the next stage. Stage one.";
+            document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
+        }
         document.getElementById('line3pop1').style.visibility = "visible";
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
@@ -206,6 +263,12 @@ function line22ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line23ToolTipsMouseOver() {
 
     // For line 23
@@ -221,15 +284,17 @@ function line23ToolTipsMouseOver() {
         } else if (document.getElementById('line23').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
         }
-            if(tempArray[3] == undefined) {
-                document.getElementById('line3pop1').textContent = "Sending the registers out of the buffer so they can";
-                document.getElementById('line3pop2').textContent = "be distributed into the correct places. Stage one.";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
-            } else {
-                document.getElementById('line3pop1').textContent = "Sending the registers out of the buffer so they can";
-                document.getElementById('line3pop2').textContent = "be distributed into the correct places. Stage one.";
-                document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
-            }
+
+        //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
+        if(tempArray[3] == undefined) {
+            document.getElementById('line3pop1').textContent = "Sending the registers out of the buffer so they can";
+            document.getElementById('line3pop2').textContent = "be distributed into the correct places. Stage one.";
+            document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2];
+        } else {
+            document.getElementById('line3pop1').textContent = "Sending the registers out of the buffer so they can";
+            document.getElementById('line3pop2').textContent = "be distributed into the correct places. Stage one.";
+            document.getElementById('line3pop3').textContent = "Instruction is " + tempArray[0] + " " + tempArray[1] + " " + tempArray[2] + " " + tempArray[3];
+        }
         document.getElementById('line3pop1').style.visibility = "visible";
         document.getElementById('line3pop2').style.visibility = "visible";
         document.getElementById('line3pop3').style.visibility = "visible";
@@ -238,9 +303,15 @@ function line23ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line50ToolTipsMouseOver() {
 
-    // For line 23
+    // For line 50, 49
     if (document.getElementById('line50').getAttribute("stroke") != "#000000" && document.getElementById('line50').getAttribute("stroke") != "slategrey") {
         var loadArray;
         var loadTemp;
@@ -258,8 +329,12 @@ function line50ToolTipsMouseOver() {
         } else if (document.getElementById('line50').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
         }
+
+        //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
         if (tempArray[3] == undefined) {
             loadArray = tempArray[2];
+
+            //This whole if statement is used to strip offset amount.
             if(loadArray.indexOf("(") != -1) {
                 loadTemp = loadArray.split("");
                 tempValue = "";
@@ -301,9 +376,15 @@ function line50ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line51ToolTipsMouseOver() {
 
-    // For line 23
+    // For line 51
     if(document.getElementById('line51').getAttribute("stroke") != "#000000" && document.getElementById('line51').getAttribute("stroke") != "slategrey") {
         var loadArray;
         var loadTemp;
@@ -364,9 +445,15 @@ function line51ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line28ToolTipsMouseOver() {
 
-    // For line 23
+    // For line 28
     if(document.getElementById('line28').getAttribute("stroke") != "#000000" && document.getElementById('line28').getAttribute("stroke") != "slategrey") {
         var loadArray;
         var loadTemp;
@@ -428,9 +515,15 @@ function line28ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line24ToolTipsMouseOver() {
 
-    // For line 23
+    // For line 24
     if (document.getElementById('line24').getAttribute("stroke") != "#000000" && document.getElementById('line24').getAttribute("stroke") != "slategrey") {
         var loadArray;
         var loadTemp;
@@ -491,9 +584,15 @@ function line24ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line25ToolTipsMouseOver() {
 
-    // For line 23
+    // For line 25
     if (document.getElementById('line25').getAttribute("stroke") != "#000000" && document.getElementById('line25').getAttribute("stroke") != "slategrey") {
         var loadArray;
         var loadTemp;
@@ -538,9 +637,15 @@ function line25ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line32ToolTipsMouseOver() {
 
-    // For line 23
+    // For line 32
     if (document.getElementById('line32').getAttribute("stroke") != "#000000" && document.getElementById('line32').getAttribute("stroke") != "slategrey") {
         var loadArray;
         var loadTemp;
@@ -601,6 +706,12 @@ function line32ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line33ToolTipsMouseOver() {
 
     // For line 33
@@ -665,9 +776,15 @@ function line33ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line31ToolTipsMouseOver() {
 
-    // For line 23
+    // For line 31
     if (document.getElementById('line31').getAttribute("stroke") != "#000000" && document.getElementById('line31').getAttribute("stroke") != "slategrey") {
         var loadArray;
         var loadTemp;
@@ -711,9 +828,15 @@ function line31ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line34ToolTipsMouseOver() {
 
-    // For line 34, 35
+    // For line 34
     if (document.getElementById('line34').getAttribute("stroke") != "#000000" && document.getElementById('line34').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line35').getAttribute("stroke") != '#000000' && document.getElementById('line35').getAttribute("stroke") != "slategrey") {
             var loadArray;
@@ -762,9 +885,15 @@ function line34ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line35ToolTipsMouseOver() {
 
-    // For line 34, 35
+    // For line 35
     if (document.getElementById('line35').getAttribute("stroke") != "#000000" && document.getElementById('line35').getAttribute("stroke") != "slategrey") {
             var loadArray;
             var loadTemp;
@@ -809,9 +938,15 @@ function line35ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line37ToolTipsMouseOver() {
 
-    // For line 30, 56, 62
+    // For line 37
     if (document.getElementById('line37').getAttribute("stroke") != "#000000" && document.getElementById('line37').getAttribute("stroke") != "slategrey") {
         var loadArray;
         var loadTemp;
@@ -873,9 +1008,15 @@ function line37ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line30ToolTipsMouseOver() {
 
-    // For line 30, 56, 62
+    // For line 30, 56, 61
     if (document.getElementById('line30').getAttribute("stroke") != "#000000" && document.getElementById('line30').getAttribute("stroke") != "slategrey") {
         var loadArray;
         var loadTemp;
@@ -937,9 +1078,15 @@ function line30ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line39ToolTipsMouseOver() {
 
-    // For line 30, 56, 62
+    // For line 39
     if (document.getElementById('line39').getAttribute("stroke") != "#000000" && document.getElementById('line39').getAttribute("stroke") != "slategrey") {
         var loadArray;
         var loadTemp;
@@ -984,6 +1131,12 @@ function line39ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line54ToolTipsMouseOver() {
 
     // For line 54, 36
@@ -1048,9 +1201,15 @@ function line54ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line41ToolTipsMouseOver() {
 
-    // For line 54, 36
+    // For line 41
     if (document.getElementById('line41').getAttribute("stroke") != "#000000" && document.getElementById('line41').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line41').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
@@ -1092,6 +1251,12 @@ function line41ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line57ToolTipsMouseOver() {
 
     // For line 57, 43
@@ -1119,9 +1284,15 @@ function line57ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line42ToolTipsMouseOver() {
 
-    // For line 54, 36
+    // For line 42
     if (document.getElementById('line42').getAttribute("stroke") != "#000000" && document.getElementById('line42').getAttribute("stroke") != "slategrey") {
         var instructionCheck;
         if (document.getElementById('line42').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
@@ -1159,9 +1330,15 @@ function line42ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line60ToolTipsMouseOver() {
 
-    // For line 54, 36
+    // For line 60
     if (document.getElementById('line60').getAttribute("stroke") != "#000000" && document.getElementById('line60').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line60').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
@@ -1185,9 +1362,15 @@ function line60ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line44ToolTipsMouseOver() {
 
-    // For line 54, 36
+    // For line 44
     if (document.getElementById('line44').getAttribute("stroke") != "#000000" && document.getElementById('line44').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line44').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
@@ -1211,9 +1394,15 @@ function line44ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line45ToolTipsMouseOver() {
 
-    // For line 54, 36
+    // For line 45
     if (document.getElementById('line45').getAttribute("stroke") != "#000000" && document.getElementById('line45').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line45').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
@@ -1239,9 +1428,15 @@ function line45ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line46ToolTipsMouseOver() {
 
-    // For line 54, 36
+    // For line 46, 58, 62
     if (document.getElementById('line46').getAttribute("stroke") != "#000000" && document.getElementById('line46').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line46').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
@@ -1265,6 +1460,12 @@ function line46ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line47ToolTipsMouseOver() {
 
     // For line 47, 59, 48, 53, 27
@@ -1299,9 +1500,15 @@ function line47ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line26ToolTipsMouseOver() {
 
-    // For line 26
+    // For line 26, 70, 69, 68, 67
     if (document.getElementById('line26').getAttribute("stroke") != "#000000" && document.getElementById('line26').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line26').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
@@ -1333,9 +1540,15 @@ function line26ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line63ToolTipsMouseOver() {
 
-    // For line 26
+    // For line 63, 64
     if (document.getElementById('line63').getAttribute("stroke") != "#000000" && document.getElementById('line63').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line63').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
@@ -1367,9 +1580,15 @@ function line63ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line65ToolTipsMouseOver() {
 
-    // For line 26
+    // For line 65
     if (document.getElementById('line65').getAttribute("stroke") != "#000000" && document.getElementById('line65').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line65').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
@@ -1401,9 +1620,15 @@ function line65ToolTipsMouseOver() {
     }
 }
 
+/**
+ * This method is used to update the tooltips that are displayed for the user whenever they hover over the specified
+ * lines that are defined either in the method header or in the first line of the method itself. Then it checks to see
+ * which slot in the legend has the same color as the lines and then extracts the data that it needs from that slot.
+ * Once it has the data it checks if there are 2 or 3 registers and places the appropriate tooltip to then make visible.
+ */
 function line66ToolTipsMouseOver() {
 
-    // For line 26
+    // For line 66
     if (document.getElementById('line66').getAttribute("stroke") != "#000000" && document.getElementById('line66').getAttribute("stroke") != "slategrey") {
         if (document.getElementById('line66').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
             tempArray = document.getElementById("slot1").textContent.split(" ");
@@ -1434,7 +1659,7 @@ function line66ToolTipsMouseOver() {
         toolTipClearForThreeLines();
     }
 }
-//###############################################SECTION FOR DIAGRAM PARTS WHICH DOES NOT INCLUDE LINES#####################################################################
+//###############################################SECTION FOR DIAGRAM PARTS WHICH DO NOT INCLUDE LINES#####################################################################
 
 function mutexTool1TipsMouseOver() {
 
