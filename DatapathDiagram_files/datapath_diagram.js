@@ -149,9 +149,11 @@ var tempArray;
 var instListCounter;
 
 /**
- *
+ * True  - there is a hazard in the 3rd stage of the diagram, which will cause a
+ *         stall.
+ * False - There is not a hazard in the 3rd stage of the diagram.
  */
-var hazard;
+var hazard = false;
 
 /**
  * The popup window that brings the user to upload a file once they visit the
@@ -225,9 +227,14 @@ function parseFile() {
 
 }
 
+/**
+ * This function
+ */
 function validate() {
+
     console.log("CALLING VALIDATE");
     if (document.getElementById('checkLine').checked) {
+
         document.getElementById('line63').style.visibility = "visible";
         document.getElementById('line64').style.visibility = "visible";
         document.getElementById('line64a').style.visibility = "visible";
@@ -239,7 +246,9 @@ function validate() {
         document.getElementById('line68').style.visibility = "visible";
         document.getElementById('line69').style.visibility = "visible";
         document.getElementById('line70').style.visibility = "visible";
+
     } else {
+
         document.getElementById('line63').style.visibility = "hidden";
         document.getElementById('line64').style.visibility = "hidden";
         document.getElementById('line64a').style.visibility = "hidden";
@@ -251,7 +260,9 @@ function validate() {
         document.getElementById('line68').style.visibility = "hidden";
         document.getElementById('line69').style.visibility = "hidden";
         document.getElementById('line70').style.visibility = "hidden";
+
     }
+
 }
 
 /**
@@ -260,7 +271,11 @@ function validate() {
  */
 function runThrough() {
 
-    currentNumInstruction++;
+    //if (!hazard) {
+
+        currentNumInstruction++;
+
+    //}
 
     if (counter == 1) {
 
@@ -393,14 +408,13 @@ function runThrough() {
         }
 
     }
-    
-    forward();
 
     isHazard();
+    forward();
 
     if (hazard) {
 
-        console.log(hazard);
+        console.log("hazard: " + hazard);
         //setupLegend();
         // blah
 
@@ -454,7 +468,7 @@ function callInst(numSlots) {
  *
  * @param tempCounter
  */
-function stallRunThrough(tempCounter) {
+/*function stallRunThrough(tempCounter) {
 
     if (tempCounter == 1) {
 
@@ -627,7 +641,7 @@ function stallRunThrough(tempCounter) {
         isFirst = false;
 
     }
-}
+}*/
 
 /**
  * This function calls the correct path for the given instruction, once the
@@ -662,10 +676,12 @@ function runInst(inst, stage, color) {
     console.log("color is " + color);
 
     if (type == "r") {
+
         console.log("calling r type");
         stepThroughRType(stage, color);
 
     } else if (type == "i") {
+
         console.log("calling I type");
         stepThroughIType(stage, color, inst);
 
@@ -999,10 +1015,13 @@ function forward() {
     var threeArray;
     var fourArray;
     var temp;
+
     console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! IN FORWARD");
     if(document.getElementById('rect10').getAttribute("fill") != "#ffffff") {
+
         console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!PASSING FIRST IF");
-      if (document.getElementById('rect15').getAttribute('fill') == "#ffffff" && document.getElementById('rect14').getAttribute('fill') != "#ffffff") {
+        if (document.getElementById('rect15').getAttribute('fill') == "#ffffff" && document.getElementById('rect14').getAttribute('fill') != "#ffffff") {
+
             console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!INCHECK FOR SECOND ROW OF THINGGIES");
             oneArray = document.getElementById("slot1").textContent.split(" ");
             twoArray = document.getElementById("slot2").textContent.split(" ");
@@ -1011,15 +1030,21 @@ function forward() {
             twoArray[2] = twoArray[2].substring(0,twoArray[2].length-1);
             twoArray[1] = twoArray[1].substring(0,twoArray[1].length-1);
             threeArray[2] = threeArray[2].substring(0,threeArray[2].length-1);
+
             if (oneArray[1] == threeArray[2]) {
+
                 console.log("FIRST IF THE SAME AS THE SECOND OF THRIRD");
                 document.getElementById('slot2a').textContent = "" + oneArray[1];
                 document.getElementById('slot2a').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
+
             } else if (oneArray[1] == threeArray[3]) {
+
                 console.log("FIRST IS SAME AS THIRD OF THIRD");
                 document.getElementById('slot2a').textContent = "" + oneArray[1];
                 document.getElementById('slot2a').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
+
             }
+
         } else if (document.getElementById('rect15').getAttribute('fill') != "#ffffff"){
             document.getElementById('slot2a').textContent = "";
             document.getElementById('slot2b').textContent = "";
@@ -1031,88 +1056,152 @@ function forward() {
                 twoArray = document.getElementById("slot2").textContent.split(" ");
                 threeArray = document.getElementById("slot3").textContent.split(" ");
             var loadTemp, tempValue, allValue, i;
+
             if(oneArray[3] == undefined && document.getElementById('slot1').textContent != "noop") {
+
                 loadTemp = oneArray[2].split("");
                 tempValue = "";
                 allValue = "";
                 i = 0;
+
                 while (loadTemp[i] != '(') {
+
                     tempValue = tempValue + "" + loadTemp[i];
                     i++;
+
                 }
+
                 while (i < loadTemp.length) {
+
                     allValue = allValue + "" + loadTemp[i];
                     i++;
+
                 }
+
                 oneArray[2] = allValue;
                 oneArray[2] = oneArray[2].substring(0, oneArray[2].length - 1);
                 oneArray[2] = oneArray[2].substring(1, oneArray[2].length);
                 oneArray[1] = oneArray[1].substring(0, oneArray[1].length - 1);
+
             } else {
+
                 if (document.getElementById('slot1').textContent != "noop") {
+
                     oneArray[1] = oneArray[1].substring(0, oneArray[1].length - 1);
+
                 }
+
             }
+
+            // fix
             if(twoArray[3] == undefined && document.getElementById('slot2').textContent != "noop") {
-                loadTemp = twoArray[2].split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
+
+                if (document.getElementById('slot2').textContent != " ") {
+
+                    loadTemp = twoArray[2].split("");
+
+                    tempValue = "";
+                    allValue = "";
+                    i = 0;
+
+                    while (loadTemp[i] != '(') {
+
+                        tempValue = tempValue + "" + loadTemp[i];
+                        i++;
+
+                    }
+
+                    while (i < loadTemp.length) {
+
+                        allValue = allValue + "" + loadTemp[i];
+                        i++;
+
+                    }
+
+                    twoArray[2] = allValue;
+                    twoArray[2] = twoArray[2].substring(0, twoArray[2].length - 1);
+                    twoArray[2] = twoArray[2].substring(1, twoArray[2].length);
+                    twoArray[1] = twoArray[1].substring(0, twoArray[1].length - 1);
+
                 }
-                while (i < loadTemp.length) {
-                    allValue = allValue + "" + loadTemp[i];
-                    i++;
-                }
-                twoArray[2] = allValue;
-                twoArray[2] = twoArray[2].substring(0, twoArray[2].length - 1);
-                twoArray[2] = twoArray[2].substring(1, twoArray[2].length);
-                twoArray[1] = twoArray[1].substring(0, twoArray[1].length - 1);
+
             } else {
+
                 if (document.getElementById('slot2').textContent != "noop") {
+
                     twoArray[2] = twoArray[2].substring(0, twoArray[2].length - 1);
                     twoArray[1] = twoArray[1].substring(0, twoArray[1].length - 1);
+
                 }
+
             }
+
             if(threeArray[3] == undefined && document.getElementById('slot3').textContent != "noop") {
-                loadTemp = threeArray[2].split("");
-                tempValue = "";
-                allValue = "";
-                i = 0;
-                while (loadTemp[i] != '(') {
-                    tempValue = tempValue + "" + loadTemp[i];
-                    i++;
+
+                if (document.getElementById('slot3').textContent != " ") {
+
+                    loadTemp = threeArray[2].split("");
+
+                    tempValue = "";
+                    allValue = "";
+                    i = 0;
+
+                    while (loadTemp[i] != '(') {
+
+                        tempValue = tempValue + "" + loadTemp[i];
+                        i++;
+
+                    }
+
+                    while (i < loadTemp.length) {
+
+                        allValue = allValue + "" + loadTemp[i];
+                        i++;
+
+                    }
+
+                    threeArray[2] = allValue;
+                    threeArray[2] = threeArray[2].substring(0, threeArray[2].length - 1);
+                    threeArray[2] = threeArray[2].substring(1, threeArray[2].length);
+                    threeArray[1] = threeArray[1].substring(0, threeArray[1].length - 1);
+
                 }
-                while (i < loadTemp.length) {
-                    allValue = allValue + "" + loadTemp[i];
-                    i++;
-                }
-                threeArray[2] = allValue;
-                threeArray[2] = threeArray[2].substring(0, threeArray[2].length - 1);
-                threeArray[2] = threeArray[2].substring(1, threeArray[2].length);
-                threeArray[1] = threeArray[1].substring(0, threeArray[1].length - 1);
+
             } else {
+
                 if (document.getElementById('slot3').textContent != "noop") {
+
                     threeArray[2] = threeArray[2].substring(0, threeArray[2].length - 1);
                     threeArray[1] = threeArray[1].substring(0, threeArray[1].length - 1);
+
                 }
+
             }
 //                fourArray[2] = fourArray[2].substring(0,fourArray[2].length-1);
+
             if ((oneArray[1] == twoArray[2] || oneArray[1] == twoArray[3]) && document.getElementById('slot1').textContent != "noop") {
+
                 document.getElementById('slot2a').textContent = "" + oneArray[1];
                 document.getElementById('slot2a').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
+
             }
+
             if ((twoArray[1] == threeArray[2] || twoArray[1] == threeArray[3]) && document.getElementById('slot2').textContent != "noop") {
+
                 document.getElementById('slot3a').textContent = "" + twoArray[1];
                 document.getElementById('slot3a').setAttribute('fill', document.getElementById('slot2').getAttribute('fill'));
+
             }
+
             if ((oneArray[1] == threeArray[2] || oneArray[1] == threeArray[3]) && document.getElementById('slot1').textContent != "noop") {
+
                 document.getElementById('slot3b').textContent = "" + oneArray[1];
                 document.getElementById('slot3b').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
+
             }
+
         }
+
     }
 
 }
@@ -1124,53 +1213,110 @@ function forward() {
 function isHazard() {
 
     console.log("IS HAZARD?!?!?!?!?!?!?!?!?!?!?!?!?!?");
-    console.log("counter > 3: " + (counter > 3));
+    console.log("hazard: " + hazard);
+    console.log("!hazard: " + !hazard);
+    console.log("currentNumInstruction == 3: " + (currentNumInstruction == 3));
+    console.log("currentNumInstruction == 4: " + (currentNumInstruction == 4));
+    console.log("currentNumInstruction == 5: " + (currentNumInstruction == 5));
     console.log("slot4 != \" \": " + !(document.getElementById("slot4").textContent == " "));
     console.log("slot3 == lw: " + (document.getElementById("slot3").getAttribute("inst") == "lw"));
 
-    if (counter > 3 && !(document.getElementById("slot4").textContent == " ") &&
-        (document.getElementById("slot3").getAttribute("inst") == "lw")) {
+    var inst  = "";
+    var inst1 = "";
+    var inst2 = "";
+    var inst3 = "";
 
-        var inst1 = "";
-        var inst2 = "";
-        var inst3 = "";
+    if (!hazard && currentNumInstruction == 3) {
 
-        console.log(Inst3);
-        console.log(Inst4);
-        console.log((Inst4[3] != "")/* || (Inst4[0] == "sw") || (Inst4[0] == "sh") ||
-            (Inst4[0] == "sb")*/ + " \"" + Inst4[3] + "\"");
-        if ((Inst4[3] != "")/* || (Inst4[0] == "sw") || (Inst4[0] == "sh") ||
-            (Inst4[0] == "sb")*/) {
+        inst = Inst1[0];
 
-            console.log("first if");
-            inst1 = Inst3[1].substring(0, Inst3[1].length - 1);
-            inst2 = Inst4[2].substring(0, Inst4[2].length - 1);
-            inst3 = Inst4[3];
+        if ((Inst2[0] == "la") || (Inst2[0] == "li") ||
+            (Inst2[0] == "lw") || (Inst2[0] == "lh") ||
+            (Inst2[0] == "lb") || (Inst2[0] == "sw") ||
+            (Inst2[0] == "sh") || (Inst2[0] == "sb")) {
 
-        } else if ((Inst4[0] == "la") || (Inst4[0] == "li") ||
-                   (Inst4[0] == "lw") || (Inst4[0] == "lh") ||
-                   (Inst4[0] == "lb") || (Inst4[0] == "sw") ||
-                   (Inst4[0] == "sh") || (Inst4[0] == "sb")) {
+            inst1 = Inst1[1];
+            inst2 = Inst2[1];
+            inst3 = Inst2[3];
 
-            console.log("second if");
-            inst1 = Inst3[1].substring(0, Inst3[1].length - 1);
-            inst2 = Inst4[1].substring(0, Inst4[2].length - 1);
-            inst3 = Inst4[2].slice((Inst4[2].indexOf("(") + 1), (Inst4[2].indexOf(")") + 1));
+        } else {
+
+            inst1 = Inst1[1];
+            inst2 = Inst2[2];
+            inst3 = Inst2[3];
 
         }
 
-        console.log(inst1 + " == " + inst2 + "?");
-        console.log(inst1 + " == " + inst3 + "?");
-        console.log(inst1 == inst2);
-        console.log(inst1 == inst3);
+    } else if (!hazard && currentNumInstruction == 4) {
 
-        if ((inst1 == inst2) || (inst1 == inst3)) {
+        inst = Inst2[0];
+
+        if ((Inst3[0] == "la") || (Inst3[0] == "li") ||
+            (Inst3[0] == "lw") || (Inst3[0] == "lh") ||
+            (Inst3[0] == "lb") || (Inst3[0] == "sw") ||
+            (Inst3[0] == "sh") || (Inst3[0] == "sb")) {
+
+            inst1 = Inst2[1];
+            inst2 = Inst3[1];
+            inst3 = Inst3[3];
+
+        } else {
+
+            inst1 = Inst2[1];
+            inst2 = Inst3[2];
+            inst3 = Inst3[3];
+
+        }
+
+    } else if (!hazard && (currentNumInstruction > 4) && !(document.getElementById("slot4").textContent == " ") &&
+               (document.getElementById("slot3").getAttribute("inst") == "lw")) {
+
+        inst = Inst3[0];
+        console.log("Instruction 3 is : " + Inst3[0] + " " + Inst3[1] + ", " +  Inst3[2] + ", " +  Inst3[3]);
+        console.log("Instruction 4 is : " + Inst4[0] + " " + Inst4[1] + ", " +  Inst4[2] + ", " +  Inst4[3]);
+        if ((Inst4[0] == "la") || (Inst4[0] == "li") ||
+            (Inst4[0] == "lw") || (Inst4[0] == "lh") ||
+            (Inst4[0] == "lb") || (Inst4[0] == "sw") ||
+            (Inst4[0] == "sh") || (Inst4[0] == "sb")) {
+
+            inst1 = Inst3[1];
+            inst2 = Inst4[1];
+            inst3 = Inst4[3];
+
+        } else {
+
+            inst1 = Inst3[1];
+            inst2 = Inst4[2];
+            inst3 = Inst4[3];
+
+        }
+
+    } /*else if (currentNumInstruction > 2) {
+
+        setupLegend();
+
+    }*/
+
+    console.log(inst1 + " == " + inst2 + "? " + (inst1 == inst2));
+    console.log(inst1 + " == " + inst3 + "? " + (inst1 == inst3));
+    console.log("inst != \"\": " + ((inst1 != "") && (inst2 != "") && (inst3 != "")));
+    if (((inst1 != "") && (inst2 != "") && (inst3 != "") && ((inst == "lw") || (inst == "sw")))) {
+
+        hazard = ((inst1 == inst2) || (inst1 == inst3));
+        /*if ((inst1 == inst2) || (inst1 == inst3)) {
 
             hazard = true;
 
-        }
+        } else {
 
-    }
+            hazard = false
+
+        }*/
+
+    } /*else {
+
+        hazard = false;
+    }*/
 
     console.log("IS HAZARD: " + hazard);
 

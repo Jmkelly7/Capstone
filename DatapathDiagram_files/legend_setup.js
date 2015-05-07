@@ -18,48 +18,56 @@ var instructionArray = [];
  * @param instArray - the array to set up for the given instruction.
  */
 function setupReg(instArray) {
+
     console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!INST1 IS " + Inst1[0]);
     if (Inst1[0] == [""]) {
-        console.log("INTHE FIST CHECK FOR SETUPREG");
+
+        console.log("IN THE FIST CHECK FOR SETUPREG");
         console.log("value from array" + instArray[regCounter]);
-        Inst1 = instArray[regCounter].split(" ");
-      //  Inst1.shift();
-        console.log("REGISTER VALUE 1", Inst1[0], "REGISTER VALUE 2", Inst1[1], "REGISTER VALUE 3", Inst1[2]);
+        Inst1 = trimInst(instArray[regCounter].split(" "));
+        //  Inst1.shift();
+        console.log("REGISTER VALUE 1:", Inst1[0], "| REGISTER VALUE 2:", Inst1[1], "| REGISTER VALUE 3:", Inst1[2], "| REGISTER VALUE 4:", Inst1[3]);
         regCounter++;
-        Inst2 = instArray[regCounter].split(" ");
-       // Inst2.shift();
-        console.log("REGISTER VALUE 1", Inst2[0], "REGISTER VALUE 2", Inst2[1], "REGISTER VALUE 3", Inst2[2]);
+
+        Inst2 = trimInst(instArray[regCounter].split(" "));
+        // Inst2.shift();
+        console.log("REGISTER VALUE 1:", Inst2[0], "| REGISTER VALUE 2:", Inst2[1], "| REGISTER VALUE 3:", Inst2[2], "| REGISTER VALUE 4:", Inst2[3]);
         regCounter++;
-        Inst3 = instArray[regCounter].split(" ");
+
+        Inst3 = trimInst(instArray[regCounter].split(" "));
         //Inst3.shift();
-        console.log("REGISTER VALUE 1", Inst3[0], "REGISTER VALUE 2", Inst3[1], "REGISTER VALUE 3", Inst3[2]);
+        console.log("REGISTER VALUE 1:", Inst3[0], "| REGISTER VALUE 2:", Inst3[1], "| REGISTER VALUE 3:", Inst3[2], "| REGISTER VALUE 4:", Inst3[3]);
         regCounter++;
-        Inst4 = instArray[regCounter].split(" ");
-       // Inst4.shift();
-        console.log("REGISTER VALUE 1", Inst4[0], "REGISTER VALUE 2", Inst4[1], "REGISTER VALUE 3", Inst4[2]);
+
+        Inst4 = trimInst(instArray[regCounter].split(" "));
+        // Inst4.shift();
+        console.log("REGISTER VALUE 1:", Inst4[0], "| REGISTER VALUE 2:", Inst4[1], "| REGISTER VALUE 3:", Inst4[2], "| REGISTER VALUE 4:", Inst4[3]);
         regCounter++;
-        Inst5 = instArray[regCounter].split(" ");
+
+        Inst5 = trimInst(instArray[regCounter].split(" "));
         //Inst5.shift();
-        console.log("REGISTER VALUE 1", Inst5[0], "REGISTER VALUE 2", Inst5[1], "REGISTER VALUE 3", Inst5[2]);
+        console.log("REGISTER VALUE 1:", Inst5[0], "| REGISTER VALUE 2:", Inst5[1], "| REGISTER VALUE 3:", Inst5[2], "| REGISTER VALUE 4:", Inst5[3]);
         regCounter++;
         //regCounter = currentNumInstruction;
     } else {
 
         if(document.getElementById("slot6").textContent != "") {
+
             Inst1 = Inst2;
             Inst2 = Inst3;
             Inst3 = Inst4;
             Inst4 = Inst5;
-            Inst5 = instructionArray[regCounter].split(" ");
+            Inst5 = trimInst(instructionArray[regCounter].split(" "));
             //Inst5.shift();
             regCounter++;
+
         }
 
-        console.log("REGISTER VALUE 1", Inst1[0], "REGISTER VALUE 2", Inst1[1], "REGISTER VALUE 3", Inst1[2]);
-        console.log("REGISTER VALUE 1", Inst2[0], "REGISTER VALUE 2", Inst2[1], "REGISTER VALUE 3", Inst2[2]);
-        console.log("REGISTER VALUE 1", Inst3[0], "REGISTER VALUE 2", Inst3[1], "REGISTER VALUE 3", Inst3[2]);
-        console.log("REGISTER VALUE 1", Inst4[0], "REGISTER VALUE 2", Inst4[1], "REGISTER VALUE 3", Inst4[2]);
-        console.log("REGISTER VALUE 1", Inst5[0], "REGISTER VALUE 2", Inst5[1], "REGISTER VALUE 3", Inst5[2]);
+        console.log("1st REGISTER VALUE 1:", Inst1[0], "| REGISTER VALUE 2:", Inst1[1], "| REGISTER VALUE 3:", Inst1[2], "| REGISTER VALUE 4:", Inst1[3]);
+        console.log("2nd REGISTER VALUE 1:", Inst2[0], "| REGISTER VALUE 2:", Inst2[1], "| REGISTER VALUE 3:", Inst2[2], "| REGISTER VALUE 4:", Inst2[3]);
+        console.log("3rd REGISTER VALUE 1:", Inst3[0], "| REGISTER VALUE 2:", Inst3[1], "| REGISTER VALUE 3:", Inst3[2], "| REGISTER VALUE 4:", Inst3[3]);
+        console.log("4th REGISTER VALUE 1:", Inst4[0], "| REGISTER VALUE 2:", Inst4[1], "| REGISTER VALUE 3:", Inst4[2], "| REGISTER VALUE 4:", Inst4[3]);
+        console.log("5th REGISTER VALUE 1:", Inst5[0], "| REGISTER VALUE 2:", Inst5[1], "| REGISTER VALUE 3:", Inst5[2], "| REGISTER VALUE 4:", Inst5[3]);
         console.log("Iregcounter" + regCounter);
 
     }
@@ -96,6 +104,11 @@ function getInstructionForList(instArray) {
 
 }
 
+/**
+ * This function
+ *
+ * @returns {boolean}
+ */
 function isNoOp() {
 
     var isNoOp = false;
@@ -336,7 +349,12 @@ function setupLegend() {
                 }
 
                 instructionCounter++;
-                setupReg(instructionArray);
+
+                if (!hazard) {
+
+                    setupReg(instructionArray);
+
+                }
             }
 
         }
@@ -348,6 +366,40 @@ function setupLegend() {
         }
 
     }
+
+}
+
+
+/**
+ * This function trims off unneeded punctuations from the given instruction.
+ *
+ * @param inst      - array containing the pieces of an instruction.
+ * @returns {Array} - array with punctuation removed.
+ */
+function trimInst(inst) {
+
+    var trimmed = [];
+
+    if ((inst[3] != undefined)) {
+
+        trimmed[0] = inst[0];
+        trimmed[1] = inst[1].substring(0, inst[1].length - 1);
+        trimmed[2] = inst[2].substring(0, inst[2].length - 1);
+        trimmed[3] = inst[3];
+
+    } else if ((inst[0] == "la") || (inst[0] == "li") ||
+        (inst[0] == "lw") || (inst[0] == "lh") ||
+        (inst[0] == "lb") || (inst[0] == "sw") ||
+        (inst[0] == "sh") || (inst[0] == "sb")) {
+
+        trimmed[0] = inst[0];
+        trimmed[1] = inst[1].substring(0, inst[1].length - 1);
+        trimmed[2] = inst[2].slice(0, 1);
+        trimmed[3] = inst[2].slice((inst[2].indexOf("(") + 1), (inst[2].indexOf(")")));
+
+    }
+
+    return trimmed;
 
 }
 
