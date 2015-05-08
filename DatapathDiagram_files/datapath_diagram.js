@@ -211,6 +211,7 @@ function parseFile() {
 
     }
 
+    //Added empty instructions on the end to ensure functionality of program.
     legendArray[parseCounter] = " ";
     legendArray[parseCounter + 1] = " ";
     legendArray[parseCounter + 2] = " ";
@@ -279,6 +280,7 @@ function runThrough() {
 
     if (counter == 1) {
 
+        //One instruction
         callInst(counter);
 
         INST_ONE_CNT++;
@@ -286,6 +288,7 @@ function runThrough() {
 
     } else if (counter == 2) {
 
+        //Two instructions
         if (!(document.getElementById("slot2").textContent == "")) {
 
             callInst(counter);
@@ -304,6 +307,7 @@ function runThrough() {
 
     } else if (counter == 3) {
 
+        //Three instructions
         if (!(document.getElementById("slot3").textContent == "")) {
 
             callInst(counter);
@@ -323,6 +327,7 @@ function runThrough() {
 
     } else if (counter == 4) {
 
+        //Four instructions
         if (!(document.getElementById("slot5").textContent == "")) {
 
             callInst(counter);
@@ -343,6 +348,7 @@ function runThrough() {
 
     } else if (counter == 5) {
 
+        //Five instructions
         INST_TWO_CNT++;
         INST_THREE_CNT++;
         INST_FOUR_CNT++;
@@ -408,7 +414,7 @@ function runThrough() {
         }
 
     }
-
+    //Checking for hazards and forwarding.
     isHazard();
     forward();
 
@@ -1016,10 +1022,10 @@ function forward() {
     var fourArray;
     var temp;
 
-    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! IN FORWARD");
+    //Checks if the rect10 is not white
     if(document.getElementById('rect10').getAttribute("fill") != "#ffffff") {
 
-        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!PASSING FIRST IF");
+        //Checks if the rect15 is white and if rect14 is not white
         if (document.getElementById('rect15').getAttribute('fill') == "#ffffff" && document.getElementById('rect14').getAttribute('fill') != "#ffffff") {
 
             console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!INCHECK FOR SECOND ROW OF THINGGIES");
@@ -1031,12 +1037,14 @@ function forward() {
             twoArray[1] = twoArray[1].substring(0,twoArray[1].length-1);
             threeArray[2] = threeArray[2].substring(0,threeArray[2].length-1);
 
+            //Checks if the 1st register in oneArray is equal to the second in threeArray
             if (oneArray[1] == threeArray[2]) {
 
                 console.log("FIRST IF THE SAME AS THE SECOND OF THRIRD");
                 document.getElementById('slot2a').textContent = "" + oneArray[1];
                 document.getElementById('slot2a').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
 
+                //Checks if the 1st register in oneArray is equal to the third  in threeArray
             } else if (oneArray[1] == threeArray[3]) {
 
                 console.log("FIRST IS SAME AS THIRD OF THIRD");
@@ -1044,7 +1052,7 @@ function forward() {
                 document.getElementById('slot2a').setAttribute('fill', document.getElementById('slot1').getAttribute('fill'));
 
             }
-
+        // Checks if the rect15 is not white
         } else if (document.getElementById('rect15').getAttribute('fill') != "#ffffff"){
             document.getElementById('slot2a').textContent = "";
             document.getElementById('slot2b').textContent = "";
@@ -1057,13 +1065,14 @@ function forward() {
                 threeArray = document.getElementById("slot3").textContent.split(" ");
             var loadTemp, tempValue, allValue, i;
 
+            //Checks that the 3rd register in oneArray is undefined and that slot1 is not a noop
             if(oneArray[3] == undefined && document.getElementById('slot1').textContent != "noop") {
 
                 loadTemp = oneArray[2].split("");
                 tempValue = "";
                 allValue = "";
                 i = 0;
-
+                //stripping off offset and ().
                 while (loadTemp[i] != '(') {
 
                     tempValue = tempValue + "" + loadTemp[i];
@@ -1085,6 +1094,7 @@ function forward() {
 
             } else {
 
+                //Checks if slot1 is not a noop
                 if (document.getElementById('slot1').textContent != "noop") {
 
                     oneArray[1] = oneArray[1].substring(0, oneArray[1].length - 1);
@@ -1093,11 +1103,12 @@ function forward() {
 
             }
 
-            // fix
+            // checks if the 3rd register of twoArray is undefined and if slot2 is not a noop
             if(twoArray[3] == undefined && document.getElementById('slot2').textContent != "noop") {
 
                 if (document.getElementById('slot2').textContent != " ") {
 
+                    //Stripping offset and ()
                     loadTemp = twoArray[2].split("");
 
                     tempValue = "";
@@ -1127,6 +1138,7 @@ function forward() {
 
             } else {
 
+                //Checks if slot2 is not a noop
                 if (document.getElementById('slot2').textContent != "noop") {
 
                     twoArray[2] = twoArray[2].substring(0, twoArray[2].length - 1);
@@ -1136,10 +1148,13 @@ function forward() {
 
             }
 
+            //checks if the 3rd register of threeArray and that is slot3 is not a noop
             if(threeArray[3] == undefined && document.getElementById('slot3').textContent != "noop") {
 
+                //Checks if the slot3 is not equal to " "
                 if (document.getElementById('slot3').textContent != " ") {
 
+                    //Stripping offset and ()
                     loadTemp = threeArray[2].split("");
 
                     tempValue = "";
@@ -1169,6 +1184,7 @@ function forward() {
 
             } else {
 
+                //Checks if slot3 is not a noop
                 if (document.getElementById('slot3').textContent != "noop") {
 
                     threeArray[2] = threeArray[2].substring(0, threeArray[2].length - 1);
@@ -1177,8 +1193,8 @@ function forward() {
                 }
 
             }
-//                fourArray[2] = fourArray[2].substring(0,fourArray[2].length-1);
 
+            //Checks if the destination register of one is equal to the parts of two  and if slot1 is not a noop
             if ((oneArray[1] == twoArray[2] || oneArray[1] == twoArray[3]) && document.getElementById('slot1').textContent != "noop") {
 
                 document.getElementById('slot2a').textContent = "" + oneArray[1];
@@ -1186,6 +1202,7 @@ function forward() {
 
             }
 
+            //Checks if the destination register of two is equal to the parts of three and if slot2 is not a noop
             if ((twoArray[1] == threeArray[2] || twoArray[1] == threeArray[3]) && document.getElementById('slot2').textContent != "noop") {
 
                 document.getElementById('slot3a').textContent = "" + twoArray[1];
@@ -1193,6 +1210,7 @@ function forward() {
 
             }
 
+            //Checks if the destination register of one is equal to the parts of three and if slot1 is not a noop
             if ((oneArray[1] == threeArray[2] || oneArray[1] == threeArray[3]) && document.getElementById('slot1').textContent != "noop") {
 
                 document.getElementById('slot3b').textContent = "" + oneArray[1];

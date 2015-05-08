@@ -161,21 +161,40 @@ function stepThroughIType(stage, color, inst) {
 
         }
 
-        colorObject("rect5", color);
-        colorObject("rect7", color);
-        colorObject("rect8", color);
-        colorObject("ellipse2", color);
-        colorLine("line23", color);
-        colorLine("line24", color);
-        colorLine("line25", color);
-        colorLine("line31", color);
-        colorLine("line32", color);
-        colorLine("line49", color);
-        colorLine("line50", color);
-        colorLine("line51", color);
-        colorLine("line52", color);
-        colorLine("line28", color);
-        colorLine("line29", color);
+        if (inst == ("lb") || inst == ("lbu") || inst == ("lh") ||
+            inst == ("lhu") || inst == ("lui") || inst == ("lw")) {
+
+            colorObject("rect5", color);
+            colorObject("rect7", color);
+            colorObject("rect8", color);
+            colorObject("ellipse2", color);
+            colorLine("line23", color);
+            colorLine("line24", color);
+            colorLine("line32", color);
+            colorLine("line49", color);
+            colorLine("line50", color);
+            colorLine("line51", color);
+            colorLine("line52", color);
+            colorLine("line28", color);
+            colorLine("line29", color);
+
+        } else {
+            colorObject("rect5", color);
+            colorObject("rect7", color);
+            colorObject("rect8", color);
+            colorObject("ellipse2", color);
+            colorLine("line23", color);
+            colorLine("line24", color);
+            colorLine("line25", color);
+            colorLine("line31", color);
+            colorLine("line32", color);
+            colorLine("line49", color);
+            colorLine("line50", color);
+            colorLine("line51", color);
+            colorLine("line52", color);
+            colorLine("line28", color);
+            colorLine("line29", color);
+        }
 
     } else if (stage == 2) {
 
@@ -198,23 +217,38 @@ function stepThroughIType(stage, color, inst) {
             colorLine("line54", color);
             colorLine("line36", color);
 
-        } else {
+        } else  if (inst == ("lb") || inst == ("lbu") || inst == ("lh") ||
+            inst == ("lhu") || inst == ("lui") || inst == ("lw")) {
 
             colorObject("rect9", color);
             colorObject("rect10", color);
             colorObject("ellipse4", color);
             colorObject("poly3", color);
             colorLine("line33", color);
-            colorLine("line34", color);
-            colorLine("line35", color);
             colorLine("line37", color);
             colorLine("line39", color);
             colorLine("line30", color);
             colorLine("line61", color);
             colorLine("line56", color);
             colorLine("line65", color);
+        } else {
+
+                colorObject("rect9", color);
+                colorObject("rect10", color);
+                colorObject("ellipse4", color);
+                colorObject("poly3", color);
+                colorLine("line33", color);
+                colorLine("line34", color);
+                colorLine("line35", color);
+                colorLine("line37", color);
+                colorLine("line39", color);
+                colorLine("line30", color);
+                colorLine("line61", color);
+                colorLine("line56", color);
+                colorLine("line65", color);
 
         }
+
 
     } else if (stage == 3) {
 

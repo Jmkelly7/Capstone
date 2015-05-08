@@ -64,6 +64,7 @@ function line2ToolTipsMouseOver() {
         } else if (document.getElementById('line2').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
         }
+        //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
             if(tempArray[3] == undefined) {
                 document.getElementById('line3pop1').textContent = "Send the new program counter total in order to set";
                 document.getElementById('line3pop2').textContent = "the count for the next instruction. Stage one, ";
@@ -319,23 +320,30 @@ function line50ToolTipsMouseOver() {
         var allValue = "";
         var i = 0;
         if (document.getElementById('line50').getAttribute("stroke") == document.getElementById('slot1').getAttribute("fill")) {
+
             tempArray = document.getElementById("slot1").textContent.split(" ");
         } else if (document.getElementById('line50').getAttribute("stroke") == document.getElementById('slot2').getAttribute("fill")) {
+
             tempArray = document.getElementById("slot2").textContent.split(" ");
         } else if (document.getElementById('line50').getAttribute("stroke") == document.getElementById('slot3').getAttribute("fill")) {
+
             tempArray = document.getElementById("slot3").textContent.split(" ");
         } else if (document.getElementById('line50').getAttribute("stroke") == document.getElementById('slot4').getAttribute("fill")) {
+
             tempArray = document.getElementById("slot4").textContent.split(" ");
         } else if (document.getElementById('line50').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
+
             tempArray = document.getElementById("slot5").textContent.split(" ");
         }
 
         //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
         if (tempArray[3] == undefined) {
+
             loadArray = tempArray[2];
 
             //This whole if statement is used to strip offset amount.
             if(loadArray.indexOf("(") != -1) {
+
                 loadTemp = loadArray.split("");
                 tempValue = "";
                 allValue = "";
@@ -349,12 +357,15 @@ function line50ToolTipsMouseOver() {
                     i++;
                 }
             } else {
+
                 allValue = tempArray[2];
             }
                 document.getElementById('line3pop1').textContent = "Sending registers that are designated to be read";
                 document.getElementById('line3pop2').textContent = "to the correct places with RS on top and RT on the ";
                 document.getElementById('line3pop3').textContent = "bottom. Stage two." + "RT: " + tempArray[1] + " RS: " + allValue;
             } else {
+
+                //This check is for I type instructions that have 2 registers and an intermediate value
                 loadArray = tempArray[0];
                 loadTemp = loadArray.split("");
                 tempValue = loadTemp[loadTemp.length - 1];
@@ -402,8 +413,12 @@ function line51ToolTipsMouseOver() {
         } else if (document.getElementById('line51').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
         }
+
+        //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
         if (tempArray[3] == undefined) {
             loadArray = tempArray[2];
+
+            //This whole if statement is used to strip offset amount.
             if(loadArray.indexOf("(") != -1) {
                 loadTemp = loadArray.split("");
                 tempValue = "";
@@ -424,6 +439,8 @@ function line51ToolTipsMouseOver() {
                 document.getElementById('line3pop2').textContent = "the intermediate value to be sign extended from 16";
                 document.getElementById('line3pop3').textContent = "to 32. Stage two." + "Offset: " + tempValue;
             } else {
+
+            //This check is for I type instructions that have 2 registers and an intermediate value
                 loadArray = tempArray[0];
                 loadTemp = loadArray.split("");
                 tempValue = loadTemp[loadTemp.length-1];
@@ -472,8 +489,12 @@ function line28ToolTipsMouseOver() {
             '').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
         }
+
+        //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
         if (tempArray[3] == undefined) {
             loadArray = tempArray[2];
+
+            //This whole if statement is used to strip offset amount.
             if(loadArray.indexOf("(") != -1) {
                 loadTemp = loadArray.split("");
                 tempValue = "";
@@ -541,8 +562,12 @@ function line24ToolTipsMouseOver() {
         } else if (document.getElementById('line24').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
         }
+
+        //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
             if (tempArray[3] == undefined) {
                 loadArray = tempArray[2];
+
+                //This whole if statement is used to strip offset amount.
                 if(loadArray.indexOf("(") != -1) {
                     loadTemp = loadArray.split("");
                     tempValue = "";
@@ -563,6 +588,8 @@ function line24ToolTipsMouseOver() {
                 document.getElementById('line3pop2').textContent = "to the correct place with RS";
                 document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + allValue;
             } else {
+
+                //This check is for I type instructions that have 2 registers and an intermediate value
                 loadArray = tempArray[0];
                 loadTemp = loadArray.split("");
                 tempValue = loadTemp[loadTemp.length - 1];
@@ -610,12 +637,16 @@ function line25ToolTipsMouseOver() {
         } else if (document.getElementById('line25').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
         }
+
+        //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
             if (tempArray[3] == undefined) {
 
                 document.getElementById('line3pop1').textContent = "Sending register that is designated to be read";
                 document.getElementById('line3pop2').textContent = "to the correct place with RT";
                 document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
             } else {
+
+                //This whole if statement is used to strip offset amount.
                 loadArray = tempArray[0];
                 loadTemp = loadArray.split("");
                 tempValue = loadTemp[loadTemp.length - 1];
@@ -663,8 +694,12 @@ function line32ToolTipsMouseOver() {
         } else if (document.getElementById('line32').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
         }
+
+        //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
         if (tempArray[3] == undefined) {
             loadArray = tempArray[2];
+
+            //This whole if statement is used to strip offset amount.
             if(loadArray.indexOf("(") != -1) {
                 loadTemp = loadArray.split("");
                 tempValue = "";
@@ -685,6 +720,8 @@ function line32ToolTipsMouseOver() {
                 document.getElementById('line3pop2').textContent = "read into the correct place with RS";
                 document.getElementById('line3pop3').textContent = "Stage two." + " RS: " + allValue;
             } else {
+
+            //This check is for I type instructions that have 2 registers and an intermediate value
                 loadArray = tempArray[0];
                 loadTemp = loadArray.split("");
                 tempValue = loadTemp[loadTemp.length - 1];
@@ -732,8 +769,12 @@ function line33ToolTipsMouseOver() {
         } else if (document.getElementById('line33').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
         }
+
+        //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
         if (tempArray[3] == undefined) {
             loadArray = tempArray[2];
+
+            //This whole if statement is used to strip offset amount.
             if(loadArray.indexOf("(") != -1) {
                 loadTemp = loadArray.split("");
                 tempValue = "";
@@ -754,6 +795,8 @@ function line33ToolTipsMouseOver() {
                 document.getElementById('line3pop2').textContent = "ALU to perform whatever code has been sent to it.";
                 document.getElementById('line3pop3').textContent = "Stage three." + " RS: " + allValue;
             } else {
+
+            //This check is for I type instructions that have 2 registers and an intermediate value
                 loadArray = tempArray[0];
                 loadTemp = loadArray.split("");
                 tempValue = loadTemp[loadTemp.length - 1];
@@ -802,11 +845,15 @@ function line31ToolTipsMouseOver() {
         } else if (document.getElementById('line31').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
         }
+
+        //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
             if (tempArray[3] == undefined) {
                 document.getElementById('line3pop1').textContent = "Sending out the data from the register that was";
                 document.getElementById('line3pop2').textContent = "read into the correct place with RT";
                 document.getElementById('line3pop3').textContent = "Stage two." + " RT: " + tempArray[1];
             } else {
+
+                //This whole if statement is used to strip offset amount.
                 loadArray = tempArray[0];
                 loadTemp = loadArray.split("");
                 tempValue = loadTemp[loadTemp.length - 1];
@@ -855,11 +902,15 @@ function line34ToolTipsMouseOver() {
             } else if (document.getElementById('line34').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
                 tempArray = document.getElementById("slot5").textContent.split(" ");
             }
+
+            //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
             if (tempArray[3] == undefined) {
                 document.getElementById('line3pop1').textContent = "Sending out the data from RT to be placed into the ";
                 document.getElementById('line3pop2').textContent = "mutex to see if it is needed in the ALU or the data";
                 document.getElementById('line3pop3').textContent = "to be written to data. Stage three." + " RT: " + tempArray[1];
             } else {
+
+                //This whole if statement is used to strip offset amount.
                 loadArray = tempArray[0];
                 loadTemp = loadArray.split("");
                 tempValue = loadTemp[loadTemp.length - 1];
@@ -911,11 +962,15 @@ function line35ToolTipsMouseOver() {
             } else if (document.getElementById('line35').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
                 tempArray = document.getElementById("slot5").textContent.split(" ");
             }
+
+            //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
             if (tempArray[3] == undefined) {
                 document.getElementById('line3pop1').textContent = "Sending out the data from RT to be placed into the ";
                 document.getElementById('line3pop2').textContent = "mutex to see if it is needed in the ALU or the data";
                 document.getElementById('line3pop3').textContent = "to be written to data. Stage three." + " RT: " + tempArray[1];
             } else {
+
+                //This check is for I type instructions that have 2 registers and an intermediate value
                 loadArray = tempArray[0];
                 loadTemp = loadArray.split("");
                 tempValue = loadTemp[loadTemp.length - 1];
@@ -964,8 +1019,12 @@ function line37ToolTipsMouseOver() {
         } else if (document.getElementById('line37').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
         }
+
+        //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
         if (tempArray[3] == undefined) {
             loadArray = tempArray[2];
+
+            //This whole if statement is used to strip offset amount.
             if(loadArray.indexOf("(") != -1) {
                 loadTemp = loadArray.split("");
                 tempValue = "";
@@ -986,6 +1045,8 @@ function line37ToolTipsMouseOver() {
             document.getElementById('line3pop2').textContent = "which in this case is the 32 bit hex value";
             document.getElementById('line3pop3').textContent = "Stage three." + "IM or Offset: " + tempValue;
         } else {
+
+        //This check is for I type instructions that have 2 registers and an intermediate value
             loadArray = tempArray[0];
             loadTemp = loadArray.split("");
             tempValue = loadTemp[loadTemp.length - 1];
@@ -1034,8 +1095,12 @@ function line30ToolTipsMouseOver() {
         } else if (document.getElementById('line30').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
         }
+
+        //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
         if (tempArray[3] == undefined) {
             loadArray = tempArray[2];
+
+            //This whole if statement is used to strip offset amount.
             if(loadArray.indexOf("(") != -1) {
                 loadTemp = loadArray.split("");
                 tempValue = "";
@@ -1056,6 +1121,8 @@ function line30ToolTipsMouseOver() {
             document.getElementById('line3pop2').textContent = "to the mutex to see if its needed by the ALU.";
             document.getElementById('line3pop3').textContent = "Stage three." + "IM or Offset: " + tempValue;
         } else {
+
+            //This check is for I type instructions that have 2 registers and an intermediate value
             loadArray = tempArray[0];
             loadTemp = loadArray.split("");
             tempValue = loadTemp[loadTemp.length - 1];
@@ -1104,11 +1171,15 @@ function line39ToolTipsMouseOver() {
         } else if (document.getElementById('line39').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
         }
+
+        //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
         if (tempArray[3] == undefined) {
             document.getElementById('line3pop1').textContent = "Sending out the correct result of the ALU operation";
             document.getElementById('line3pop2').textContent = "which in this case is the address to load or store";
             document.getElementById('line3pop3').textContent = "Stage three." + "Address: " + tempArray[2];
         } else {
+
+            //This check is for I type instructions that have 2 registers and an intermediate value
             loadArray = tempArray[0];
             loadTemp = loadArray.split("");
             tempValue = loadTemp[loadTemp.length - 1];
@@ -1157,8 +1228,12 @@ function line54ToolTipsMouseOver() {
         } else if (document.getElementById('line54').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
         }
+
+        //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
         if (tempArray[3] == undefined) {
             loadArray = tempArray[2];
+
+            //This whole if statement is used to strip offset amount.
             if(loadArray.indexOf("(") != -1) {
                 loadTemp = loadArray.split("");
                 tempValue = "";
@@ -1179,6 +1254,8 @@ function line54ToolTipsMouseOver() {
             document.getElementById('line3pop2').textContent = "the memory at the other register.";
             document.getElementById('line3pop3').textContent = "Stage three." + "Data Reg: " + tempArray[1] + " Store Reg: " + allValue;
         } else {
+
+            //This check is for I type instructions that have 2 registers and an intermediate value
             loadArray = tempArray[0];
             loadTemp = loadArray.split("");
             tempValue = loadTemp[loadTemp.length - 1];
@@ -1227,6 +1304,8 @@ function line41ToolTipsMouseOver() {
             tempArray = document.getElementById("slot5").textContent.split(" ");
             instructionCheck = document.getElementById("slot5").getAttribute("inst");
         }
+
+        //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
         if (tempArray[3] == undefined) {
             if (instructionCheck == ("sw") || instructionCheck == ("sb") || instructionCheck == ("sh")) {
                 document.getElementById('line3pop1').textContent = "Sending the 32 bit hex address that the new value";
@@ -1311,6 +1390,8 @@ function line42ToolTipsMouseOver() {
             tempArray = document.getElementById("slot5").textContent.split(" ");
             instructionCheck = document.getElementById("slot5").getAttribute("inst");
         }
+
+        //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
         if (tempArray[3] == undefined) {
             if (instructionCheck == ("sw") || instructionCheck == ("sb") || instructionCheck == ("sh")) {
                 document.getElementById('line3pop1').textContent = "Sending the 32 bit hex address that the new value";
@@ -1481,6 +1562,8 @@ function line47ToolTipsMouseOver() {
         } else if (document.getElementById('line47').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
         }
+
+        //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
         if (tempArray[3] == undefined) {
 
             document.getElementById('line3pop1').textContent = "Sending the value that was loaded to memory to be";
@@ -1521,6 +1604,8 @@ function line26ToolTipsMouseOver() {
         } else if (document.getElementById('line26').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
         }
+
+        //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
         if (tempArray[3] == undefined) {
             document.getElementById('line3pop1').textContent = "The register that will be receiving the results ";
             document.getElementById('line3pop2').textContent = "of the load from memory";
@@ -1561,6 +1646,8 @@ function line63ToolTipsMouseOver() {
         } else if (document.getElementById('line63').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
         }
+
+        //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
         if (tempArray[3] == undefined) {
             document.getElementById('line3pop1').textContent = "The register that will be receiving the results ";
             document.getElementById('line3pop2').textContent = "of the load from memory";
@@ -1601,6 +1688,8 @@ function line65ToolTipsMouseOver() {
         } else if (document.getElementById('line65').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
         }
+
+        //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
         if (tempArray[3] == undefined) {
             document.getElementById('line3pop1').textContent = "The register that will be receiving the results ";
             document.getElementById('line3pop2').textContent = "of the load from memory";
@@ -1641,6 +1730,8 @@ function line66ToolTipsMouseOver() {
         } else if (document.getElementById('line66').getAttribute("stroke") == document.getElementById('slot5').getAttribute("fill")) {
             tempArray = document.getElementById("slot5").textContent.split(" ");
         }
+
+        //This check is to see if there are 2 or 3 registers in the given instruction tempArray[3] being undefined if there are 2.
         if (tempArray[3] == undefined) {
             document.getElementById('line3pop1').textContent = "The register that will be receiving the results ";
             document.getElementById('line3pop2').textContent = "of the load from memory";
@@ -1661,9 +1752,15 @@ function line66ToolTipsMouseOver() {
 }
 //###############################################SECTION FOR DIAGRAM PARTS WHICH DO NOT INCLUDE LINES#####################################################################
 
+/**
+ *
+ * This method displays the appropriate tooltip for the last mutex in stage 5 when there is a store word in that section
+ * since the store word has none of the parts in the 5th stage highlighted at that time.
+ */
 function mutexTool1TipsMouseOver() {
 
     var instructionVal;
+        // Checks if the lastm utex is white and if there is a SW instruction in slot 1 on the legend.
         if (document.getElementById('ellipse5').getAttribute("fill") == "white") {
             tempArray = document.getElementById("slot1").textContent.split(" ");
             instructionVal = document.getElementById("slot1").getAttribute("inst");
@@ -1686,6 +1783,9 @@ function mutexTool1TipsMouseOver() {
         }
 }
 
+/**
+ * Sets the appropriate tooltip lines to visible for the given objects names in the method header.
+ */
 function mutexToolTipsMouseOver() {
 
         document.getElementById('ell1pop1').style.visibility = "visible";
@@ -1695,6 +1795,9 @@ function mutexToolTipsMouseOver() {
         document.getElementById('ell1pop5').style.visibility = "visible";
 }
 
+/**
+ * Sets the appropriate tooltip lines to hidden for the given objects names in the method header.
+ */
 function mutexToolTipsMouseOut() {
 
     document.getElementById('ell1pop1').style.visibility = "hidden";
@@ -1705,6 +1808,9 @@ function mutexToolTipsMouseOut() {
 
 }
 
+/**
+ * Sets the appropriate tooltip lines to hidden for the last mutex in stage 5.
+ */
 function mutexTool1TipsMouseOut() {
 
     document.getElementById('line3pop1').style.visibility = "hidden";
@@ -1718,30 +1824,45 @@ function mutexTool1TipsMouseOut() {
 
 }
 
+/**
+ * Sets the appropriate tooltip lines to visible for the given objects names in the method header.
+ */
 function pcToolTipsMouseOver() {
 
         document.getElementById('rect1pop1').style.visibility = "visible";
         document.getElementById('rect1pop2').style.visibility = "visible";
 }
 
+/**
+ * Sets the appropriate tooltip lines to hidden for the given objects names in the method header.
+ */
 function pcToolTipsMouseOut() {
 
     document.getElementById('rect1pop1').style.visibility= "hidden";
     document.getElementById('rect1pop2').style.visibility= "hidden";
 }
 
+/**
+ * Sets the appropriate tooltip lines to visible for the given objects names in the method header.
+ */
 function addToolTipsMouseOver() {
 
     document.getElementById('poly1pop1').style.visibility = "visible";
     document.getElementById('poly1pop2').style.visibility = "visible";
 }
 
+/**
+ * Sets the appropriate tooltip lines to hidden for the given objects names in the method header.
+ */
 function addToolTipsMouseOut() {
 
     document.getElementById('poly1pop1').style.visibility= "hidden";
     document.getElementById('poly1pop2').style.visibility= "hidden";
 }
 
+/**
+ * Sets the appropriate tooltip lines to visible for the given objects names in the method header.
+ */
 function instMemToolTipsMouseOver() {
 
     document.getElementById('rect2pop1').style.visibility = "visible";
@@ -1750,6 +1871,9 @@ function instMemToolTipsMouseOver() {
     document.getElementById('rect2pop4').style.visibility = "visible";
 }
 
+/**
+ * Sets the appropriate tooltip lines to hidden for the given objects names in the method header.
+ */
 function instMemToolTipsMouseOut() {
 
     document.getElementById('rect2pop1').style.visibility= "hidden";
@@ -1758,6 +1882,9 @@ function instMemToolTipsMouseOut() {
     document.getElementById('rect2pop4').style.visibility= "hidden";
 }
 
+/**
+ * Sets the appropriate tooltip lines to visible for the given objects names in the method header.
+ */
 function ifidToolTipsMouseOver() {
 
     document.getElementById('rect4pop1').style.visibility = "visible";
@@ -1768,6 +1895,9 @@ function ifidToolTipsMouseOver() {
     document.getElementById('rect4pop6').style.visibility = "visible";
 }
 
+/**
+ * Sets the appropriate tooltip lines to hidden for the given objects names in the method header.
+ */
 function ifidToolTipsMouseOut() {
 
     document.getElementById('rect4pop1').style.visibility= "hidden";
@@ -1778,6 +1908,9 @@ function ifidToolTipsMouseOut() {
     document.getElementById('rect4pop6').style.visibility = "hidden";
 }
 
+/**
+ * Sets the appropriate tooltip lines to visible for the given objects names in the method header.
+ */
 function regToolTipsMouseOver() {
 
     document.getElementById('rect6pop1').style.visibility = "visible";
@@ -1788,6 +1921,9 @@ function regToolTipsMouseOver() {
     document.getElementById('rect6pop6').style.visibility = "visible";
 }
 
+/**
+ * Sets the appropriate tooltip lines to hidden for the given objects names in the method header.
+ */
 function regToolTipsMouseOut() {
 
     document.getElementById('rect6pop1').style.visibility= "hidden";
@@ -1798,6 +1934,9 @@ function regToolTipsMouseOut() {
     document.getElementById('rect6pop6').style.visibility = "hidden";
 }
 
+/**
+ * Sets the appropriate tooltip lines to visible for the given objects names in the method header.
+ */
 function aluToolTipsMouseOver() {
 
     document.getElementById('poly3pop1').style.visibility = "visible";
@@ -1807,6 +1946,9 @@ function aluToolTipsMouseOver() {
     document.getElementById('poly3pop5').style.visibility = "visible";
 }
 
+/**
+ * Sets the appropriate tooltip lines to hidden for the given objects names in the method header.
+ */
 function aluToolTipsMouseOut() {
 
     document.getElementById('poly3pop1').style.visibility= "hidden";
@@ -1816,6 +1958,9 @@ function aluToolTipsMouseOut() {
     document.getElementById('poly3pop5').style.visibility = "hidden";
 }
 
+/**
+ * Sets the appropriate tooltip lines to visible for the given objects names in the method header.
+ */
 function idexToolTipsMouseOver() {
 
     document.getElementById('rect8pop1').style.visibility = "visible";
@@ -1825,6 +1970,9 @@ function idexToolTipsMouseOver() {
     document.getElementById('rect8pop5').style.visibility = "visible";
 }
 
+/**
+ * Sets the appropriate tooltip lines to hidden for the given objects names in the method header.
+ */
 function idexToolTipsMouseOut() {
 
     document.getElementById('rect8pop1').style.visibility= "hidden";
@@ -1834,6 +1982,9 @@ function idexToolTipsMouseOut() {
     document.getElementById('rect8pop5').style.visibility = "hidden";
 }
 
+/**
+ * Sets the appropriate tooltip lines to visible for the given objects names in the method header.
+ */
 function exmemToolTipsMouseOver() {
 
     document.getElementById('rect10pop1').style.visibility = "visible";
@@ -1843,6 +1994,9 @@ function exmemToolTipsMouseOver() {
     document.getElementById('rect10pop5').style.visibility = "visible";
 }
 
+/**
+ * Sets the appropriate tooltip lines to hidden for the given objects names in the method header.
+ */
 function exmemToolTipsMouseOut() {
 
     document.getElementById('rect10pop1').style.visibility= "hidden";
@@ -1852,6 +2006,9 @@ function exmemToolTipsMouseOut() {
     document.getElementById('rect10pop5').style.visibility = "hidden";
 }
 
+/**
+ * Sets the appropriate tooltip lines to visible for the given objects names in the method header.
+ */
 function memwbToolTipsMouseOver() {
 
     document.getElementById('rect14pop1').style.visibility = "visible";
@@ -1861,6 +2018,9 @@ function memwbToolTipsMouseOver() {
     document.getElementById('rect14pop5').style.visibility = "visible";
 }
 
+/**
+ * Sets the appropriate tooltip lines to hidden for the given objects names in the method header.
+ */
 function memwbToolTipsMouseOut() {
 
     document.getElementById('rect14pop1').style.visibility= "hidden";
@@ -1870,6 +2030,9 @@ function memwbToolTipsMouseOut() {
     document.getElementById('rect14pop5').style.visibility = "hidden";
 }
 
+/**
+ * Sets the appropriate tooltip lines to visible for the given objects names in the method header.
+ */
 function dataToolTipsMouseOver() {
 
     document.getElementById('rect12pop1').style.visibility = "visible";
@@ -1880,6 +2043,9 @@ function dataToolTipsMouseOver() {
     document.getElementById('rect12pop6').style.visibility = "visible";
 }
 
+/**
+ * Sets the appropriate tooltip lines to hidden for the given objects names in the method header.
+ */
 function dataToolTipsMouseOut() {
 
     document.getElementById('rect12pop1').style.visibility= "hidden";
@@ -1890,6 +2056,9 @@ function dataToolTipsMouseOut() {
     document.getElementById('rect12pop6').style.visibility = "hidden";
 }
 
+/**
+ * Sets the appropriate tooltip lines to visible for the given objects names in the method header.
+ */
 function sgexToolTipsMouseOver() {
 
     document.getElementById('ell2pop1').style.visibility = "visible";
@@ -1900,6 +2069,9 @@ function sgexToolTipsMouseOver() {
     document.getElementById('ell2pop6').style.visibility = "visible";
 }
 
+/**
+ * Sets the appropriate tooltip lines to hidden for the given objects names in the method header.
+ */
 function sgexToolTipsMouseOut() {
 
     document.getElementById('ell2pop1').style.visibility= "hidden";
@@ -1910,6 +2082,9 @@ function sgexToolTipsMouseOut() {
     document.getElementById('ell2pop6').style.visibility = "hidden";
 }
 
+/**
+ * Sets the appropriate tooltip lines to visible for the given objects names in the method header.
+ */
 function shiftToolTipsMouseOver() {
 
     document.getElementById('ell3pop1').style.visibility = "visible";
@@ -1917,6 +2092,9 @@ function shiftToolTipsMouseOver() {
     document.getElementById('ell3pop3').style.visibility = "visible";
 }
 
+/**
+ * Sets the appropriate tooltip lines to hidden for the given objects names in the method header.
+ */
 function shiftToolTipsMouseOut() {
 
     document.getElementById('ell3pop1').style.visibility= "hidden";

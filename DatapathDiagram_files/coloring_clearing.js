@@ -96,15 +96,6 @@ function clearLine(lineName) {
 
 }
 
-/*function clearSlots() {
-
-    for (var i = 1; i <= 5; i++) {
-
-        document.getElementById("slot" + i).setAttribute("fill", "#000000");
-
-    }
-
-}*/
 
 /**
  * This function colors all of the diagram components of certain stages of the
@@ -134,11 +125,8 @@ function colorNoOp(color) {
         colorLine("line37", color);
         colorLine("line38", color);
         colorLine("line39", color);
-        //colorLine("line42", color);
-        //colorLine("line44", color);
         colorLine("line54", color);
         colorLine("line56", color);
-        //colorLine("line60", color);
         colorLine("line61", color);
         colorLine("line65", color);
 
@@ -202,7 +190,7 @@ function colorNoOp(color) {
 }
 
 /**
- * This function
+ * This function is used to color the slots in the diagram white to show that they are empty.
  *
  * @param slot
  */
@@ -306,11 +294,8 @@ function clearStageThree() {
     clearLine("line37");
     clearLine("line38");
     clearLine("line39");
-    //clearLine("line42");
-    //clearLine("line44");
     clearLine("line54");
     clearLine("line56");
-   // clearLine("line60");
     clearLine("line61");
     clearLine("line65");
 
