@@ -41,7 +41,6 @@ function stepThroughRType(stage, color) {
     } else if (stage == 1) {
 
         clearStageOne();
-       // clearStageTwo();
 
         colorObject("rect5", color);
         colorObject("rect7", color);
@@ -61,7 +60,6 @@ function stepThroughRType(stage, color) {
     } else if (stage == 2) {
 
         clearStageTwo();
-        //clearStageThree();
 
         colorObject("rect9", color);
         colorObject("rect10", color);
@@ -77,7 +75,6 @@ function stepThroughRType(stage, color) {
     } else if (stage == 3) {
 
         clearStageThree();
-        ///clearStageFour();
 
         colorObject("rect11", color);
         colorObject("rect14", color);
@@ -90,7 +87,6 @@ function stepThroughRType(stage, color) {
     } else if (stage == 4) {
 
         clearStageFour();
-        //clearStageFive();
 
         colorObject("rect15", color);
         colorObject("ellipse5", color);
@@ -126,7 +122,6 @@ function stepThroughRType(stage, color) {
  * @param inst  - The current instruction.
  **/
 function stepThroughIType(stage, color, inst) {
-
 
     if (stage == 0) {
 

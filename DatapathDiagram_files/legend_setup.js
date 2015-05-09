@@ -25,30 +25,25 @@ function setupReg(instArray) {
         console.log("IN THE FIST CHECK FOR SETUPREG");
         console.log("value from array" + instArray[regCounter]);
         Inst1 = trimInst(instArray[regCounter].split(" "));
-        //  Inst1.shift();
         console.log("REGISTER VALUE 1:", Inst1[0], "| REGISTER VALUE 2:", Inst1[1], "| REGISTER VALUE 3:", Inst1[2], "| REGISTER VALUE 4:", Inst1[3]);
         regCounter++;
 
         Inst2 = trimInst(instArray[regCounter].split(" "));
-        // Inst2.shift();
         console.log("REGISTER VALUE 1:", Inst2[0], "| REGISTER VALUE 2:", Inst2[1], "| REGISTER VALUE 3:", Inst2[2], "| REGISTER VALUE 4:", Inst2[3]);
         regCounter++;
 
         Inst3 = trimInst(instArray[regCounter].split(" "));
-        //Inst3.shift();
         console.log("REGISTER VALUE 1:", Inst3[0], "| REGISTER VALUE 2:", Inst3[1], "| REGISTER VALUE 3:", Inst3[2], "| REGISTER VALUE 4:", Inst3[3]);
         regCounter++;
 
         Inst4 = trimInst(instArray[regCounter].split(" "));
-        // Inst4.shift();
         console.log("REGISTER VALUE 1:", Inst4[0], "| REGISTER VALUE 2:", Inst4[1], "| REGISTER VALUE 3:", Inst4[2], "| REGISTER VALUE 4:", Inst4[3]);
         regCounter++;
 
         Inst5 = trimInst(instArray[regCounter].split(" "));
-        //Inst5.shift();
         console.log("REGISTER VALUE 1:", Inst5[0], "| REGISTER VALUE 2:", Inst5[1], "| REGISTER VALUE 3:", Inst5[2], "| REGISTER VALUE 4:", Inst5[3]);
         regCounter++;
-        //regCounter = currentNumInstruction;
+
     } else {
 
         if(document.getElementById("slot6").textContent != "") {
@@ -58,7 +53,6 @@ function setupReg(instArray) {
             Inst3 = Inst4;
             Inst4 = Inst5;
             Inst5 = trimInst(instructionArray[regCounter].split(" "));
-            //Inst5.shift();
             regCounter++;
 
         }
@@ -105,7 +99,7 @@ function getInstructionForList(instArray) {
 }
 
 /**
- * This function
+ * This function determines if there is a hazard that should cause a stall.
  *
  * @returns {boolean}
  */
@@ -115,13 +109,11 @@ function isNoOp() {
 
     for (var i = 1; i <= 5; i++) {
 
-        //console.log("NoOp in slot" + i + "? ");
         if (document.getElementById("slot" + i).textContent == "noop") {
 
             isNoOp = true;
 
         }
-        //console.log(isNoOp);
 
     }
 
@@ -152,45 +144,10 @@ function setupLegend() {
         // The color that will replace nextColor when the instruction in stage 5
         //  falls off the diagram.
         var colorQueue = document.getElementById("slot1").getAttribute("fill");
-        //var color = colors.indexOf(document.getElementById("slot2").getAttribute("fill"));
-        //console.log("DID IT WORK?!?!?!?!?!?!?!?!?!?!? " + color);
+
         console.log("==================" + colorQueue + "===================");
 
-        console.log(isNoOp());
-
-        /*if (isNoOp()) {
-
-            console.log(nextNextColor != "");
-
-            if (nextNextColor != "") {
-
-                nextColor = nextNextColor;
-
-            }
-
-            nextNextColor = colorQueue;
-
-        } else {
-
-            nextColor = colorQueue;
-
-        }*/
-
-        /*if (colorQueue == "slategrey")
-
-            console.log("I'M IN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-
-            //var color = colors.indexOf(document.getElementById("slot2").getAttribute("fill"));
-
-            if (color == 1) { color = 6 }
-
-            colorQueue = colors[color];
-
-            console.log("==================" + color + "===================");
-            console.log("==================" + colorQueue + "===================");
-
-        }*/
-
+        // Fills the instruction legend. Various checks determine what happens.
         for (var i = 1; i < 12; i++) {
 
             var word = "slot";
@@ -260,7 +217,7 @@ function setupLegend() {
                         nextColor = nextNextColor;
                         nextNextColor = colorQueue;
 
-                    } else if (hazard && isNoOp() /*&& (colorQueue == "slategrey")*/) {
+                    } else if (hazard && isNoOp()) {
 
                         if (colorQueue == "slategrey") {
 
@@ -273,12 +230,7 @@ function setupLegend() {
 
                         }
 
-                    } /*else if (hazard && isNoOp()) {
-
-                        console.log("Setting nextNextColor to " + colorQueue + " (colorQueue)(i == 5)(hazard && isNoOp())!");
-                        nextNextColor = colorQueue;
-
-                    }*/ else if (!hazard && isNoOp()) {
+                    } else if (!hazard && isNoOp()) {
 
                         if (nextNextColor != "") {
 
@@ -380,6 +332,7 @@ function trimInst(inst) {
 
     var trimmed = [];
 
+    // Checks to see if the instruction has 3 or 4 parts.
     if ((inst[3] != undefined)) {
 
         trimmed[0] = inst[0];
@@ -388,9 +341,9 @@ function trimInst(inst) {
         trimmed[3] = inst[3];
 
     } else if ((inst[0] == "la") || (inst[0] == "li") ||
-        (inst[0] == "lw") || (inst[0] == "lh") ||
-        (inst[0] == "lb") || (inst[0] == "sw") ||
-        (inst[0] == "sh") || (inst[0] == "sb")) {
+               (inst[0] == "lw") || (inst[0] == "lh") ||
+               (inst[0] == "lb") || (inst[0] == "sw") ||
+               (inst[0] == "sh") || (inst[0] == "sb")) {
 
         trimmed[0] = inst[0];
         trimmed[1] = inst[1].substring(0, inst[1].length - 1);
@@ -406,6 +359,8 @@ function trimInst(inst) {
 /**
  * This function handles updating the instruction legend when the back button is
  *  clicked.
+ *
+ *  NOT USED.
  */
 /*function backLegend(previousInstruction, inst, colorInQueue) {
 

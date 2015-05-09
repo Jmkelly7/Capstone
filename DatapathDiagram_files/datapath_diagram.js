@@ -29,12 +29,6 @@ var regCounter = 0;
 var counter = 1;
 
 /**
- * The counter used to parse through the given file and help construct the array
- *  of instructions
- */
-//var parseCounter = 0;
-
-/**
  * The counter for what step the 1st instruction is on in the pipeline.
  */
 var INST_ONE_CNT = 0;
@@ -58,11 +52,6 @@ var INST_FOUR_CNT = 0;
  * The counter for what step the 5th instruction is on in the pipeline.
  */
 var INST_FIVE_CNT = 0;
-
-/**
- * The counter for what step the 6th instruction is on in the pipeline.
- */
-var INST_SIX_CNT = 0;
 
 /**
  * The array for the registers of the 1st instruction.
@@ -139,12 +128,12 @@ var intervalColor;
 var isFirst = true;
 
 /**
- * An array that
+ * A temporary array.
  */
 var tempArray;
 
 /**
- *
+ * Keeps track of the position in the instruction list.
  */
 var instListCounter;
 
@@ -161,7 +150,6 @@ var hazard = false;
  */
 var popup = window.open('./Upload.html', 'Upload File',
                         'height=300,width=400,left=450,top=200');
-
 // Gives the popup window focus.
 popup.focus();
 
@@ -183,10 +171,13 @@ function parseFile() {
         returnInstructions[i] = returnInstructions[i].trim();
 
         if (i < 5) {
+
             console.log("\""+returnInstructions[i]+"\"");
+
         }
 
         if (returnInstructions[i].indexOf("$") != -1 &&
+
             returnInstructions[i].substring(0, 1) != "" &&
             returnInstructions[i].substring(0, 1) != "#" &&
             returnInstructions[i].substring(0, 6) != "syscall") {
@@ -229,7 +220,7 @@ function parseFile() {
 }
 
 /**
- * This function
+ * This function hides the write back lines.
  */
 function validate() {
 
@@ -272,15 +263,11 @@ function validate() {
  */
 function runThrough() {
 
-    //if (!hazard) {
-
-        currentNumInstruction++;
-
-    //}
+    currentNumInstruction++;
 
     if (counter == 1) {
 
-        //One instruction
+        // One instruction
         callInst(counter);
 
         INST_ONE_CNT++;
@@ -288,7 +275,7 @@ function runThrough() {
 
     } else if (counter == 2) {
 
-        //Two instructions
+        // Two instructions
         if (!(document.getElementById("slot2").textContent == "")) {
 
             callInst(counter);
@@ -307,7 +294,7 @@ function runThrough() {
 
     } else if (counter == 3) {
 
-        //Three instructions
+        // Three instructions
         if (!(document.getElementById("slot3").textContent == "")) {
 
             callInst(counter);
@@ -327,7 +314,7 @@ function runThrough() {
 
     } else if (counter == 4) {
 
-        //Four instructions
+        // Four instructions
         if (!(document.getElementById("slot5").textContent == "")) {
 
             callInst(counter);
@@ -348,7 +335,7 @@ function runThrough() {
 
     } else if (counter == 5) {
 
-        //Five instructions
+        // Five instructions
         INST_TWO_CNT++;
         INST_THREE_CNT++;
         INST_FOUR_CNT++;
@@ -414,15 +401,14 @@ function runThrough() {
         }
 
     }
-    //Checking for hazards and forwarding.
+
+    // Checking for hazards and forwarding.
     isHazard();
     forward();
 
     if (hazard) {
 
         console.log("hazard: " + hazard);
-        //setupLegend();
-        // blah
 
     }
 
@@ -468,186 +454,6 @@ function callInst(numSlots) {
     }
 
 }
-
-/**
- * This function
- *
- * @param tempCounter
- */
-/*function stallRunThrough(tempCounter) {
-
-    if (tempCounter == 1) {
-
-        runInst(document.getElementById("slot1").getAttribute("inst"),
-            INST_ONE_CNT,
-            document.getElementById("slot1").getAttribute("fill"));
-
-        INST_ONE_CNT++;
-        tempCounter++;
-
-    } else if (tempCounter == 2) {
-
-        if (!(document.getElementById("slot2").textContent == "")) {
-
-            runInst(document.getElementById("slot1").getAttribute("inst"),
-                INST_ONE_CNT,
-                document.getElementById("slot1").getAttribute("fill"));
-
-            runInst(document.getElementById("slot1").getAttribute("inst"),
-                INST_TWO_CNT,
-                "white");
-
-            INST_ONE_CNT++;
-            INST_TWO_CNT++;
-            tempCounter++;
-
-        } else {
-
-            tempCounter--;
-            runThrough();
-            setupLegend();
-
-        }
-
-    } else if (tempCounter == 3) {
-
-        if (!(document.getElementById("slot3").textContent == "")) {
-
-            runInst(document.getElementById("slot1").getAttribute("inst"),
-                INST_ONE_CNT,
-                document.getElementById("slot1").getAttribute("fill"));
-
-            runInst(document.getElementById("slot1").getAttribute("inst"),
-                INST_TWO_CNT,
-                "white");
-
-            runInst(document.getElementById("slot1").getAttribute("inst"),
-                INST_THREE_CNT,
-                "white");
-
-            INST_ONE_CNT++;
-            INST_TWO_CNT++;
-            INST_THREE_CNT++;
-            tempCounter++;
-
-        } else {
-
-            tempCounter--;
-            runThrough();
-            setupLegend();
-
-        }
-
-    } else if (tempCounter == 4) {
-
-        if (!(document.getElementById("slot5").textContent == "")) {
-
-            runInst(document.getElementById("slot1").getAttribute("inst"),
-                INST_ONE_CNT,
-                document.getElementById("slot1").getAttribute("fill"));
-
-            runInst(document.getElementById("slot1").getAttribute("inst"),
-                INST_TWO_CNT,
-                "white");
-
-            runInst(document.getElementById("slot1").getAttribute("inst"),
-                INST_THREE_CNT,
-                "white");
-
-            runInst(document.getElementById("slot1").getAttribute("inst"),
-                INST_FOUR_CNT,
-                "white");
-
-            INST_ONE_CNT++;
-            INST_TWO_CNT++;
-            INST_THREE_CNT++;
-            INST_FOUR_CNT++;
-            tempCounter++;
-
-        } else {
-
-            tempCounter--;
-            setupLegend();
-            runThrough();
-
-        }
-
-    } else if (tempCounter == 5) {
-
-        INST_ONE_CNT++;
-        INST_TWO_CNT++;
-        INST_THREE_CNT++;
-        INST_FOUR_CNT++;
-        INST_FIVE_CNT++;
-
-        INST_ONE_CNT = INST_TWO_CNT;
-        INST_TWO_CNT = INST_THREE_CNT;
-        INST_THREE_CNT = INST_FOUR_CNT;
-        INST_FOUR_CNT = INST_FIVE_CNT;
-        INST_FIVE_CNT = 0;
-
-        if (!isFirst) {
-
-            setupLegend();
-
-        }
-
-        if (document.getElementById("slot2").textContent == "") {
-
-            document.getElementById("slot1").setAttribute("fill", "white");
-            document.getElementById("slot2").setAttribute("fill", "white");
-            document.getElementById("slot3").setAttribute("fill", "white");
-            document.getElementById("slot4").setAttribute("fill", "white");
-            document.getElementById("slot5").setAttribute("fill", "white");
-
-        } else if (document.getElementById("slot3").textContent == "") {
-
-            document.getElementById("slot2").setAttribute("fill", "white");
-            document.getElementById("slot3").setAttribute("fill", "white");
-            document.getElementById("slot4").setAttribute("fill", "white");
-            document.getElementById("slot5").setAttribute("fill", "white");
-
-        } else if (document.getElementById("slot4").textContent == "") {
-
-            document.getElementById("slot3").setAttribute("fill", "white");
-            document.getElementById("slot4").setAttribute("fill", "white");
-            document.getElementById("slot5").setAttribute("fill", "white");
-
-        } else if (document.getElementById("slot5").textContent == "") {
-
-            document.getElementById("slot4").setAttribute("fill", "white");
-            document.getElementById("slot5").setAttribute("fill", "white");
-
-        } else if (document.getElementById("slot6").textContent == "") {
-
-            document.getElementById("slot5").setAttribute("fill", "white");
-
-        }
-
-        runInst(document.getElementById("slot1").getAttribute("inst"),
-            INST_ONE_CNT,
-            document.getElementById("slot1").getAttribute("fill"));
-
-        runInst(document.getElementById("slot2").getAttribute("inst"),
-            INST_TWO_CNT,
-            document.getElementById("slot2").getAttribute("fill"));
-
-        runInst(document.getElementById("slot3").getAttribute("inst"),
-            INST_THREE_CNT,
-            document.getElementById("slot3").getAttribute("fill"));
-
-        runInst(document.getElementById("slot4").getAttribute("inst"),
-            INST_FOUR_CNT,
-            document.getElementById("slot4").getAttribute("fill"));
-
-        runInst(document.getElementById("slot5").getAttribute("inst"),
-            INST_FIVE_CNT,
-            document.getElementById("slot5").getAttribute("fill"));
-
-        isFirst = false;
-
-    }
-}*/
 
 /**
  * This function calls the correct path for the given instruction, once the
@@ -722,10 +528,8 @@ function runInst(inst, stage, color) {
 function receiveMessage(event) {
 
     fileName = ab2str(event.data[0]);
-    //console.log(fileName);
     fileContents = ab2str(event.data[1]);
-    //console.log(fileContents);
-    //console.log("message received\n" + fileContents);
+
     setName();
     setupLegend();
 
@@ -820,6 +624,7 @@ function skipTo() {
     console.log(!isNaN(instNum));
     console.log(0 <= instNum < (instructionArray.length - 11));
     console.log(instructionArray.length - 11);
+
     // need to check if instNum is a number
     if (!isNaN(instNum) && (0 <= instNum < (instructionArray.length - 11))) {
 
@@ -852,6 +657,7 @@ function skipTo() {
             runThrough();
 
         }
+
         document.getElementById('slot2a').textContent = "";
         document.getElementById('slot2b').textContent = "";
         document.getElementById('slot3a').textContent = "";
@@ -862,6 +668,8 @@ function skipTo() {
 
 /**
  * This function reverts the diagram back one step in the code.
+ *
+ * NOT USED!
  */
 /*function stepBack() {
 
@@ -1014,8 +822,9 @@ function uploadNew() {
  *  diagram.
  */
 function forward() {
-    //Need to do check to string 05($1) off of the register in order to check it properly
-    //also need to deal with clearing off forwarding registers when the user cancels the skip-to method.
+
+    // Need to do check to string 05($1) off of the register in order to check it properly
+    //  also need to deal with clearing off forwarding registers when the user cancels the skip-to method.
     var oneArray;
     var twoArray;
     var threeArray;
@@ -1309,11 +1118,7 @@ function isHazard() {
 
         }
 
-    } /*else if (currentNumInstruction > 2) {
-
-        setupLegend();
-
-    }*/
+    }
 
     console.log(inst1 + " == " + inst2 + "? " + (inst1 == inst2));
     console.log(inst1 + " == " + inst3 + "? " + (inst1 == inst3));
@@ -1321,20 +1126,8 @@ function isHazard() {
     if (((inst1 != "") && (inst2 != "") && (inst3 != "") && ((inst == "lw") || (inst == "sw")))) {
 
         hazard = ((inst1 == inst2) || (inst1 == inst3));
-        /*if ((inst1 == inst2) || (inst1 == inst3)) {
 
-            hazard = true;
-
-        } else {
-
-            hazard = false
-
-        }*/
-
-    } /*else {
-
-        hazard = false;
-    }*/
+    }
 
     console.log("IS HAZARD: " + hazard);
 
